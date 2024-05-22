@@ -15,7 +15,7 @@ def main():
      # Initial condition
     initial_x = [0,1,0.5]
     t_span = (0, 3)  # From 0 to 10
-    t_vals, x_vals,z_vals = solver_casadi(initial_x,t_span,len(initial_x))
+    t_vals, x_vals,z_vals = solver_casadi(initial_x,t_span,len(initial_x),initial_guess=0)
     plot_solution(t_vals, x_vals, z_vals)
 
 

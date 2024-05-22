@@ -25,7 +25,7 @@ def main():
     if method == 'Scipy':
          t_vals, x_vals, z_vals = solver_scipy(initial_x, t_span)
     elif method == 'CasADi':
-        t_vals, x_vals,z_vals = solver_casadi(initial_x,t_span)
+        t_vals, x_vals,z_vals = solver_casadi(initial_x,t_span,0)
     else:
         print("Invalid option. Please choose 'Scipy' or 'CasADi'.")
         return
