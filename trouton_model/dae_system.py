@@ -1,4 +1,3 @@
-import numpy as np
 import casadi as ca
 def ode_rhs(u,h,dx):
     """
