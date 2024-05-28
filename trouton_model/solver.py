@@ -17,7 +17,7 @@ def solver_casadi(nx,dx,BCS,t_span):
     alg = algebraic_equation(u,h,dx)
     print(f'algebraic equations are {alg.shape} and are {alg}')
     dae = {'x':h,'z':u[1:-1],'t':t, 'ode': rhs, 'alg': alg}
-    t_vals = np.linspace(t_span[0],t_span[1],10)
+    t_vals = np.linspace(t_span[0],t_span[1],2)
     integrator = ca.integrator('integrator', 'idas', dae, 0,t_vals)
 
     h0 = np.ones(nx)
