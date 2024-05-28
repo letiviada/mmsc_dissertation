@@ -7,7 +7,7 @@ def ode_rhs(u,h,dx):
     Uses Method of Lines to discretize the spatial derivatives
     """
     uh = u*h
-    print(uh)
+    #print(uh)
     # We use central differences for interior points
     uh_central = (uh[2:] - uh[:-2]) / (2 * dx)
     # We use backward finite differences for the right-most point
@@ -15,7 +15,7 @@ def ode_rhs(u,h,dx):
     # We use forward finite differences for the left-most point
     uh_forward = (uh[1] - uh[0]) / dx
     uh_x = ca.vertcat(-uh_forward,-uh_central, -uh_backward)
-    print(f'uh_x is {uh_x}')
+    #print(f'uh_x is {uh_x}')
     return uh_x
 
 def ode_rhs1(u, h, dx):
