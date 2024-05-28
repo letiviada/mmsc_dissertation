@@ -7,4 +7,5 @@ def solver_casadi(nx,dx):
     h = ca.SX.sym('h',nx)
     u = ca.SX.sym('u',nx) # Variable in differential equation
     rhs= ode_rhs(u,h,dx) # Define differential equation
+    alg = algebraic_equation(u,h,dx)
     return rhs
