@@ -7,7 +7,7 @@ x = np.linspace(0, 1, nx)
 dx = x[1] - x[0]
 
 # Time span
-t_span = [0, 10]
+t_span = [0, 2]
 
 # Boundary conditions for u
 BCS = [1, 10]
