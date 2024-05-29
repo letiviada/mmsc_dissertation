@@ -1,7 +1,7 @@
 import casadi as ca
 import numpy as np
 
-def ode_rhs(u,h,dx):
+def ode_rhs1(u,h,dx):
     """
     Defines the right-hand side of the ODE.
     Uses Method of Lines to discretize the spatial derivatives
@@ -18,12 +18,12 @@ def ode_rhs(u,h,dx):
     #print(f'uh_x is {uh_x}')
     return uh_x
 
-def ode_rhs1(u, h, dx):
+def ode_rhs(u, h, dx):
     """ Defines the right-hand side of the ODE for h """
     nx = h.shape[0]
     rhs = ca.SX.zeros(nx)
     for i in range(1, nx-1):
-        rhs[i] = - (h[i] * u[i] - h[i-2] * u[i-2]) / (2*dx)
+        rhs[i] = - (h[i] * u[i] - h[i-1] * u[i-1]) / (dx)
     print(f'rhs is {rhs}')
     return rhs
     

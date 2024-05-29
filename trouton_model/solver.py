@@ -1,27 +1,21 @@
 import casadi as ca
 import numpy as np
-from dae_system import ode_rhs, algebraic_equation
-from bdry_initial_conditions import initial_u, boundary_conditions
+from model import ode, alg, initial
+from utils.reshape_data import reshape
 
-
-def solver_casadi(nx,dx,BCS,t_span):
-    """Solves the DAE system using CasADi"""
-    h = ca.SX.sym('h',nx)
-    u  = ca.SX.sym('u',nx)
-    t = ca.SX.sym('t')
-    u = boundary_conditions(u,BCS)
-    #print(u[1:-1].shape)
-    #u  = ca.SX.sym('u',nx)
-    rhs= ode_rhs(u,h,dx) # Define differential equation
-    #print(f'ode has size {rhs.shape}')
-    alg = algebraic_equation(u,h,dx)
-    #print(f'algebraic equations are {alg.shape} and are {alg}')
-    dae = {'x':h,'z':u[1:-1],'t':t, 'ode': rhs, 'alg': alg}
-    t_vals = np.linspace(t_span[0],t_span[1],10)
-    integrator = ca.integrator('integrator', 'idas', dae, 0,t_vals)
-
-    h0 = np.ones(nx)
-    u0 = initial_u(nx,BCS)
-    #print(u0)
-    result = integrator(x0=h0, z0=u0)
-    return result
+def solver(nx,t_eval):
+    x = ca.SX.sym('x',(nx,1))
+    z  = ca.SX.sym('z',(nx,1))
+    # Define the solver
+    opts = {'reltol':1e-6,'abstol':1e-6}
+    dae = {'x':x,'z':z, 'ode': ode(x,z,nx), 'alg': alg(x,z,nx)}
+    F = ca.integrator('F', 'idas', dae, t_eval[0], t_eval, opts)
+    # Add initial conditions
+    x0 = initial(x,z,nx)[0]
+    z0 = initial(x,z,nx)[1]
+    result = F(x0=x0, z0=z0)
+    x_res = result['xf'].full()
+    z_res = result['zf'].full()
+    x_sol = reshape(x_res)
+    z_sol = reshape(z_res)
+    return x_sol, z_sol
