@@ -7,17 +7,13 @@ nt = 101
 dx = 1 / (nx - 1)
 
 def alg(x,z):
+    dx = 1 / (nx - 1)
     alg_eqn = ca.SX(nx,1)
     alg_eqn[0] = z[0] - 1.0
     alg_eqn[-1] = z[-1] - 10.0
-    # Vectorized computation for the interior points
-    term1 = (x[2:] - x[:-2]) * (z[2:] - z[:-2]) / (4 * dx**2)
-    term2 = x[1:-1] * (z[2:] - 2 * z[1:-1] + z[:-2]) / (dx**2)
-    alg_eqn[1:-1] = term1 + term2
-    #for i in range(1, nx-1):
-       # term1 = (x[i+1] - x[i-1]) * (z[i+1] - z[i-1]) / (4 * dx**2)
-       # term2 = x[i] * (z[i+1] - 2 * z[i] + z[i-1]) / (dx **2)
-        #alg_eqn[i] = term1 + term2
+    term1 = (x[2:] + x[1:-1]) * (z[2:] - z[1:-1]) / (2 * dx ** 2)
+    term2 = (x[1:-1] + x[:-2]) * (z[1:-1] - z[:-2]) / (2 * dx ** 2)
+    alg_eqn[1:-1] = term1 - term2
     return alg_eqn
 
 def ode(x,z):
