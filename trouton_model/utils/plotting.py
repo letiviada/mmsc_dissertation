@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def plot_results(x_eval, t_eval, x_array, option='time', point=None, variable='thickness', ax=None, fig=None):
+def plot_results(x_eval, t_eval, x_array,exact_initial=None, exact_infinity=None, option='time', point=None, variable='thickness', ax=None, fig=None):
     """
     Plots the results against time or space, optionally on given subplot axes.
 
@@ -9,6 +9,8 @@ def plot_results(x_eval, t_eval, x_array, option='time', point=None, variable='t
         x_eval (np.ndarray): The evaluation points for time or space.
         t_eval (np.ndarray): The time evaluation points.
         x_array (np.ndarray): The results array with shape (nt, nx).
+        exact_initial (np.ndarray, optional): The exact solution at the initial time.
+        exact_infinity (np.ndarray, optional): The exact solution as t -> infinity.
         option (str): 'time' or 'space' to plot time points or space points.
         point (float): The specific point to plot. If None, plots multiple points.
         variable (str): The variable being plotted ('thickness' or 'axial velocity').
@@ -17,7 +19,6 @@ def plot_results(x_eval, t_eval, x_array, option='time', point=None, variable='t
     """
     if ax is None or fig is None:
         fig, ax = plt.subplots()
-
     nt = x_array[:,0].shape[0]
     nx = x_array[0,:].shape[0]
     if option == 'time':
@@ -26,10 +27,14 @@ def plot_results(x_eval, t_eval, x_array, option='time', point=None, variable='t
             time_index = (np.abs(x_eval - point)).argmin()
             ax.plot(x_eval, x_array[time_index,:], label=f't = {t_eval[time_index]:.2f}')
         else:
-            step_size = max(1, nt // 10)  # Ensure we have a reasonable step size
+            step_size = max(1, nt // 5)  # Ensure we have a reasonable step size
             for i in range(0, nt, step_size):
                 ax.plot(x_eval, x_array[i, :], label=f't = {t_eval[i]:.1f}')
         title = f'{variable.capitalize()} at different time points'
+        if exact_initial is not None:
+            ax.plot(x_eval, exact_initial, label=f'Exact t = 0', linestyle='--',color= 'red')
+        if exact_infinity is not None:
+            ax.plot(x_eval, exact_infinity, label=f'Steady State solution', linestyle='--',color = 'black')
             
     elif option == 'space':
         if point is not None:
@@ -45,6 +50,6 @@ def plot_results(x_eval, t_eval, x_array, option='time', point=None, variable='t
     ax.set_title(title)
     ax.set_xlabel('Space' if option == 'time' else 'Time')
     ax.set_ylabel(variable.capitalize())
-    ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15), ncol=4, fancybox=True, shadow=True)
+    ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15), ncol=4)
     fig.tight_layout()
     return fig, ax

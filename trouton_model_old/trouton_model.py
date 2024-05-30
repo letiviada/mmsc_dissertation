@@ -47,7 +47,7 @@ z_res = result['zf'].full()
 #y_sol = np.concatenate(x_res,z_res)
 x_eval = np.linspace(0,1,nx)
 z_array = np.array(z_res)
-x_array = np.array(x_res)
+x_array = np.array(z_res)
 x_array2 = np.transpose(x_array)
 
 plt.figure()
