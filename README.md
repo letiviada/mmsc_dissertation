@@ -34,8 +34,8 @@ This example involves solving a simple DAE system. The system is defined as foll
 
 $$
 \begin{align*}
-\frac{dx}{dt} &= \frac{1}{2} \\
-0 &= z-2x
+\frac{dx}{dt} &= \frac{1}{2}, \\
+ z-2x &= 0.
 \end{align*}
 $$
 
@@ -44,9 +44,9 @@ This example involves solving a medium complexity DAE system. The system is defi
 
 $$
 \begin{align*}
-\frac{dx}{dt} &= \frac{1}{2} \\
-\frac{dy}{dt} &= y \\
-0 &= z-2x
+\frac{dx}{dt} &= \frac{1}{2}, \\
+\frac{dy}{dt} &= y, \\
+ z-2x &= 0.
 \end{align*}
 $$
 
@@ -57,10 +57,10 @@ This systems defines the sheet thickness ($h$), and axial velocity ($u$) of a gl
 $$
 \begin{align*}
 \frac{\partial h}{\partial t} + \frac{\partial (uh)}{\partial x} &= 0 \\
-\frac{\partial }{\partial x}\left (h\frac{\partial u}{\partial x}) &= 0\\
+\frac{\partial }{\partial x}\left (h\frac{\partial u}{\partial x}\right) &= 0\\
 h(t=0,x) &= 1, \\
 h(t,x=0) &= 1, \\
 u(t,x=0) &= 1, \\
-u(t,x=1) &= 10, \\
+u(t,x=1) &= 10. \\
 \end{align*}
 $$
