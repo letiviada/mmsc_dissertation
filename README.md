@@ -8,8 +8,9 @@ This repository contains all the codes used to complete my dissertation. The pro
 2. [Folder Structure](#folder-structure)
 3. [Examples](#examples)
     1. [Example 1: Simple DAE System](#example-1-simple-dae-system)
-    2. [Example 2: Medium Complexity DAE System](#example-2-medium-complexity-dae-system)
-    3. [Example 3: Complex DAE System](#example-3-complex-dae-system)
+    2. [Example 2: DAE system with two differentiable variables](#example-2-dae-system-with-two-differentiable-variables)
+4. [Trouton Model](#trouton-model)
+
 
 ## Introduction
 This project contains the codes used for solving various Differential-Algebraic Equations (DAE) systems. 
@@ -52,7 +53,7 @@ $$
 
 
 ## Trouton Model
-This systems defines the sheet thickness ($h$), and axial velocity ($u$) of a glass sheet when it is strreched. The system is defined as follows:
+This systems defines the sheet thickness ($h$), and axial velocity ($u$) of a glass sheet when it is streched. The system is defined as follows:
 
 $$
 \begin{align*}
