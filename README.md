@@ -40,7 +40,7 @@ $$
 \end{align*}
 $$
 
-### Example 2: DAE system with two differential variables
+### Example 2: DAE system with two differentiable variables
 This example involves solving a medium complexity DAE system. The system is defined as follows:
 
 $$
