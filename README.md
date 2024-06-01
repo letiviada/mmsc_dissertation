@@ -26,7 +26,7 @@ code_dissertation/
 ├── trouton_model/
 │
 └── tensor_code/
-``````
+```
 ## Examples
 
 ### Example 1: Simple DAE system
