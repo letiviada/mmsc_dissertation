@@ -16,6 +16,7 @@ This project contains the codes used for solving various Differential-Algebraic 
 
 ## Folder Structure
 The repository is organized as follows:
+```bash
 code_dissertation/
 │
 ├── dae_examples/
@@ -25,7 +26,7 @@ code_dissertation/
 ├── trouton_model/
 │
 └── tensor_code/
-
+``````
 ## Examples
 
 ### Example 1: Simple DAE system
