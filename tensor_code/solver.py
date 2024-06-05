@@ -12,7 +12,7 @@ def solver(t_eval):
     dae = {'x':x,'z':z, 'ode': ode(x,z), 'alg': alg(x,z)}
     F = integrator('F', 'idas', dae, t_eval[0],t_eval,opts)
     # Initial confitions given as a numpy array
-    tensor, x0 = initial()
+    _, x0 = initial()
     z0 = 0.0*x0
 
     result = F(x0=x0, z0=z0)

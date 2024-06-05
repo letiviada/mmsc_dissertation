@@ -23,8 +23,6 @@ def ode(x,z):
     #dhdt[0] = 0.0
     #dhdt[-1] = -(xz[-1] - xz[-2]) / dx
     dhdt[1:] = -(xz[1:] - xz[:-1]) / dx
-    #for i in range(1,nx):
-        #dhdt[i] = -(xz[i] - xz[i-1]) / (dx)
     return dhdt
 
 

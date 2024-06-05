@@ -1,54 +1,65 @@
 import numpy as np
-from casadi import * 
+import time
 
-nx = 144
-nt = 6
+def initial_broadcast(nx, t, values_dict):
+    x = np.linspace(0, 1, nx)
 
-def alg(x,z):
-    alg_eqn = z-0.5*x
-    return alg_eqn
+    def func(xi, t, value):
+        c = 2 / value
+        return 2 / (t + xi + c)
 
-def ode(x,z):
-    ode = - x * z
-    return ode
+    tensor = np.zeros((nx, 9, 4, 4))
 
-def initial(value = 1):
-    tensor = np.zeros((9, 4, 4)) # Shape of the tensor (r,i,j)
+    positions = np.array(list(values_dict.keys()))
+    values = np.array(list(values_dict.values()))
 
-    # Define initial values and their positions ()
-    positions = [
-        (1,0,2), (1,1,3),
-        (3,0,1), (3,2,3),
-        (4,0,1), (4,0,2), (4,1,0), (4,1,3), (4,2,0), (4,2,3), (4,3,1), (4,3,2),
-        (5,1,0), (5,3,2),
-        (7,2,0), (7,3,1)
-    ]
-    # Assign non-zero values to the tensor
-    for pos in positions:
-        tensor[pos] = value
-    initial_condition  = tensor.reshape(-1) # Reshape into a 1d array (it does so by rows)
+    idx_nx = np.arange(nx)[:, None]
+    idx_r = positions[:, 0]
+    idx_i = positions[:, 1]
+    idx_j = positions[:, 2]
+
+    xi = x[:, None]
+    c = 2 / values
+    tensor_values = func(xi, t, values)
+
+    tensor[idx_nx, idx_r, idx_i, idx_j] = tensor_values
+
+    initial_condition = tensor.reshape(-1)
     return tensor, initial_condition
 
-x = SX.sym('x',(nx,1))
-z = SX.sym('z',(nx,1))
-t_eval = np.linspace(0,5,nt)
+# Example usage
+nx = 10000
+t = 1
 
-opts = {'reltol':1e-10,'abstol':1e-10}
-dae = {'x':x,'z':z, 'ode': ode(x,z), 'alg': alg(x,z)}
-F = integrator('F', 'idas', dae, t_eval[0],t_eval,opts)
-#x0 = np.ones((nx,1))
-tensor, x0 = initial()
-z0 = 0.0*x0
-result = F(x0=x0, z0=z0)
-x_res = result['xf'].full()
-z_res = result['zf'].full()
+values_dict = {
+    (1, 0, 2): 1, (1, 1, 3): 2,
+    (3, 0, 1): 3, (3, 2, 3): 4,
+    (4, 0, 1): 5, (4, 0, 2): 6, (4, 1, 0): 5, (4, 1, 3): 7, (4, 2, 0): 6, (4, 2, 3): 8, (4, 3, 1): 7, (4, 3, 2): 8,
+    (5, 1, 0): 9, (5, 3, 2): 10,
+    (7, 2, 0): 11, (7, 3, 1): 12
+}
 
-X = x_res.transpose().reshape(nt,9,4,4)
-Z = z_res.transpose().reshape(nt,9,4,4)
-print(X[0,:,:,:])
-print(tensor==X[0,:,:,:])
+start_time = time.time()
+tensor, initial_condition = initial_broadcast(nx=nx, t=t, values_dict=values_dict)
+print(f"Broadcasting time: {time.time() - start_time} seconds")
 
-exact = lambda x: 2/(x+2)
-tensor2, _ = initial(exact(5))
-print(f'The real solution is {tensor2}') 
-print(f'The approximate solution is  {X[-1,:,:,:]}')
+def initial_loop(nx, t, values_dict):
+    x = np.linspace(0, 1, nx)
+
+    def func(xi, t, value):
+        c = 2 / value
+        return 2 / (t + xi + c)
+
+    tensor = np.zeros((nx, 9, 4, 4))
+
+    for i, xi in enumerate(x):
+        for pos, val in values_dict.items():
+            tensor[i, pos[0], pos[1], pos[2]] = func(xi, t, val)
+
+    initial_condition = tensor.reshape(-1)
+    return tensor, initial_condition
+
+# Example usage
+start_time = time.time()
+tensor, initial_condition = initial_loop(nx=nx, t=t, values_dict=values_dict)
+print(f"For loop time: {time.time() - start_time} seconds")

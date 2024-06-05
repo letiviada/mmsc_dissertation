@@ -1,6 +1,6 @@
 def dae_rhs(t,x,z):
     """Defines the right-hand side of the DAE."""
-    dxdt =0.5
+    dxdt = 0.5
     return dxdt
 
 def algebraic_equation(x,z):
