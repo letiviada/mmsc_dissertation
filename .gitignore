@@ -25,6 +25,8 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+.DS_Store
+
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -127,8 +129,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-DMMSC_venv/
-
+.casadi_vevn/
 # Spyder project settings
 .spyderproject
 .spyproject
@@ -159,3 +160,22 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+.DS_Store
+.gitignore
+casadi_venv/pyvenv.cfg
+casadi_venv/bin/activate
+casadi_venv/bin/activate.csh
+casadi_venv/bin/activate.fish
+casadi_venv/bin/Activate.ps1
+casadi_venv/bin/f2py
+casadi_venv/bin/fonttools
+casadi_venv/bin/pip
+casadi_venv/bin/pip3
+casadi_venv/bin/pip3.11
+casadi_venv/bin/pyftmerge
+casadi_venv/bin/pyftsubset
+casadi_venv/bin/python
+casadi_venv/bin/python3
+casadi_venv/bin/python3.11
+casadi_venv/bin/ttx
+casadi_venv/share/man/man1/ttx.1

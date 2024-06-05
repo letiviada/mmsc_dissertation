@@ -64,20 +64,23 @@ for t in t_eval.astype(int):
     tensor, _ = initial(nx, t=t)
     check_solution(tensor, t, x_indices)
 
-fig, axes = plt.subplots(nrows=nt//3 +(nt%3>0),ncols=3)
+fig, axes = plt.subplots(nrows=nt//3 + (nt%3>0), ncols=3)
 axes = axes.flatten()
 
 for idx, t in enumerate(t_eval.astype(int)):
-    tensor,_ = initial(nx,t=t)
+    tensor, _ = initial(nx, t=t)
     ax = axes[idx]
-    ax.plot(x_eval,X[t,:,4,0,1], label="$G_{12}^{(0,0)^{T}}$")
-    ax.plot(x_eval,tensor[:,4,0,1],linestyle="--",label = "Exact $G_{12}^{(0,0)^{T}}$ ")
-    ax.plot(x_eval,X[t,:,4,3,1], label="$G_{43}^{(0,0)^{T}}$")
-    ax.plot(x_eval,tensor[:,4,3,1],linestyle="--",label = "Exact $G_{43}^{(0,0)^{T}}$ ")
+    l1, = ax.plot(x_eval, X[t, :, 4, 0, 1], label="$G_{12}^{(0,0)^{T}}$")
+    l2, = ax.plot(x_eval, tensor[:, 4, 0, 1], linestyle="--", label="Exact $G_{12}^{(0,0)^{T}}$")
+    l3, = ax.plot(x_eval, X[t, :, 4, 3, 1], label="$G_{43}^{(0,0)^{T}}$")
+    l4, = ax.plot(x_eval, tensor[:, 4, 3, 1], linestyle="--", label="Exact $G_{43}^{(0,0)^{T}}$")
+    l5, = ax.plot(x_eval, X[t, :, 3, 0, 1], label='$G_{12}^{(-1,0)^{T}}$')
+    l6, = ax.plot(x_eval, tensor[:, 3, 0, 1], linestyle='--', label='Exact $G_{12}^{(-1,0)^{T}}$')
     ax.set_xlabel('x')
     ax.grid(True)
 
-handles, labels = ax.get_legend_handles_labels()
-fig.legend(handles,labels, loc ='lower center',ncol=4)
-plt.tight_layout()
+# Create a single legend
+fig.legend(handles=[l1, l2, l3, l4, l5, l6], loc='upper center',bbox_to_anchor=(0.5, 1), ncol=3)
+
+plt.tight_layout(rect=[0, 0.03, 1, 0.85])
 plt.show()
