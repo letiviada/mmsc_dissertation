@@ -64,4 +64,20 @@ for t in t_eval.astype(int):
     tensor, _ = initial(nx, t=t)
     check_solution(tensor, t, x_indices)
 
-plt.figure()
+fig, axes = plt.subplots(nrows=nt//3 +(nt%3>0),ncols=3)
+axes = axes.flatten()
+
+for idx, t in enumerate(t_eval.astype(int)):
+    tensor,_ = initial(nx,t=t)
+    ax = axes[idx]
+    ax.plot(x_eval,X[t,:,4,0,1], label="$G_{12}^{(0,0)^{T}}$")
+    ax.plot(x_eval,tensor[:,4,0,1],linestyle="--",label = "Exact $G_{12}^{(0,0)^{T}}$ ")
+    ax.plot(x_eval,X[t,:,4,3,1], label="$G_{43}^{(0,0)^{T}}$")
+    ax.plot(x_eval,tensor[:,4,3,1],linestyle="--",label = "Exact $G_{43}^{(0,0)^{T}}$ ")
+    ax.set_xlabel('x')
+    ax.grid(True)
+
+handles, labels = ax.get_legend_handles_labels()
+fig.legend(handles,labels, loc ='lower center',ncol=4)
+plt.tight_layout()
+plt.show()
