@@ -3,7 +3,7 @@ from casadi import *
 import matplotlib.pyplot as plt
 
 array_length = 144
-nx = 11
+nx = 101
 nt = 6
 def alg(x,z):
     alg_eqn = z-0.5*x
@@ -64,23 +64,27 @@ for t in t_eval.astype(int):
     tensor, _ = initial(nx, t=t)
     check_solution(tensor, t, x_indices)
 
-fig, axes = plt.subplots(nrows=nt//3 + (nt%3>0), ncols=3)
+fig, axes = plt.subplots(nrows=nt//3 + (nt%3>0), ncols=3,figsize = (15,8),dpi=300)
 axes = axes.flatten()
 
 for idx, t in enumerate(t_eval.astype(int)):
     tensor, _ = initial(nx, t=t)
     ax = axes[idx]
-    l1, = ax.plot(x_eval, X[t, :, 4, 0, 1], label="$G_{12}^{(0,0)^{T}}$")
-    l2, = ax.plot(x_eval, tensor[:, 4, 0, 1], linestyle="--", label="Exact $G_{12}^{(0,0)^{T}}$")
-    l3, = ax.plot(x_eval, X[t, :, 4, 3, 1], label="$G_{43}^{(0,0)^{T}}$")
-    l4, = ax.plot(x_eval, tensor[:, 4, 3, 1], linestyle="--", label="Exact $G_{43}^{(0,0)^{T}}$")
-    l5, = ax.plot(x_eval, X[t, :, 3, 0, 1], label='$G_{12}^{(-1,0)^{T}}$')
-    l6, = ax.plot(x_eval, tensor[:, 3, 0, 1], linestyle='--', label='Exact $G_{12}^{(-1,0)^{T}}$')
+    l1, = ax.plot(x_eval, X[t, :, 4, 0, 1], label="$G_{12}^{(0,0)^{T}}$",linewidth = 2)
+    l2, = ax.plot(x_eval, tensor[:, 4, 0, 1], linestyle="--", label="Exact $G_{12}^{(0,0)^{T}}$",linewidth = 2)
+    #l12, = ax.plot(x_eval, X[t, :, 4, 1, 0], label="$G_{21}^{(0,0)^{T}}$",linewidth = 2)
+    #l22, = ax.plot(x_eval, tensor[:, 4, 1, 0], linestyle="--", label="Exact $G_{21}^{(0,0)^{T}}$",linewidth = 2)
+    l3, = ax.plot(x_eval, X[t, :, 4, 3, 1], label="$G_{43}^{(0,0)^{T}}$",linewidth = 2)
+    l4, = ax.plot(x_eval, tensor[:, 4, 3, 1], linestyle="--", label="Exact $G_{43}^{(0,0)^{T}}$",linewidth = 2)
+    l5, = ax.plot(x_eval, X[t, :, 3, 0, 1], label='$G_{12}^{(-1,0)^{T}}$',linewidth = 2)
+    l6, = ax.plot(x_eval, tensor[:, 3, 0, 1], linestyle='--', label='Exact $G_{12}^{(-1,0)^{T}}$',linewidth = 2)
     ax.set_xlabel('x')
+    ax.set_title(f't={t}',pad=2)
     ax.grid(True)
 
 # Create a single legend
 fig.legend(handles=[l1, l2, l3, l4, l5, l6], loc='upper center',bbox_to_anchor=(0.5, 1), ncol=3)
-
+fig.savefig('tensor_code/examples/figures/conductance.png')  
 plt.tight_layout(rect=[0, 0.03, 1, 0.85])
+plt.subplots_adjust(hspace=0.75, wspace=0.4) 
 plt.show()

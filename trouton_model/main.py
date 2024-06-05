@@ -26,5 +26,5 @@ plot_results(x_eval, t_eval, x_sol, exact_initial = sol_h_initial(x_eval), exact
 plot_results(x_eval, t_eval, z_sol, exact_initial = sol_u_initial(x_eval), exact_infinity=sol_u_final(x_eval),option='time', variable='axial velocity', ax=ax2, fig=fig1)
 #plot_results(x_eval, t_eval, z_sol, option='space', variable='axial velocity', ax=ax2, fig=fig2)    
 #fig2.savefig('dae_examples/trouton_model/figures/axial_velocity.png')
-fig1.savefig('dae_examples/trouton_model/figures/trouton_model.png')  
+fig1.savefig('trouton_model/figures/trouton_model.png')  
 plt.show()
