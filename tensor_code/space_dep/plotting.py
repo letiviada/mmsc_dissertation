@@ -90,7 +90,7 @@ def plot_results(t_eval, x_eval, X, initial_func,save = False,fig_name='conducta
 
     
     if save == True:
-        fig.savefig(f'tensor_code/examples/figures/{fig_name}.png')
+        fig.savefig(f'tensor_code/space_dep/figures/{fig_name}.png')
     plt.tight_layout()
     plt.subplots_adjust(hspace=0.75, wspace=0.4)
     #plt.show()
