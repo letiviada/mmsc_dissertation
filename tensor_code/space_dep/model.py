@@ -51,7 +51,7 @@ def initial(x_axis,t=0):
     (4, 0, 1): 5, (4, 0, 2): 6, (4, 1, 0): 5, (4, 1, 3): 7, (4, 2, 0): 6, (4, 2, 3): 8, (4, 3, 1): 7, (4, 3, 2): 8,
     (5, 1, 0): 9, (5, 3, 2): 10,
     (7, 2, 0): 11, (7, 3, 1): 12
-    }
+    } #(xi,i,j,r,s): initial_conductance at edge i,j,r,s= at position xi
     # Assign non-zero values to the tensor
     positions = np.array(list(values_dict.keys()))
     values = np.array(list(values_dict.values()))

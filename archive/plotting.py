@@ -23,7 +23,35 @@ values_dict = {
     (7, 3, 1): "$G_{42}^{(0,-1)^{T}}$"
 }
 
-def plot_tensor(ax, x_eval, X, tensor, t, positions, labels):
+def create_fig(nrows, ncols, figsize=(15, 8), dpi=300):
+    """
+    Create a figure and axes.
+
+    Parameters:
+    nrows (int): Number of rows of subplots.
+    ncols (int): Number of columns of subplots.
+    figsize (tuple): Size of the figure.
+    dpi (int): Dots per inch of the figure.
+
+    Returns:
+    fig (matplotlib.figure.Figure): The created figure.
+    axes (np.ndarray): Array of Axes objects.
+    """
+    fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=figsize, dpi=dpi)
+    return fig, axes.flatten()
+
+def save_figure(fig, path):
+    """
+    Saves the figure to the specified path in both SVG and PDF formats.
+
+    Args:
+        fig (matplotlib.figure.Figure): The figure to save.
+        path (str): The directory path where the figure should be saved.
+    """
+    fig.savefig(f"{path}.svg")
+    fig.savefig(f"{path}.pdf")
+
+def plot_tensor(ax, x_eval, X , tensor, t, positions, labels):
     """
     Plot tensor values for given positions and labels.
     
@@ -86,8 +114,6 @@ def plot_results(t_eval, x_eval, X, initial_func,save = False,fig_name='conducta
     fig.legend(handles=custom_lines, labels=custom_labels, handler_map={tuple: HandlerTuple(ndivide=None)},
                 loc='outside center right', borderaxespad=1, ncol=1)
     fig.suptitle('Exact (color) vs Numerical (black) Solution')
-
-
     
     if save == True:
         fig.savefig(f'tensor_code/space_dep/figures/{fig_name}.png')
