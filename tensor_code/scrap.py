@@ -1,5 +1,6 @@
 import numpy as np
 import time
+from matplotlib import colormaps
 
 def initial_broadcast(nx, t, values_dict):
     x = np.linspace(0, 1, nx)
@@ -63,3 +64,5 @@ def initial_loop(nx, t, values_dict):
 start_time = time.time()
 tensor, initial_condition = initial_loop(nx=nx, t=t, values_dict=values_dict)
 print(f"For loop time: {time.time() - start_time} seconds")
+
+print(list(colormaps))

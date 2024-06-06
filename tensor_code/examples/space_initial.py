@@ -27,13 +27,23 @@ def initial(nx=1,t=0):
     }
     # Assign non-zero values to the tensor
     x_axis = np.linspace(0,1,nx)
-    for i, xi in enumerate(x_axis):
-        for pos, val in values_dict.items():
-            tensor[i, pos[0], pos[1], pos[2]] = func(val, xi =xi)
+    positions = np.array(list(values_dict.keys()))
+    values = np.array(list(values_dict.values()))
+    idx_nx = np.arange(nx)[:, None]
+    idx_r = positions[:, 0]
+    idx_i = positions[:, 1]
+    idx_j = positions[:, 2]
+    xi = x_axis[:, None]
+    tensor_values = func(values,xi)
+
+    tensor[idx_nx, idx_r, idx_i, idx_j] = tensor_values
+
+    #for i, xi in enumerate(x_axis):
+       # for pos, val in values_dict.items():
+           # tensor[i, pos[0], pos[1], pos[2]] = func(val, xi =xi)
 
     in_cond = tensor.reshape(-1)
     return tensor, in_cond
-
 
 x = SX.sym('x',(array_length*nx,1))
 z = SX.sym('z',(array_length*nx,1))
@@ -64,27 +74,26 @@ for t in t_eval.astype(int):
     tensor, _ = initial(nx, t=t)
     check_solution(tensor, t, x_indices)
 
+plt.style.use('seaborn-v0_8')
 fig, axes = plt.subplots(nrows=nt//3 + (nt%3>0), ncols=3,figsize = (15,8),dpi=300)
 axes = axes.flatten()
 
 for idx, t in enumerate(t_eval.astype(int)):
     tensor, _ = initial(nx, t=t)
     ax = axes[idx]
-    l1, = ax.plot(x_eval, X[t, :, 4, 0, 1], label="$G_{12}^{(0,0)^{T}}$",linewidth = 2)
-    l2, = ax.plot(x_eval, tensor[:, 4, 0, 1], linestyle="--", label="Exact $G_{12}^{(0,0)^{T}}$",linewidth = 2)
-    #l12, = ax.plot(x_eval, X[t, :, 4, 1, 0], label="$G_{21}^{(0,0)^{T}}$",linewidth = 2)
-    #l22, = ax.plot(x_eval, tensor[:, 4, 1, 0], linestyle="--", label="Exact $G_{21}^{(0,0)^{T}}$",linewidth = 2)
-    l3, = ax.plot(x_eval, X[t, :, 4, 3, 1], label="$G_{43}^{(0,0)^{T}}$",linewidth = 2)
-    l4, = ax.plot(x_eval, tensor[:, 4, 3, 1], linestyle="--", label="Exact $G_{43}^{(0,0)^{T}}$",linewidth = 2)
-    l5, = ax.plot(x_eval, X[t, :, 3, 0, 1], label='$G_{12}^{(-1,0)^{T}}$',linewidth = 2)
-    l6, = ax.plot(x_eval, tensor[:, 3, 0, 1], linestyle='--', label='Exact $G_{12}^{(-1,0)^{T}}$',linewidth = 2)
+    l1a, = ax.plot(x_eval,X[t,:,1,0,2], color = 'k',label = "$G_{13}^{(0,1)^{T}}$",linewidth = 2)
+    l1b, = ax.plot(x_eval,tensor[:,1,0,2], linestyle = '--', label = "Exact $G_{13}^{(0,1)^{T}}$",linewidth = 2)
+    l2a, = ax.plot(x_eval,X[t,:,1,1,3], color = 'k',label = "$G_{24}^{(0,1)^{T}}$",linewidth = 2)
+    l2b, = ax.plot(x_eval,tensor[:,1,1,3], linestyle = '--',label = "Exact $G_{24}^{(0,1)^{T}}$",linewidth = 2)
+    l3a, = ax.plot(x_eval, X[t, :, 3, 0, 1], color = 'k',label='$G_{12}^{(-1,0)^{T}}$',linewidth = 2)
+    l3b, = ax.plot(x_eval, tensor[:, 3, 0, 1], linestyle='--', label='Exact $G_{12}^{(-1,0)^{T}}$',linewidth = 2)
     ax.set_xlabel('x')
     ax.set_title(f't={t}',pad=2)
     ax.grid(True)
 
 # Create a single legend
-fig.legend(handles=[l1, l2, l3, l4, l5, l6], loc='upper center',bbox_to_anchor=(0.5, 1), ncol=3)
-fig.savefig('tensor_code/examples/figures/conductance.png')  
+fig.legend(handles=[l1a,l1b,l2a,l2b, l3a,l3b], loc='upper center',bbox_to_anchor=(0.5, 1), ncol=6)
+fig.savefig('tensor_code/examples/figures/conductance_easy.png')  
 plt.tight_layout(rect=[0, 0.03, 1, 0.85])
 plt.subplots_adjust(hspace=0.75, wspace=0.4) 
 plt.show()
