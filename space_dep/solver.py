@@ -66,7 +66,7 @@ def reshape_N4(shape, cas_output):
     Returns:
     X (np.ndarray): tensor with the required size to interpret the solution.
     """
-    X =cas_output.transpose().reshape(*shape)
+    X = cas_output.transpose().reshape(*shape)
     return X
 
 

@@ -1,5 +1,5 @@
 import  numpy as np
-
+from data.N4 import ic_dict
 def alg(x,z):
     """
     Algebraic equation for the DAE system.
@@ -28,45 +28,37 @@ def ode(x,z):
     ode = - x * z
     return ode
 
-def initial(x_axis,t=0):
+def initial(x_eval,shape,t=0):
     """
     Initialize the tensor with given dimensions and time parameter.
     
     Parameters:
-    x_axis (np.ndarray): Spatial points.
+    x_eval (np.ndarray): Spatial points.
+    shape (tuple): Shape of the cells (i,j,r,s) 
     t (float): Time parameter.
     
     Returns:
     tensor (np.ndarray): Initialised tensor.
     in_cond (np.ndarray): Flattened initial condition tensor.
     """
-    nx = len(x_axis)
-    tensor = np.zeros((nx,9, 4, 4)) # Shape of the tensor (r,i,j)
+    nx = len(x_eval)
+    tensor = np.zeros((nx,*shape)) #(xi,i,j,r,s): initial_conductance at edge i,j,r,s at position xi
+    
     def func(val,xi=0):
         c = 2 / val
         return 2 / (t + xi + c)
-    values_dict = {
-    (1, 0, 2): 1, (1, 1, 3): 2,
-    (3, 0, 1): 3, (3, 2, 3): 4,
-    (4, 0, 1): 5, (4, 0, 2): 6, (4, 1, 0): 5, (4, 1, 3): 7, (4, 2, 0): 6, (4, 2, 3): 8, (4, 3, 1): 7, (4, 3, 2): 8,
-    (5, 1, 0): 9, (5, 3, 2): 10,
-    (7, 2, 0): 11, (7, 3, 1): 12
-    } #(xi,i,j,r,s): initial_conductance at edge i,j,r,s= at position xi
+    
     # Assign non-zero values to the tensor
-    positions = np.array(list(values_dict.keys()))
-    values = np.array(list(values_dict.values()))
+    positions = np.array(list(ic_dict.keys()))
+    values = np.array(list(ic_dict.values()))
     idx_nx = np.arange(nx)[:, None]
-    idx_r = positions[:, 0]
-    idx_i = positions[:, 1]
-    idx_j = positions[:, 2]
-    xi = x_axis[:, None]
+    idx_i, idx_j, idx_r, idx_s  = positions[:, 0], positions[:, 1], positions[:, 2], positions[:,3]
+    xi = x_eval[:, None]
     tensor_values = func(values,xi)
 
-    tensor[idx_nx, idx_r, idx_i, idx_j] = tensor_values
+    # Build tensor for the initial condition depending on space
+    tensor[idx_nx, idx_i, idx_j, idx_r, idx_s] = tensor_values
 
-    #for i, xi in enumerate(x_axis):
-       # for pos, val in values_dict.items():
-           # tensor[i, pos[0], pos[1], pos[2]] = func(val, xi =xi)
-
+    # Reshape to obtain solution in a form CasADi accepts
     in_cond = tensor.reshape(-1)
     return tensor, in_cond
