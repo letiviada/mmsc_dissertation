@@ -1,3 +1,5 @@
+from functools import reduce
+
 def map_indices(indices):
     """ Maps the keys as defined in a mathematical way to enable describing the tensor
     
@@ -27,4 +29,18 @@ def create_value_dict(ic_dict):
         i, j, r, s = key
         values_dict[key] = f"$G_{{{i}{j}}}^{{({r},{s})^T}}$"
     return values_dict
+
+def shape_to_length(shape):
+    """
+    Set up the CasADi integrator for solving the DAE system.
+    
+    Parameters:
+    shape (tuple): shape of the cell (i,j,r,s)
+    
+    Returns:
+    size (int): returns the lenth a 1d array has to have: i*j*r*s
+    """
+    size= reduce (lambda x,y: x*y,shape)
+    return size
+
 

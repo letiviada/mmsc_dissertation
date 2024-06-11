@@ -5,6 +5,7 @@ from solver import solver_dae, run, reshape_N4
 from plotting.plots import plot_varying_time, plot_varying_cell
 from plotting.save import save_figure
 from data.N4 import values_dict_math
+
 import time
 
 def main():
@@ -29,9 +30,10 @@ def main():
     Z = reshape_N4(end_shape,z_sol_array)
     # Plot the results
     #fig = plot_varying_time(t_eval, x_eval, X, initial, values_dict)
-    fig2 = plot_varying_cell(t_eval,x_eval,X,initial, values_dict_math.keys())
+    #fig2 = plot_varying_cell(t_eval,x_eval,X,initial, values_dict_math.keys())
+    fig3 = plot_varying_cell(t_eval,x_eval,X,initial, [(2,1,0,0),(1,3,0,0),(3,4,0,0),(4,2,0,0)])
     #save_figure(fig,'space_dep/figures/conductance')
-    save_figure(fig2,'space_dep/figures/cell1/cell')
+    save_figure(fig3,'space_dep/figures/cell1/cell2')
     #plt.show()
     end = time.time()
     print(f"Time taken: {end - start:.4f} seconds")

@@ -1,20 +1,6 @@
-import numpy as np
 from casadi import *
-from functools import reduce
+from data.helpers import shape_to_length
 from model import alg, ode
-
-def shape_to_length(shape):
-    """
-    Set up the CasADi integrator for solving the DAE system.
-    
-    Parameters:
-    shape (tuple): shape of the cell (i,j,r,s)
-    
-    Returns:
-    size (int): returns the lenth a 1d array has to have: i*j*r*s
-    """
-    size= reduce (lambda x,y: x*y,shape)
-    return size
      
 def solver_dae(cell_shape, x_eval, t_eval):
     """
