@@ -1,5 +1,5 @@
-from casadi import * 
-from utils.get_functions import integrate_simpson
+from casadi import *
+from utils.get_functions import integrate_simpson,reshape_f
 
 def ode_c(c,u,psi,nx,phi=1):
     """
@@ -19,7 +19,6 @@ def ode_c(c,u,psi,nx,phi=1):
     dx = 1 / (nx - 1) # Spatial domain size
     dcdt = MX(nx,1) # Define vector or RHS
     dcdt[1:] = -(u / phi) * ((c[1:]-c[:-1])/dx) - (psi[1:] / phi) * c[1:] # Use upwinding scheme to define each RHS
-    #dcdt[1:] = 0.5
     return dcdt
 
 def ode_tau(tau,c,u,interp_k,nx):
@@ -39,7 +38,6 @@ def ode_tau(tau,c,u,interp_k,nx):
     """
     dtaudt = MX(nx,1)
     k_MX = interp_k(tau) #Obtain interpolated MX type of k
-    #dtaudt[:] = 1.0
     dtaudt[:] = c[:] * u * k_MX[:] # Define the RHS of the ODE
     return dtaudt
 
@@ -88,3 +86,62 @@ def alg_psi(psi,u,interp_k_inv,interp_j,tau):
     return alg_eqn_psi
 
 # ----------------------------- # ----------------------------#
+# Spatial domain
+nx = 15
+x_eval = np.linspace(0,1,nx)
+
+# Differential Variables
+c = MX.sym('c', (nx,1))
+tau = MX.sym('tau',(nx,1))
+
+# Algebraic variables
+u = MX.sym('u',(1,1))
+psi = MX.sym('psi',(nx,1))
+
+# Retrieve data from the microscale system
+#k_fun = lambda x: x**2 +1
+#k = k_fun(np.linspace(-10,10,11))
+k  = np.ones(11)
+k_inv = np.where(k != 0, 1/k, 0) # Obtain inverse of k
+j = 2*np.ones(11)
+tau_eval = np.linspace(-10,10,11)
+
+# Interpolate
+interp_k = interpolant('INTERP_K','linear',[tau_eval],k)
+interp_k_inv = interpolant('INTERP_K_INV','linear',[tau_eval],k_inv)
+interp_j = interpolant('INTERP_J','linear',[tau_eval],j)
+
+
+# Define the system of differential equations
+x = vertcat(c,tau)
+ode = vertcat(ode_c(c,u,psi,nx),ode_tau(tau,c,u,interp_k))
+
+# Define the system of algebraic equations
+z = vertcat(u,psi)
+alg = vertcat(alg_u(u,interp_k,tau),alg_psi(psi,u,interp_k_inv,interp_j,tau))
+
+# Time domain
+nt=11
+t_eval = np.linspace(0,10,nt)
+
+# Define solver
+opts = {'reltol': 1e-8, 'abstol': 1e-8}
+dae = {'x': x, 'z': z , 'ode':ode, 'alg': alg}
+F = integrator('F', 'idas', dae, t_eval[0], t_eval, opts) 
+
+# Initial Conditions
+c00 = 1.0
+c0 = np.zeros((nx-1,1))
+tau0 = np.zeros((nx,1))
+x0 = vertcat(c00,c0,tau0)
+z0 = np.zeros((nx+1,1))
+
+# Solve problem 
+result = F(x0=x0, z0=z0)
+x_res = result['xf'].full()
+z_res = result['zf'].full()
+
+
+c,tau,u,psi = reshape_f(x_res,z_res,nt,nx)
+print(c,tau)
+print(u,psi)

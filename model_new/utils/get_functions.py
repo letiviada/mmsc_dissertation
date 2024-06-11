@@ -15,23 +15,22 @@ def integrate_simpson(k, l=1):
     dx = l / (N - 1)
     integral_simpson = dx/3 * (k[0] + 4*sum1(k[1:N-1:2]) + 2*sum1(k[2:N-2:2]) + k[-1])
     return integral_simpson
-
-def interp1(f,tau_eval, x_eval):
-    """"
-    Function that interpolates np.ndarray and returns SX and np.ndarray in required spatial domain
+def reshape_f(x_res,z_res,nt,nx):
+    """
+    Reshapes the solution to and cuts it to obtain c and tau
 
     Parameters:
-
-    f (np.ndarray): Function evaluated in tau_eval points.
-    tau_eval (np.ndarray): Discretised domain where f is found
-    x_eval (np.ndarray): Domain of the solution
+    arr (np.ndarray): The input 2D array of size (nt,2*nx).
+    nt (int): Size of time domain.
+    nx (int): The size of the spatial domain.
 
     Returns:
-
-    f_SX: Interpolated function as CasADi SX type
-    f_numpy: Interpolated function as np.ndarray type
+    list: A list containing the two segments as numpy arrays.
     """
-
-    interp = interpolant('INTERP','bspline',[tau_eval],f)
-    f_SX = interp(x_eval)
-    return f_SX
+    arr_x = x_res.transpose().reshape((nt,2*nx))
+    arr_z = z_res.transpose().reshape((nt,nx+1))
+    c = arr_x[:,:nx]
+    tau = arr_x[:,nx:]
+    u = arr_z[:,0]
+    psi = arr_z[:,1:]
+    return c, tau, u, psi
