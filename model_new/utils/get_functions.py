@@ -35,38 +35,3 @@ def interp1(f,tau_eval, x_eval):
     interp = interpolant('INTERP','bspline',[tau_eval],f)
     f_SX = interp(x_eval)
     return f_SX
-
-def reshape_ode_array(x_res,nt,nx):
-    """
-    Reshapes the solution to and cuts it to obtain c and tau
-
-    Parameters:
-    arr (np.ndarray): The input 2D array of size (nt,2*nx).
-    nt (int): Size of time domain.
-    nx (int): The size of the spatial domain.
-
-    Returns:
-    list: A list containing the two segments as numpy arrays.
-    """
-    arr = x_res.transpose().reshape((nt,2*nx))
-    c = arr[:,:nx]
-    tau = arr[:,nx:]
-    return c, tau
-
-
-def reshape_alg_array(z_res,nt,nx):
-    """
-    Cuts the 1D array into segments of sizes num_i, nx, nx, nx, ..., 1.
-
-    Parameters:
-    arr (np.ndarray): The input 1D array of size (num_i + 4nx + 1,).
-    num_i (int): The size of the first segment.
-    nx (int): The size of the subsequent segments.
-
-    Returns:
-    list: A list containing the segments as numpy arrays.
-    """
-    arr = z_res.transpose().reshape((nt,nx+1))
-    u = arr[:,0]
-    psi = arr[:,1:]
-    return u, psi
