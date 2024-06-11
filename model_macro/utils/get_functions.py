@@ -1,4 +1,3 @@
-import numpy as np
 from casadi import *
 def integrate_simpson(k, l=1):
     """

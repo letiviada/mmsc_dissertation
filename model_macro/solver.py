@@ -21,7 +21,7 @@ def solv(interp_k,interp_k_inv,interp_j,t_eval,nx):
     alg = vertcat(alg_u(u,interp_k,tau),alg_psi(psi,u,interp_k_inv,interp_j,tau))
 
     # Define solver
-    opts = {'reltol': 1e-10, 'abstol': 1e-10}
+    opts = {'reltol': 1e-12, 'abstol': 1e-12}
     dae = {'x': x, 'z': z , 'ode':ode, 'alg': alg}
     F = integrator('F', 'idas', dae, t_eval[0], t_eval, opts) 
     return F
