@@ -40,7 +40,7 @@ def delta_broadcast(W):
     Delta_broadcast = W_i - (W_j + r_l)  # Shape (N, N, 3)
     return Delta_broadcast
 # ----------------------------------------------------------
-# Example usage
+
 s, N = 2, 4
 W = np.arange(s * N).reshape(s, N)  # Example array with shape (s, N), here s=2 and N=4
 result = delta_broadcast1(W)
