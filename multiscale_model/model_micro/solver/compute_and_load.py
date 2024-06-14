@@ -1,7 +1,7 @@
 import numpy as np
 from solver.funct_def import solve_W, find_delta, find_k, find_j, solve_G, initial_G
 
-def compute_results(alpha, beta,G_initial, s_values,l=1):
+def compute_results(alpha, beta,G_initial, tau_values,l=1):
     """
     Computes results for a range of s values.
 
@@ -14,11 +14,11 @@ def compute_results(alpha, beta,G_initial, s_values,l=1):
     """
     results = []
 
-    for s in s_values:
-        if s == 0:
+    for tau in tau_values:
+        if tau == 0:
             G = initial_G(G_initial)
         else:
-            G = solve_G(alpha, beta,W, G_previous, s)
+            G = solve_G(alpha, beta,W, G_previous, tau)
     
         W = solve_W(G)
         delta = find_delta(W,l)
@@ -28,7 +28,7 @@ def compute_results(alpha, beta,G_initial, s_values,l=1):
         #print(f"s = {s}, G.shape = {G.shape}, W = {W}, delta.shape = {delta.shape}, k = {k}, j = {j}")
 
         results.append({
-            's': s,
+            'tau': tau,
             'G': G,
             'W': W,
             'delta': delta,

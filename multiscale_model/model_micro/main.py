@@ -10,18 +10,20 @@ def main():
         (0, 1, 1, 1): 1, (1, 0, 1, 1): 1, (0, 2, 1, 1): 1, (2, 0, 1, 1): 1,
         (1, 3, 1, 1): 1, (3, 1, 1, 1): 1, (2, 3, 1, 1): 1, (3, 2, 1, 1): 1
     }
-    s_values = np.arange(0, 21)
+    tau_values = np.arange(0, 21)
     # COmpute and save results for all s values
-    results = compute_results(alpha, beta, G_initial, s_values)
-    save_results(results, 'model_micro/results.npy')
+    results = compute_results(alpha, beta, G_initial, tau_values)
+    save_results(results, 'multiscale_model/model_micro/results.npy')
     # Load the results
-    results = load_results('model_micro/results.npy')
+    results = load_results('multiscale_model/model_micro/results.npy')
     # Extract arrays for s and k
-    s_array = extract_values(results, 's')
+    tau_array = extract_values(results, 'tau')
     k_array = extract_values(results, 'k')
+    j_array = extract_values(results, 'j')
     # Print the results
-    print("s array:", s_array)
+    print("tau array:", tau_array)
     print("k array:", k_array)
+    print("j array:", j_array)
 
 if __name__ == "__main__":
     main()

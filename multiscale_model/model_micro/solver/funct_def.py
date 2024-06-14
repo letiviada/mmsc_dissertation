@@ -99,7 +99,7 @@ def find_j(alpha,G,delta, l=1):
     j = -(1 / l) * np.sum(integrand, axis = (3,2,1,0))
     return j
 
-def solve_G(alpha, beta, delta, G_previous, s):
+def solve_G(alpha, beta, delta, G_previous, tau):
     """
     Solves for G given W and previous G.
 
@@ -108,13 +108,11 @@ def solve_G(alpha, beta, delta, G_previous, s):
     beta (float): Particle Size
     delta (np.ndarray): Pressure difference size (4,4,3)
     G_previous (np.ndarray): Previous G array of shape (4, 4, 3, 3).
-    s (float): Current value of s.
+    tau (float): Current value of tau.
 
     Returns:
     G (np.ndarray): Output array of shape (4, 4, 3, 3).
     """
-    
-
     G = G_previous
     return G
 
