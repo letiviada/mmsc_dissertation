@@ -1,5 +1,5 @@
-#from data.helpers import map_indices, create_value_dict
-from helpers import map_indices, create_value_dict
+from data.helpers import map_indices, create_value_dict
+#from helpers import map_indices, create_value_dict
 # Defining the points in the form of (i,j,r,s) we do (i-1,j-1,r+1,s+1)
 ic_dict_math = {
     (1,3,0,1): 1, (3,1,0,-1): 1,
