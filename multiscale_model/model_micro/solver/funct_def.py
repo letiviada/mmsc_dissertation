@@ -79,7 +79,7 @@ def find_k(G,delta,l=1):
     k = (1 / (2*l)) * np.sum(integrand)
     return k
 
-def find_j(alpha,G,delta, l=1):
+def find_j(alpha,G,delta,k, l=1):
     """
     Finds j given alpha, G, delta.
 
@@ -99,7 +99,7 @@ def find_j(alpha,G,delta, l=1):
     j = -(1 / l) * np.sum(integrand, axis = (3,2,1,0))
     return j
 
-def solve_G(alpha, beta, delta, G_previous, tau):
+def solve_G(alpha, beta, delta, G_previous, tau, dtau):
     """
     Solves for G given W and previous G.
 
@@ -113,7 +113,10 @@ def solve_G(alpha, beta, delta, G_previous, tau):
     Returns:
     G (np.ndarray): Output array of shape (4, 4, 3, 3).
     """
-    G = G_previous
+    result_exp = np.expand_dims(delta, axis=-1)
+    delta_ext = np.tile(result_exp, (1, 1, 1, 3))
+
+    G = G_previous + dtau * (-alpha * beta * G_previous ** (3/2) * np.abs(delta_ext))
     return G
 
 def initial_G(initial_G_dict):

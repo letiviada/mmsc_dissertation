@@ -13,12 +13,12 @@ def compute_results(alpha, beta,G_initial, tau_values,l=1):
     list: List of dictionaries containing results for each s.
     """
     results = []
-
+    dtau = 1 / (len(tau_values)-1)
     for tau in tau_values:
         if tau == 0:
             G = initial_G(G_initial)
         else:
-            G = solve_G(alpha, beta,W, G_previous, tau)
+            G = solve_G(alpha, beta, delta,G_previous, tau,dtau)
     
         W = solve_W(G)
         delta = find_delta(W,l)

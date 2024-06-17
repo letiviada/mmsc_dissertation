@@ -22,6 +22,8 @@ def ode_c(c,u,psi,nx,phi=1):
     #dcdt[1:] = 0.5
     return dcdt
 
+# ----------------------------- # ----------------------------#
+
 def ode_tau(tau,c,u,interp_k,nx):
     """
     Differential equation for the auxiliar variable tau
@@ -59,11 +61,14 @@ def alg_u(u,interp_k_inv,tau):
     k_inv_MX = interp_k_inv(tau)  # Obtain k as np.ndarray and shape (nx,1)
     u_inv = integrate_simpson(k_inv_MX)
     u_fl = 1 / u_inv # Define u
+    #u_fl = u_inv
     u_MX = MX(u_fl) # Maki it SX type
 
     alg_eqn_u = MX(u.shape[0],1)
     alg_eqn_u = u - u_MX # Define algebraic equation
     return alg_eqn_u
+
+# ----------------------------- # ----------------------------#
 
 def alg_psi(psi,u,interp_k_inv,interp_j,tau):
     """ Function that defines the algebraic equations of u.
