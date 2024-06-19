@@ -1,6 +1,6 @@
 import numpy as np
-
-def solve_W(G,l=1):
+from scipy import linalg
+def solve_W(G,l):
     """
     Solves for W given G.
 
@@ -11,92 +11,90 @@ def solve_W(G,l=1):
     Returns:
     np.ndarray: Output array of shape (4,).
     """
-    def get_r():
-        shape = (4,4,3,3)
-        r_tensor = np.zeros(shape)
-
-            # Assign values based on r and s
-        for r in range(-1, 2):
-            for s in range(-1, 2):
-                if (r, s) in [(1, 1), (-1, 1), (1, -1), (-1, -1)]:
-                    value = 0
-                else:
-                    value = r + s
-                r_tensor[:, :, r + 1, s + 1] = value
-                
-        return r_tensor
-    r = get_r()
+    N = 4
+    R = 3
+    #r_arr3 = np.array([-l,0,l])
+    r_arr3 = l * np.array([0,1,-1])
+    # Checked against Arkady's and seems fine
     Gk = np.sum(G, axis=(3,2,1))
-    Gk_kronecker = np.eye(4) * Gk
+    Gk_kronecker = np.eye(N) * Gk
     G_summed = np.sum(G, axis = (3,2))
     LHS = G_summed - Gk_kronecker
-    integrand = G * r * l
-    RHS = np.sum(integrand, axis = (3,2,1))
-    #W = np.linalg.solve(LHS,RHS)
-    W = np.array([-1,1,1,-1])
+
+    RHS_4 = np.empty(shape = (N,N,R,R))
+    for r in range(R):
+        for s in range(R):
+            RHS_4[:,:,r,s] = G[:,:,r,s] * r_arr3[r]
+    RHS_2 = np.sum(a = np.sum(a=RHS_4,axis = 3),axis = 2)
+    RHS_1 = -np.sum(a = RHS_2,axis = 1)
+    W = linalg.solve(LHS,RHS_1)
+    W = l * np.array([-0.25,  0.25, -0.25,  0.25])
+    print(W)
     return W
 
-def find_delta(W,l=1):
+def find_delta(W,l):
     """
     Finds delta given W.
 
     Parameters:
-    W (np.ndarray): Input array of shape (4,).
+    W (np.ndarray): Input array of shape (N,).
 
     Returns:
-    np.ndarray: Output array of shape (4, 4, 3), 
+    np.ndarray: Output array of shape (N, N, R), 
     component of the pressure difference in edge ijr per unit pressure gradient
     """
-    diff_matrix = W[:, np.newaxis] - W
-    R = np.array([-1, 0, 1])*l
+    N,R = 4,3
+    W_matrix_2 = W[:, np.newaxis] - W
+   #rl_array = np.array([-1, 0, 1])*l
+    rl_array = np.array([0, 1,-1])*l
     # Initialize the tensor to store results (i, j, r)
-    delta = np.zeros((4, 4, 3))
+    delta = np.zeros((N,N,R))
 # Compute the values according to the formula for each r
-    for idx, r_l in enumerate(R):
-        delta[:, :, idx] = diff_matrix - (r_l)
+    for r in range(R):
+        delta[:,:,r] = W_matrix_2[:,:] -rl_array[r]
     return delta
 
-def find_k(G,delta,l=1):
+def find_k(G,delta,l):
     """
     Finds k given G and delta
 
     Parameters:
-    G (np.ndarray): Pore conductance (4,4,3,3).
-    Delta (np.ndarray): Pressure difference (4,4,3)
+    G (np.ndarray): Pore conductance (N,N,R,R).
+    Delta (np.ndarray): Pressure difference (N,N,R)
 
     Returns:
     k (float): Scalar value k.
     """
     # Multiply delta by r
-    delta_r = np.zeros((4,4,3))
-    r = np.array([-1,0,1])
-    for idx_r in range(len(r)):
-        delta_r[:,:,idx_r] = delta[:,:,idx_r] * r[idx_r]
+    N, R = 4,3
+    delta_r = np.zeros((N,N,R))
+    r_arr = np.array([0,1,-1])
+    #r_arr = np.array([-1,0,1])
+    for idx_r in range(R):
+        delta_r[:,:,idx_r] = delta[:,:,idx_r] * r_arr[idx_r]
     # Make delta match the shape of G
-    result_exp = np.expand_dims(delta_r, axis=-1)
-    delta_ext = np.tile(result_exp, (1, 1, 1, 3))
-    integrand = - G * delta_ext
-    k = (1 / (2*l)) * np.sum(integrand)
+    delta_4 = np.repeat(a=delta_r[:,:,:,np.newaxis],repeats=3,axis=-1)
+    integrand = - G * delta_4
+    k = (1 /(2 * 1)) * np.sum(integrand)
     return k
 
-def find_j(alpha,G,delta,k, l=1):
+def find_j(alpha,G,delta,l):
     """
     Finds j given alpha, G, delta.
 
     Parameters:
     alpha (float): Stickiness
-    G (np.ndarray): Pore conductance shape (4,4,3,3)
-    Delta (np.ndarray): Pressure difference shape (4,4,3)
+    G (np.ndarray): Pore conductance shape (N,N,R,R)
+    Delta (np.ndarray): Pressure difference shape (N,N,R)
     l (float): Length of the filtre
 
     Returns:
     j (float): Scalar value j.
     """    
     # Make delta match the shape of G
-    result_exp = np.expand_dims(delta, axis=-1)
-    delta_ext = np.tile(result_exp, (1, 1, 1, 3))
-    integrand =  alpha * G * delta_ext * (1-np.heaviside(G*delta_ext, 0))
-    j = -(1 / l) * np.sum(integrand, axis = (3,2,1,0))
+    delta_4 = np.repeat(a=delta[:,:,:,np.newaxis],repeats=3,axis=-1)
+    integrand =  - alpha * G * delta_4 * (1-np.heaviside(-G*delta_4, 1))
+    j = -(1 / l) * np.sum(integrand)
     return j
 
 def solve_G(alpha, beta, delta, G_previous, tau, dtau):
@@ -106,17 +104,16 @@ def solve_G(alpha, beta, delta, G_previous, tau, dtau):
     Parameters:
     alpha (float): Adhesitivity
     beta (float): Particle Size
-    delta (np.ndarray): Pressure difference size (4,4,3)
-    G_previous (np.ndarray): Previous G array of shape (4, 4, 3, 3).
+    delta (np.ndarray): Pressure difference size (N,N,R)
+    G_previous (np.ndarray): Previous G array of shape (N,N,R,R).
     tau (float): Current value of tau.
 
     Returns:
-    G (np.ndarray): Output array of shape (4, 4, 3, 3).
+    G (np.ndarray): Output array of shape (N,N,R,R).
     """
-    result_exp = np.expand_dims(delta, axis=-1)
-    delta_ext = np.tile(result_exp, (1, 1, 1, 3))
+    delta_4 = np.repeat(a=delta[:,:,:,np.newaxis],repeats=3,axis=-1)
 
-    G = G_previous + dtau * (-alpha * beta * G_previous ** (3/2) * np.abs(delta_ext))
+    G = G_previous + dtau * (-alpha * beta * (G_previous ** (3/2)) * np.abs(delta_4))
     return G
 
 def initial_G(initial_G_dict):
@@ -129,7 +126,8 @@ def initial_G(initial_G_dict):
     Returns:
     G (np.ndarray): Solution fot initial G of shape (4,4,3,3)
     """
-    G = np.zeros((4,4,3,3))
+    N,R = 4,3
+    G = np.zeros((N,N,R,R))
     positions = initial_G_dict
     # Assign non-zero values to the tensor
     position= np.array(list(positions.keys()))
@@ -139,4 +137,5 @@ def initial_G(initial_G_dict):
     idx_r = position[:, 2]
     idx_s = position[:, 3]
     G[idx_i, idx_j, idx_r, idx_s] = values
+    print(G)
     return G

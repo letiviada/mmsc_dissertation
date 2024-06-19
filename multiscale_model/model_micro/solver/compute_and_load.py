@@ -1,7 +1,7 @@
 import numpy as np
 from solver.funct_def import solve_W, find_delta, find_k, find_j, solve_G, initial_G
 
-def compute_results(alpha, beta,G_initial, tau_values,l=1):
+def compute_results(alpha, beta,G_initial, tau_values,l):
     """
     Computes results for a range of s values.
 
@@ -13,17 +13,18 @@ def compute_results(alpha, beta,G_initial, tau_values,l=1):
     list: List of dictionaries containing results for each s.
     """
     results = []
-    dtau = 1 / (len(tau_values)-1)
+    dtau = (tau_values[-1]-tau_values[0]) / (len(tau_values)-1)
     for tau in tau_values:
         if tau == 0:
             G = initial_G(G_initial)
         else:
             G = solve_G(alpha, beta, delta,G_previous, tau,dtau)
     
-        W = solve_W(G)
+        W = solve_W(G,l)
         delta = find_delta(W,l)
         k = find_k(G,delta,l)
         j = find_j(alpha,G,delta,l)
+        
 
         #print(f"s = {s}, G.shape = {G.shape}, W = {W}, delta.shape = {delta.shape}, k = {k}, j = {j}")
 

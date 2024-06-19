@@ -11,7 +11,8 @@ def map_indices(indices):
     """
     i,j,r,s = indices
     key_i, key_j = i-1, j-1
-    key_r, key_s = r+1, s+1
+    #key_r, key_s = r+1, s+1
+    key_r, key_s = r, s
     return key_i, key_j, key_r, key_s
 
 def create_value_dict(ic_dict):
