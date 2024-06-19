@@ -140,4 +140,3 @@ def four_reg_prescribed(num_nodes: int, num_refs: int):
         cond_init_4[8,2,0,-1] = 1.0#1.0 #1.0
 
     return cond_init_4
-

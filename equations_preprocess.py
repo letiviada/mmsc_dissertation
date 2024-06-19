@@ -1,10 +1,9 @@
 import numpy 
 import scipy.sparse.linalg as linalg
 
-    
     # Methods
     # -----        
-    def get_cell_problem(cond_4:numpy.ndarray)->tuple:
+def get_cell_problem(cond_4:numpy.ndarray)->tuple:
         """Get the left hand side and right hand side of the cell problem.
         The cell problem is a linear equation of the form Ax=b.
 
@@ -26,12 +25,12 @@ import scipy.sparse.linalg as linalg
         
         # Define readable parameters 
         # -----
-        N = ...
+        N = 4
         R = 3
-        D = ...
+        D = 1
         
-        refs_1 = numpy.ndarray([-1,0,1])
-        leng_1 = numpy.ndarray([1.0,1.0])
+        refs_1 = numpy.array([-1,0,1])
+        leng_1 = numpy.array([1.0])
         
 
         # Define arrays to fill
@@ -83,7 +82,7 @@ import scipy.sparse.linalg as linalg
         return (lhs_cpro_2, rhs_cpro_3)
 
 
-    def step_cell_problem(self, lhs_cpro_2:numpy.ndarray, rhs_cpro_3:numpy.ndarray)->numpy.ndarray:
+def step_cell_problem(lhs_cpro_2:numpy.ndarray, rhs_cpro_3:numpy.ndarray)->numpy.ndarray:
         """Solve the cell problem.
         The cell problem is a linear equation of the form Ax=b.
 
@@ -106,8 +105,8 @@ import scipy.sparse.linalg as linalg
 
         # Define readable parameters 
         # -----
-        N = ...
-        D = ... 
+        N = 4
+        D = 1
 
 
         # Define arrays to fill
@@ -121,6 +120,7 @@ import scipy.sparse.linalg as linalg
         a_2 = lhs_cpro_2[:,:]
         for m in range(D):
             b_1 = numpy.sum(a=rhs_cpro_3[:,:,m], axis=1) # sum over j
+            print(b_1)
             csol_2[:,m] = linalg.lsqr(A=a_2, b=b_1)[0]
 
             # TODO: Consider -- 
@@ -130,7 +130,7 @@ import scipy.sparse.linalg as linalg
         return csol_2
 
 
-    def get_delta(csol_2:numpy.ndarray, refs_1:numpy.ndarray, leng_1:numpy.ndarray)->numpy.ndarray:
+def get_delta(csol_2:numpy.ndarray, refs_1:numpy.ndarray, leng_1:numpy.ndarray)->numpy.ndarray:
         """Get delta. 
         Delta is a tensor that holds information about the difference between cell solutions
         at different nodes.
@@ -181,7 +181,7 @@ import scipy.sparse.linalg as linalg
         return delt_4
     
 
-    def get_heaviside(delt_4:numpy.ndarray)->numpy.ndarray:
+def get_heaviside(delt_4:numpy.ndarray)->numpy.ndarray:
         """Get the Heaviside function. 
         Heaviside is a tensor that holds information about the sign of the difference between cell solutions
         at different nodes. This is positive only when the difference tensor indicates 
@@ -210,7 +210,7 @@ import scipy.sparse.linalg as linalg
         return heav_4
 
 
-    def get_permeability_and_adhesivity(adhe_4:numpy.ndarray, cond_4:numpy.ndarray, 
+def get_permeability_and_adhesivity(adhe_4:numpy.ndarray, cond_4:numpy.ndarray, 
                                         delt_4:numpy.ndarray, heav_4:numpy.ndarray, 
                                         refs_1:numpy.ndarray, leng_1:numpy.ndarray)->tuple:
         """Get the permeability and adhesivity. 
@@ -324,8 +324,7 @@ import scipy.sparse.linalg as linalg
 
         return (perm_2, depo_1)
 
-
-    def get_conductance_problem(cond_4:numpy.ndarray, adhe_4:numpy.ndarray, effe_4:numpy.ndarray, delt_4:numpy.ndarray)->numpy.ndarray:
+def get_conductance_problem(cond_4:numpy.ndarray, adhe_4:numpy.ndarray, effe_4:numpy.ndarray, delt_4:numpy.ndarray)->numpy.ndarray:
         """Get the right hand side of the equation that describes 
         how the conductance decreases as particle adhering occurs. 
 
@@ -381,7 +380,8 @@ import scipy.sparse.linalg as linalg
         return rhs_4
 
 
-    def step_conductance_problem(cond_4:numpy.ndarray, rhs_4:numpy.ndarray, diff_tlik:float)->numpy.ndarray:
+def step_conductance_problem(cond_4:numpy.ndarray, rhs_4:numpy.ndarray, diff_tlik:float)->numpy.ndarray:
+        
         """Execute one step of the equation for the change of conductance due to adhering particles.
 
         Parameters
@@ -409,3 +409,6 @@ import scipy.sparse.linalg as linalg
         """
         cond_new_4 = cond_4 - diff_tlik*rhs_4
         return cond_new_4
+
+
+

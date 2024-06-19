@@ -1,5 +1,5 @@
 import numpy as np
-from solver.funct_def import solve_W, find_delta, find_k, find_j, solve_G, initial_G
+from solver.funct_def import solve_W, find_delta, find_permeability, find_adhesivity, solve_G, initial_G,four_reg_prescribed
 
 def compute_results(alpha, beta,G_initial, tau_values,l):
     """
@@ -13,18 +13,18 @@ def compute_results(alpha, beta,G_initial, tau_values,l):
     list: List of dictionaries containing results for each s.
     """
     results = []
-    dtau = (tau_values[-1]-tau_values[0]) / (len(tau_values)-1)
     for tau in tau_values:
         if tau == 0:
             G = initial_G(G_initial)
+            #G = four_reg_prescribed(4,3)
         else:
-            G = solve_G(alpha, beta, delta,G_previous, tau,dtau)
+            G = solve_G(alpha, beta, delta,G_previous, tau_values)
     
         W = solve_W(G,l)
         delta = find_delta(W,l)
-        k = find_k(G,delta,l)
-        j = find_j(alpha,G,delta,l)
-        
+        k = find_permeability(G,delta)
+        j = find_adhesivity(alpha,G,delta,l)
+    
 
         #print(f"s = {s}, G.shape = {G.shape}, W = {W}, delta.shape = {delta.shape}, k = {k}, j = {j}")
 
