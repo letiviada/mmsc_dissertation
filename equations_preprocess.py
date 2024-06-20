@@ -3,7 +3,7 @@ import scipy.sparse.linalg as linalg
 
     # Methods
     # -----        
-def get_cell_problem(cond_4:numpy.ndarray)->tuple:
+def get_cell_problem(cond_4:numpy.ndarray,refs_1,leng_1)->tuple:
         """Get the left hand side and right hand side of the cell problem.
         The cell problem is a linear equation of the form Ax=b.
 
@@ -27,10 +27,10 @@ def get_cell_problem(cond_4:numpy.ndarray)->tuple:
         # -----
         N = 4
         R = 3
-        D = 1
+        D = 2
         
-        refs_1 = numpy.array([-1,0,1])
-        leng_1 = numpy.array([1.0])
+        #refs_1 = numpy.array([0,1,-1])
+        #leng_1 = numpy.array([1.0,1.0])
         
 
         # Define arrays to fill
@@ -106,7 +106,7 @@ def step_cell_problem(lhs_cpro_2:numpy.ndarray, rhs_cpro_3:numpy.ndarray)->numpy
         # Define readable parameters 
         # -----
         N = 4
-        D = 1
+        D = 2
 
 
         # Define arrays to fill
@@ -120,7 +120,6 @@ def step_cell_problem(lhs_cpro_2:numpy.ndarray, rhs_cpro_3:numpy.ndarray)->numpy
         a_2 = lhs_cpro_2[:,:]
         for m in range(D):
             b_1 = numpy.sum(a=rhs_cpro_3[:,:,m], axis=1) # sum over j
-            print(b_1)
             csol_2[:,m] = linalg.lsqr(A=a_2, b=b_1)[0]
 
             # TODO: Consider -- 
@@ -161,8 +160,8 @@ def get_delta(csol_2:numpy.ndarray, refs_1:numpy.ndarray, leng_1:numpy.ndarray)-
 
         # Define readable parameters 
         # -----
-        N = ...
-        D = ...
+        N = 4
+        D = 2
         R = 3
         
 
@@ -260,9 +259,9 @@ def get_permeability_and_adhesivity(adhe_4:numpy.ndarray, cond_4:numpy.ndarray,
         
         # Define readable parameters 
         # -----
-        N = ... 
+        N = 4 
         R = 3  
-        D = ...  
+        D = 2
 
 
         # Make arrays to fill
@@ -361,7 +360,7 @@ def get_conductance_problem(cond_4:numpy.ndarray, adhe_4:numpy.ndarray, effe_4:n
         
         # Define readable parameters 
         # -----
-        N = ...
+        N = 4
         R = 3
 
 

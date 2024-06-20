@@ -238,7 +238,7 @@ def find_adhesivity(alpha: float,G: np.ndarray,delta: np.ndarray,l: float) -> fl
 
     # Multiply by prefactors
     # ----------------------
-    depo_1 = -depo_1
+    depo_1 = -(1/l) * depo_1
     #print(f'j is {j}, and perm_2 is {depo_1}, {j == depo_1}')
     
     return depo_1

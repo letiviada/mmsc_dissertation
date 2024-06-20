@@ -18,7 +18,7 @@ def main():
 
     # Compute and save results for all s values
     # -----------------------------------------
-    results = compute_results(alpha, beta, G_initial, tau_values,l=4.0)
+    results = compute_results(alpha, beta, G_initial, tau_values,l=2.0)
     save_results(results, 'multiscale/micro_results.npy')
 
     # Load the results

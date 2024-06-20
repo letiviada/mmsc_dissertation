@@ -1,6 +1,6 @@
 import numpy as np
 
-def load_results(filename='multiscale_model/model_micro/results.npy'):
+def load_results(filename='multiscale/micro_results.npy'):
     """
     Loads the results from a file.
 
@@ -24,7 +24,7 @@ def extract_values(results, key):
     np.ndarray: Array of extracted values.
     """
     return np.array([result[key] for result in results])
-def load_k_j(filename='multiscale_model/model_micro/results.npy'):
+def load_k_j(filename='multiscale/micro_results.npy'):
     """
     Loads only the k and j values from the results file.
 
