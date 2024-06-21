@@ -21,7 +21,7 @@ def main(alphas: list, betas: float):
             #beta_values.append(beta)
 
             # Load k_values, j_values, tau_eval
-            k_values, j_values, tau_eval = load_k_j(alpha, betas)
+            k_values, j_values, tau_eval = load_k_j(betas, alpha)
 
             # Append to respective lists
             k_values_list.append(k_values)
@@ -30,9 +30,9 @@ def main(alphas: list, betas: float):
     # Plot the results
     # ----------------
     fig_k = plot_one_dim(tau_values_list[0],k_values_list, title = 'Permeability', x_eval_type='tau')
-    save_figure(fig_k, 'multiscale/figures/microscale/permeability/k')
+    save_figure(fig_k, 'multiscale/figures/microscale/permeability/k2')
     fig_j = plot_one_dim(tau_values_list[0],j_values_list, title = 'Adhesivity', x_eval_type='tau')
-    save_figure(fig_j, 'multiscale/figures/microscale/adhesivity/j')
+    save_figure(fig_j, 'multiscale/figures/microscale/adhesivity/j2')
 
 
 
