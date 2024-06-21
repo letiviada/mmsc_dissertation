@@ -1,5 +1,5 @@
 from casadi import * 
-from utils.get_functions import integrate_simpson
+from utils import integrate_simpson
 
 class MacroscaleModel:
     def __init__(self,l:float):

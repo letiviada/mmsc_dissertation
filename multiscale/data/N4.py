@@ -16,4 +16,3 @@ values_dict_math = create_value_dict(ic_dict_math)
 # Outputs that we need
 ic_dict = {map_indices(key): value for key, value in ic_dict_math.items()}
 values_dict = {map_indices(key): value for key, value in values_dict_math.items()}
-print(ic_dict)
