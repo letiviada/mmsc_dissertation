@@ -34,3 +34,4 @@ done
 end_time=$(date +%s)
 execution_time=$((end_time - start_time))
 echo "Total execution time: $execution_time seconds"
+echo "Done!"
