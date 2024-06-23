@@ -63,7 +63,7 @@ def load_any(alpha,beta,key,filename='multiscale/macro_results.json'):
     values = results[key]
     return values
 
-def save_micro_results(alpha, beta, results, time_passed, filename='multiscale/micro_results.json'):
+def save_micro_results1(alpha, beta, results, time_passed, filename='multiscale/micro_results.json'):
     """
     Appends results to a JSON file under the key of the (alpha, beta) pair.
 
@@ -99,7 +99,7 @@ def save_micro_results(alpha, beta, results, time_passed, filename='multiscale/m
     with open(filename, 'w') as file:
         json.dump(data, file)
 
-def save_macro_results(alpha, beta,output_dict, filename='multiscale/macro_results.json'):
+def save_macro_results1(alpha, beta,output_dict, filename='multiscale/macro_results.json'):
     """
     Saves the results to a JSON file, converting NumPy arrays to lists.
 
@@ -125,3 +125,57 @@ def save_macro_results(alpha, beta,output_dict, filename='multiscale/macro_resul
 
     # Print a success message
     #print("Output values of macroscale model saved to macro_results.json")
+
+
+def save_macro_results(alpha, beta, output_dict, directory='macro_results/'):
+    """
+    Saves the results to a JSON file, converting NumPy arrays to lists.
+
+    Parameters:
+    alpha (float): Adhesivity
+    beta (float): Particle size
+    output_dict (dict): Dictionary containing the output values of the macroscale model.
+    directory (str): Directory to save the results to.
+    """
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    
+    # Generate the filename dynamically based on alpha and beta values
+    filename = os.path.join(directory, f'macro_results_alpha_{alpha}_beta_{beta}.json')
+
+    # Save as JSON
+    with open(filename, 'w') as file:
+        json.dump(output_dict, file, indent=4)
+
+
+def save_micro_results(alpha, beta, results, time_passed, directory='multiscale/'):
+    """
+    Saves the results to a JSON file, converting NumPy arrays to lists.
+
+    Parameters:
+    alpha (float): Alpha value.
+    beta (float): Beta value.
+    results (dict): Dictionary containing the output values of the microscale model.
+    time_passed (float): Time passed during the computation.
+    directory (str): Directory to save the results to.
+    """
+    accumulated_results = {}
+    for result in results:
+        for key, value in result.items():
+            if key not in accumulated_results:
+                accumulated_results[key] = []
+            if isinstance(value, np.ndarray):
+                accumulated_results[key].append(value.tolist())
+            else:
+                accumulated_results[key].append(value)
+    accumulated_results['time'] = time_passed
+
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    
+    # Generate the filename dynamically based on alpha and beta values
+    filename = os.path.join(directory, f'micro_results_alpha_{alpha}_beta_{beta}.json')
+
+    # Save as JSON
+    with open(filename, 'w') as file:
+        json.dump(accumulated_results, file, indent=4)
