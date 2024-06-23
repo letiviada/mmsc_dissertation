@@ -127,7 +127,7 @@ def save_macro_results1(alpha, beta,output_dict, filename='multiscale/macro_resu
     #print("Output values of macroscale model saved to macro_results.json")
 
 
-def save_macro_results(alpha, beta, output_dict, directory='macro_results/'):
+def save_macro_results(alpha, beta, output_dict, directory='multiscale/'):
     """
     Saves the results to a JSON file, converting NumPy arrays to lists.
 

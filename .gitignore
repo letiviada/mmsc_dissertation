@@ -146,6 +146,9 @@ Dvenv/
 .dmypy.json
 dmypy.json
 
+multiscale/macro_results.json
+multiscale/micro_results.json
+
 # Pyre type checker
 .pyre/
 

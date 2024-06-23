@@ -4,7 +4,7 @@ import json
 
 def combine_micro_results(directory='multiscale/', output_filename='multiscale/micro_results.json'):
     combined_data = {}
-    for filepath in glob.glob(os.path.join(directory, 'results_alpha_*.json')):
+    for filepath in glob.glob(os.path.join(directory, 'micro_results_alpha_*.json')):
         with open(filepath, 'r') as file:
             data = json.load(file)
             # Extract the alpha and beta values from the filename
@@ -17,11 +17,11 @@ def combine_micro_results(directory='multiscale/', output_filename='multiscale/m
         json.dump(combined_data, file, indent=4)
     
     # Remove individual result files
-    for filepath in glob.glob(os.path.join(directory, 'results_alpha_*.json')):
+    for filepath in glob.glob(os.path.join(directory, 'micro_results_alpha_*.json')):
         os.remove(filepath)
 
 
-def combine_macro_results(directory='multiscale/', output_filename='multiscale/macro_results.json'):
+def combine_macro_results(directory='multiscale/macro_results', output_filename='multiscale/macro_results.json'):
     combined_data = {}
     for filepath in glob.glob(os.path.join(directory, 'macro_results_alpha_*.json')):
         with open(filepath, 'r') as file:
@@ -41,6 +41,6 @@ def combine_macro_results(directory='multiscale/', output_filename='multiscale/m
 
 
 if __name__ == "__main__":
-    combine_micro_results()
+    #combine_micro_results()
     combine_macro_results()
 

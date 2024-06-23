@@ -13,14 +13,14 @@ script_start_time=$(date +%s)
 
 # Start timing the micro computation
 micro_computation_start_time=$(date +%s)
-python3 multiscale/micro_main.py --alphas $alphas --betas $betas
+#python3 multiscale/micro_main.py --alphas $alphas --betas $betas
 micro_computation_end_time=$(date +%s)
 micro_computation_time=$((micro_computation_end_time - micro_computation_start_time))
 echo "Micro computation time: $micro_computation_time seconds"
 
 # Start timing the macro computation
 macro_computation_start_time=$(date +%s)
-python3 multiscale/macro_main.py --alphas $alphas --betas $betas
+#python3 multiscale/macro_main.py --alphas $alphas --betas $betas
 macro_computation_end_time=$(date +%s)
 macro_computation_time=$((macro_computation_end_time - macro_computation_start_time))
 echo "Macro computation time: $macro_computation_time seconds"
