@@ -36,8 +36,6 @@ combine_end_time=$(date +%s)
 combine_time=$((combine_end_time - combine_start_time))
 echo "Combining results time: $combine_time seconds"
 
-
-
 # End timing the entire script
 script_end_time=$(date +%s)
 total_time=$((script_end_time - script_start_time))

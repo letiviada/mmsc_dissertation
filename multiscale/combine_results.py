@@ -11,11 +11,7 @@ def combine_results(directory, pattern, output_filename,scale):
         try:
             with open(filepath, 'r') as file:
                 data = json.load(file)
-                # Extract the alpha and beta values from the filename
                 filename = os.path.basename(filepath)
-                alpha_beta_key = filename.replace(pattern.split('*')[0], '').replace('.json', '')
-                #components = alpha_beta_key.split('_')
-                #print(components)
                 if scale == 'macro':
                     match = re.search(r'macro_results_alpha_(?P<alpha>\d*\.?\d+)_beta_(?P<beta>\d*\.?\d+)_phi_(?P<phi>\d*\.?\d+).json', filename)
                     if match:
