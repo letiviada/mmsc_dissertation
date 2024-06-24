@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from .create import create_fig
 from .style import style_and_colormap, create_legend_exactandnum, create_legend_times
-from data.helpers import map_indices
+#rom data.helpers import map_indices
 
 def exact_vs_num(ax, x_eval, X , tensor, t, positions, labels, colors):
     """
@@ -48,7 +48,7 @@ def specific_cell(ax,t_eval,x_eval,cell,num_approx,exact_sol, colors):
     """
     i,j,r,s = cell
     ax.set_title(f"$G_{{{i}{j}}}^{{({r},{s})^T}}$",pad = 2)
-    cell = map_indices(cell)
+    cell = 1
     i,j,r,s = cell
     for t_idx,t in enumerate(t_eval):
         tensor, _ = exact_sol(x_eval, shape = (4,4,3,3), t=t)

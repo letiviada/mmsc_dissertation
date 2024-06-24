@@ -93,7 +93,7 @@ def find_permeability(G: np.ndarray,delta: np.ndarray, l) -> float:
     # Compute the integrand
     integrand = - G * delta_4
     # Compute k
-    k = (1/l) * 0.5  * np.sum(integrand) # Sum over r,s,j,i
+    k =  0.5  * np.sum(integrand) # Sum over r,s,j,i
     return k
 
 def compute_heaviside(x: np.ndarray, tolerance: float =1e-5) -> np.ndarray:
@@ -133,7 +133,7 @@ def find_adhesivity(alpha: float,G: np.ndarray,delta: np.ndarray,l: float) -> fl
     # Make delta match the shape of G
     delta_4 = np.repeat(a=delta[:,:,:,np.newaxis],repeats=3,axis=-1)
     integrand =  - alpha * G * delta_4 * (1-compute_heaviside(-G * delta_4))
-    j = - (1/l**2)*np.sum(integrand)
+    j = - (1/l)*np.sum(integrand)
     return j
 
 def solve_G(alpha:float, beta:float, delta: np.ndarray, G_previous: np.ndarray,tau: np.ndarray) -> np.ndarray:

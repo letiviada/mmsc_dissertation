@@ -18,9 +18,9 @@ class MultiscaleModel:
         self.x_eval = np.linspace(0, self.l, self.nx)
         self.phi = phi
 
-    def load_and_interpolate(self,alpha,beta):
+    def load_and_interpolate(self,alpha,beta,phi):
         # Load data from the microscale model
-        k, j, tau_eval = load_k_j(alpha,beta)
+        k, j, tau_eval = load_k_j(alpha,beta,phi)
         # Interpolate the data
         self.interp_k, self.interp_k_inv, self.interp_j = interp_functions(k, j, tau_eval)
 
@@ -50,29 +50,31 @@ class MultiscaleModel:
         'time': time_passed}
         return output_dict
 
-def compute_and_save(alpha, beta):
+def compute_and_save(alpha, beta, phi):
     start = time.time()
     model = MultiscaleModel()
-    model.load_and_interpolate(alpha, beta)
+    model.load_and_interpolate(alpha, beta,phi)
     model.setup_and_run()
     model.obtain_k_and_j()
     end = time.time()
     time_passed = end - start
-    save_macro_results(alpha, beta, model.output_dict(time_passed))
-    print(f"Alpha: {alpha}, Beta: {beta}, Time elapsed: {time_passed} seconds")
+    save_macro_results(alpha, beta,phi, model.output_dict(time_passed))
+    #print(f"Alpha: {alpha}, Beta: {beta}, Time elapsed: {time_passed} seconds")
     
 
 def main():
     parser = argparse.ArgumentParser(description='Run macro_main.py with parameters.')
     parser.add_argument("--alphas", nargs='+', type=float, help="List of alpha values")
     parser.add_argument("--betas", nargs='+', type=float, help="List of beta values")
+    parser.add_argument("--phis", nargs='+', type=float, help="List of phi values")
     args = parser.parse_args()
 
     alphas = args.alphas
     betas = args.betas
+    phis = args.phis
 
     with concurrent.futures.ProcessPoolExecutor() as executor:
-        futures = [executor.submit(compute_and_save, alpha, beta) for alpha in alphas for beta in betas]
+        futures = [executor.submit(compute_and_save, alpha, beta,phi) for alpha in alphas for beta in betas for phi in phis]
         for future in concurrent.futures.as_completed(futures):
             try:
                 future.result()
