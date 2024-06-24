@@ -24,14 +24,14 @@ echo "Combining micro_results time: $micro_combine_time seconds"
 
 # Start timing the macro computation
 macro_computation_start_time=$(date +%s)
-#python3 multiscale/macro_main.py --alphas $alphas --betas $betas --phis $phis
+python3 multiscale/macro_main.py --alphas $alphas --betas $betas --phis $phis
 macro_computation_end_time=$(date +%s)
 macro_computation_time=$((macro_computation_end_time - macro_computation_start_time))
 echo "Macro computation time: $macro_computation_time seconds"
 
 # Combine individual micro result files into one JSON file and delete them
 combine_start_time=$(date +%s)
-#python3 multiscale/combine_results.py macro
+python3 multiscale/combine_results.py macro
 combine_end_time=$(date +%s)
 combine_time=$((combine_end_time - combine_start_time))
 echo "Combining results time: $combine_time seconds"
