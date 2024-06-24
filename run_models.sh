@@ -3,8 +3,8 @@
 # Define values for alpha and beta
 #betas=$(seq 0 0.01 0.1)
 alphas=$(seq 0 0.1 1)
-betas=$(seq 0 0.01 0.1)
-phis=$(seq 0.1 0.1 0.9)
+betas=(0.01)
+phis=(0.6)
 # Start timing the entire script
 script_start_time=$(date +%s)
 
