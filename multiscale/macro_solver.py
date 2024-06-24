@@ -6,7 +6,7 @@ class Solver:
     def __init__(self,l):
         self.model = MacroscaleModel(l)  
 
-    def setup(self,interp_k,interp_k_inv,interp_j,t_eval,nx,l):
+    def setup(self,interp_k,interp_k_inv,interp_j,t_eval,nx,l,phi):
         """
         Sets up the differential-algebraic equation (DAE) solver with
         the necessary parameters and returns the integrator function.
@@ -37,7 +37,7 @@ class Solver:
         # Define the system of differential equations
         # --------------------------------------------
         x = vertcat(c,tau)
-        ode = vertcat(self.model.ode_c(c,u,psi,nx),self.model.ode_tau(tau,c,u,interp_k,nx))
+        ode = vertcat(self.model.ode_c(c,u,psi,nx,phi),self.model.ode_tau(tau,c,u,interp_k,nx))
 
         # Define the system of algebraic equations
         # -----------------------------------------

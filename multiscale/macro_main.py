@@ -9,13 +9,14 @@ import concurrent.futures
 import time
 
 class MultiscaleModel:
-    def __init__(self, T=450,length=2.0, nt=10, nx=101):
+    def __init__(self, T=450,length=2.0, nt=10, nx=101,phi = 0.6):
         self.T = T
         self.l = length
         self.nt = nt
         self.nx = nx
         self.t_eval = np.linspace(0, self.T, self.nt)
         self.x_eval = np.linspace(0, self.l, self.nx)
+        self.phi = phi
 
     def load_and_interpolate(self,alpha,beta):
         # Load data from the microscale model
@@ -26,7 +27,7 @@ class MultiscaleModel:
     def setup_and_run(self):
         solv = Solver(self.l)
         # Setup the DAE solver
-        F = solv.setup(self.interp_k, self.interp_k_inv, self.interp_j, self.t_eval, self.nx, self.l)
+        F = solv.setup(self.interp_k, self.interp_k_inv, self.interp_j, self.t_eval, self.nx, self.l,self.phi)
         # Run the DAE solver
         x_res, z_res = solv.run(F, self.nx)
         # Reshape the solution

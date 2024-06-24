@@ -5,7 +5,7 @@ class MacroscaleModel:
     def __init__(self,l:float):
         self.l = l
 
-    def ode_c(self,c: MX,u: MX,psi,nx: int,phi: float=1) -> MX:
+    def ode_c(self,c: MX,u: MX,psi,nx: int,phi: float) -> MX:
         """
         Differential equation for concentration c.
 
@@ -15,7 +15,7 @@ class MacroscaleModel:
             u (MX): Algebraic variable representing Darcy's velocity
             psi (MX): Algebraic variable
             nx (int): Number of spatial points
-            phi(float): Porosity, default value is 1
+            phi(float): Porosity
 
         Returns:
         --------
