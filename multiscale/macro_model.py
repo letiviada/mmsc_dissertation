@@ -30,7 +30,7 @@ class MacroscaleModel:
 
     # ----------------------------- # ----------------------------#
 
-    def ode_tau(self,tau: MX,c: MX,u: MX ,interp_k,nx:int) -> MX:
+    def ode_tau(self,tau: MX,c: MX,u: MX ,interp_k_inv,nx:int) -> MX:
         """
         Differential equation for the auxiliar variable tau
 
@@ -46,9 +46,9 @@ class MacroscaleModel:
 
         """
         dtaudt = MX(nx,1)
-        k_MX = interp_k(tau) #Obtain interpolated MX type of k
+        k_inv_MX = interp_k_inv(tau) #Obtain interpolated MX type of k
         #dtaudt[:] = 1.0
-        dtaudt[:] = c[:] * u * k_MX[:] # Define the RHS of the ODE
+        dtaudt[:] = c[:] * u * k_inv_MX[:] # Define the RHS of the ODE
         return dtaudt
 
     # ----------------------------- # ----------------------------#

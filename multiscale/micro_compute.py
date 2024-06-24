@@ -24,7 +24,7 @@ def compute_results(alpha, beta,G_initial, tau_values,l):
     
         W = solve_W(G,l)
         delta = find_delta(W,l)
-        k = find_permeability(G,delta)
+        k = find_permeability(G,delta,l)
         j = find_adhesivity(alpha,G,delta,l)
 
         #print(f"s = {s}, G.shape = {G.shape}, W = {W}, delta.shape = {delta.shape}, k = {k}, j = {j}")

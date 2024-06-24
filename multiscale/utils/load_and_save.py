@@ -25,7 +25,7 @@ def convert_to_numpy(results):
         results[key] = np.array(value)
     return results
 
-def load_k_j(alpha,beta,filename='multiscale/micro_results.json'):
+def load_k_j(alpha,beta,filename='multiscale/micro_results/micro_results.json'):
     """
     Loads only the k and j values from the results file.
 
@@ -45,7 +45,7 @@ def load_k_j(alpha,beta,filename='multiscale/micro_results.json'):
     tau_eval = results['tau']
     return k_values, j_values, tau_eval
 
-def load_any(alpha,beta,key,filename='multiscale/macro_results.json'):
+def load_any(alpha,beta,key,filename='multiscale/macro_results/macro_results.json'):
     """
     Loads only the k and j values from the results file.
 
@@ -127,7 +127,7 @@ def save_macro_results1(alpha, beta,output_dict, filename='multiscale/macro_resu
     #print("Output values of macroscale model saved to macro_results.json")
 
 
-def save_macro_results(alpha, beta, output_dict, directory='multiscale/'):
+def save_macro_results(alpha, beta, output_dict, directory='multiscale/macro_results'):
     """
     Saves the results to a JSON file, converting NumPy arrays to lists.
 
@@ -148,7 +148,7 @@ def save_macro_results(alpha, beta, output_dict, directory='multiscale/'):
         json.dump(output_dict, file, indent=4)
 
 
-def save_micro_results(alpha, beta, results, time_passed, directory='multiscale/'):
+def save_micro_results(alpha, beta, results, time_passed, directory='multiscale/micro_results'):
     """
     Saves the results to a JSON file, converting NumPy arrays to lists.
 

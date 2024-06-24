@@ -9,7 +9,7 @@ import concurrent.futures
 import time
 
 class MultiscaleModel:
-    def __init__(self, T=450,length=2.0, nt=10, nx=101,phi = 0.6):
+    def __init__(self, T=450,length=1.0, nt=10, nx=101,phi = 0.6):
         self.T = T
         self.l = length
         self.nt = nt

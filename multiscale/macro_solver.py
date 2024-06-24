@@ -37,7 +37,7 @@ class Solver:
         # Define the system of differential equations
         # --------------------------------------------
         x = vertcat(c,tau)
-        ode = vertcat(self.model.ode_c(c,u,psi,nx,phi),self.model.ode_tau(tau,c,u,interp_k,nx))
+        ode = vertcat(self.model.ode_c(c,u,psi,nx,phi),self.model.ode_tau(tau,c,u,interp_k_inv,nx))
 
         # Define the system of algebraic equations
         # -----------------------------------------
@@ -46,7 +46,7 @@ class Solver:
 
         # Define solver
         # -------------
-        opts = {'reltol': 1e-4, 'abstol': 1e-4}
+        opts = {'reltol': 1e-6, 'abstol': 1e-6}
         dae = {'x': x, 'z': z , 'ode':ode, 'alg': alg}
         F = integrator('F', 'idas', dae, t_eval[0], t_eval, opts) 
         return F

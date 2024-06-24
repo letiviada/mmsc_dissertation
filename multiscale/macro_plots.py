@@ -43,7 +43,7 @@ def main(alpha,beta):
 
     # Save figures
     # ---------------
-    save_figure(fig, f'multiscale/figures/macroscale/oncentration/c_{alpha}_{beta}')
+    save_figure(fig, f'multiscale/figures/macroscale/concentration/c_{alpha}_{beta}')
     save_figure(fig2, f'multiscale/figures/macroscale/tau/tau_{alpha}_{beta}')
     save_figure(fig3, f'multiscale/figures/macroscale/permeability/k_{alpha}_{beta}')
     save_figure(fig4, f'multiscale/figures/macroscale/adhesivity/j_{alpha}_{beta}')
