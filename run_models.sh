@@ -1,10 +1,10 @@
 #!/bin/bash
 # To run, put in the terminal: bash micro_params.sh
 # Define values for alpha and beta
-#betas=$(seq 0 0.01 0.1)
+#
 alphas=$(seq 0 0.1 1)
-betas=(0.01)
-phis=(0.6)
+betas=$(seq 0 0.01 0.1)
+phis=$(seq 0.1 0.1 0.9)
 # Start timing the entire script
 script_start_time=$(date +%s)
 
