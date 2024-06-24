@@ -3,7 +3,7 @@
 # Define values for alpha and beta
 #betas=$(seq 0 0.01 0.1)
 #alphas=(0.1)
-betas=(0.01)
+betas=$(seq 0 0.01 0.1)
 alphas=$(seq 0 0.1 1)
 
 # Start timing the entire script
