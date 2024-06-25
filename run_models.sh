@@ -3,7 +3,7 @@
 # Define values for alpha and beta
 #
 alphas=$(seq 0 0.1 1)
-betas=$(seq 0 0.1 0.1)
+betas=$(seq 0 0.01 0.1)
 #alphas=(0.6)
 betas=(0.1)
 phis=(0.1)

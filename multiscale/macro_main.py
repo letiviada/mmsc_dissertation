@@ -73,7 +73,7 @@ def main():
     betas = args.betas
     phis = args.phis
 
-    with concurrent.futures.ProcessPoolExecutor() as executor:
+    with concurrent.futures.ProcessPoolExecutor(max_workers = 4) as executor:
         futures = [executor.submit(compute_and_save, alpha, beta,phi) for alpha in alphas for beta in betas for phi in phis]
         for future in concurrent.futures.as_completed(futures):
             try:
