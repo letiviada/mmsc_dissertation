@@ -33,4 +33,4 @@ def main(alpha,beta,filename):
 
 if __name__ == '__main__':
     alpha, beta = 1.0, 0.01
-    main(alpha,beta,filename='multiscale/results/macroscale/macro_results_phi_0.6.json')
+    main(alpha,beta,filename='multiscale/results/macroscale/macro_results_phi_0.1.json')

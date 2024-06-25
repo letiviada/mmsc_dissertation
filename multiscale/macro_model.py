@@ -24,7 +24,7 @@ class MacroscaleModel:
 
         dx = 1 / (nx - 1) # Spatial domain size
         dcdt = MX(nx,1) # Define vector or RHS
-        dcdt[1:] = -(u / phi) * ((c[1:]-c[:-1])/dx) - (psi[1:] / phi) * c[1:] # Use upwinding scheme to define each RHS
+        dcdt[1:] = -(u / 0.1) * ((c[1:]-c[:-1])/dx) - (psi[1:] / 0.1) * c[1:] # Use upwinding scheme to define each RHS
         #dcdt[1:] = 0.5
         return dcdt
 
