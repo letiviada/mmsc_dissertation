@@ -47,7 +47,6 @@ class MacroscaleModel:
         """
         dtaudt = MX(nx,1)
         k_inv_MX = interp_k_inv(tau) #Obtain interpolated MX type of k
-        #dtaudt[:] = 1.0
         dtaudt[:] = c[:] * u * k_inv_MX[:] # Define the RHS of the ODE
         return dtaudt
 

@@ -46,7 +46,7 @@ class Solver:
 
         # Define solver
         # -------------
-        opts = {'reltol': 1e-6, 'abstol': 1e-6}
+        opts = {'reltol': 1e-4, 'abstol': 1e-4, 'max_num_steps': 1000}
         dae = {'x': x, 'z': z , 'ode':ode, 'alg': alg}
         F = integrator('F', 'idas', dae, t_eval[0], t_eval, opts) 
         return F
