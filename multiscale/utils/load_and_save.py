@@ -119,7 +119,7 @@ def save_micro_results(alpha, beta,results, time_passed, directory='multiscale/r
     accumulated_results['time'] = time_passed
 
     if not os.path.exists(directory):
-        os.makedirs(directory)
+        os.makedirs(directory,exist_ok=True)
     
     # Generate the filename dynamically based on alpha and beta values
     filename = os.path.join(directory, f'micro_results_alpha_{alpha}_beta_{beta}.json')

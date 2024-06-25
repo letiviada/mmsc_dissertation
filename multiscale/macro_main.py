@@ -59,7 +59,7 @@ def compute_and_save(alpha, beta, phi):
     end = time.time()
     time_passed = end - start
     save_macro_results(alpha, beta,phi, model.output_dict(time_passed))
-    #print(f"Alpha: {alpha}, Beta: {beta}, Time elapsed: {time_passed} seconds")
+    print(f"Alpha: {alpha}, Beta: {beta}, Time elapsed: {time_passed} seconds")
     
 
 def main():
@@ -73,7 +73,7 @@ def main():
     betas = args.betas
     phis = args.phis
 
-    with concurrent.futures.ProcessPoolExecutor() as executor:
+    with concurrent.futures.ProcessPoolExecutor(max_workers=5) as executor:
         futures = [executor.submit(compute_and_save, alpha, beta,phi) for alpha in alphas for beta in betas for phi in phis]
         for future in concurrent.futures.as_completed(futures):
             try:
