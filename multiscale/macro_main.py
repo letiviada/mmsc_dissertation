@@ -9,14 +9,14 @@ import concurrent.futures
 import time
 
 class MultiscaleModel:
-    def __init__(self, T=450,length=1.0, nt=10, nx=101,phi = 0.6):
+    def __init__(self,phi,T=450,length=2.0, nt=10, nx=101):
+        self.phi = phi
         self.T = T
         self.l = length
         self.nt = nt
         self.nx = nx
         self.t_eval = np.linspace(0, self.T, self.nt)
         self.x_eval = np.linspace(0, self.l, self.nx)
-        self.phi = phi
 
     def load_and_interpolate(self,alpha,beta,phi):
         # Load data from the microscale model
@@ -52,7 +52,7 @@ class MultiscaleModel:
 
 def compute_and_save(alpha, beta, phi):
     start = time.time()
-    model = MultiscaleModel()
+    model = MultiscaleModel(phi)
     model.load_and_interpolate(alpha, beta,phi)
     model.setup_and_run()
     model.obtain_k_and_j()
