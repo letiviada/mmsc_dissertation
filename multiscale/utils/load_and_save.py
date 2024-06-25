@@ -1,4 +1,5 @@
 import json
+import zipfile
 import os
 import numpy as np
 
@@ -18,6 +19,16 @@ def load_results(filename='multiscale/results/microscale/micro_results.json'):
     
     return results
 
+def load_zip(filename = 'multiscale/results/microscale/micro_results.zip'):
+    zip_path = filename
+    json_filename = 'multiscale/results/microscale/micro_results.json'
+    # Open the zip file
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+    # Extract the JSON file from the zip archive
+        with zip_ref.open(json_filename) as json_file:
+            results = json.load(json_file)
+    return results
+
 def convert_to_numpy(results):
         
     # Convert lists back to NumPy arrays
@@ -25,7 +36,7 @@ def convert_to_numpy(results):
         results[key] = np.array(value)
     return results
 
-def load_k_j(alpha,beta,phi,filename='multiscale/results/microscale/micro_results.json'):
+def load_k_j(alpha,beta,phi,filename='multiscale/results/microscale/micro_results.zip'):
     """
     Loads only the k and j values from the results file.
 
@@ -35,7 +46,8 @@ def load_k_j(alpha,beta,phi,filename='multiscale/results/microscale/micro_result
     Returns:
     tuple: Two numpy arrays containing k and j values.
     """
-    data = load_results(filename)
+
+    data = load_zip(filename)
     if f'(alpha,beta)=({alpha},{beta})' not in data:
         raise KeyError(f'(alpha,beta)=({alpha},{beta}) not found in data')
     results = data[f'(alpha,beta)=({alpha},{beta})']

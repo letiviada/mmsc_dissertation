@@ -2,9 +2,10 @@ import argparse
 import glob
 import os
 import json
+import zipfile
 import re
 
-def combine_results(directory, pattern, output_filename,scale):
+def combine_results(directory, pattern, output_filename = None,scale = None):
 
     combined_data = {}
     for filepath in glob.glob(os.path.join(directory, pattern)):
@@ -19,6 +20,14 @@ def combine_results(directory, pattern, output_filename,scale):
                         beta = match.group('beta')
                         phi = match.group('phi')
                     combined_data[f'(alpha,beta,phi)=({alpha},{beta},{phi})'] = data
+                elif scale == 'macro_phi':
+                    match = re.search(r'macro_results_alpha_(?P<alpha>\d*\.?\d+)_beta_(?P<beta>\d*\.?\d+)_phi_(?P<phi>\d*\.?\d+).json', filename)
+                    if match:
+                        alpha = match.group('alpha')
+                        beta = match.group('beta')
+                        phi = match.group('phi')
+                    combined_data[f'(alpha,beta)=({alpha},{beta})'] = data
+                    output_filename = f'macro_results_phi_{phi}.json'
                 elif scale == 'micro':
                     match = re.search(r'micro_results_alpha_(?P<alpha>\d*\.?\d+)_beta_(?P<beta>\d*\.?\d+).json', filename)
                     if match:
@@ -54,13 +63,20 @@ def combine_results(directory, pattern, output_filename,scale):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Combine micro or macro results.')
-    parser.add_argument('type', choices=['micro', 'macro'], help='Specify whether to combine micro or macro results.')
+    parser.add_argument('type', choices=['micro', 'macro','macro_phi'], help='Specify whether to combine micro or macro results.')
     args = parser.parse_args()
 
     if args.type == 'micro':
         combine_results('multiscale/results/microscale', 'micro_results_alpha_*.json', 'micro_results.json','micro')
+        zip_filename = 'multiscale/results/microscale/micro_results.zip'
+        with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
+            micro_results_path = 'multiscale/results/microscale/micro_results.json'
+            zipf.write(micro_results_path, os.path.basename(micro_results_path))
+            print(f"Compressed {micro_results_path} into {zip_filename}")
     elif args.type == 'macro':
         combine_results('multiscale/results/macroscale', 'macro_results_alpha_*.json', 'macro_results.json','macro')
+    elif args.type == 'macro_phi':
+        combine_results(directory='multiscale/results/macroscale', pattern='macro_results_alpha_*.json',scale = 'macro_phi')
 
 
 
