@@ -1,16 +1,13 @@
 import argparse
 import numpy as np
 from casadi import *
-import matplotlib.pyplot as plt
 from macro_solver import Solver
 from utils import reshape_f, interp_functions, load_k_j, get_k_and_j, save_macro_results
-#from plotting import plot_time, plot_one_dim, save_figure
 import concurrent.futures
 import time
 
 class MultiscaleModel:
-    def __init__(self,phi,T=450,length=2.0, nt=10, nx=101):
-        self.phi = phi
+    def __init__(self,T=450,length=2.0, nt=10, nx=101):
         self.T = T
         self.l = length
         self.nt = nt
@@ -24,10 +21,10 @@ class MultiscaleModel:
         # Interpolate the data
         self.interp_k, self.interp_k_inv, self.interp_j = interp_functions(k, j, tau_eval)
 
-    def setup_and_run(self):
+    def setup_and_run(self,phi):
         solv = Solver(self.l)
         # Setup the DAE solver
-        F = solv.setup(self.interp_k, self.interp_k_inv, self.interp_j, self.t_eval, self.nx, self.l,self.phi)
+        F = solv.setup(self.interp_k, self.interp_k_inv, self.interp_j, self.t_eval, self.nx, self.l,phi)
         # Run the DAE solver
         x_res, z_res = solv.run(F, self.nx)
         # Reshape the solution
@@ -52,7 +49,7 @@ class MultiscaleModel:
 
 def compute_and_save(alpha, beta, phi):
     start = time.time()
-    model = MultiscaleModel(phi)
+    model = MultiscaleModel()
     model.load_and_interpolate(alpha, beta,phi)
     model.setup_and_run()
     model.obtain_k_and_j()
@@ -73,11 +70,7 @@ def main():
     betas = args.betas
     phis = args.phis
 
-<<<<<<< HEAD
-    with concurrent.futures.ProcessPoolExecutor(max_workers=5) as executor:
-=======
     with concurrent.futures.ProcessPoolExecutor(max_workers = 4) as executor:
->>>>>>> a5e660d92a907bf58f5070198a78e0ae0ff25922
         futures = [executor.submit(compute_and_save, alpha, beta,phi) for alpha in alphas for beta in betas for phi in phis]
         for future in concurrent.futures.as_completed(futures):
             try:

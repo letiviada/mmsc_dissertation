@@ -57,7 +57,7 @@ def load_k_j(alpha,beta,phi,filename='multiscale/results/microscale/micro_result
     tau_eval = results['tau']
     return k_values, j_values, tau_eval
 
-def load_any(alpha,beta,phi,key,filename='multiscale/results/macro_results.json'):
+def load_any(alpha,beta,key,filename='multiscale/results/macro_results.json'):
     """
     Loads only the k and j values from the results file.
 
@@ -68,9 +68,9 @@ def load_any(alpha,beta,phi,key,filename='multiscale/results/macro_results.json'
     tuple: Two numpy arrays containing k and j values.
     """
     data = load_results(filename)
-    if f'(alpha,beta,phi)=({alpha},{beta},{phi})' not in data:
+    if f'(alpha,beta)=({alpha},{beta})' not in data:
         raise KeyError(f'(alpha,beta)=({alpha},{beta}) not found in data')
-    results = data[f'(alpha,beta,phi)=({alpha},{beta},{phi})']
+    results = data[f'(alpha,beta)=({alpha},{beta})']
     results = convert_to_numpy(results)
     values = results[key]
     return values
