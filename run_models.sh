@@ -2,22 +2,22 @@
 # To run, put in the terminal: bash micro_params.sh
 # Define values for alpha and beta
 #
-alphas=$(seq 0 0.1 1)
-betas=(0.01)
-phis=(0.1)
+alphas=$(seq 0.4 0.1 0.7)
+betas=(0.04)
+phis=(0.6)
 # Start timing the entire script
 script_start_time=$(date +%s)
 
 # Start timing the micro computation
 micro_computation_start_time=$(date +%s)
-#python3 multiscale/micro_main.py --alphas $alphas --betas $betas
+python3 multiscale/micro_main.py --alphas $alphas --betas $betas
 micro_computation_end_time=$(date +%s)
 micro_computation_time=$((micro_computation_end_time - micro_computation_start_time))
 echo "Micro computation time: $micro_computation_time seconds"
 
 # Combine individual micro result files into one JSON file and delete them
 micro_combine_start_time=$(date +%s)
-#python3 multiscale/combine_results.py micro
+python3 multiscale/combine_results.py micro
 micro_combine_end_time=$(date +%s)
 micro_combine_time=$((micro_combine_end_time - micro_combine_start_time))
 echo "Combining micro_results time: $micro_combine_time seconds"
