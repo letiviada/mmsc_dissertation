@@ -24,20 +24,19 @@ def main(alpha,beta,phi,filename):
     # Save figures
     # ---------------
     #save_figure(fig, f'multiscale/figures/macroscale/concentration/c_{alpha}_{beta}')
-    save_figure(fig2, f'multiscale/figures/macroscale/tau/tau_alpha_{alpha}_beta_{beta}_phi_{phi}')
+    save_figure(fig2, f'multiscale/figures/macroscale/tau/alpha_{alpha}_beta_{beta}/tau_alpha_{alpha}_beta_{beta}_phi_{phi}')
     #save_figure(fig3, f'multiscale/figures/macroscale/permeability/k_{alpha}_{beta}')
     #save_figure(fig4, f'multiscale/figures/macroscale/adhesivity/j_{alpha}_{beta}')
-    save_figure(fig5, f'multiscale/figures/macroscale/velocity/u_alpha_{alpha}_beta_{beta}_phi_{phi}')
+    save_figure(fig5, f'multiscale/figures/macroscale/velocity/alpha_{alpha}_beta_{beta}/u_alpha_{alpha}_beta_{beta}_phi_{phi}')
     #save_figure(fig6, f'multiscale/figures/macroscale/reactivity/psi_{alpha}_{beta}')
     #save_figure(fig7, f'multiscale/figures/macroscale/reactivity/psi_time_{alpha}_{beta}')
 
 if __name__ == '__main__':
-    alpha, beta = 0.3,0.04
-    phi=0.7
-    main(alpha,beta, phi,filename='multiscale/results/macroscale/macro_results_phi_0.7.json')
-    phi=0.6
-    main(alpha,beta, phi,filename='multiscale/results/macroscale/macro_results_phi_0.6.json')
-    phi=0.5
-    main(alpha,beta,phi,filename='multiscale/results/macroscale/macro_results_phi_0.5.json')
-    phi=0.8
-    main(alpha,beta, phi,filename='multiscale/results/macroscale/macro_results_phi_0.8.json')
+    alpha_values = [0.3, 0.4, 0.5]  # List of alpha values
+    beta_values = [0.04, 0.05, 0.06]  # List of beta values
+    alpha_beta_pairs = [(alpha, beta) for alpha in alpha_values for beta in beta_values]
+    phi_values = [0.8, 0.7, 0.6, 0.5]  #
+    for alpha, beta in alpha_beta_pairs:
+        for phi in phi_values:
+            main(alpha, beta, phi, filename='multiscale/results/macroscale/macro_results_phi_{:.1f}.json'.format(phi))
+    phi_values = [0.7, 0.6, 0.5, 0.8]  # List of phi values
