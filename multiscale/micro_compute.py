@@ -16,6 +16,7 @@ def compute_results(alpha, beta,G_initial, tau_values,l):
     """
     start = time.time()
     results = []
+    results_with_G = []
     for tau in tau_values:
         if tau == 0:
             G = initial_G(G_initial)
@@ -29,7 +30,7 @@ def compute_results(alpha, beta,G_initial, tau_values,l):
 
         #print(f"s = {s}, G.shape = {G.shape}, W = {W}, delta.shape = {delta.shape}, k = {k}, j = {j}")
 
-        results.append({
+        results_with_G.append({
             'tau': tau,
             'G': G,
             'W': W,
@@ -37,8 +38,13 @@ def compute_results(alpha, beta,G_initial, tau_values,l):
             'k': k,
             'j': j,
         })
+        results.append({
+            'tau': tau,
+            'k': k,
+            'j': j,
+        })
 
         G_previous = G
     end = time.time()
     time_passed = end-start
-    return results, time_passed
+    return results_with_G,results, time_passed

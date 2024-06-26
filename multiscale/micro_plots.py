@@ -18,7 +18,7 @@ def main(alphas: list, betas: list,name:str):
     for beta in betas:    
         for alpha in alphas:
             # Load k_values, j_values, tau_eval
-            k_values, j_values, tau_eval = load_k_j(alpha, beta)
+            k_values, j_values, tau_eval = load_k_j(alpha, beta,0)
 
             # Append to respective lists
             k_values_list.append(k_values)

@@ -42,11 +42,11 @@ class Solver:
         # Define the system of algebraic equations
         # -----------------------------------------
         z = vertcat(u,psi)
-        alg = vertcat(self.model.alg_u(u,interp_k_inv,tau,l),self.model.alg_psi(psi,u,interp_k_inv,interp_j,tau))
+        alg = vertcat(self.model.alg_u(u,interp_k_inv,tau,l),self.model.alg_psi(psi,u,interp_k,interp_k_inv,interp_j,tau))
 
         # Define solver
         # -------------
-        opts = {'reltol': 1e-4, 'abstol': 1e-4}
+        opts = {'reltol': 1e-6, 'abstol': 1e-6}
         dae = {'x': x, 'z': z , 'ode':ode, 'alg': alg}
         F = integrator('F', 'idas', dae, t_eval[0], t_eval, opts) 
         return F

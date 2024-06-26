@@ -32,5 +32,5 @@ def main(alpha,beta,filename):
     save_figure(fig7, f'multiscale/figures/macroscale/reactivity/psi_time_{alpha}_{beta}')
 
 if __name__ == '__main__':
-    alpha, beta = 1.0, 0.01
+    alpha, beta = 0.1, 0.01
     main(alpha,beta,filename='multiscale/results/macroscale/macro_results_phi_0.1.json')

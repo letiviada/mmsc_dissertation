@@ -24,7 +24,7 @@ class MacroscaleModel:
 
         dx = 1 / (nx - 1) # Spatial domain size
         dcdt = MX(nx,1) # Define vector or RHS
-        dcdt[1:] = -(u / 0.1) * ((c[1:]-c[:-1])/dx) - (psi[1:] / 0.1) * c[1:] # Use upwinding scheme to define each RHS
+        dcdt[1:] = -(u / phi) * ((c[1:]-c[:-1])/dx) - (psi[1:] / phi) * c[1:] # Use upwinding scheme to define each RHS
         #dcdt[1:] = 0.5
         return dcdt
 
@@ -77,7 +77,7 @@ class MacroscaleModel:
 
     # ----------------------------- # ----------------------------#
 
-    def alg_psi(self,psi: MX,u: MX,interp_k_inv,interp_j,tau:MX) -> MX:
+    def alg_psi(self,psi: MX,u: MX,interp_k,interp_k_inv,interp_j,tau:MX) -> MX:
         """ Function that defines the algebraic equations of u.
         
         Parameters:
@@ -94,9 +94,10 @@ class MacroscaleModel:
             alg_eqn_psi (MX): Algebraic equation used to define reactivity, psi
         """
         k_MX_inv = interp_k_inv(tau)
+        k_MX = interp_k(tau)
         j_MX = interp_j(tau) # Obtain MX type for j in shape (nx,1)
     
-        psi_alg = j_MX * k_MX_inv * u # Obtain equation psi satisfies
+        psi_alg = j_MX * (1/k_MX) * u # Obtain equation psi satisfies
 
         alg_eqn_psi = MX(psi.shape[0],1)
         alg_eqn_psi[:] = psi[:] - psi_alg[:] # Define the algebraic equation at each spatial point

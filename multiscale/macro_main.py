@@ -7,7 +7,7 @@ import concurrent.futures
 import time
 
 class MultiscaleModel:
-    def __init__(self,T=450,length=2.0, nt=10, nx=101):
+    def __init__(self,T=500,length=2.0, nt=51, nx=101):
         self.T = T
         self.l = length
         self.nt = nt
@@ -60,6 +60,9 @@ def compute_and_save(alpha, beta, phi):
     
 
 def main():
+    #alpha,beta = 1.0, 1.0
+    #phi = 0.9
+    #compute_and_save(alpha, beta, phi)
     parser = argparse.ArgumentParser(description='Run macro_main.py with parameters.')
     parser.add_argument("--alphas", nargs='+', type=float, help="List of alpha values")
     parser.add_argument("--betas", nargs='+', type=float, help="List of beta values")

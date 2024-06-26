@@ -68,15 +68,14 @@ if __name__ == "__main__":
 
     if args.type == 'micro':
         combine_results('multiscale/results/microscale', 'micro_results_alpha_*.json', 'micro_results.json','micro')
-        zip_filename = 'multiscale/results/microscale/micro_results.zip'
+        combine_results('multiscale/results/microscale/full_output', 'micro_results_alpha_*.json', 'micro_results.json','micro')
+        zip_filename = 'multiscale/results/microscale/full_output/micro_results.zip'
         with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
-            micro_results_path = 'multiscale/results/microscale/micro_results.json'
+            micro_results_path = 'multiscale/results/microscale/full_output/micro_results.json'
             zipf.write(micro_results_path, os.path.basename(micro_results_path))
             print(f"Compressed {micro_results_path} into {zip_filename}")
-    elif args.type == 'macro':
-        combine_results('multiscale/results/macroscale', 'macro_results_alpha_*.json', 'macro_results.json','macro')
+   # elif args.type == 'macro':
+        #combine_results('multiscale/results/macroscale', 'macro_results_alpha_*.json', 'macro_results.json','macro')
     elif args.type == 'macro_phi':
         combine_results(directory='multiscale/results/macroscale', pattern='macro_results_alpha_*.json',scale = 'macro_phi')
-
-
 

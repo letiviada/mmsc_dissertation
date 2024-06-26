@@ -36,7 +36,7 @@ def convert_to_numpy(results):
         results[key] = np.array(value)
     return results
 
-def load_k_j(alpha,beta,phi,filename='multiscale/results/microscale/micro_results.zip'):
+def load_k_j(alpha,beta,phi,filename='multiscale/results/microscale/micro_results.json'):
     """
     Loads only the k and j values from the results file.
 
@@ -47,7 +47,7 @@ def load_k_j(alpha,beta,phi,filename='multiscale/results/microscale/micro_result
     tuple: Two numpy arrays containing k and j values.
     """
 
-    data = load_zip(filename)
+    data = load_results(filename)
     if f'(alpha,beta)=({alpha},{beta})' not in data:
         raise KeyError(f'(alpha,beta)=({alpha},{beta}) not found in data')
     results = data[f'(alpha,beta)=({alpha},{beta})']
@@ -119,7 +119,7 @@ def save_micro_results(alpha, beta,results, time_passed, directory='multiscale/r
     accumulated_results['time'] = time_passed
 
     if not os.path.exists(directory):
-        os.makedirs(directory,exist_ok=True)
+        os.makedirs(directory)
     
     # Generate the filename dynamically based on alpha and beta values
     filename = os.path.join(directory, f'micro_results_alpha_{alpha}_beta_{beta}.json')
