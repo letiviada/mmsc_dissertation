@@ -59,6 +59,8 @@ def plot_one_dim(x_eval,functs,title = None, colormap = 'tab20b',style = 'seabor
         ax[0].plot(x_eval,funct,color = color, linewidth = 2)
     if x_eval_type == 'time':
         ax[0].set_xlabel('Time')
+        ax[0].set_ylim(bottom=0.08)
+        ax[0].axhline(y=0.1,color='orange',linestyle='--',linewidth=2)
     elif x_eval_type == 'tau':
         ax[0].set_xlabel('$\\tau$')
     else:
