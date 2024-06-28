@@ -2,44 +2,57 @@
 # To run, put in the terminal: bash micro_params.sh
 # Define values for alpha and beta
 #
-alphas=$(seq 0.2 0.1 0.8)
-betas=$(seq 0.02 0.01 0.08)
-phis=$(seq 0.5 0.1 0.9)
+alphas=$(seq 0.2 0.1 0.7)
+betas=$(seq 0.01 0.01 0.09)
+#phis=$(seq 0.1 0.1 0.9)
+#alphas=(0.7)
+#betas=(0.09)
+phis=(0.7)
 # Start timing the entire script
 script_start_time=$(date +%s)
 
 # Start timing the micro computation
 micro_computation_start_time=$(date +%s)
-python3 multiscale/micro_main.py --alphas $alphas --betas $betas
+#python3 multiscale/micro_main.py --alphas $alphas --betas $betas
 micro_computation_end_time=$(date +%s)
 micro_computation_time=$((micro_computation_end_time - micro_computation_start_time))
-echo "Micro computation time: $micro_computation_time seconds"
+minutes=$((micro_computation_time / 60))
+seconds=$((micro_computation_time % 60))
+echo "Micro computation time: $minutes minutes and $seconds seconds"
 
 # Combine individual micro result files into one JSON file and delete them
 micro_combine_start_time=$(date +%s)
-python3 multiscale/combine_results.py micro
+#python3 multiscale/combine_results.py micro
 micro_combine_end_time=$(date +%s)
 micro_combine_time=$((micro_combine_end_time - micro_combine_start_time))
-echo "Combining micro_results time: $micro_combine_time seconds"
+minutes=$((micro_combine_time / 60))
+seconds=$((micro_combine_time % 60))
+echo "Combining micro_results time: $minutes minutes and $seconds seconds"
 
 # Start timing the macro computation
 macro_computation_start_time=$(date +%s)
 python3 multiscale/macro_main.py --alphas $alphas --betas $betas --phis $phis
 macro_computation_end_time=$(date +%s)
 macro_computation_time=$((macro_computation_end_time - macro_computation_start_time))
-echo "Macro computation time: $macro_computation_time seconds"
+minutes=$((macro_computation_time / 60))
+seconds=$((macro_computation_time % 60))
+echo "Macro computation time: $minutes minutes and $seconds seconds"
 
 # Combine individual micro result files into one JSON file and delete them
 combine_start_time=$(date +%s)
 python3 multiscale/combine_results.py macro_phi
 combine_end_time=$(date +%s)
 combine_time=$((combine_end_time - combine_start_time))
-echo "Combining results time: $combine_time seconds"
+minutes=$((combine_time / 60))
+seconds=$((combine_time % 60))
+echo "Combining results time: $minutes minutes and $seconds seconds"
 
 # End timing the entire script
 script_end_time=$(date +%s)
 total_time=$((script_end_time - script_start_time))
-echo "Total execution time: $total_time seconds"
+min=$((total_time / 60))
+sec=$((total_time % 60))
+echo "Total execution time: $min minutes and $sec seconds"
 
 echo "Done!"
 

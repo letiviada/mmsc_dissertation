@@ -34,7 +34,7 @@ def plot_time(t_eval,x_eval,funct,title = None,colormap = 'tab20b',style = 'seab
     ax[0].grid(True)# Set limits to restrict the left domain to start at x=0, y=0
     ax[0].set_xlim(left=0)
     #ax[0].set_ylim(bottom=0)
-    ax[0].legend(loc='center left', bbox_to_anchor=(1, 0.5))
+   #ax[0].legend(loc='center left', bbox_to_anchor=(1, 0.5))
     fig.tight_layout()
     #fig.subplots_adjust(hspace=0.7, wspace=0.2)
     return fig
@@ -59,7 +59,7 @@ def plot_one_dim(x_eval,functs,title = None, colormap = 'tab20b',style = 'seabor
         ax[0].plot(x_eval,funct,color = color, linewidth = 2)
     if x_eval_type == 'time':
         ax[0].set_xlabel('Time')
-        ax[0].set_ylim(bottom=0.08)
+       # ax[0].set_ylim(bottom=0.08)
         ax[0].axhline(y=0.1,color='orange',linestyle='--',linewidth=2)
     elif x_eval_type == 'tau':
         ax[0].set_xlabel('$\\tau$')
@@ -70,3 +70,4 @@ def plot_one_dim(x_eval,functs,title = None, colormap = 'tab20b',style = 'seabor
     #ax[0].set_ylim(bottom=0)
     fig.tight_layout()
     return fig
+
