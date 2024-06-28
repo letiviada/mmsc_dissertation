@@ -23,5 +23,5 @@ phi=(0.5)
 parameter="concentration" #Choose between: "concentration", "auxiliar_variable","darcy_velocity", "permeability", "adghesivity", "reactivity"
 # Call the Python script with the sequences
 echo "Generating plots for the macroscale model"
-python3 macro_plots.py --alpha_values $alpha_values --beta_values $beta_values --phi $phi --parameter "$parameter"
+python3 multiscale/macro_plots.py --alpha_values $alphas2 --beta_values $betas --phi $phi --parameter "$parameter"
 echo "Done!"

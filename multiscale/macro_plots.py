@@ -10,14 +10,6 @@ def main(alpha,beta,phi,filename,parameter):
     # Load values
     t_eval = load_any(alpha,beta,'time_eval',filename)
     x_eval = load_any(alpha,beta,'x_eval',filename)
-    
-    c = load_any(alpha,beta,'concentration',filename)
-    tau = load_any(alpha,beta,'auxiliar_variable',filename)
-    k = load_any(alpha,beta,'permeability',filename)
-    j = load_any(alpha,beta,'adhesivity',filename)
-    u = load_any(alpha,beta,'darcy_velocity',filename)
-    psi = load_any(alpha,beta,'reactivity',filename)
-
      # Time points of interest
     time_points = [10, 100, 500, 1000, 1500]
     # Find indices of the time points in t_eval
@@ -66,4 +58,4 @@ if __name__ == '__main__':
     alpha_beta_pairs = alpha_beta_pairs(args.alpha_values, args.beta_values)
 
     for alpha, beta in tqdm(alpha_beta_pairs):
-            main(alpha, beta, args.phi,'multiscale/results/macroscale/macro_results_phi_0.7.json',args.parameter)
+            main(alpha, beta, args.phi,f'multiscale/results/macroscale/macro_results_phi_{args.phi}.json',args.parameter)
