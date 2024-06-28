@@ -56,7 +56,7 @@ def alpha_beta_pairs(alpha_values, beta_values):
 
 if __name__ == '__main__':
 
-    parser = argparse.ArgumentParser
+    parser = argparse.ArgumentParser(description='Plot macro results')
     parser.add_argument('--alpha_values', nargs='+', type=float, help='List of alpha values')
     parser.add_argument('--beta_values', nargs='+', type=float, help='List of beta values')
     parser.add_argument('--phi', type=float, help='Value of phi')
