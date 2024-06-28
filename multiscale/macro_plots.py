@@ -1,11 +1,16 @@
+import argparse
+import numpy as np
 from plotting import plot_time, save_figure, plot_one_dim
 import matplotlib.pyplot as plt
 from utils import load_any
 from tqdm import tqdm
-def main(alpha,beta,phi,filename):
+
+
+def main(alpha,beta,phi,filename,parameter):
     # Load values
     t_eval = load_any(alpha,beta,'time_eval',filename)
     x_eval = load_any(alpha,beta,'x_eval',filename)
+    
     c = load_any(alpha,beta,'concentration',filename)
     tau = load_any(alpha,beta,'auxiliar_variable',filename)
     k = load_any(alpha,beta,'permeability',filename)
@@ -13,38 +18,52 @@ def main(alpha,beta,phi,filename):
     u = load_any(alpha,beta,'darcy_velocity',filename)
     psi = load_any(alpha,beta,'reactivity',filename)
 
-    # Plot solutions
-    # -----------------
-    fig = plot_time(t_eval[100:150], x_eval, c[100:150], title='Concentration')
-    fig2 = plot_time(t_eval[100:150], x_eval, tau[100:150], title='Auxiliar variable')
-    #fig3 = plot_time(t_eval, x_eval, k, title='Permeability')
-    #fig4 = plot_time(t_eval, x_eval, j, title='Adhesivity')
-    fig5 = plot_one_dim(t_eval, [u], title='Darcy Velocity')
-    #fig6 = plot_time(t_eval, x_eval,psi, title='Reactivity')
-    #fig7 = plot_one_dim(t_eval, [psi[:,1]], title='Reactivity')
+     # Time points of interest
+    time_points = [10, 100, 500, 1000, 1500]
+    # Find indices of the time points in t_eval
+    indices = [np.abs(t_eval - t_point).argmin() for t_point in time_points]
 
-    # Save figures
-    # ---------------
-    save_figure(fig, f'multiscale/figures/macroscale/concentration/c_alpha_{alpha}_beta_{beta}_phi_{phi}')
-    save_figure(fig2, f'multiscale/figures/macroscale/tau/alpha_{alpha}_beta_{beta}/tau_alpha_{alpha}_beta_{beta}_phi_{phi}')
-    #save_figure(fig3, f'multiscale/figures/macroscale/permeability/k_{alpha}_{beta}')
-    #save_figure(fig4, f'multiscale/figures/macroscale/adhesivity/j_{alpha}_{beta}')
-    save_figure(fig5, f'multiscale/figures/macroscale/velocity/alpha_{alpha}_beta_{beta}/u_alpha_{alpha}_beta_{beta}_phi_{phi}')
-    #save_figure(fig6, f'multiscale/figures/macroscale/reactivity/psi_{alpha}_{beta}')
-    #save_figure(fig7, f'multiscale/figures/macroscale/reactivity/psi_time_{alpha}_{beta}')
-    plt.close(fig2)
-    plt.close(fig5)
+    param = load_any(alpha,beta,parameter,filename)
+    if parameter == 'darcy_velocity':
+        u=param
+        fig =  plot_one_dim(t_eval, [u], title='Darcy Velocity')
+        save_figure(fig, f'multiscale/figures/macroscale/darcy_velocity/alpha_{alpha}/darcy_velocity_alpha_{alpha}_beta_{beta}_phi_{phi}')
+        plt.close(fig)
+    elif parameter == 'reactivity':
+        filtered_t_eval = t_eval[indices]
+        filtered_psi = param[indices, :]
+        fig = plot_time(filtered_t_eval, x_eval,filtered_psi, title='Reactivity')
+        save_figure(fig, f'multiscale/figures/macroscale/reactivity/reactivity_time/alpha_{alpha}/reactivity_alpha_{alpha}_beta_{beta}_phi_{phi}')
+        fig2 = plot_one_dim(t_eval, [param[:,1]], title='Reactivity')
+        save_figure(fig2, f'multiscale/figures/macroscale/reactivity/reactivity/alpha_{alpha}/reactivity_alpha_{alpha}_beta_{beta}_phi_{phi}')
+        plt.close(fig)
+        plt.close(fig2)
+    else:
+        filtered_t_eval = t_eval[indices]
+        filtered_param = param[indices, :]
+
+        fig = plot_time(filtered_t_eval, x_eval, filtered_param, title=parameter)
+        save_figure(fig, f'multiscale/figures/macroscale/{parameter}/alpha_{alpha}/{parameter}alpha_{alpha}_beta_{beta}_phi_{phi}') 
+        plt.close(fig)
+
+
+# Function to generate alpha beta pairs
+def alpha_beta_pairs(alpha_values, beta_values):
+    alpha_beta_pairs = [(alpha, beta) for alpha in alpha_values for beta in beta_values]
+    return alpha_beta_pairs
+
+
+
 if __name__ == '__main__':
-    #alpha_values = [0.3]  # List of alpha values
-    #beta_values = [0.03]  # List of beta values
-    #alpha_beta_pairs = [(alpha, beta) for alpha in alpha_values for beta in beta_values]
-    alpha_beta_pairs = [(0.3,0.03),(0.5,0.05),(0.7,0.07)]
-    #phi_values = [0.9,0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]  #
-    #phi_values = [0.9]
+
+    parser = argparse.ArgumentParser
+    parser.add_argument('--alpha_values', nargs='+', type=float, help='List of alpha values')
+    parser.add_argument('--beta_values', nargs='+', type=float, help='List of beta values')
+    parser.add_argument('--phi', type=float, help='Value of phi')
+    parser.add_argument('--parameter', type=str, help='Parameter to plot')
+    args = parser.parse_args()
+
+    alpha_beta_pairs = alpha_beta_pairs(args.alpha_values, args.beta_values)
+
     for alpha, beta in tqdm(alpha_beta_pairs):
-        #for phi in tqdm(phi_values):
-            #main(alpha, beta, phi, filename='multiscale/results/macroscale/macro_results_phi_{:.1f}.json'.format(phi))
-            main(alpha, beta, 0.7, filename='multiscale/results/macroscale/macro_results_phi_0.7.json')
-   # phi_values = [0.7, 0.6, 0.5, 0.8]  # List of phi values
-
-
+            main(alpha, beta, args.phi,'multiscale/results/macroscale/macro_results_phi_0.7.json',args.parameter)

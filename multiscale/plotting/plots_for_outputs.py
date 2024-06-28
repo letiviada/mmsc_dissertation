@@ -33,8 +33,7 @@ def plot_time(t_eval,x_eval,funct,title = None,colormap = 'tab20b',style = 'seab
     ax[0].set_xlabel('$x$')
     ax[0].grid(True)# Set limits to restrict the left domain to start at x=0, y=0
     ax[0].set_xlim(left=0)
-    #ax[0].set_ylim(bottom=0)
-   #ax[0].legend(loc='center left', bbox_to_anchor=(1, 0.5))
+    ax[0].set_ylim(bottom=0)
     fig.tight_layout()
     #fig.subplots_adjust(hspace=0.7, wspace=0.2)
     return fig

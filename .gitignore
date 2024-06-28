@@ -131,6 +131,7 @@ env.bak/
 venv.bak/
 .casadi_venv/
 Dvenv/
+casadi_venv/
 # Spyder project settings
 .spyderproject
 .spyproject
