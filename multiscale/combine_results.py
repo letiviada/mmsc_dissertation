@@ -37,6 +37,14 @@ def combine_results(directory, pattern,scale = 'macro_phi'):
                         beta = match.group('beta')
                     combined_data[f'(alpha,beta)=({alpha},{beta})'] = data
                     output_filename = 'micro_results.json'
+                elif scale =='performance_indicators':
+                    match = re.search(r'macro_results_alpha_(?P<alpha>\d*\.?\d+)_beta_(?P<beta>\d*\.?\d+)_phi_(?P<phi>\d*\.?\d+).json', filename)
+                    if match:
+                        alpha = match.group('alpha')
+                        beta = match.group('beta')
+                        phi = match.group('phi')
+                    combined_data[f'(alpha,beta)=({alpha},{beta})'] = data
+                    output_filename = f'performance_indicators_phi_{phi}.json'
         except Exception as e:
             print(f"Error reading {filepath}: {e}")
             continue
@@ -66,7 +74,7 @@ def combine_results(directory, pattern,scale = 'macro_phi'):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Combine micro or macro results.')
-    parser.add_argument('type', choices=['micro', 'macro','macro_phi'], help='Specify whether to combine micro or macro results.')
+    parser.add_argument('type', choices=['micro', 'macro','macro_phi','performance_indicators'], help='Specify whether to combine micro or macro results.')
     args = parser.parse_args()
 
     if args.type == 'micro':
@@ -81,4 +89,5 @@ if __name__ == "__main__":
         #combine_results('multiscale/results/macroscale', 'macro_results_alpha_*.json', 'macro_results.json','macro')
     elif args.type == 'macro_phi':
         combine_results(directory='multiscale/results/macroscale', pattern='macro_results_alpha_*.json')
-
+    elif args.type == 'performance_indicators':
+        combine_results(directory = 'multiscale/results/performance_indicators', pattern = 'macro_results_alpha_*.json' )

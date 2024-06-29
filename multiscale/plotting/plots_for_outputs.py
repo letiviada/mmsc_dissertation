@@ -29,11 +29,12 @@ def plot_time(t_eval,x_eval,funct,title = None,colormap = 'tab20b',style = 'seab
     ax[0].annotate('', xy=(end_point[0], end_point[1]), xytext=(start_point[0], start_point[1]),
                 arrowprops=dict(facecolor='black', arrowstyle='->', lw=1.5))
     # Add text "Time" at the end of the arrow
-    ax[0].text(end_point[0] + 0.05, end_point[1], 'Time', fontsize=18, verticalalignment='bottom')
+    ax[0].text(end_point[0] + 0.05, end_point[1], 'Time', fontsize=18, verticalalignment='bottom')    
     ax[0].set_xlabel('$x$')
     ax[0].grid(True)# Set limits to restrict the left domain to start at x=0, y=0
     ax[0].set_xlim(left=0)
     ax[0].set_ylim(bottom=0)
+    ax[0].legend( loc = 'center left',bbox_to_anchor= (1,0.5))
     fig.tight_layout()
     #fig.subplots_adjust(hspace=0.7, wspace=0.2)
     return fig

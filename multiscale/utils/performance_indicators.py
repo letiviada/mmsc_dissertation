@@ -28,7 +28,7 @@ class FilterPerformance:
         throughput = np.array([quad(velocity, 0, time)[0] for time in tf])
         return throughput
 
-    def efficiency(self) -> np.ndarray:
+    def efficiency(self,t_eval) -> np.ndarray:
         """
         Function to calculate the efficiency of the filter given the darcy_velocity.
 
@@ -40,8 +40,10 @@ class FilterPerformance:
         --------
         efficiency (np.ndarray): The efficiency of the filter.
         """
-        efficiency = np.empty(shape=(len(self.t_eval), 1))
-        efficiency[:] = 1 - self.c[:, -1]
+        efficiency = np.empty(shape=(len(t_eval)))
+        c_outlet= self.c[:,-1]
+        concent_outlet_interp = interp1d(self.t_eval,c_outlet,kind='linear',fill_value='extrapolate')
+        efficiency[:] = 1 - concent_outlet_interp(t_eval)
         return efficiency
 
     def termination_time(self, mu: float) -> float:

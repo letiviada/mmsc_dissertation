@@ -3,8 +3,8 @@ import json
 import numpy as np
 
 def check_json_files(filename,directory = 'multiscale/results/macroscale', file_extension = ".json"):
-    alpha_values = np.around(np.linspace(0.2, 0.7, 6), 2)
-    beta_values = np.around(np.linspace(0.01, 0.09, 9), 2)
+    alpha_values = np.around(np.linspace(0.0, 1.0, 11), 2)
+    beta_values = np.around(np.linspace(0.01, 0.1, 11), 2)
 # Construct the full path to the file
     filepath = os.path.join(directory, filename)
     
@@ -26,6 +26,6 @@ def check_json_files(filename,directory = 'multiscale/results/macroscale', file_
 #check_json_files("macro_results_phi_0.1.json")
 #check_json_files("macro_results_phi_0.2.json")
 #check_json_files("macro_results_phi_0.6.json")
-check_json_files("macro_results_phi_0.7.json")
+check_json_files("macro_results_phi_0.5.json")
 #check_json_files("macro_results_phi_0.8.json")
 #check_json_files("macro_results_phi_0.9.json")

@@ -11,7 +11,7 @@ def main(alpha,beta,phi,filename,parameter):
     t_eval = load_any(alpha,beta,'time_eval',filename)
     x_eval = load_any(alpha,beta,'x_eval',filename)
      # Time points of interest
-    time_points = [10, 100, 500, 1000, 1500]
+    time_points = [0,10, 50, 100, 250, 500, 750, 1000, 1250,1500]
     # Find indices of the time points in t_eval
     indices = [np.abs(t_eval - t_point).argmin() for t_point in time_points]
 
@@ -35,7 +35,7 @@ def main(alpha,beta,phi,filename,parameter):
         filtered_param = param[indices, :]
 
         fig = plot_time(filtered_t_eval, x_eval, filtered_param, title=parameter)
-        save_figure(fig, f'multiscale/figures/macroscale/{parameter}/alpha_{alpha}/{parameter}alpha_{alpha}_beta_{beta}_phi_{phi}') 
+        save_figure(fig, f'multiscale/figures/macroscale/{parameter}/alpha_{alpha}/{parameter}_alpha_{alpha}_beta_{beta}_phi_{phi}') 
         plt.close(fig)
 
 
@@ -52,10 +52,13 @@ if __name__ == '__main__':
     parser.add_argument('--alpha_values', nargs='+', type=float, help='List of alpha values')
     parser.add_argument('--beta_values', nargs='+', type=float, help='List of beta values')
     parser.add_argument('--phi', type=float, help='Value of phi')
-    parser.add_argument('--parameter', type=str, help='Parameter to plot')
+   # parser.add_argument('--parameter', nargs = '+',type=str, help='Parameter to plot')
     args = parser.parse_args()
 
     alpha_beta_pairs = alpha_beta_pairs(args.alpha_values, args.beta_values)
-
+    parameters=["auxiliar_variable", "concentration", "darcy_velocity",
+                 "permeability", "adhesivity", "reactivity"]
+    parameters=["darcy_velocity","reactivity"]
     for alpha, beta in tqdm(alpha_beta_pairs):
-            main(alpha, beta, args.phi,f'multiscale/results/macroscale/macro_results_phi_{args.phi}.json',args.parameter)
+        for parameter in tqdm(parameters):
+            main(alpha, beta, args.phi,f'multiscale/results/macroscale/macro_results_phi_{args.phi}.json',parameter)
