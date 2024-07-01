@@ -36,7 +36,7 @@ def convert_to_numpy(results):
         results[key] = np.array(value)
     return results
 
-def load_k_j(alpha,beta,phi,filename='multiscale/results/microscale/micro_results.json'):
+def load_k_j(alpha,beta,run,filename='multiscale/results/microscale/micro_results.json'):
     """
     Loads only the k and j values from the results file.
 
@@ -51,13 +51,16 @@ def load_k_j(alpha,beta,phi,filename='multiscale/results/microscale/micro_result
     if f'(alpha,beta)=({alpha},{beta})' not in data:
         raise KeyError(f'(alpha,beta)=({alpha},{beta}) not found in data')
     results = data[f'(alpha,beta)=({alpha},{beta})']
-    results = convert_to_numpy(results)
-    k_values = results['k']
-    j_values = results['j']
-    tau_eval = results['tau']
+    if f'run={run}' not in results:
+        raise KeyError(f'run = {run} not found in data')
+    results_to_convert = results[f'run={run}']
+    results_to_get = convert_to_numpy(results_to_convert)
+    k_values = results_to_get['k']
+    j_values = results_to_get['j']
+    tau_eval = results_to_get['tau']
     return k_values, j_values, tau_eval
 
-def load_any(alpha,beta,key,filename='multiscale/results/macro_results.json'):
+def load_any(alpha,beta,key,run=0,filename='multiscale/results/macro_results.json'):
     """
     Loads only the k and j values from the results file.
 
@@ -71,32 +74,14 @@ def load_any(alpha,beta,key,filename='multiscale/results/macro_results.json'):
     if f'(alpha,beta)=({alpha},{beta})' not in data:
         raise KeyError(f'(alpha,beta)=({alpha},{beta}) not found in data')
     results = data[f'(alpha,beta)=({alpha},{beta})']
-    results = convert_to_numpy(results)
-    values = results[key]
+    if f'run={run}' not in results:
+        raise KeyError(f'run = {run} not found in data')
+    results_to_convert = results[f'run={run}']
+    results_to_get = convert_to_numpy(results_to_convert)
+    values = results_to_get[key]
     return values
 
-def save_macro_results(alpha, beta,phi, output_dict, directory='multiscale/results/macroscale'):
-    """
-    Saves the results to a JSON file, converting NumPy arrays to lists.
-
-    Parameters:
-    alpha (float): Adhesivity
-    beta (float): Particle size
-    output_dict (dict): Dictionary containing the output values of the macroscale model.
-    directory (str): Directory to save the results to.
-    """
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-    
-    # Generate the filename dynamically based on alpha and beta values
-    filename = os.path.join(directory, f'macro_results_alpha_{alpha}_beta_{beta}_phi_{phi}.json')
-
-    # Save as JSON
-    with open(filename, 'w') as file:
-        json.dump(output_dict, file, indent=4)
-
-
-def save_micro_results(alpha, beta,results, time_passed, directory='multiscale/results/microscale'):
+def save_results(alpha, beta,results_runs, scale, phi = None, directory='multiscale/results/microscale'):
     """
     Saves the results to a JSON file, converting NumPy arrays to lists.
 
@@ -107,23 +92,22 @@ def save_micro_results(alpha, beta,results, time_passed, directory='multiscale/r
     time_passed (float): Time passed during the computation.
     directory (str): Directory to save the results to.
     """
+    
     accumulated_results = {}
-    for result in results:
-        for key, value in result.items():
-            if key not in accumulated_results:
-                accumulated_results[key] = []
-            if isinstance(value, np.ndarray):
-                accumulated_results[key].append(value.tolist())
-            else:
-                accumulated_results[key].append(value)
-    accumulated_results['time'] = time_passed
-
+    for result in results_runs:
+        if not isinstance(result, dict):
+            raise TypeError(f"Expected a dictionary but got {type(result)}: {result}")
+        run_key = f'run={result["run"]}'
+        accumulated_results[run_key] = {key: (value.tolist() if isinstance(value, np.ndarray) else value)
+                                        for key, value in result.items() if key!="run"}
     if not os.path.exists(directory):
         os.makedirs(directory)
-    
-    # Generate the filename dynamically based on alpha and beta values
-    filename = os.path.join(directory, f'micro_results_alpha_{alpha}_beta_{beta}.json')
-
+    if scale == 'micro':
+        filename = os.path.join(directory, f'micro_results_alpha_{alpha}_beta_{beta}.json')
+    elif scale == 'macro':
+        filename = os.path.join(directory, f'macro_results_alpha_{alpha}_beta_{beta}_phi_{phi}.json')
+    elif scale == 'performance_indicators':
+        filename = os.path.join(directory, f'performance_indicators_alpha_{alpha}_beta_{beta}_phi_{phi}.json')
     # Save as JSON
     with open(filename, 'w') as file:
         json.dump(accumulated_results, file, indent=4)

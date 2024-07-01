@@ -15,8 +15,8 @@ def compute_results(alpha, beta,G_initial, tau_values,l):
     list: List of dictionaries containing results for each s.
     """
     start = time.time()
-    results = []
-    results_with_G = []
+    results = {'tau': [], 'k': [], 'j': []}
+    results_with_G = {'tau': [], 'k': [], 'j': [], 'G': [], 'W': [], 'delta': []}
     for tau in tau_values:
         if tau == 0:
             G = initial_G(G_initial)
@@ -29,20 +29,16 @@ def compute_results(alpha, beta,G_initial, tau_values,l):
         j = find_adhesivity(alpha,G,delta,l)
 
         #print(f"s = {s}, G.shape = {G.shape}, W = {W}, delta.shape = {delta.shape}, k = {k}, j = {j}")
+        results['tau'].append(tau)
+        results['k'].append(k)
+        results['j'].append(j)
 
-        results_with_G.append({
-            'tau': tau,
-            'G': G,
-            'W': W,
-            'delta': delta,
-            'k': k,
-            'j': j,
-        })
-        results.append({
-            'tau': tau,
-            'k': k,
-            'j': j,
-        })
+        results_with_G['tau'].append(tau)
+        results_with_G['k'].append(k)
+        results_with_G['j'].append(j)
+        results_with_G['G'].append(G)
+        results_with_G['W'].append(W)
+        results_with_G['delta'].append(delta)
 
         G_previous = G
     end = time.time()

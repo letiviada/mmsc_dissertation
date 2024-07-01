@@ -8,14 +8,14 @@ from tqdm import tqdm
 
 def main(alpha,beta,phi,filename,parameter):
     # Load values
-    t_eval = load_any(alpha,beta,'time_eval',filename)
-    x_eval = load_any(alpha,beta,'x_eval',filename)
+    t_eval = load_any(alpha,beta,'time_eval',run = 0,filename=filename)
+    x_eval = load_any(alpha,beta,'x_eval',run =0,filename= filename)
      # Time points of interest
     time_points = [0,10, 50, 100, 250, 500, 750, 1000, 1250,1500]
     # Find indices of the time points in t_eval
     indices = [np.abs(t_eval - t_point).argmin() for t_point in time_points]
 
-    param = load_any(alpha,beta,parameter,filename)
+    param = load_any(alpha,beta,parameter,run = 0,filename=filename)
     if parameter == 'darcy_velocity':
         u=param
         fig =  plot_one_dim(t_eval, [u], title='Darcy Velocity')
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     alpha_beta_pairs = alpha_beta_pairs(args.alpha_values, args.beta_values)
     parameters=["auxiliar_variable", "concentration", "darcy_velocity",
                  "permeability", "adhesivity", "reactivity"]
-    parameters=["darcy_velocity","reactivity"]
+    parameters=["reactivity"]
     for alpha, beta in tqdm(alpha_beta_pairs):
         for parameter in tqdm(parameters):
             main(alpha, beta, args.phi,f'multiscale/results/macroscale/macro_results_phi_{args.phi}.json',parameter)

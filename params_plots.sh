@@ -20,6 +20,8 @@ echo "Done!"
 alpha_values=$(seq 0.1 0.1 1.0)
 beta_values=$(seq 0.01 0.01 0.1)
 phi=(0.5)
+alpha_values=(1.0)
+beta_values=(0.09)
 #parameter=("auxiliar_variable") # "concentration" #"darcy_velocity", "permeability", "adhesivity", "reactivity")
 # Call the Python script with the sequences
 echo "Generating plots for the macroscale model"
