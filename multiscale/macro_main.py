@@ -1,3 +1,4 @@
+from tqdm import tqdm
 import argparse
 import numpy as np
 from casadi import *
@@ -7,7 +8,7 @@ import concurrent.futures
 import time
 
 class MultiscaleModel:
-    def __init__(self,T=1500,length=2.0, nt=301, nx=101):
+    def __init__(self,T=300,length=2.0, nt=101, nx=51):
         self.T = T
         self.l = length
         self.nt = nt
@@ -56,8 +57,7 @@ def compute_and_save(alpha, beta, phi, num_run):
     else:
         filename = f'multiscale/results/mono-dispersed/microscale/micro_results.json'
         directory='multiscale/results/mono-dispersed/macroscale'
-    # Run simulations of the model
-    for run in range(num_run):
+    for run in tqdm(range(num_run)):
         start = time.time()
         model = MultiscaleModel()
         model.load_and_interpolate(alpha, beta,run,filename)
@@ -90,7 +90,7 @@ def main():
     betas = args.betas
     phis = args.phis
     num_run = args.num_runs
-    with concurrent.futures.ProcessPoolExecutor(max_workers = 4) as executor:
+    with concurrent.futures.ProcessPoolExecutor(max_workers = 6) as executor:
         futures = [executor.submit(compute_and_save, alpha, beta,phi, num_run) for alpha in alphas for beta in betas for phi in phis]
         for future in concurrent.futures.as_completed(futures):
             try:

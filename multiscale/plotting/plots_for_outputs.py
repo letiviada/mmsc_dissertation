@@ -39,7 +39,7 @@ def plot_time(t_eval,x_eval,funct,title = None,colormap = 'tab20b',style = 'seab
     #fig.subplots_adjust(hspace=0.7, wspace=0.2)
     return fig
 
-def plot_one_dim(x_eval,functs,title = None, colormap = 'tab20b',style = 'seaborn-v0_8', x_eval_type = 'time'):
+def plot_one_dim(x_eval,functs,title = None, colormap = 'tab20b',style = 'seaborn-v0_8', funct_type = None):
     """
     Plot for evaluating a function depending on only one variable
 
@@ -56,18 +56,10 @@ def plot_one_dim(x_eval,functs,title = None, colormap = 'tab20b',style = 'seabor
     for i in range(len(functs)):
         color = colors[i]
         funct = functs[i]
-        ax[0].plot(x_eval,funct,color = color, linewidth = 2)
-    if x_eval_type == 'time':
-        ax[0].set_xlabel('Time')
-       # ax[0].set_ylim(bottom=0.08)
+        ax[0].plot(x_eval,funct,color = color, linewidth = 2, label= i)
+    if funct_type == 'velocity':
         ax[0].axhline(y=0.1,color='orange',linestyle='--',linewidth=2)
-    elif x_eval_type == 'tau':
-        ax[0].set_xlabel('$\\tau$')
-    else:
-        ax[0].set_xlabel(x_eval_type)
     ax[0].grid(True)# Set limits to restrict the left domain to start at x=0, y=0
     ax[0].set_xlim(left=0)
-    #ax[0].set_ylim(bottom=0)
     fig.tight_layout()
     return fig
-

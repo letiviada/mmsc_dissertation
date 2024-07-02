@@ -18,24 +18,24 @@ def main(alpha,beta,phi,filename,parameter):
     param = load_any(alpha,beta,parameter,run = 0,filename=filename)
     if parameter == 'darcy_velocity':
         u=param
-        fig =  plot_one_dim(t_eval, [u], title='Darcy Velocity')
-        save_figure(fig, f'multiscale/figures/macroscale/darcy_velocity/alpha_{alpha}/darcy_velocity_alpha_{alpha}_beta_{beta}_phi_{phi}')
+        fig =  plot_one_dim(t_eval, [u],funct_type='velocity')
+        save_figure(fig, f'multiscale/figures/mono-dispersed/macroscale/darcy_velocity/alpha_{alpha}/darcy_velocity_alpha_{alpha}_beta_{beta}_phi_{phi}')
         plt.close(fig)
     elif parameter == 'reactivity':
         filtered_t_eval = t_eval[indices]
         filtered_psi = param[indices, :]
-        fig = plot_time(filtered_t_eval, x_eval,filtered_psi, title='Reactivity')
-        save_figure(fig, f'multiscale/figures/macroscale/reactivity/reactivity_time/alpha_{alpha}/reactivity_alpha_{alpha}_beta_{beta}_phi_{phi}')
+        fig = plot_time(filtered_t_eval, x_eval,filtered_psi)
+        save_figure(fig, f'multiscale/figures/mono-dispersed/macroscale/reactivity/reactivity_time/alpha_{alpha}/reactivity_alpha_{alpha}_beta_{beta}_phi_{phi}')
         fig2 = plot_one_dim(t_eval, [param[:,1]], title='Reactivity')
-        save_figure(fig2, f'multiscale/figures/macroscale/reactivity/reactivity/alpha_{alpha}/reactivity_alpha_{alpha}_beta_{beta}_phi_{phi}')
+        save_figure(fig2, f'multiscale/figures/mono-dispersed/macroscale/reactivity/reactivity/alpha_{alpha}/reactivity_alpha_{alpha}_beta_{beta}_phi_{phi}')
         plt.close(fig)
         plt.close(fig2)
     else:
         filtered_t_eval = t_eval[indices]
         filtered_param = param[indices, :]
 
-        fig = plot_time(filtered_t_eval, x_eval, filtered_param, title=parameter)
-        save_figure(fig, f'multiscale/figures/macroscale/{parameter}/alpha_{alpha}/{parameter}_alpha_{alpha}_beta_{beta}_phi_{phi}') 
+        fig = plot_time(filtered_t_eval, x_eval, filtered_param)
+        save_figure(fig, f'multiscale/figures/mono-dispersed/macroscale/{parameter}/alpha_{alpha}/{parameter}_alpha_{alpha}_beta_{beta}_phi_{phi}') 
         plt.close(fig)
 
 
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     alpha_beta_pairs = alpha_beta_pairs(args.alpha_values, args.beta_values)
     parameters=["auxiliar_variable", "concentration", "darcy_velocity",
                  "permeability", "adhesivity", "reactivity"]
-    parameters=["reactivity"]
+    parameters=["reactivity","darcy_velocity"]
     for alpha, beta in tqdm(alpha_beta_pairs):
         for parameter in tqdm(parameters):
-            main(alpha, beta, args.phi,f'multiscale/results/macroscale/macro_results_phi_{args.phi}.json',parameter)
+            main(alpha, beta, args.phi,f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{args.phi}.json',parameter)

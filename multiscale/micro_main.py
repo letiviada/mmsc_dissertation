@@ -1,3 +1,4 @@
+from tqdm import tqdm
 import numpy as np
 from micro_compute import compute_results
 from utils import save_results
@@ -12,8 +13,8 @@ def compute_and_save(alpha, beta, num_runs):
         (1, 3, 0, 0): 1, (3, 1, 0, 0): 1, (2, 3, 0, 0): 1, (3, 2, 0, 0): 1
     }
 
-    def poly_dispersed():
-        def generate_lognormal_value(mean=0, sigma=1):
+    def poly_dispersed(mean,sigma):
+        def generate_lognormal_value(mean, sigma):
             return np.random.lognormal(mean, sigma)
         processed_keys = set()
         for key in G_initial:
@@ -38,8 +39,10 @@ def compute_and_save(alpha, beta, num_runs):
     tau_values = np.linspace(0,2_000, 4_001)
     results_all_runs = []
     results_all_runs_with_G = []
-    for run in range(num_runs):
+    for run in tqdm(range(num_runs)):
         # Compute results
+        if num_runs > 1:
+            G_initial = poly_dispersed(mean=0.5,sigma=0.3)
         results_with_G, results, time_passed = compute_results(alpha, beta, G_initial, tau_values, l=2.0)
 
         run_results = {

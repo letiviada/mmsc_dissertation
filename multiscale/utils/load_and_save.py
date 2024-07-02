@@ -36,7 +36,7 @@ def convert_to_numpy(results):
         results[key] = np.array(value)
     return results
 
-def load_k_j(alpha,beta,run,filename='multiscale/results/microscale/micro_results.json'):
+def load_k_j(alpha,beta,run,filename):
     """
     Loads only the k and j values from the results file.
 

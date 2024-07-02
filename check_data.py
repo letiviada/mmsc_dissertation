@@ -2,9 +2,9 @@ import os
 import json
 import numpy as np
 
-def check_json_files(filename,directory = 'multiscale/results/macroscale', file_extension = ".json"):
-    alpha_values = np.around(np.linspace(0.0, 1.0, 11), 2)
-    beta_values = np.around(np.linspace(0.01, 0.1, 11), 2)
+def check_json_files(filename,directory = 'multiscale/results/mono-dispersed/', file_extension = ".json"):
+    alpha_values = np.around(np.linspace(0.3, 1.0, 8), 2)
+    beta_values = np.around(np.linspace(0.03, 0.1, 8), 2)
 # Construct the full path to the file
     filepath = os.path.join(directory, filename)
     
@@ -23,9 +23,7 @@ def check_json_files(filename,directory = 'multiscale/results/macroscale', file_
         print(f"File '{filename}' not found in directory '{directory}' or does not match the file extension '{file_extension}'.")
     print('Done')
 # Call the function
-#check_json_files("macro_results_phi_0.1.json")
-#check_json_files("macro_results_phi_0.2.json")
-#check_json_files("macro_results_phi_0.6.json")
-check_json_files("macro_results_phi_0.5.json")
-#check_json_files("macro_results_phi_0.8.json")
-#check_json_files("macro_results_phi_0.9.json")
+
+check_json_files("macroscale/macro_results_phi_2.0.json")
+check_json_files("performance_indicators/performance_indicators_phi_2.0.json")
+
