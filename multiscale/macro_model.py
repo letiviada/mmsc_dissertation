@@ -77,7 +77,7 @@ class MacroscaleModel:
 
     # ----------------------------- # ----------------------------#
 
-    def alg_psi(self,psi: MX,u: MX,interp_k,interp_k_inv,interp_j,tau:MX) -> MX:
+    def alg_psi(self,psi: MX,u: MX,interp_k,interp_j,tau:MX) -> MX:
         """ Function that defines the algebraic equations of u.
         
         Parameters:
@@ -93,7 +93,6 @@ class MacroscaleModel:
         --------
             alg_eqn_psi (MX): Algebraic equation used to define reactivity, psi
         """
-        k_MX_inv = interp_k_inv(tau)
         k_MX = interp_k(tau)
         j_MX = interp_j(tau) # Obtain MX type for j in shape (nx,1)
     

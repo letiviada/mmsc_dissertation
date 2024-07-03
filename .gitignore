@@ -135,6 +135,7 @@ casadi_venv/
 # Spyder project settings
 .spyderproject
 .spyproject
+sklearn-env/
 
 # Rope project settings
 .ropeproject

@@ -51,16 +51,20 @@ def load_k_j(alpha,beta,run,filename):
     if f'(alpha,beta)=({alpha},{beta})' not in data:
         raise KeyError(f'(alpha,beta)=({alpha},{beta}) not found in data')
     results = data[f'(alpha,beta)=({alpha},{beta})']
-    if f'run={run}' not in results:
-        raise KeyError(f'run = {run} not found in data')
-    results_to_convert = results[f'run={run}']
+    if run is not None:
+        if f'run={run}' not in results:
+            raise KeyError(f'run = {run} not found in da ta')
+        results_to_convert = results[f'run={run}']
+    else:
+        if isinstance(results, dict) and not any(key.startswith('run=') for key in results.keys()):
+            results_to_convert = results
     results_to_get = convert_to_numpy(results_to_convert)
     k_values = results_to_get['k']
     j_values = results_to_get['j']
     tau_eval = results_to_get['tau']
     return k_values, j_values, tau_eval
 
-def load_any(alpha,beta,key,run=0,filename='multiscale/results/macro_results.json'):
+def load_any(alpha,beta,key,run,filename='multiscale/results/macro_results.json'):
     """
     Loads only the k and j values from the results file.
 
@@ -74,9 +78,13 @@ def load_any(alpha,beta,key,run=0,filename='multiscale/results/macro_results.jso
     if f'(alpha,beta)=({alpha},{beta})' not in data:
         raise KeyError(f'(alpha,beta)=({alpha},{beta}) not found in data')
     results = data[f'(alpha,beta)=({alpha},{beta})']
-    if f'run={run}' not in results:
-        raise KeyError(f'run = {run} not found in data')
-    results_to_convert = results[f'run={run}']
+    if run is not None:
+        if f'run={run}' not in results:
+            raise KeyError(f'run = {run} not found in da ta')
+        results_to_convert = results[f'run={run}']
+    else:
+        if isinstance(results, dict) and not any(key.startswith('run=') for key in results.keys()):
+            results_to_convert = results
     results_to_get = convert_to_numpy(results_to_convert)
     values = results_to_get[key]
     return values
@@ -92,14 +100,18 @@ def save_results(alpha, beta,results_runs, scale, phi = None, directory='multisc
     time_passed (float): Time passed during the computation.
     directory (str): Directory to save the results to.
     """
-    
     accumulated_results = {}
-    for result in results_runs:
-        if not isinstance(result, dict):
-            raise TypeError(f"Expected a dictionary but got {type(result)}: {result}")
-        run_key = f'run={result["run"]}'
-        accumulated_results[run_key] = {key: (value.tolist() if isinstance(value, np.ndarray) else value)
-                                        for key, value in result.items() if key!="run"}
+    if len(results_runs) == 1:
+        result = results_runs[0]
+        accumulated_results = {key: (value.tolist() if isinstance(value, np.ndarray) else value)
+                               for key, value in result.items() if key != "run"}
+    else:
+        for result in results_runs:
+            if not isinstance(result, dict):
+                raise TypeError(f"Expected a dictionary but got {type(result)}: {result} here")
+            run_key = f'run={result["run"]}'
+            accumulated_results[run_key] = {key: (value.tolist() if isinstance(value, np.ndarray) else value)
+                                            for key, value in result.items() if key != "run"}
     if not os.path.exists(directory):
         os.makedirs(directory)
     if scale == 'micro':

@@ -1,4 +1,3 @@
-from tqdm import tqdm
 import numpy as np
 from micro_compute import compute_results
 from utils import save_results
@@ -39,7 +38,7 @@ def compute_and_save(alpha, beta, num_runs):
     tau_values = np.linspace(0,2_000, 4_001)
     results_all_runs = []
     results_all_runs_with_G = []
-    for run in tqdm(range(num_runs)):
+    for run in range(num_runs):
         # Compute results
         if num_runs > 1:
             G_initial = poly_dispersed(mean=0.5,sigma=0.3)
@@ -51,11 +50,14 @@ def compute_and_save(alpha, beta, num_runs):
         }
         run_results.update(results)
         results_all_runs.append(run_results)
+        results_all_runs_with_G.append(results_with_G)
+
     if num_runs > 1:
         save_results(alpha, beta, results_all_runs, scale = 'micro', directory='multiscale/results/poly-dispersed/microscale')
-        #save_micro_results(alpha,beta, results_with_G,directory='multiscale/results/poly-dispersed/microscale/full_output')
+        save_results(alpha,beta, results_with_G,scale = 'micro',directory='multiscale/results/poly-dispersed/microscale/full_output')
     else:
         save_results(alpha, beta, results_all_runs, scale = 'micro', directory='multiscale/results/mono-dispersed/microscale')
+        #save_results(alpha,beta, results_with_G,scale = 'micro',directory='multiscale/results/mono-dispersed/microscale/full_output')
 
 def main():
     parser = argparse.ArgumentParser()
@@ -68,7 +70,7 @@ def main():
     betas = args.betas
     num_run = args.num_runs
 
-    with concurrent.futures.ProcessPoolExecutor() as executor:
+    with concurrent.futures.ProcessPoolExecutor(max_workers=7) as executor:
         futures = [executor.submit(compute_and_save, alpha, beta, num_run) for alpha in alphas for beta in betas]
         for future in concurrent.futures.as_completed(futures):
             try:

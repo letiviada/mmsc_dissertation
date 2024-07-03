@@ -1,4 +1,3 @@
-from tqdm import tqdm
 import argparse
 import numpy as np
 from casadi import *
@@ -8,7 +7,7 @@ import concurrent.futures
 import time
 
 class MultiscaleModel:
-    def __init__(self,T=300,length=2.0, nt=101, nx=51):
+    def __init__(self,T=1500,length=2.0, nt=201, nx=151):
         self.T = T
         self.l = length
         self.nt = nt
@@ -23,6 +22,7 @@ class MultiscaleModel:
         self.interp_k, self.interp_k_inv, self.interp_j = interp_functions(k, j, tau_eval)
 
     def setup_and_run(self,phi):
+        phi = 1
         solv = Solver(self.l)
         # Setup the DAE solver
         F = solv.setup(self.interp_k, self.interp_k_inv, self.interp_j, self.t_eval, self.nx, self.l,phi)
@@ -57,16 +57,17 @@ def compute_and_save(alpha, beta, phi, num_run):
     else:
         filename = f'multiscale/results/mono-dispersed/microscale/micro_results.json'
         directory='multiscale/results/mono-dispersed/macroscale'
-    for run in tqdm(range(num_run)):
+    for run in range(num_run):
+        actual_run = None if num_run ==1 else run
         start = time.time()
         model = MultiscaleModel()
-        model.load_and_interpolate(alpha, beta,run,filename)
+        model.load_and_interpolate(alpha, beta, actual_run,filename)
         model.setup_and_run(phi)
         model.obtain_k_and_j()
         end = time.time()
         time_passed = end - start
         run_results = {
-            'run': run,
+            'run': actual_run,
             'time_passed': time_passed
         }
         run_results.update(model.output_dict())
@@ -90,7 +91,7 @@ def main():
     betas = args.betas
     phis = args.phis
     num_run = args.num_runs
-    with concurrent.futures.ProcessPoolExecutor(max_workers = 6) as executor:
+    with concurrent.futures.ProcessPoolExecutor(max_workers = 7) as executor:
         futures = [executor.submit(compute_and_save, alpha, beta,phi, num_run) for alpha in alphas for beta in betas for phi in phis]
         for future in concurrent.futures.as_completed(futures):
             try:

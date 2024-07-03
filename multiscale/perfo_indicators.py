@@ -38,12 +38,13 @@ def compute(alpha, beta, phi,num_runs):
         directory='multiscale/results/mono-dispersed/performance_indicators'
     
     for run in range(num_runs):
+        actual_run = None if num_runs == 1 else run
         start = time.time()
         end = time.time()
         time_passed = end - start
-        perf_indicators = performance_indicators(alpha,beta,phi,run,filename)
+        perf_indicators = performance_indicators(alpha,beta,phi,actual_run,filename)
         run_results = {
-            'run': run,
+            'run': actual_run,
             'time_passed': time_passed
         }
         run_results.update(perf_indicators)
@@ -64,7 +65,7 @@ def main():
     phis = args.phis
     num_run = args.num_runs
 
-    with concurrent.futures.ProcessPoolExecutor(max_workers = 6) as executor:
+    with concurrent.futures.ProcessPoolExecutor(max_workers = 7) as executor:
         futures = [executor.submit(compute, alpha, beta,phi,num_run) for alpha in alphas for beta in betas for phi in phis]
         for future in concurrent.futures.as_completed(futures):
             try:

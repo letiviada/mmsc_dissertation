@@ -42,7 +42,7 @@ class Solver:
         # Define the system of algebraic equations
         # -----------------------------------------
         z = vertcat(u,psi)
-        alg = vertcat(self.model.alg_u(u,interp_k_inv,tau,l),self.model.alg_psi(psi,u,interp_k,interp_k_inv,interp_j,tau))
+        alg = vertcat(self.model.alg_u(u,interp_k_inv,tau,l),self.model.alg_psi(psi,u,interp_k,interp_j,tau))
 
         # Define solver
         # -------------
