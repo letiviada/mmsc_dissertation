@@ -1,14 +1,12 @@
-from treat_data import get_data_from_json, get_input_output
+from regression.utils.treat_data import obtain_data
 import matplotlib.pyplot as plt
 import seaborn as sns
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc')
 from multiscale.plotting import create_fig, style_and_colormap, save_figure
-# Get the data from the json file and split it into inputs and outputs
-data = get_input_output(get_data_from_json(filename = 'multiscale/results/mono-dispersed/performance_indicators/performance_indicators_phi_1.0.json'), 'termination_time')
-data = data.drop(data[(data['alpha'] == 0.3) & (data['beta'] == 0.03)].index)
-inputs = data[['alpha', 'beta']]
-ouputs = data['termination_time']
+
+data = obtain_data('termination_time')
+print(data.head())
 
 
 # Plot data

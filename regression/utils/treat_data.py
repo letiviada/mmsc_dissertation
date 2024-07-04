@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 
-def get_data_from_json(filename:str) -> pd.DataFrame:
+def get_data_from_json(filename:str = 'multiscale/results/mono-dispersed/performance_indicators/performance_indicators_phi_1.0.json') -> pd.DataFrame:
     """
     Function that gets the json file and processes the data
 
@@ -28,18 +28,15 @@ def get_data_from_json(filename:str) -> pd.DataFrame:
     ml_data = pd.DataFrame(data_list)
     return ml_data
 
-def get_input_output(ml_data: pd.DataFrame, ouput_name:str) -> pd.DataFrame:
-    """
-    Function that gets the columns of the data
 
-    Parameters:
-    ----------
-    ml_data (pd.DataFrame): the data in a pandas DataFrame
 
-    Returns:
-    -------
-    input (pd.DataFrame): the input data of the regression
-    output (pd.DataFrame): the performance metric we are measuring
-    """
-    data = ml_data[['alpha', 'beta', ouput_name]]
+def obtain_data(output:str, filename: str = 'multiscale/results/mono-dispersed/performance_indicators/performance_indicators_phi_1.0.json') -> pd.DataFrame:
+    ml_data = get_data_from_json(filename)
+    data = ml_data[['alpha', 'beta', output]]
+    if output == 'termination_time':
+        data = data[data[output] <= 900]
+    # Just to check if the value i wanted to remove did it
+    #data.sort_values(by=['alpha', 'beta'], inplace=True)
+    #print(data)
     return data
+
