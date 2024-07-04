@@ -33,8 +33,8 @@ def get_data_from_json(filename:str = '/home/viadacampos/mmsc_dissertaion/multis
 def obtain_data(output:str, filename: str = '/home/viadacampos/Documents/mmsc_dissertation/multiscale/results/mono-dispersed/performance_indicators/performance_indicators_phi_1.0.json') -> pd.DataFrame:
     ml_data = get_data_from_json(filename)
     data = ml_data[['alpha', 'beta', output]]
-    if output == 'termination_time':
-        data = data[data[output] <= 700]
+    #if output == 'termination_time':
+        #data = data[data[output] <= 1000]
     # Just to check if the value i wanted to remove did it
     #data.sort_values(by=['alpha', 'beta'], inplace=True)
     #print(data)

@@ -1,9 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 from matplotlib.lines import Line2D
 from matplotlib.legend_handler import HandlerTuple
 
-def style_and_colormap(style='seaborn-v0_8', colormap='tab20', num_positions = None):
+def style_and_colormap(colormap='tab20', num_positions = None):
     """
     Set the plotting style and return the colormap.
 
@@ -15,24 +16,36 @@ def style_and_colormap(style='seaborn-v0_8', colormap='tab20', num_positions = N
     Returns:
     colormap (matplotlib.colors.Colormap): The colormap to use for plotting.
     """
+    plt.rcParams.update({
+    "text.usetex": True,
+    "font.family": "serif",
+    "font.serif": "Computer Modern Roman",
+    "font.size": 20,
+    #"axes.labelsize": 20,
+    "axes.titlesize": 20,
+    #"legend.fontsize": 20,
+    #"xtick.labelsize": 20,
+    #"ytick.labelsize": 20
+    })
+    sns.set_style('darkgrid')
+    color_map = plt.get_cmap(colormap,num_positions)
+    colors = None
+    if num_positions is not None:
+        colors = color_map(np.linspace(0,1,num_positions))
+    return color_map, colors
+def style_and_color(style='seaborn-v0_8'):
     plt.style.use(style)
     plt.rcParams.update({
     "text.usetex": True,
     "font.family": "serif",
     "font.serif": ["Computer Modern Roman"],
     "font.size": 20,
-    "axes.labelsize": 20,
+    "axes.labelsize": 30,
     "axes.titlesize": 20,
     "legend.fontsize": 20,
     "xtick.labelsize": 20,
     "ytick.labelsize": 20
     })
-    color_map = plt.get_cmap(colormap,num_positions)
-    colors = None
-    if num_positions is not None:
-        colors = color_map(np.linspace(0,1,num_positions))
-    return color_map, colors
-
 def create_legend_exactandnum(fig, values_dict,style = 'seaborn-v0_8', colormap='tab20'):
     """
     Create a colormap legend that includes in the same entry the color for the exact solution (black) and the numerical (color).
