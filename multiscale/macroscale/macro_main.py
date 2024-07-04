@@ -4,6 +4,7 @@ from casadi import *
 from macro_solver import Solver
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc')
+sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 from multiscale.utils import reshape_f, interp_functions, load_k_j, get_k_and_j, save_results
 import concurrent.futures
 import time

@@ -1,5 +1,6 @@
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc')
+sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 from multiscale.utils import save_results, load_any
 from performance_indicators import FilterPerformance
 import argparse

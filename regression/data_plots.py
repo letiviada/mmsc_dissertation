@@ -1,12 +1,14 @@
-from regression.utils.treat_data import obtain_data
+from utils import obtain_data
 import matplotlib.pyplot as plt
 import seaborn as sns
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc')
+sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 from multiscale.plotting import create_fig, style_and_colormap, save_figure
 
 data = obtain_data('termination_time')
 print(data.head())
+print(data.describe())
 
 
 # Plot data
@@ -21,4 +23,4 @@ ax[0].set_xlabel('Alpha',fontsize = 20)
 ax[0].set_ylabel('Termination Time', fontsize = 20)
 ax[0].tick_params(axis = 'both', labelsize = 20)
 #ax[0].legend(title = 'Beta', bbox_to_anchor = (1,0.95), loc = 'upper left', ncols = 1)
-save_figure(fig, 'regression/figures/data/termination_time_vs_alpha_beta')
+save_figure(fig, 'figures/data_larger/termination_time_vs_alpha_beta')

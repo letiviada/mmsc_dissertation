@@ -2,6 +2,7 @@ import numpy as np
 from micro_compute import compute_results
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc')
+sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 from multiscale.utils import save_results
 import argparse
 import concurrent.futures

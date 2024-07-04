@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 
-def get_data_from_json(filename:str = 'multiscale/results/mono-dispersed/performance_indicators/performance_indicators_phi_1.0.json') -> pd.DataFrame:
+def get_data_from_json(filename:str = '/home/viadacampos/mmsc_dissertaion/multiscale/results/mono-dispersed/performance_indicators/performance_indicators_phi_1.0.json') -> pd.DataFrame:
     """
     Function that gets the json file and processes the data
 
@@ -30,11 +30,11 @@ def get_data_from_json(filename:str = 'multiscale/results/mono-dispersed/perform
 
 
 
-def obtain_data(output:str, filename: str = 'multiscale/results/mono-dispersed/performance_indicators/performance_indicators_phi_1.0.json') -> pd.DataFrame:
+def obtain_data(output:str, filename: str = '/home/viadacampos/Documents/mmsc_dissertation/multiscale/results/mono-dispersed/performance_indicators/performance_indicators_phi_1.0.json') -> pd.DataFrame:
     ml_data = get_data_from_json(filename)
     data = ml_data[['alpha', 'beta', output]]
     if output == 'termination_time':
-        data = data[data[output] <= 900]
+        data = data[data[output] <= 700]
     # Just to check if the value i wanted to remove did it
     #data.sort_values(by=['alpha', 'beta'], inplace=True)
     #print(data)

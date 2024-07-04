@@ -1,5 +1,6 @@
 from casadi import * 
 import sys
+sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 sys.path.append('/Users/letiviada/dissertation_mmsc')
 from multiscale.utils import integrate_simpson
 
