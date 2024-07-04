@@ -20,12 +20,12 @@ def style_and_colormap(style='seaborn-v0_8', colormap='tab20', num_positions = N
     "text.usetex": True,
     "font.family": "serif",
     "font.serif": ["Computer Modern Roman"],
-    "font.size": 16,
-    "axes.labelsize": 16,
-    "axes.titlesize": 16,
-    "legend.fontsize": 14,
-    "xtick.labelsize": 14,
-    "ytick.labelsize": 14
+    "font.size": 20,
+    "axes.labelsize": 20,
+    "axes.titlesize": 20,
+    "legend.fontsize": 20,
+    "xtick.labelsize": 20,
+    "ytick.labelsize": 20
     })
     color_map = plt.get_cmap(colormap,num_positions)
     colors = None

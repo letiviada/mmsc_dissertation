@@ -1,10 +1,11 @@
-from utils import FilterPerformance
-from utils import save_results
+import sys
+sys.path.append('/Users/letiviada/dissertation_mmsc')
+from multiscale.utils import save_results, load_any
+from performance_indicators import FilterPerformance
 import argparse
 import concurrent.futures
 import numpy as np
 import time
-from utils import load_any
 
 def performance_indicators(alpha,beta,phi,run,filename):
     t_eval = load_any(alpha,beta,'time_eval',run,filename)
@@ -16,13 +17,14 @@ def performance_indicators(alpha,beta,phi,run,filename):
     termination_time = filter_performance.termination_time(mu=0.1)
     time_ev = np.linspace(0,termination_time,101)
     throughput = filter_performance.throughput(tf=time_ev)
-    efficiency = filter_performance.efficiency(t_eval=time_ev)
+    efficiency,eff_total = filter_performance.efficiency(t_eval=time_ev)
     lifetime = throughput[-1]
     performance_indicators={
             'time' : time_ev.tolist(),
             'termination_time': termination_time,
             'throughput':throughput.tolist(),
-            'efficiency': efficiency.tolist(),
+            'efficiency_array': efficiency.tolist(),
+            'efficiency_total': eff_total,
             'lifetime': lifetime
     }
     return performance_indicators
@@ -40,9 +42,9 @@ def compute(alpha, beta, phi,num_runs):
     for run in range(num_runs):
         actual_run = None if num_runs == 1 else run
         start = time.time()
+        perf_indicators = performance_indicators(alpha,beta,phi,actual_run,filename)
         end = time.time()
         time_passed = end - start
-        perf_indicators = performance_indicators(alpha,beta,phi,actual_run,filename)
         run_results = {
             'run': actual_run,
             'time_passed': time_passed

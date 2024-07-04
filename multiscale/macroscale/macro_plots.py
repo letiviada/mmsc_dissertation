@@ -1,8 +1,10 @@
 import argparse
 import numpy as np
-from plotting import plot_time, save_figure, plot_one_dim
+import sys
+sys.path.append('/Users/letiviada/dissertation_mmsc')
+from multiscale.plotting import plot_time, save_figure, plot_one_dim
 import matplotlib.pyplot as plt
-from utils import load_any
+from multiscale.utils import load_any
 from tqdm import tqdm
 
 

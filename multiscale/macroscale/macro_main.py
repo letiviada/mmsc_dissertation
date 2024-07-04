@@ -2,7 +2,9 @@ import argparse
 import numpy as np
 from casadi import *
 from macro_solver import Solver
-from utils import reshape_f, interp_functions, load_k_j, get_k_and_j, save_results
+import sys
+sys.path.append('/Users/letiviada/dissertation_mmsc')
+from multiscale.utils import reshape_f, interp_functions, load_k_j, get_k_and_j, save_results
 import concurrent.futures
 import time
 

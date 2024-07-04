@@ -1,6 +1,8 @@
 import numpy as np
 from micro_compute import compute_results
-from utils import save_results
+import sys
+sys.path.append('/Users/letiviada/dissertation_mmsc')
+from multiscale.utils import save_results
 import argparse
 import concurrent.futures
 
