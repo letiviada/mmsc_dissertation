@@ -1,5 +1,5 @@
 from sklearn.model_selection import train_test_split, GridSearchCV
-from utils import obtain_data
+from utils import clean_data, obtain_data
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
@@ -7,35 +7,44 @@ import seaborn as sns
 import time
 import joblib
 import numpy as np
+import pandas as pd
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
-from multiscale.plotting import create_fig, style_and_colormap, save_figure
+from multiscale.plotting import scatter_solutions
 
-file = "regression/models/termination_time_model.pkl"
-best_model = joblib.load(file)
-data = obtain_data('termination_time')
-inputs, outputs = data[['alpha', 'beta']], data['termination_time']#
-inputs, outputs = joblib.load("regression/models/train_data.pkl")
+def model_eval(type_eval):
 
-y_pred = best_model.predict(inputs)
+    file = "regression/models/termination_time_model.pkl"
+    best_model = joblib.load(file)
 
-mse = mean_squared_error(outputs, y_pred)
-r2 = r2_score(outputs, y_pred)
-print(f"Mean squared error: {mse}")
-print(f"R2 score: {r2}")
+    if type_eval == 'total':
+        data_to_keep = clean_data()
+        data = obtain_data(data_to_keep, 'Termination time')
+        inputs, outputs = data.drop('Termination time', axis = 1), data['Termination time']
+    else:
+        inputs, outputs = joblib.load(f"regression/models/{type_eval}_data.pkl")
+    
 
-sns.set_theme()
-fig, ax = create_fig(nrows = 1, ncols = 2 ,dpi = 100)
-_, colors = style_and_colormap(num_positions = 7, colormap = 'tab20b')
-colors = colors.tolist()
-sns.scatterplot(x = outputs, y = y_pred, ax = ax[0])
-# plot the results of the model
-ax[0].plot(outputs, outputs, color = 'black')
-# plot the predicted values against the actual values
-sns.scatterplot(x = inputs['alpha'], y = y_pred, marker = 'x', label = 'Predicted Test', ax = ax[1])
-sns.scatterplot(x = inputs['alpha'], y = outputs, marker = 'o', label = 'Actual Test', ax = ax[1])
-ax[1].set_xlabel('Adhesivity',fontsize='20')
-ax[1].set_ylabel('Termination Time', fontsize = '20')  
-save_figure(fig, 'regression/figures/data_larger/solution_regression')
-plt.show()
+    y_pred = best_model.predict(inputs)
+    outputs = outputs.to_frame()
+    outputs['Prediction'] = y_pred.tolist()
+    mse = mean_squared_error(outputs['Termination time'], outputs['Prediction']) 
+    r2 = r2_score(outputs['Termination time'], outputs['Prediction'])
+    print(f"Mean squared error, {type_eval} : {mse}")
+    print(f"R2 score,{type_eval} : {r2}")
+    return inputs, outputs
+    
+def main(type_eval):  
+    inputs, outputs = model_eval(type_eval)
+    scatter_solutions(inputs,outputs,type_eval)
+
+if __name__ == '__main__':
+    names =['total', 'train', 'test']
+    for name_eval in names:
+        main(name_eval) 
+
+
+
+
+

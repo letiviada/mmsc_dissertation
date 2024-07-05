@@ -1,14 +1,15 @@
 
-from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.model_selection import train_test_split, GridSearchCV, RandomizedSearchCV
 from utils import save_model
-from utils import obtain_data
+from utils import clean_data, obtain_data
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import time
 import numpy as np
 def main():
-    data = obtain_data('termination_time')
-    inputs, ouputs = data[['alpha', 'beta']], data['termination_time']
+    data_to_keep = clean_data()
+    data = obtain_data(data_to_keep, 'Termination time')
+    inputs, ouputs = data.drop('Termination time', axis = 1), data['Termination time']
    
     # Split the data into training and testing sets
     # ---------------------------------------------
@@ -21,17 +22,19 @@ def main():
     # Hyperparameter tuning
     # ---------------------
     param_grid = {
-        'n_estimators': [100,200,300], # Number of trees in the forest
-        'max_depth': [10, 20, None], # Maximum depth of the tree
-        'min_samples_split': [2,5,10], # Minimum number of samples required to split an internal node 
+        'n_estimators': [300,350,400], # Number of trees in the forest
+        'max_depth': [10, 15, 20, 25], # Maximum depth of the tree
+ # Minimum number of samples required to split an internal node 
         'ccp_alpha': np.arange(0, 1.1, 0.1) # Complexity parameter used for Minimal Cost-Complexity Pruning
     }
-    grid_search = GridSearchCV(rand_forest_model, param_grid, cv = 5, n_jobs= -1) 
+    grid_search = GridSearchCV(rand_forest_model, param_grid, scoring = 'neg_mean_squared_error', cv = 3, n_jobs= -1) 
     # n_jobs = -1 means use all processors, cv = 5 means 5-fold cross validation
     start = time.time()
     grid_search.fit(X_train, y_train)
     end = time.time()
-    print("Best parameters:" , grid_search.best_params_)
+    print("Best parameters:" , grid_search.best_estimator_)
+    print(f'Best score:{grid_search.best_score_} ')
+    print(f'Best params:{grid_search.best_params_} ')
     print(f'Time taken: {end-start}')
     best_model = grid_search.best_estimator_
 
