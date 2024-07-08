@@ -1,12 +1,5 @@
-from utils import obtain_data
-import matplotlib.pyplot as plt
-import seaborn as sns
-import sys
-sys.path.append('/Users/letiviada/dissertation_mmsc')
-sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
-from multiscale.plotting import create_fig, style_and_colormap, save_figure
+import numpy as np
 
-
-plt.show()
-
- 
+a = np.arange(0.1,0.92,0.04)
+print(a)
+print(len(a)**2)
