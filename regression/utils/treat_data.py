@@ -35,7 +35,7 @@ def obtain_data(data_all, output:str, filename: str = '/home/viadacampos/Documen
     return data
 
 def clean_data(filename: str = 'performance_indicators_phi_1.0.json'):
-    directory = '/home/viadacampos/mmsc_dissertation/multiscale/results/mono-dispersed/performance_indicators/'
+    directory = '/home/viadacampos/Documents/mmsc_dissertation/multiscale/results/mono-dispersed/performance_indicators/'
     filepath = os.path.join(directory, filename)
     if not os.path.exists(filepath):
         directory = '/Users/letiviada/dissertation_mmsc/multiscale/results/mono-dispersed/performance_indicators/'

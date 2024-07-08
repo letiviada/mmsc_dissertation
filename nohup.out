@@ -1,0 +1,1128 @@
+Running micro simulation...
+Micro computation time: 1 minutes and 7 seconds
+Combining micro_results time: 0 minutes and 9 seconds
+Running macro simulation...
+Alpha: 0.3, Beta: 0.06, Phi: 1.0 Time elapsed: 4.200681209564209 seconds
+Alpha: 0.3, Beta: 0.09, Phi: 1.0 Time elapsed: 3.9851064682006836 seconds
+Alpha: 0.35, Beta: 0.04, Phi: 1.0 Time elapsed: 4.006318807601929 seconds
+Alpha: 0.35, Beta: 0.085, Phi: 1.0 Time elapsed: 4.001312255859375 seconds
+Alpha: 0.4, Beta: 0.04, Phi: 1.0 Time elapsed: 3.9782350063323975 seconds
+Alpha: 0.4, Beta: 0.075, Phi: 1.0 Time elapsed: 4.000941276550293 seconds
+Alpha: 0.45, Beta: 0.035, Phi: 1.0 Time elapsed: 3.966820001602173 seconds
+Alpha: 0.45, Beta: 0.07, Phi: 1.0 Time elapsed: 4.00450587272644 seconds
+Alpha: 0.5, Beta: 0.03, Phi: 1.0 Time elapsed: 3.9643750190734863 seconds
+Alpha: 0.5, Beta: 0.06, Phi: 1.0 Time elapsed: 4.021945476531982 seconds
+Alpha: 0.5, Beta: 0.095, Phi: 1.0 Time elapsed: 4.082363843917847 seconds
+Alpha: 0.55, Beta: 0.06, Phi: 1.0 Time elapsed: 4.024123907089233 seconds
+Alpha: 0.55, Beta: 0.095, Phi: 1.0 Time elapsed: 4.03347373008728 seconds
+Alpha: 0.6, Beta: 0.05, Phi: 1.0 Time elapsed: 4.070535182952881 seconds
+Alpha: 0.6, Beta: 0.085, Phi: 1.0 Time elapsed: 4.0734357833862305 seconds
+Alpha: 0.65, Beta: 0.045, Phi: 1.0 Time elapsed: 4.245083332061768 seconds
+Alpha: 0.65, Beta: 0.095, Phi: 1.0 Time elapsed: 4.3251330852508545 seconds
+Alpha: 0.7, Beta: 0.055, Phi: 1.0 Time elapsed: 4.040076494216919 seconds
+Alpha: 0.7, Beta: 0.09, Phi: 1.0 Time elapsed: 4.039273977279663 seconds
+Alpha: 0.75, Beta: 0.05, Phi: 1.0 Time elapsed: 4.038942337036133 seconds
+Alpha: 0.75, Beta: 0.085, Phi: 1.0 Time elapsed: 4.089499235153198 seconds
+Alpha: 0.8, Beta: 0.045, Phi: 1.0 Time elapsed: 4.0421106815338135 seconds
+Alpha: 0.8, Beta: 0.08, Phi: 1.0 Time elapsed: 4.042604923248291 seconds
+Alpha: 0.85, Beta: 0.04, Phi: 1.0 Time elapsed: 4.055874586105347 seconds
+Alpha: 0.85, Beta: 0.075, Phi: 1.0 Time elapsed: 4.058889865875244 seconds
+Alpha: 0.9, Beta: 0.035, Phi: 1.0 Time elapsed: 4.030871868133545 seconds
+Alpha: 0.9, Beta: 0.07, Phi: 1.0 Time elapsed: 4.06082820892334 seconds
+Alpha: 0.3, Beta: 0.03, Phi: 1.0 Time elapsed: 4.170612096786499 seconds
+Alpha: 0.3, Beta: 0.065, Phi: 1.0 Time elapsed: 4.002070426940918 seconds
+Alpha: 0.35, Beta: 0.035, Phi: 1.0 Time elapsed: 3.970228433609009 seconds
+Alpha: 0.35, Beta: 0.075, Phi: 1.0 Time elapsed: 3.977430820465088 seconds
+Alpha: 0.4, Beta: 0.035, Phi: 1.0 Time elapsed: 3.975621223449707 seconds
+Alpha: 0.4, Beta: 0.07, Phi: 1.0 Time elapsed: 3.9949004650115967 seconds
+Alpha: 0.45, Beta: 0.03, Phi: 1.0 Time elapsed: 3.9952499866485596 seconds
+Alpha: 0.45, Beta: 0.065, Phi: 1.0 Time elapsed: 4.047593116760254 seconds
+Alpha: 0.45, Beta: 0.1, Phi: 1.0 Time elapsed: 4.0198376178741455 seconds
+Alpha: 0.5, Beta: 0.065, Phi: 1.0 Time elapsed: 4.032098054885864 seconds
+Alpha: 0.5, Beta: 0.1, Phi: 1.0 Time elapsed: 4.031947135925293 seconds
+Alpha: 0.55, Beta: 0.055, Phi: 1.0 Time elapsed: 4.047581434249878 seconds
+Alpha: 0.55, Beta: 0.09, Phi: 1.0 Time elapsed: 4.0733277797698975 seconds
+Alpha: 0.6, Beta: 0.055, Phi: 1.0 Time elapsed: 4.070547580718994 seconds
+Alpha: 0.6, Beta: 0.09, Phi: 1.0 Time elapsed: 4.062582015991211 seconds
+Alpha: 0.65, Beta: 0.05, Phi: 1.0 Time elapsed: 4.0866687297821045 seconds
+Alpha: 0.65, Beta: 0.08, Phi: 1.0 Time elapsed: 4.200979471206665 seconds
+Alpha: 0.7, Beta: 0.04, Phi: 1.0 Time elapsed: 4.108728408813477 seconds
+Alpha: 0.7, Beta: 0.075, Phi: 1.0 Time elapsed: 4.09575343132019 seconds
+Alpha: 0.75, Beta: 0.035, Phi: 1.0 Time elapsed: 4.069736003875732 seconds
+Alpha: 0.75, Beta: 0.08, Phi: 1.0 Time elapsed: 4.062674522399902 seconds
+Alpha: 0.8, Beta: 0.04, Phi: 1.0 Time elapsed: 4.036893367767334 seconds
+Alpha: 0.8, Beta: 0.07, Phi: 1.0 Time elapsed: 4.04801869392395 seconds
+Alpha: 0.85, Beta: 0.03, Phi: 1.0 Time elapsed: 4.044371128082275 seconds
+Alpha: 0.85, Beta: 0.06, Phi: 1.0 Time elapsed: 4.077545404434204 seconds
+Alpha: 0.85, Beta: 0.1, Phi: 1.0 Time elapsed: 4.092849969863892 seconds
+Alpha: 0.9, Beta: 0.065, Phi: 1.0 Time elapsed: 4.043571710586548 seconds
+Alpha: 0.9, Beta: 0.095, Phi: 1.0 Time elapsed: 4.076587438583374 seconds
+Alpha: 0.3, Beta: 0.045, Phi: 1.0 Time elapsed: 4.178260564804077 seconds
+Alpha: 0.3, Beta: 0.075, Phi: 1.0 Time elapsed: 3.9966931343078613 seconds
+Alpha: 0.35, Beta: 0.03, Phi: 1.0 Time elapsed: 3.9767541885375977 seconds
+Alpha: 0.35, Beta: 0.08, Phi: 1.0 Time elapsed: 4.032949209213257 seconds
+Alpha: 0.4, Beta: 0.045, Phi: 1.0 Time elapsed: 4.001411437988281 seconds
+Alpha: 0.4, Beta: 0.08, Phi: 1.0 Time elapsed: 4.017940521240234 seconds
+Alpha: 0.45, Beta: 0.045, Phi: 1.0 Time elapsed: 3.9928505420684814 seconds
+Alpha: 0.45, Beta: 0.075, Phi: 1.0 Time elapsed: 4.023720026016235 seconds
+Alpha: 0.5, Beta: 0.035, Phi: 1.0 Time elapsed: 3.9934654235839844 seconds
+Alpha: 0.5, Beta: 0.07, Phi: 1.0 Time elapsed: 3.992906093597412 seconds
+Alpha: 0.55, Beta: 0.03, Phi: 1.0 Time elapsed: 4.023363828659058 seconds
+Alpha: 0.55, Beta: 0.065, Phi: 1.0 Time elapsed: 4.025251865386963 seconds
+Alpha: 0.55, Beta: 0.1, Phi: 1.0 Time elapsed: 4.067732095718384 seconds
+Alpha: 0.6, Beta: 0.06, Phi: 1.0 Time elapsed: 4.011847734451294 seconds
+Alpha: 0.6, Beta: 0.095, Phi: 1.0 Time elapsed: 4.080626726150513 seconds
+Alpha: 0.65, Beta: 0.06, Phi: 1.0 Time elapsed: 4.110971212387085 seconds
+Alpha: 0.65, Beta: 0.09, Phi: 1.0 Time elapsed: 4.19201397895813 seconds
+Alpha: 0.7, Beta: 0.05, Phi: 1.0 Time elapsed: 4.04837703704834 seconds
+Alpha: 0.7, Beta: 0.085, Phi: 1.0 Time elapsed: 4.071122169494629 seconds
+Alpha: 0.75, Beta: 0.045, Phi: 1.0 Time elapsed: 4.031347990036011 seconds
+Alpha: 0.75, Beta: 0.075, Phi: 1.0 Time elapsed: 4.039522409439087 seconds
+Alpha: 0.8, Beta: 0.03, Phi: 1.0 Time elapsed: 4.033159971237183 seconds
+Alpha: 0.8, Beta: 0.065, Phi: 1.0 Time elapsed: 4.054531812667847 seconds
+Alpha: 0.8, Beta: 0.1, Phi: 1.0 Time elapsed: 4.0812928676605225 seconds
+Alpha: 0.85, Beta: 0.065, Phi: 1.0 Time elapsed: 4.046755313873291 seconds
+Alpha: 0.85, Beta: 0.095, Phi: 1.0 Time elapsed: 4.079418420791626 seconds
+Alpha: 0.9, Beta: 0.055, Phi: 1.0 Time elapsed: 4.064920902252197 seconds
+Alpha: 0.9, Beta: 0.09, Phi: 1.0 Time elapsed: 4.044772624969482 seconds
+Alpha: 0.3, Beta: 0.04, Phi: 1.0 Time elapsed: 4.196052551269531 seconds
+Alpha: 0.3, Beta: 0.085, Phi: 1.0 Time elapsed: 4.043002367019653 seconds
+Alpha: 0.35, Beta: 0.055, Phi: 1.0 Time elapsed: 3.9793801307678223 seconds
+Alpha: 0.35, Beta: 0.09, Phi: 1.0 Time elapsed: 3.9818196296691895 seconds
+Alpha: 0.4, Beta: 0.05, Phi: 1.0 Time elapsed: 3.9945449829101562 seconds
+Alpha: 0.4, Beta: 0.085, Phi: 1.0 Time elapsed: 4.007397651672363 seconds
+Alpha: 0.45, Beta: 0.04, Phi: 1.0 Time elapsed: 4.017950773239136 seconds
+Alpha: 0.45, Beta: 0.08, Phi: 1.0 Time elapsed: 4.051870346069336 seconds
+Alpha: 0.5, Beta: 0.04, Phi: 1.0 Time elapsed: 4.004287004470825 seconds
+Alpha: 0.5, Beta: 0.075, Phi: 1.0 Time elapsed: 3.99552321434021 seconds
+Alpha: 0.55, Beta: 0.035, Phi: 1.0 Time elapsed: 3.9952001571655273 seconds
+Alpha: 0.55, Beta: 0.07, Phi: 1.0 Time elapsed: 4.016936302185059 seconds
+Alpha: 0.6, Beta: 0.03, Phi: 1.0 Time elapsed: 4.005014181137085 seconds
+Alpha: 0.6, Beta: 0.065, Phi: 1.0 Time elapsed: 4.037530422210693 seconds
+Alpha: 0.6, Beta: 0.1, Phi: 1.0 Time elapsed: 4.028080224990845 seconds
+Alpha: 0.65, Beta: 0.055, Phi: 1.0 Time elapsed: 4.089676856994629 seconds
+Alpha: 0.65, Beta: 0.085, Phi: 1.0 Time elapsed: 4.232618570327759 seconds
+Alpha: 0.7, Beta: 0.045, Phi: 1.0 Time elapsed: 4.069509744644165 seconds
+Alpha: 0.7, Beta: 0.08, Phi: 1.0 Time elapsed: 4.057391166687012 seconds
+Alpha: 0.75, Beta: 0.04, Phi: 1.0 Time elapsed: 4.046072959899902 seconds
+Alpha: 0.75, Beta: 0.07, Phi: 1.0 Time elapsed: 4.064841270446777 seconds
+Alpha: 0.8, Beta: 0.035, Phi: 1.0 Time elapsed: 4.041463851928711 seconds
+Alpha: 0.8, Beta: 0.075, Phi: 1.0 Time elapsed: 4.0577826499938965 seconds
+Alpha: 0.85, Beta: 0.035, Phi: 1.0 Time elapsed: 4.069818496704102 seconds
+Alpha: 0.85, Beta: 0.07, Phi: 1.0 Time elapsed: 4.064514636993408 seconds
+Alpha: 0.9, Beta: 0.03, Phi: 1.0 Time elapsed: 4.0617899894714355 seconds
+Alpha: 0.9, Beta: 0.06, Phi: 1.0 Time elapsed: 4.067447662353516 seconds
+Alpha: 0.9, Beta: 0.1, Phi: 1.0 Time elapsed: 4.059707164764404 seconds
+Alpha: 0.3, Beta: 0.035, Phi: 1.0 Time elapsed: 4.271658658981323 seconds
+Alpha: 0.3, Beta: 0.095, Phi: 1.0 Time elapsed: 3.985130786895752 seconds
+Alpha: 0.35, Beta: 0.045, Phi: 1.0 Time elapsed: 3.9538497924804688 seconds
+Alpha: 0.35, Beta: 0.07, Phi: 1.0 Time elapsed: 3.986737012863159 seconds
+Alpha: 0.4, Beta: 0.03, Phi: 1.0 Time elapsed: 4.013902902603149 seconds
+Alpha: 0.4, Beta: 0.065, Phi: 1.0 Time elapsed: 3.9756147861480713 seconds
+Alpha: 0.4, Beta: 0.1, Phi: 1.0 Time elapsed: 4.016557693481445 seconds
+Alpha: 0.45, Beta: 0.06, Phi: 1.0 Time elapsed: 4.009338855743408 seconds
+Alpha: 0.45, Beta: 0.095, Phi: 1.0 Time elapsed: 4.021033525466919 seconds
+Alpha: 0.5, Beta: 0.055, Phi: 1.0 Time elapsed: 3.9548180103302 seconds
+Alpha: 0.5, Beta: 0.09, Phi: 1.0 Time elapsed: 3.9925835132598877 seconds
+Alpha: 0.55, Beta: 0.05, Phi: 1.0 Time elapsed: 3.9822654724121094 seconds
+Alpha: 0.55, Beta: 0.085, Phi: 1.0 Time elapsed: 4.026669502258301 seconds
+Alpha: 0.6, Beta: 0.045, Phi: 1.0 Time elapsed: 4.021113395690918 seconds
+Alpha: 0.6, Beta: 0.08, Phi: 1.0 Time elapsed: 4.030424118041992 seconds
+Alpha: 0.65, Beta: 0.04, Phi: 1.0 Time elapsed: 3.9977786540985107 seconds
+Alpha: 0.65, Beta: 0.075, Phi: 1.0 Time elapsed: 4.020111083984375 seconds
+Alpha: 0.7, Beta: 0.035, Phi: 1.0 Time elapsed: 3.9798221588134766 seconds
+Alpha: 0.7, Beta: 0.07, Phi: 1.0 Time elapsed: 4.015599250793457 seconds
+Alpha: 0.75, Beta: 0.03, Phi: 1.0 Time elapsed: 3.9695024490356445 seconds
+Alpha: 0.75, Beta: 0.065, Phi: 1.0 Time elapsed: 4.020097017288208 seconds
+Alpha: 0.75, Beta: 0.1, Phi: 1.0 Time elapsed: 3.970820188522339 seconds
+Alpha: 0.8, Beta: 0.06, Phi: 1.0 Time elapsed: 3.9630208015441895 seconds
+Alpha: 0.8, Beta: 0.095, Phi: 1.0 Time elapsed: 3.984070301055908 seconds
+Alpha: 0.85, Beta: 0.055, Phi: 1.0 Time elapsed: 3.9862582683563232 seconds
+Alpha: 0.85, Beta: 0.09, Phi: 1.0 Time elapsed: 3.952023506164551 seconds
+Alpha: 0.9, Beta: 0.05, Phi: 1.0 Time elapsed: 3.9480111598968506 seconds
+Alpha: 0.9, Beta: 0.085, Phi: 1.0 Time elapsed: 3.984785795211792 seconds
+Alpha: 0.3, Beta: 0.055, Phi: 1.0 Time elapsed: 4.175507307052612 seconds
+Alpha: 0.3, Beta: 0.08, Phi: 1.0 Time elapsed: 4.004439830780029 seconds
+Alpha: 0.3, Beta: 0.1, Phi: 1.0 Time elapsed: 3.9220268726348877 seconds
+Alpha: 0.35, Beta: 0.06, Phi: 1.0 Time elapsed: 3.8988895416259766 seconds
+Alpha: 0.35, Beta: 0.095, Phi: 1.0 Time elapsed: 3.975715398788452 seconds
+Alpha: 0.4, Beta: 0.06, Phi: 1.0 Time elapsed: 3.9173896312713623 seconds
+Alpha: 0.4, Beta: 0.09, Phi: 1.0 Time elapsed: 3.932974100112915 seconds
+Alpha: 0.45, Beta: 0.05, Phi: 1.0 Time elapsed: 3.929914712905884 seconds
+Alpha: 0.45, Beta: 0.085, Phi: 1.0 Time elapsed: 3.9473040103912354 seconds
+Alpha: 0.5, Beta: 0.045, Phi: 1.0 Time elapsed: 3.9127237796783447 seconds
+Alpha: 0.5, Beta: 0.08, Phi: 1.0 Time elapsed: 3.927332639694214 seconds
+Alpha: 0.55, Beta: 0.04, Phi: 1.0 Time elapsed: 3.919165849685669 seconds
+Alpha: 0.55, Beta: 0.075, Phi: 1.0 Time elapsed: 3.9577364921569824 seconds
+Alpha: 0.6, Beta: 0.035, Phi: 1.0 Time elapsed: 3.9182214736938477 seconds
+Alpha: 0.6, Beta: 0.07, Phi: 1.0 Time elapsed: 3.952000379562378 seconds
+Alpha: 0.65, Beta: 0.03, Phi: 1.0 Time elapsed: 3.944772958755493 seconds
+Alpha: 0.65, Beta: 0.065, Phi: 1.0 Time elapsed: 3.9814541339874268 seconds
+Alpha: 0.65, Beta: 0.1, Phi: 1.0 Time elapsed: 3.9529542922973633 seconds
+Alpha: 0.7, Beta: 0.06, Phi: 1.0 Time elapsed: 3.9554851055145264 seconds
+Alpha: 0.7, Beta: 0.095, Phi: 1.0 Time elapsed: 3.978877544403076 seconds
+Alpha: 0.75, Beta: 0.055, Phi: 1.0 Time elapsed: 3.9236550331115723 seconds
+Alpha: 0.75, Beta: 0.09, Phi: 1.0 Time elapsed: 3.9513800144195557 seconds
+Alpha: 0.8, Beta: 0.05, Phi: 1.0 Time elapsed: 3.9082071781158447 seconds
+Alpha: 0.8, Beta: 0.085, Phi: 1.0 Time elapsed: 3.9393556118011475 seconds
+Alpha: 0.85, Beta: 0.045, Phi: 1.0 Time elapsed: 3.9207143783569336 seconds
+Alpha: 0.85, Beta: 0.08, Phi: 1.0 Time elapsed: 3.9745230674743652 seconds
+Alpha: 0.9, Beta: 0.04, Phi: 1.0 Time elapsed: 3.9193482398986816 seconds
+Alpha: 0.9, Beta: 0.075, Phi: 1.0 Time elapsed: 3.953457832336426 seconds
+Alpha: 0.3, Beta: 0.05, Phi: 1.0 Time elapsed: 4.165329933166504 seconds
+Alpha: 0.3, Beta: 0.07, Phi: 1.0 Time elapsed: 4.054145812988281 seconds
+Alpha: 0.35, Beta: 0.05, Phi: 1.0 Time elapsed: 3.9040987491607666 seconds
+Alpha: 0.35, Beta: 0.065, Phi: 1.0 Time elapsed: 3.919931411743164 seconds
+Alpha: 0.35, Beta: 0.1, Phi: 1.0 Time elapsed: 3.953547954559326 seconds
+Alpha: 0.4, Beta: 0.055, Phi: 1.0 Time elapsed: 3.9634556770324707 seconds
+Alpha: 0.4, Beta: 0.095, Phi: 1.0 Time elapsed: 3.96573805809021 seconds
+Alpha: 0.45, Beta: 0.055, Phi: 1.0 Time elapsed: 3.9233651161193848 seconds
+Alpha: 0.45, Beta: 0.09, Phi: 1.0 Time elapsed: 3.950634479522705 seconds
+Alpha: 0.5, Beta: 0.05, Phi: 1.0 Time elapsed: 3.9165995121002197 seconds
+Alpha: 0.5, Beta: 0.085, Phi: 1.0 Time elapsed: 3.955794334411621 seconds
+Alpha: 0.55, Beta: 0.045, Phi: 1.0 Time elapsed: 3.9373488426208496 seconds
+Alpha: 0.55, Beta: 0.08, Phi: 1.0 Time elapsed: 3.959542751312256 seconds
+Alpha: 0.6, Beta: 0.04, Phi: 1.0 Time elapsed: 3.959458351135254 seconds
+Alpha: 0.6, Beta: 0.075, Phi: 1.0 Time elapsed: 3.9872548580169678 seconds
+Alpha: 0.65, Beta: 0.035, Phi: 1.0 Time elapsed: 3.9710278511047363 seconds
+Alpha: 0.65, Beta: 0.07, Phi: 1.0 Time elapsed: 3.9794652462005615 seconds
+Alpha: 0.7, Beta: 0.03, Phi: 1.0 Time elapsed: 3.9130797386169434 seconds
+Alpha: 0.7, Beta: 0.065, Phi: 1.0 Time elapsed: 3.980163812637329 seconds
+Alpha: 0.7, Beta: 0.1, Phi: 1.0 Time elapsed: 3.9607889652252197 seconds
+Alpha: 0.75, Beta: 0.06, Phi: 1.0 Time elapsed: 3.9790701866149902 seconds
+Alpha: 0.75, Beta: 0.095, Phi: 1.0 Time elapsed: 3.934412717819214 seconds
+Alpha: 0.8, Beta: 0.055, Phi: 1.0 Time elapsed: 3.9361531734466553 seconds
+Alpha: 0.8, Beta: 0.09, Phi: 1.0 Time elapsed: 3.9509754180908203 seconds
+Alpha: 0.85, Beta: 0.05, Phi: 1.0 Time elapsed: 3.9510185718536377 seconds
+Alpha: 0.85, Beta: 0.085, Phi: 1.0 Time elapsed: 3.9337213039398193 seconds
+Alpha: 0.9, Beta: 0.045, Phi: 1.0 Time elapsed: 3.9032113552093506 seconds
+Alpha: 0.9, Beta: 0.08, Phi: 1.0 Time elapsed: 3.956843137741089 seconds
+Macro computation time: 2 minutes and 8 seconds
+Combining results time: 2 minutes and 17 seconds
+Running performance indicators computation...
+
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+Performance Indicators computation time: 0 minutes and 0 seconds
+Combining results time: 0 minutes and 1 seconds
+Total execution time: 23 minutes and 11 seconds
+Done!
+Running micro simulation...
+Micro computation time: 0 minutes and 0 seconds
+Combining micro_results time: 0 minutes and 0 seconds
+Running macro simulation...
+Macro computation time: 0 minutes and 0 seconds
+Combining results time: 0 minutes and 0 seconds
+Running performance indicators computation...
+Alpha: 0.3, Beta: 0.07, Phi: 1.0 Time elapsed: 67.43205547332764 seconds
+Alpha: 0.3, Beta: 0.1, Phi: 1.0 Time elapsed: 66.861492395401 seconds
+Alpha: 0.35, Beta: 0.09, Phi: 1.0 Time elapsed: 65.8651008605957 seconds
+Alpha: 0.4, Beta: 0.08, Phi: 1.0 Time elapsed: 66.88140797615051 seconds
+Alpha: 0.45, Beta: 0.07, Phi: 1.0 Time elapsed: 65.79477834701538 seconds
+Alpha: 0.5, Beta: 0.06, Phi: 1.0 Time elapsed: 65.65882730484009 seconds
+Alpha: 0.55, Beta: 0.05, Phi: 1.0 Time elapsed: 66.10786533355713 seconds
+Alpha: 0.6, Beta: 0.04, Phi: 1.0 Time elapsed: 65.45791387557983 seconds
+Alpha: 0.65, Beta: 0.03, Phi: 1.0 Time elapsed: 65.5755786895752 seconds
+Alpha: 0.7, Beta: 0.03, Phi: 1.0 Time elapsed: 66.212810754776 seconds
+Alpha: 0.75, Beta: 0.03, Phi: 1.0 Time elapsed: 65.59065270423889 seconds
+Alpha: 0.75, Beta: 0.1, Phi: 1.0 Time elapsed: 65.41373085975647 seconds
+Alpha: 0.8, Beta: 0.09, Phi: 1.0 Time elapsed: 66.02442574501038 seconds
+Alpha: 0.85, Beta: 0.08, Phi: 1.0 Time elapsed: 65.47626447677612 seconds
+Alpha: 0.9, Beta: 0.07, Phi: 1.0 Time elapsed: 65.36210560798645 seconds
+Alpha: 0.3, Beta: 0.09, Phi: 1.0 Time elapsed: 68.93874645233154 seconds
+Alpha: 0.35, Beta: 0.03, Phi: 1.0 Time elapsed: 67.0778329372406 seconds
+Alpha: 0.4, Beta: 0.03, Phi: 1.0 Time elapsed: 66.10997247695923 seconds
+Alpha: 0.45, Beta: 0.03, Phi: 1.0 Time elapsed: 66.76224994659424 seconds
+Alpha: 0.45, Beta: 0.1, Phi: 1.0 Time elapsed: 65.50516748428345 seconds
+Alpha: 0.5, Beta: 0.09, Phi: 1.0 Time elapsed: 65.30128002166748 seconds
+Alpha: 0.55, Beta: 0.08, Phi: 1.0 Time elapsed: 65.8118348121643 seconds
+Alpha: 0.6, Beta: 0.07, Phi: 1.0 Time elapsed: 65.30203080177307 seconds
+Alpha: 0.65, Beta: 0.06, Phi: 1.0 Time elapsed: 65.33489227294922 seconds
+Alpha: 0.7, Beta: 0.05, Phi: 1.0 Time elapsed: 66.09210991859436 seconds
+Alpha: 0.75, Beta: 0.04, Phi: 1.0 Time elapsed: 65.54534935951233 seconds
+Alpha: 0.8, Beta: 0.03, Phi: 1.0 Time elapsed: 65.55119109153748 seconds
+Alpha: 0.8, Beta: 0.1, Phi: 1.0 Time elapsed: 65.9287052154541 seconds
+Alpha: 0.85, Beta: 0.09, Phi: 1.0 Time elapsed: 65.42584156990051 seconds
+Alpha: 0.9, Beta: 0.08, Phi: 1.0 Time elapsed: 65.33012557029724 seconds
+Alpha: 0.3, Beta: 0.04, Phi: 1.0 Time elapsed: 69.94496631622314 seconds
+Alpha: 0.35, Beta: 0.08, Phi: 1.0 Time elapsed: 69.07213568687439 seconds
+Alpha: 0.4, Beta: 0.07, Phi: 1.0 Time elapsed: 69.45320153236389 seconds
+Alpha: 0.45, Beta: 0.06, Phi: 1.0 Time elapsed: 69.53893828392029 seconds
+Alpha: 0.5, Beta: 0.05, Phi: 1.0 Time elapsed: 69.28580522537231 seconds
+Alpha: 0.5, Beta: 0.1, Phi: 1.0 Time elapsed: 69.90560793876648 seconds
+Alpha: 0.55, Beta: 0.09, Phi: 1.0 Time elapsed: 69.97611165046692 seconds
+Alpha: 0.6, Beta: 0.08, Phi: 1.0 Time elapsed: 69.1445472240448 seconds
+Alpha: 0.65, Beta: 0.07, Phi: 1.0 Time elapsed: 70.7116470336914 seconds
+Alpha: 0.7, Beta: 0.06, Phi: 1.0 Time elapsed: 71.1880898475647 seconds
+Alpha: 0.75, Beta: 0.05, Phi: 1.0 Time elapsed: 70.04748368263245 seconds
+Alpha: 0.8, Beta: 0.04, Phi: 1.0 Time elapsed: 72.90161633491516 seconds
+Alpha: 0.85, Beta: 0.03, Phi: 1.0 Time elapsed: 76.15816903114319 seconds
+Alpha: 0.85, Beta: 0.1, Phi: 1.0 Time elapsed: 75.30636763572693 seconds
+Alpha: 0.3, Beta: 0.08, Phi: 1.0 Time elapsed: 69.18628644943237 seconds
+Alpha: 0.35, Beta: 0.04, Phi: 1.0 Time elapsed: 66.92524409294128 seconds
+Alpha: 0.4, Beta: 0.04, Phi: 1.0 Time elapsed: 66.00291705131531 seconds
+Alpha: 0.4, Beta: 0.1, Phi: 1.0 Time elapsed: 66.28516674041748 seconds
+Alpha: 0.45, Beta: 0.09, Phi: 1.0 Time elapsed: 65.51252937316895 seconds
+Alpha: 0.5, Beta: 0.08, Phi: 1.0 Time elapsed: 65.38242959976196 seconds
+Alpha: 0.55, Beta: 0.07, Phi: 1.0 Time elapsed: 65.82120513916016 seconds
+Alpha: 0.6, Beta: 0.06, Phi: 1.0 Time elapsed: 65.32099962234497 seconds
+Alpha: 0.65, Beta: 0.05, Phi: 1.0 Time elapsed: 65.43512916564941 seconds
+Alpha: 0.7, Beta: 0.04, Phi: 1.0 Time elapsed: 66.0029685497284 seconds
+Alpha: 0.7, Beta: 0.1, Phi: 1.0 Time elapsed: 65.34579920768738 seconds
+Alpha: 0.75, Beta: 0.09, Phi: 1.0 Time elapsed: 65.36435508728027 seconds
+Alpha: 0.8, Beta: 0.08, Phi: 1.0 Time elapsed: 66.01007556915283 seconds
+Alpha: 0.85, Beta: 0.07, Phi: 1.0 Time elapsed: 65.43540668487549 seconds
+Alpha: 0.9, Beta: 0.06, Phi: 1.0 Time elapsed: 65.25579524040222 seconds
+Alpha: 0.9, Beta: 0.1, Phi: 1.0 Time elapsed: 65.40598464012146 seconds
+Alpha: 0.3, Beta: 0.06, Phi: 1.0 Time elapsed: 69.31791687011719 seconds
+Alpha: 0.35, Beta: 0.05, Phi: 1.0 Time elapsed: 69.27141308784485 seconds
+Alpha: 0.4, Beta: 0.05, Phi: 1.0 Time elapsed: 69.57011795043945 seconds
+Alpha: 0.45, Beta: 0.05, Phi: 1.0 Time elapsed: 69.68582582473755 seconds
+Alpha: 0.5, Beta: 0.03, Phi: 1.0 Time elapsed: 69.68618297576904 seconds
+Alpha: 0.55, Beta: 0.04, Phi: 1.0 Time elapsed: 70.06612253189087 seconds
+Alpha: 0.6, Beta: 0.03, Phi: 1.0 Time elapsed: 70.50166034698486 seconds
+Alpha: 0.6, Beta: 0.1, Phi: 1.0 Time elapsed: 69.21616101264954 seconds
+Alpha: 0.65, Beta: 0.09, Phi: 1.0 Time elapsed: 70.6203761100769 seconds
+Alpha: 0.7, Beta: 0.08, Phi: 1.0 Time elapsed: 71.22394609451294 seconds
+Alpha: 0.75, Beta: 0.07, Phi: 1.0 Time elapsed: 69.94862103462219 seconds
+Alpha: 0.8, Beta: 0.06, Phi: 1.0 Time elapsed: 72.79816627502441 seconds
+Alpha: 0.85, Beta: 0.04, Phi: 1.0 Time elapsed: 76.22000169754028 seconds
+Alpha: 0.9, Beta: 0.03, Phi: 1.0 Time elapsed: 75.5093080997467 seconds
+Alpha: 0.3, Beta: 0.05, Phi: 1.0 Time elapsed: 69.58597183227539 seconds
+Alpha: 0.35, Beta: 0.07, Phi: 1.0 Time elapsed: 69.12463545799255 seconds
+Alpha: 0.4, Beta: 0.06, Phi: 1.0 Time elapsed: 69.44863963127136 seconds
+Alpha: 0.45, Beta: 0.04, Phi: 1.0 Time elapsed: 69.83207035064697 seconds
+Alpha: 0.5, Beta: 0.04, Phi: 1.0 Time elapsed: 69.36416578292847 seconds
+Alpha: 0.55, Beta: 0.03, Phi: 1.0 Time elapsed: 70.22901773452759 seconds
+Alpha: 0.55, Beta: 0.1, Phi: 1.0 Time elapsed: 70.12854337692261 seconds
+Alpha: 0.6, Beta: 0.09, Phi: 1.0 Time elapsed: 69.21082901954651 seconds
+Alpha: 0.65, Beta: 0.08, Phi: 1.0 Time elapsed: 70.64906096458435 seconds
+Alpha: 0.7, Beta: 0.07, Phi: 1.0 Time elapsed: 71.26797652244568 seconds
+Alpha: 0.75, Beta: 0.06, Phi: 1.0 Time elapsed: 70.07424926757812 seconds
+Alpha: 0.8, Beta: 0.05, Phi: 1.0 Time elapsed: 72.99871373176575 seconds
+Alpha: 0.85, Beta: 0.05, Phi: 1.0 Time elapsed: 76.26890444755554 seconds
+Alpha: 0.9, Beta: 0.04, Phi: 1.0 Time elapsed: 75.5767936706543 seconds
+Alpha: 0.3, Beta: 0.03, Phi: 1.0 Time elapsed: 69.34648561477661 seconds
+Alpha: 0.35, Beta: 0.06, Phi: 1.0 Time elapsed: 66.59257173538208 seconds
+Alpha: 0.35, Beta: 0.1, Phi: 1.0 Time elapsed: 65.43603444099426 seconds
+Alpha: 0.4, Beta: 0.09, Phi: 1.0 Time elapsed: 66.55734086036682 seconds
+Alpha: 0.45, Beta: 0.08, Phi: 1.0 Time elapsed: 65.77267861366272 seconds
+Alpha: 0.5, Beta: 0.07, Phi: 1.0 Time elapsed: 65.34275197982788 seconds
+Alpha: 0.55, Beta: 0.06, Phi: 1.0 Time elapsed: 65.79475116729736 seconds
+Alpha: 0.6, Beta: 0.05, Phi: 1.0 Time elapsed: 65.31666302680969 seconds
+Alpha: 0.65, Beta: 0.04, Phi: 1.0 Time elapsed: 65.35953640937805 seconds
+Alpha: 0.65, Beta: 0.1, Phi: 1.0 Time elapsed: 65.81614422798157 seconds
+Alpha: 0.7, Beta: 0.09, Phi: 1.0 Time elapsed: 65.27037143707275 seconds
+Alpha: 0.75, Beta: 0.08, Phi: 1.0 Time elapsed: 65.28913068771362 seconds
+Alpha: 0.8, Beta: 0.07, Phi: 1.0 Time elapsed: 65.93431448936462 seconds
+Alpha: 0.85, Beta: 0.06, Phi: 1.0 Time elapsed: 65.32050085067749 seconds
+Alpha: 0.9, Beta: 0.05, Phi: 1.0 Time elapsed: 65.30727458000183 seconds
+Alpha: 0.9, Beta: 0.09, Phi: 1.0 Time elapsed: 65.31534433364868 seconds
+Performance Indicators computation time: 0 minutes and 0 seconds
+Combining results time: 0 minutes and 0 seconds
+Total execution time: 17 minutes and 36 seconds
+Done!
+Running micro simulation...
+Micro computation time: 0 minutes and 0 seconds
+Combining micro_results time: 0 minutes and 0 seconds
+Running macro simulation...
+Macro computation time: 0 minutes and 0 seconds
+Combining results time: 0 minutes and 0 seconds
+Running performance indicators computation...
+Running micro simulation...
+Micro computation time: 1 minutes and 22 seconds
+Combining micro_results time: 0 minutes and 17 seconds
+Running macro simulation...
+Alpha: 0.3, Beta: 0.042, Phi: 1.0 Time elapsed: 7.033802509307861 seconds
+Alpha: 0.3, Beta: 0.07, Phi: 1.0 Time elapsed: 6.721686601638794 seconds
+Alpha: 0.3, Beta: 0.098, Phi: 1.0 Time elapsed: 6.38059401512146 seconds
+Alpha: 0.35, Beta: 0.062, Phi: 1.0 Time elapsed: 6.099459886550903 seconds
+Alpha: 0.35, Beta: 0.094, Phi: 1.0 Time elapsed: 5.898033142089844 seconds
+Alpha: 0.4, Beta: 0.05, Phi: 1.0 Time elapsed: 6.019857406616211 seconds
+Alpha: 0.4, Beta: 0.078, Phi: 1.0 Time elapsed: 5.939013481140137 seconds
+Alpha: 0.45, Beta: 0.034, Phi: 1.0 Time elapsed: 5.884959697723389 seconds
+Alpha: 0.45, Beta: 0.058, Phi: 1.0 Time elapsed: 6.013624668121338 seconds
+Alpha: 0.45, Beta: 0.082, Phi: 1.0 Time elapsed: 6.120851755142212 seconds
+Alpha: 0.5, Beta: 0.038, Phi: 1.0 Time elapsed: 5.911647796630859 seconds
+Alpha: 0.5, Beta: 0.066, Phi: 1.0 Time elapsed: 5.925337553024292 seconds
+Alpha: 0.5, Beta: 0.098, Phi: 1.0 Time elapsed: 5.936065196990967 seconds
+Alpha: 0.55, Beta: 0.054, Phi: 1.0 Time elapsed: 6.396874666213989 seconds
+Alpha: 0.55, Beta: 0.082, Phi: 1.0 Time elapsed: 6.256958961486816 seconds
+Alpha: 0.6, Beta: 0.038, Phi: 1.0 Time elapsed: 6.182281732559204 seconds
+Alpha: 0.6, Beta: 0.07, Phi: 1.0 Time elapsed: 6.355118989944458 seconds
+Alpha: 0.6, Beta: 0.098, Phi: 1.0 Time elapsed: 6.3791279792785645 seconds
+Alpha: 0.65, Beta: 0.054, Phi: 1.0 Time elapsed: 6.340932607650757 seconds
+Alpha: 0.65, Beta: 0.09, Phi: 1.0 Time elapsed: 6.3456130027771 seconds
+Alpha: 0.7, Beta: 0.05, Phi: 1.0 Time elapsed: 6.36681604385376 seconds
+Alpha: 0.7, Beta: 0.078, Phi: 1.0 Time elapsed: 6.105440855026245 seconds
+Alpha: 0.75, Beta: 0.034, Phi: 1.0 Time elapsed: 6.070241451263428 seconds
+Alpha: 0.75, Beta: 0.066, Phi: 1.0 Time elapsed: 6.036930799484253 seconds
+Alpha: 0.75, Beta: 0.094, Phi: 1.0 Time elapsed: 6.0366291999816895 seconds
+Alpha: 0.8, Beta: 0.046, Phi: 1.0 Time elapsed: 5.955862522125244 seconds
+Alpha: 0.8, Beta: 0.078, Phi: 1.0 Time elapsed: 6.021982669830322 seconds
+Alpha: 0.85, Beta: 0.03, Phi: 1.0 Time elapsed: 6.03855037689209 seconds
+Alpha: 0.85, Beta: 0.062, Phi: 1.0 Time elapsed: 6.125070571899414 seconds
+Alpha: 0.85, Beta: 0.086, Phi: 1.0 Time elapsed: 6.159027814865112 seconds
+Alpha: 0.9, Beta: 0.042, Phi: 1.0 Time elapsed: 6.042256832122803 seconds
+Alpha: 0.9, Beta: 0.07, Phi: 1.0 Time elapsed: 5.924919366836548 seconds
+Alpha: 0.3, Beta: 0.05, Phi: 1.0 Time elapsed: 7.008566379547119 seconds
+Alpha: 0.3, Beta: 0.066, Phi: 1.0 Time elapsed: 6.521880626678467 seconds
+Alpha: 0.3, Beta: 0.086, Phi: 1.0 Time elapsed: 6.028825759887695 seconds
+Alpha: 0.35, Beta: 0.042, Phi: 1.0 Time elapsed: 5.716881990432739 seconds
+Alpha: 0.35, Beta: 0.07, Phi: 1.0 Time elapsed: 5.752760410308838 seconds
+Alpha: 0.35, Beta: 0.098, Phi: 1.0 Time elapsed: 5.91901159286499 seconds
+Alpha: 0.4, Beta: 0.054, Phi: 1.0 Time elapsed: 5.840861082077026 seconds
+Alpha: 0.4, Beta: 0.082, Phi: 1.0 Time elapsed: 5.822229385375977 seconds
+Alpha: 0.45, Beta: 0.038, Phi: 1.0 Time elapsed: 5.921160936355591 seconds
+Alpha: 0.45, Beta: 0.066, Phi: 1.0 Time elapsed: 5.973595142364502 seconds
+Alpha: 0.45, Beta: 0.094, Phi: 1.0 Time elapsed: 5.803787708282471 seconds
+Alpha: 0.5, Beta: 0.05, Phi: 1.0 Time elapsed: 5.716243743896484 seconds
+Alpha: 0.5, Beta: 0.078, Phi: 1.0 Time elapsed: 5.773536205291748 seconds
+Alpha: 0.55, Beta: 0.034, Phi: 1.0 Time elapsed: 5.735182762145996 seconds
+Alpha: 0.55, Beta: 0.062, Phi: 1.0 Time elapsed: 5.502943277359009 seconds
+Alpha: 0.55, Beta: 0.09, Phi: 1.0 Time elapsed: 5.472687482833862 seconds
+Alpha: 0.6, Beta: 0.046, Phi: 1.0 Time elapsed: 5.451532363891602 seconds
+Alpha: 0.6, Beta: 0.074, Phi: 1.0 Time elapsed: 5.665979385375977 seconds
+Alpha: 0.65, Beta: 0.03, Phi: 1.0 Time elapsed: 5.483151435852051 seconds
+Alpha: 0.65, Beta: 0.046, Phi: 1.0 Time elapsed: 5.521219730377197 seconds
+Alpha: 0.65, Beta: 0.074, Phi: 1.0 Time elapsed: 5.559941291809082 seconds
+Alpha: 0.7, Beta: 0.03, Phi: 1.0 Time elapsed: 5.615595817565918 seconds
+Alpha: 0.7, Beta: 0.058, Phi: 1.0 Time elapsed: 5.7261128425598145 seconds
+Alpha: 0.7, Beta: 0.086, Phi: 1.0 Time elapsed: 5.795426845550537 seconds
+Alpha: 0.75, Beta: 0.042, Phi: 1.0 Time elapsed: 5.750902414321899 seconds
+Alpha: 0.75, Beta: 0.07, Phi: 1.0 Time elapsed: 5.875235319137573 seconds
+Alpha: 0.75, Beta: 0.098, Phi: 1.0 Time elapsed: 5.80291748046875 seconds
+Alpha: 0.8, Beta: 0.054, Phi: 1.0 Time elapsed: 5.761449098587036 seconds
+Alpha: 0.8, Beta: 0.082, Phi: 1.0 Time elapsed: 5.810741662979126 seconds
+Alpha: 0.85, Beta: 0.038, Phi: 1.0 Time elapsed: 5.840598821640015 seconds
+Alpha: 0.85, Beta: 0.066, Phi: 1.0 Time elapsed: 5.8180787563323975 seconds
+Alpha: 0.85, Beta: 0.094, Phi: 1.0 Time elapsed: 5.863374710083008 seconds
+Alpha: 0.9, Beta: 0.05, Phi: 1.0 Time elapsed: 5.841660022735596 seconds
+Alpha: 0.9, Beta: 0.078, Phi: 1.0 Time elapsed: 5.743971586227417 seconds
+Alpha: 0.3, Beta: 0.038, Phi: 1.0 Time elapsed: 7.051747798919678 seconds
+Alpha: 0.3, Beta: 0.078, Phi: 1.0 Time elapsed: 6.720771312713623 seconds
+Alpha: 0.35, Beta: 0.03, Phi: 1.0 Time elapsed: 6.090856313705444 seconds
+Alpha: 0.35, Beta: 0.046, Phi: 1.0 Time elapsed: 5.697374582290649 seconds
+Alpha: 0.35, Beta: 0.074, Phi: 1.0 Time elapsed: 5.749516248703003 seconds
+Alpha: 0.4, Beta: 0.03, Phi: 1.0 Time elapsed: 5.953960657119751 seconds
+Alpha: 0.4, Beta: 0.058, Phi: 1.0 Time elapsed: 5.850904703140259 seconds
+Alpha: 0.4, Beta: 0.086, Phi: 1.0 Time elapsed: 5.8203911781311035 seconds
+Alpha: 0.45, Beta: 0.042, Phi: 1.0 Time elapsed: 5.942997455596924 seconds
+Alpha: 0.45, Beta: 0.07, Phi: 1.0 Time elapsed: 5.987249135971069 seconds
+Alpha: 0.45, Beta: 0.098, Phi: 1.0 Time elapsed: 5.820200443267822 seconds
+Alpha: 0.5, Beta: 0.054, Phi: 1.0 Time elapsed: 5.817060470581055 seconds
+Alpha: 0.5, Beta: 0.082, Phi: 1.0 Time elapsed: 5.787550210952759 seconds
+Alpha: 0.55, Beta: 0.038, Phi: 1.0 Time elapsed: 5.695073843002319 seconds
+Alpha: 0.55, Beta: 0.066, Phi: 1.0 Time elapsed: 5.470304012298584 seconds
+Alpha: 0.55, Beta: 0.094, Phi: 1.0 Time elapsed: 5.468817949295044 seconds
+Alpha: 0.6, Beta: 0.05, Phi: 1.0 Time elapsed: 5.503911733627319 seconds
+Alpha: 0.6, Beta: 0.078, Phi: 1.0 Time elapsed: 5.631002187728882 seconds
+Alpha: 0.65, Beta: 0.034, Phi: 1.0 Time elapsed: 5.504093170166016 seconds
+Alpha: 0.65, Beta: 0.062, Phi: 1.0 Time elapsed: 5.528100490570068 seconds
+Alpha: 0.65, Beta: 0.078, Phi: 1.0 Time elapsed: 5.583945989608765 seconds
+Alpha: 0.7, Beta: 0.034, Phi: 1.0 Time elapsed: 5.6155571937561035 seconds
+Alpha: 0.7, Beta: 0.062, Phi: 1.0 Time elapsed: 5.737279176712036 seconds
+Alpha: 0.7, Beta: 0.09, Phi: 1.0 Time elapsed: 5.775872468948364 seconds
+Alpha: 0.75, Beta: 0.046, Phi: 1.0 Time elapsed: 5.766593933105469 seconds
+Alpha: 0.75, Beta: 0.074, Phi: 1.0 Time elapsed: 5.829309701919556 seconds
+Alpha: 0.8, Beta: 0.03, Phi: 1.0 Time elapsed: 5.763761281967163 seconds
+Alpha: 0.8, Beta: 0.058, Phi: 1.0 Time elapsed: 5.827129602432251 seconds
+Alpha: 0.8, Beta: 0.086, Phi: 1.0 Time elapsed: 5.878515958786011 seconds
+Alpha: 0.85, Beta: 0.042, Phi: 1.0 Time elapsed: 5.85613226890564 seconds
+Alpha: 0.85, Beta: 0.07, Phi: 1.0 Time elapsed: 5.834624528884888 seconds
+Alpha: 0.85, Beta: 0.098, Phi: 1.0 Time elapsed: 5.875648736953735 seconds
+Alpha: 0.9, Beta: 0.054, Phi: 1.0 Time elapsed: 5.930774927139282 seconds
+Alpha: 0.9, Beta: 0.082, Phi: 1.0 Time elapsed: 5.706463575363159 seconds
+Alpha: 0.3, Beta: 0.03, Phi: 1.0 Time elapsed: 7.011612415313721 seconds
+Alpha: 0.3, Beta: 0.058, Phi: 1.0 Time elapsed: 6.706856966018677 seconds
+Alpha: 0.3, Beta: 0.09, Phi: 1.0 Time elapsed: 6.350288152694702 seconds
+Alpha: 0.35, Beta: 0.05, Phi: 1.0 Time elapsed: 6.0630128383636475 seconds
+Alpha: 0.35, Beta: 0.078, Phi: 1.0 Time elapsed: 5.800264596939087 seconds
+Alpha: 0.4, Beta: 0.034, Phi: 1.0 Time elapsed: 5.97271203994751 seconds
+Alpha: 0.4, Beta: 0.062, Phi: 1.0 Time elapsed: 5.812259197235107 seconds
+Alpha: 0.4, Beta: 0.09, Phi: 1.0 Time elapsed: 5.836484432220459 seconds
+Alpha: 0.45, Beta: 0.046, Phi: 1.0 Time elapsed: 5.940673589706421 seconds
+Alpha: 0.45, Beta: 0.074, Phi: 1.0 Time elapsed: 6.0059974193573 seconds
+Alpha: 0.5, Beta: 0.03, Phi: 1.0 Time elapsed: 5.751701593399048 seconds
+Alpha: 0.5, Beta: 0.058, Phi: 1.0 Time elapsed: 5.76707649230957 seconds
+Alpha: 0.5, Beta: 0.086, Phi: 1.0 Time elapsed: 5.874279499053955 seconds
+Alpha: 0.55, Beta: 0.042, Phi: 1.0 Time elapsed: 5.674861192703247 seconds
+Alpha: 0.55, Beta: 0.07, Phi: 1.0 Time elapsed: 5.461374282836914 seconds
+Alpha: 0.55, Beta: 0.098, Phi: 1.0 Time elapsed: 5.481249570846558 seconds
+Alpha: 0.6, Beta: 0.054, Phi: 1.0 Time elapsed: 5.467816114425659 seconds
+Alpha: 0.6, Beta: 0.082, Phi: 1.0 Time elapsed: 5.659242868423462 seconds
+Alpha: 0.65, Beta: 0.038, Phi: 1.0 Time elapsed: 5.497798681259155 seconds
+Alpha: 0.65, Beta: 0.066, Phi: 1.0 Time elapsed: 5.499368906021118 seconds
+Alpha: 0.65, Beta: 0.082, Phi: 1.0 Time elapsed: 5.562853097915649 seconds
+Alpha: 0.7, Beta: 0.038, Phi: 1.0 Time elapsed: 5.6439313888549805 seconds
+Alpha: 0.7, Beta: 0.066, Phi: 1.0 Time elapsed: 5.763876438140869 seconds
+Alpha: 0.7, Beta: 0.094, Phi: 1.0 Time elapsed: 5.791912794113159 seconds
+Alpha: 0.75, Beta: 0.05, Phi: 1.0 Time elapsed: 5.786943435668945 seconds
+Alpha: 0.75, Beta: 0.078, Phi: 1.0 Time elapsed: 5.8251776695251465 seconds
+Alpha: 0.8, Beta: 0.034, Phi: 1.0 Time elapsed: 5.960676431655884 seconds
+Alpha: 0.8, Beta: 0.062, Phi: 1.0 Time elapsed: 5.824392795562744 seconds
+Alpha: 0.8, Beta: 0.09, Phi: 1.0 Time elapsed: 5.898668527603149 seconds
+Alpha: 0.85, Beta: 0.046, Phi: 1.0 Time elapsed: 5.81885290145874 seconds
+Alpha: 0.85, Beta: 0.074, Phi: 1.0 Time elapsed: 5.807790756225586 seconds
+Alpha: 0.9, Beta: 0.03, Phi: 1.0 Time elapsed: 5.869527101516724 seconds
+Alpha: 0.9, Beta: 0.058, Phi: 1.0 Time elapsed: 5.857269287109375 seconds
+Alpha: 0.9, Beta: 0.086, Phi: 1.0 Time elapsed: 5.697282314300537 seconds
+Alpha: 0.3, Beta: 0.034, Phi: 1.0 Time elapsed: 7.036071062088013 seconds
+Alpha: 0.3, Beta: 0.074, Phi: 1.0 Time elapsed: 6.706582069396973 seconds
+Alpha: 0.35, Beta: 0.034, Phi: 1.0 Time elapsed: 6.351102590560913 seconds
+Alpha: 0.35, Beta: 0.058, Phi: 1.0 Time elapsed: 6.082120656967163 seconds
+Alpha: 0.35, Beta: 0.09, Phi: 1.0 Time elapsed: 5.899083852767944 seconds
+Alpha: 0.4, Beta: 0.046, Phi: 1.0 Time elapsed: 6.010505676269531 seconds
+Alpha: 0.4, Beta: 0.07, Phi: 1.0 Time elapsed: 5.954796075820923 seconds
+Alpha: 0.4, Beta: 0.098, Phi: 1.0 Time elapsed: 5.920710325241089 seconds
+Alpha: 0.45, Beta: 0.062, Phi: 1.0 Time elapsed: 6.0683746337890625 seconds
+Alpha: 0.45, Beta: 0.09, Phi: 1.0 Time elapsed: 6.07048225402832 seconds
+Alpha: 0.5, Beta: 0.046, Phi: 1.0 Time elapsed: 5.923363208770752 seconds
+Alpha: 0.5, Beta: 0.074, Phi: 1.0 Time elapsed: 5.922433376312256 seconds
+Alpha: 0.55, Beta: 0.03, Phi: 1.0 Time elapsed: 5.893151760101318 seconds
+Alpha: 0.55, Beta: 0.058, Phi: 1.0 Time elapsed: 6.415271043777466 seconds
+Alpha: 0.55, Beta: 0.086, Phi: 1.0 Time elapsed: 6.218720436096191 seconds
+Alpha: 0.6, Beta: 0.042, Phi: 1.0 Time elapsed: 6.156748056411743 seconds
+Alpha: 0.6, Beta: 0.066, Phi: 1.0 Time elapsed: 6.333807945251465 seconds
+Alpha: 0.6, Beta: 0.09, Phi: 1.0 Time elapsed: 6.402372121810913 seconds
+Alpha: 0.65, Beta: 0.05, Phi: 1.0 Time elapsed: 6.321550369262695 seconds
+Alpha: 0.65, Beta: 0.086, Phi: 1.0 Time elapsed: 6.374086380004883 seconds
+Alpha: 0.7, Beta: 0.046, Phi: 1.0 Time elapsed: 6.4089601039886475 seconds
+Alpha: 0.7, Beta: 0.074, Phi: 1.0 Time elapsed: 6.133713960647583 seconds
+Alpha: 0.75, Beta: 0.038, Phi: 1.0 Time elapsed: 6.0506861209869385 seconds
+Alpha: 0.75, Beta: 0.062, Phi: 1.0 Time elapsed: 6.061915397644043 seconds
+Alpha: 0.75, Beta: 0.09, Phi: 1.0 Time elapsed: 6.072587490081787 seconds
+Alpha: 0.8, Beta: 0.05, Phi: 1.0 Time elapsed: 5.926923513412476 seconds
+Alpha: 0.8, Beta: 0.074, Phi: 1.0 Time elapsed: 6.0419762134552 seconds
+Alpha: 0.85, Beta: 0.034, Phi: 1.0 Time elapsed: 6.035987854003906 seconds
+Alpha: 0.85, Beta: 0.058, Phi: 1.0 Time elapsed: 6.148266315460205 seconds
+Alpha: 0.85, Beta: 0.09, Phi: 1.0 Time elapsed: 6.145779371261597 seconds
+Alpha: 0.9, Beta: 0.046, Phi: 1.0 Time elapsed: 6.05766487121582 seconds
+Alpha: 0.9, Beta: 0.074, Phi: 1.0 Time elapsed: 5.90533971786499 seconds
+Alpha: 0.9, Beta: 0.098, Phi: 1.0 Time elapsed: 5.872771501541138 seconds
+Alpha: 0.3, Beta: 0.054, Phi: 1.0 Time elapsed: 7.148152828216553 seconds
+Alpha: 0.3, Beta: 0.082, Phi: 1.0 Time elapsed: 6.733108043670654 seconds
+Alpha: 0.35, Beta: 0.038, Phi: 1.0 Time elapsed: 6.35184645652771 seconds
+Alpha: 0.35, Beta: 0.066, Phi: 1.0 Time elapsed: 5.958837509155273 seconds
+Alpha: 0.35, Beta: 0.086, Phi: 1.0 Time elapsed: 5.842071533203125 seconds
+Alpha: 0.4, Beta: 0.038, Phi: 1.0 Time elapsed: 6.03393292427063 seconds
+Alpha: 0.4, Beta: 0.066, Phi: 1.0 Time elapsed: 5.885464668273926 seconds
+Alpha: 0.4, Beta: 0.094, Phi: 1.0 Time elapsed: 5.932846784591675 seconds
+Alpha: 0.45, Beta: 0.05, Phi: 1.0 Time elapsed: 6.013309001922607 seconds
+Alpha: 0.45, Beta: 0.078, Phi: 1.0 Time elapsed: 6.029604196548462 seconds
+Alpha: 0.5, Beta: 0.034, Phi: 1.0 Time elapsed: 5.857607126235962 seconds
+Alpha: 0.5, Beta: 0.062, Phi: 1.0 Time elapsed: 5.8454554080963135 seconds
+Alpha: 0.5, Beta: 0.09, Phi: 1.0 Time elapsed: 5.862098932266235 seconds
+Alpha: 0.55, Beta: 0.046, Phi: 1.0 Time elapsed: 5.707535266876221 seconds
+Alpha: 0.55, Beta: 0.074, Phi: 1.0 Time elapsed: 5.505846261978149 seconds
+Alpha: 0.6, Beta: 0.03, Phi: 1.0 Time elapsed: 5.451287031173706 seconds
+Alpha: 0.6, Beta: 0.058, Phi: 1.0 Time elapsed: 5.5466530323028564 seconds
+Alpha: 0.6, Beta: 0.086, Phi: 1.0 Time elapsed: 5.636784076690674 seconds
+Alpha: 0.65, Beta: 0.042, Phi: 1.0 Time elapsed: 5.575006008148193 seconds
+Alpha: 0.65, Beta: 0.07, Phi: 1.0 Time elapsed: 5.605614423751831 seconds
+Alpha: 0.65, Beta: 0.098, Phi: 1.0 Time elapsed: 5.638011455535889 seconds
+Alpha: 0.7, Beta: 0.042, Phi: 1.0 Time elapsed: 5.660454273223877 seconds
+Alpha: 0.7, Beta: 0.07, Phi: 1.0 Time elapsed: 5.851712703704834 seconds
+Alpha: 0.7, Beta: 0.098, Phi: 1.0 Time elapsed: 5.8197057247161865 seconds
+Alpha: 0.75, Beta: 0.054, Phi: 1.0 Time elapsed: 5.911039352416992 seconds
+Alpha: 0.75, Beta: 0.082, Phi: 1.0 Time elapsed: 5.868354320526123 seconds
+Alpha: 0.8, Beta: 0.038, Phi: 1.0 Time elapsed: 6.050370454788208 seconds
+Alpha: 0.8, Beta: 0.066, Phi: 1.0 Time elapsed: 5.901575803756714 seconds
+Alpha: 0.8, Beta: 0.094, Phi: 1.0 Time elapsed: 6.009618759155273 seconds
+Alpha: 0.85, Beta: 0.05, Phi: 1.0 Time elapsed: 5.849328279495239 seconds
+Alpha: 0.85, Beta: 0.078, Phi: 1.0 Time elapsed: 5.8796117305755615 seconds
+Alpha: 0.9, Beta: 0.034, Phi: 1.0 Time elapsed: 5.929891109466553 seconds
+Alpha: 0.9, Beta: 0.062, Phi: 1.0 Time elapsed: 5.92411208152771 seconds
+Alpha: 0.9, Beta: 0.09, Phi: 1.0 Time elapsed: 5.711843967437744 seconds
+Alpha: 0.3, Beta: 0.046, Phi: 1.0 Time elapsed: 7.011315822601318 seconds
+Alpha: 0.3, Beta: 0.062, Phi: 1.0 Time elapsed: 6.733846187591553 seconds
+Alpha: 0.3, Beta: 0.094, Phi: 1.0 Time elapsed: 6.347321033477783 seconds
+Alpha: 0.35, Beta: 0.054, Phi: 1.0 Time elapsed: 6.111982822418213 seconds
+Alpha: 0.35, Beta: 0.082, Phi: 1.0 Time elapsed: 5.904848337173462 seconds
+Alpha: 0.4, Beta: 0.042, Phi: 1.0 Time elapsed: 6.033445119857788 seconds
+Alpha: 0.4, Beta: 0.074, Phi: 1.0 Time elapsed: 5.992469549179077 seconds
+Alpha: 0.45, Beta: 0.03, Phi: 1.0 Time elapsed: 5.883679389953613 seconds
+Alpha: 0.45, Beta: 0.054, Phi: 1.0 Time elapsed: 6.046496391296387 seconds
+Alpha: 0.45, Beta: 0.086, Phi: 1.0 Time elapsed: 6.113682985305786 seconds
+Alpha: 0.5, Beta: 0.042, Phi: 1.0 Time elapsed: 5.906206369400024 seconds
+Alpha: 0.5, Beta: 0.07, Phi: 1.0 Time elapsed: 5.879661321640015 seconds
+Alpha: 0.5, Beta: 0.094, Phi: 1.0 Time elapsed: 5.924707889556885 seconds
+Alpha: 0.55, Beta: 0.05, Phi: 1.0 Time elapsed: 6.403871536254883 seconds
+Alpha: 0.55, Beta: 0.078, Phi: 1.0 Time elapsed: 6.265488147735596 seconds
+Alpha: 0.6, Beta: 0.034, Phi: 1.0 Time elapsed: 6.142752170562744 seconds
+Alpha: 0.6, Beta: 0.062, Phi: 1.0 Time elapsed: 6.386948585510254 seconds
+Alpha: 0.6, Beta: 0.094, Phi: 1.0 Time elapsed: 6.387101173400879 seconds
+Alpha: 0.65, Beta: 0.058, Phi: 1.0 Time elapsed: 6.365038871765137 seconds
+Alpha: 0.65, Beta: 0.094, Phi: 1.0 Time elapsed: 6.362723350524902 seconds
+Alpha: 0.7, Beta: 0.054, Phi: 1.0 Time elapsed: 6.375417947769165 seconds
+Alpha: 0.7, Beta: 0.082, Phi: 1.0 Time elapsed: 5.916186332702637 seconds
+Alpha: 0.75, Beta: 0.03, Phi: 1.0 Time elapsed: 5.764632701873779 seconds
+Alpha: 0.75, Beta: 0.058, Phi: 1.0 Time elapsed: 5.8791892528533936 seconds
+Alpha: 0.75, Beta: 0.086, Phi: 1.0 Time elapsed: 5.798628091812134 seconds
+Alpha: 0.8, Beta: 0.042, Phi: 1.0 Time elapsed: 5.78766131401062 seconds
+Alpha: 0.8, Beta: 0.07, Phi: 1.0 Time elapsed: 5.781083345413208 seconds
+Alpha: 0.8, Beta: 0.098, Phi: 1.0 Time elapsed: 5.912728548049927 seconds
+Alpha: 0.85, Beta: 0.054, Phi: 1.0 Time elapsed: 5.806006908416748 seconds
+Alpha: 0.85, Beta: 0.082, Phi: 1.0 Time elapsed: 5.810849666595459 seconds
+Alpha: 0.9, Beta: 0.038, Phi: 1.0 Time elapsed: 5.809723138809204 seconds
+Alpha: 0.9, Beta: 0.066, Phi: 1.0 Time elapsed: 5.868986368179321 seconds
+Alpha: 0.9, Beta: 0.094, Phi: 1.0 Time elapsed: 5.670881032943726 seconds
+Macro computation time: 3 minutes and 41 seconds
+Combining results time: 4 minutes and 36 seconds
+Running performance indicators computation...
+Alpha: 0.3, Beta: 0.09, Phi: 1.0 Time elapsed: 70.42588949203491 seconds
+Alpha: 0.35, Beta: 0.07, Phi: 1.0 Time elapsed: 75.26576375961304 seconds
+Alpha: 0.8, Beta: 0.07, Phi: 1.0 Time elapsed: 134.24773740768433 seconds
+Alpha: 0.8, Beta: 0.098, Phi: 1.0 Time elapsed: 133.16070985794067 seconds
+Alpha: 0.85, Beta: 0.054, Phi: 1.0 Time elapsed: 133.34006452560425 seconds
+Alpha: 0.85, Beta: 0.078, Phi: 1.0 Time elapsed: 134.05200815200806 seconds
+Alpha: 0.85, Beta: 0.098, Phi: 1.0 Time elapsed: 134.67006969451904 seconds
+Alpha: 0.9, Beta: 0.054, Phi: 1.0 Time elapsed: 133.9924521446228 seconds
+Alpha: 0.9, Beta: 0.082, Phi: 1.0 Time elapsed: 135.46082043647766 seconds
+Alpha: 0.4, Beta: 0.07, Phi: 1.0 Time elapsed: 76.2416136264801 seconds
+Alpha: 0.8, Beta: 0.066, Phi: 1.0 Time elapsed: 137.323792219162 seconds
+Alpha: 0.8, Beta: 0.094, Phi: 1.0 Time elapsed: 136.660626411438 seconds
+Alpha: 0.85, Beta: 0.05, Phi: 1.0 Time elapsed: 136.77186036109924 seconds
+Alpha: 0.85, Beta: 0.082, Phi: 1.0 Time elapsed: 138.82769918441772 seconds
+Alpha: 0.9, Beta: 0.038, Phi: 1.0 Time elapsed: 136.75112867355347 seconds
+Alpha: 0.9, Beta: 0.058, Phi: 1.0 Time elapsed: 137.14812803268433 seconds
+Alpha: 0.9, Beta: 0.086, Phi: 1.0 Time elapsed: 139.174467086792 seconds
+Alpha: 0.35, Beta: 0.03, Phi: 1.0 Time elapsed: 72.97566437721252 seconds
+Alpha: 0.35, Beta: 0.09, Phi: 1.0 Time elapsed: 73.6036331653595 seconds
+Alpha: 0.45, Beta: 0.03, Phi: 1.0 Time elapsed: 74.72135996818542 seconds
+Alpha: 0.5, Beta: 0.03, Phi: 1.0 Time elapsed: 74.43712067604065 seconds
+Alpha: 0.5, Beta: 0.09, Phi: 1.0 Time elapsed: 69.46268653869629 seconds
+Alpha: 0.8, Beta: 0.074, Phi: 1.0 Time elapsed: 136.5916075706482 seconds
+Alpha: 0.85, Beta: 0.03, Phi: 1.0 Time elapsed: 136.35619688034058 seconds
+Alpha: 0.85, Beta: 0.058, Phi: 1.0 Time elapsed: 138.07103896141052 seconds
+Alpha: 0.85, Beta: 0.086, Phi: 1.0 Time elapsed: 137.2470088005066 seconds
+Alpha: 0.9, Beta: 0.042, Phi: 1.0 Time elapsed: 137.92509484291077 seconds
+Alpha: 0.9, Beta: 0.062, Phi: 1.0 Time elapsed: 137.08878350257874 seconds
+Alpha: 0.9, Beta: 0.09, Phi: 1.0 Time elapsed: 137.46636509895325 seconds
+Alpha: 0.3, Beta: 0.03, Phi: 1.0 Time elapsed: 70.16521787643433 seconds
+Alpha: 0.45, Beta: 0.09, Phi: 1.0 Time elapsed: 76.36544561386108 seconds
+Alpha: 0.5, Beta: 0.07, Phi: 1.0 Time elapsed: 73.09602904319763 seconds
+Alpha: 0.8, Beta: 0.082, Phi: 1.0 Time elapsed: 168.14888525009155 seconds
+Alpha: 0.85, Beta: 0.038, Phi: 1.0 Time elapsed: 165.42052364349365 seconds
+Alpha: 0.85, Beta: 0.066, Phi: 1.0 Time elapsed: 165.2309136390686 seconds
+Alpha: 0.9, Beta: 0.03, Phi: 1.0 Time elapsed: 167.1507441997528 seconds
+Alpha: 0.9, Beta: 0.07, Phi: 1.0 Time elapsed: 168.42810654640198 seconds
+Alpha: 0.9, Beta: 0.098, Phi: 1.0 Time elapsed: 164.2985701560974 seconds
+Alpha: 0.3, Beta: 0.05, Phi: 1.0 Time elapsed: 69.86435055732727 seconds
+Alpha: 0.4, Beta: 0.09, Phi: 1.0 Time elapsed: 74.08938026428223 seconds
+Alpha: 0.45, Beta: 0.07, Phi: 1.0 Time elapsed: 72.12130188941956 seconds
+Alpha: 0.8, Beta: 0.062, Phi: 1.0 Time elapsed: 135.8710343837738 seconds
+Alpha: 0.8, Beta: 0.09, Phi: 1.0 Time elapsed: 134.30893349647522 seconds
+Alpha: 0.85, Beta: 0.046, Phi: 1.0 Time elapsed: 135.48039388656616 seconds
+Alpha: 0.85, Beta: 0.074, Phi: 1.0 Time elapsed: 136.19086623191833 seconds
+Alpha: 0.85, Beta: 0.094, Phi: 1.0 Time elapsed: 135.21243238449097 seconds
+Alpha: 0.9, Beta: 0.05, Phi: 1.0 Time elapsed: 134.89422249794006 seconds
+Alpha: 0.9, Beta: 0.078, Phi: 1.0 Time elapsed: 136.0688247680664 seconds
+Alpha: 0.4, Beta: 0.03, Phi: 1.0 Time elapsed: 77.55506300926208 seconds
+Alpha: 0.5, Beta: 0.05, Phi: 1.0 Time elapsed: 74.9293622970581 seconds
+Alpha: 0.8, Beta: 0.078, Phi: 1.0 Time elapsed: 136.658385515213 seconds
+Alpha: 0.85, Beta: 0.034, Phi: 1.0 Time elapsed: 134.04600262641907 seconds
+Alpha: 0.85, Beta: 0.062, Phi: 1.0 Time elapsed: 133.8221173286438 seconds
+Alpha: 0.85, Beta: 0.09, Phi: 1.0 Time elapsed: 135.36646151542664 seconds
+Alpha: 0.9, Beta: 0.046, Phi: 1.0 Time elapsed: 133.5670576095581 seconds
+Alpha: 0.9, Beta: 0.066, Phi: 1.0 Time elapsed: 135.20379519462585 seconds
+Alpha: 0.9, Beta: 0.094, Phi: 1.0 Time elapsed: 134.1797969341278 seconds
+Alpha: 0.3, Beta: 0.07, Phi: 1.0 Time elapsed: 68.65102314949036 seconds
+Alpha: 0.35, Beta: 0.05, Phi: 1.0 Time elapsed: 74.13765001296997 seconds
+Alpha: 0.4, Beta: 0.05, Phi: 1.0 Time elapsed: 77.86004090309143 seconds
+Alpha: 0.45, Beta: 0.05, Phi: 1.0 Time elapsed: 78.198007106781 seconds
+Alpha: 0.8, Beta: 0.086, Phi: 1.0 Time elapsed: 167.54870533943176 seconds
+Alpha: 0.85, Beta: 0.042, Phi: 1.0 Time elapsed: 162.8357880115509 seconds
+Alpha: 0.85, Beta: 0.07, Phi: 1.0 Time elapsed: 164.29127502441406 seconds
+Alpha: 0.9, Beta: 0.034, Phi: 1.0 Time elapsed: 164.497403383255 seconds
+Alpha: 0.9, Beta: 0.074, Phi: 1.0 Time elapsed: 166.28539299964905 seconds
+An error occurred: '(alpha,beta)=(0.3,0.054) not found in data'
+An error occurred: '(alpha,beta)=(0.3,0.034) not found in data'
+An error occurred: '(alpha,beta)=(0.3,0.038) not found in data'
+An error occurred: '(alpha,beta)=(0.3,0.042) not found in data'
+An error occurred: '(alpha,beta)=(0.3,0.046) not found in data'
+An error occurred: '(alpha,beta)=(0.3,0.058) not found in data'
+An error occurred: '(alpha,beta)=(0.3,0.062) not found in data'
+An error occurred: '(alpha,beta)=(0.3,0.066) not found in data'
+An error occurred: '(alpha,beta)=(0.3,0.074) not found in data'
+An error occurred: '(alpha,beta)=(0.3,0.078) not found in data'
+An error occurred: '(alpha,beta)=(0.3,0.086) not found in data'
+An error occurred: '(alpha,beta)=(0.3,0.082) not found in data'
+An error occurred: '(alpha,beta)=(0.3,0.094) not found in data'
+An error occurred: '(alpha,beta)=(0.3,0.098) not found in data'
+An error occurred: '(alpha,beta)=(0.35,0.034) not found in data'
+An error occurred: '(alpha,beta)=(0.35,0.038) not found in data'
+An error occurred: '(alpha,beta)=(0.35,0.042) not found in data'
+An error occurred: '(alpha,beta)=(0.35,0.046) not found in data'
+An error occurred: '(alpha,beta)=(0.35,0.054) not found in data'
+An error occurred: '(alpha,beta)=(0.35,0.058) not found in data'
+An error occurred: '(alpha,beta)=(0.35,0.062) not found in data'
+An error occurred: '(alpha,beta)=(0.35,0.066) not found in data'
+An error occurred: '(alpha,beta)=(0.35,0.074) not found in data'
+An error occurred: '(alpha,beta)=(0.35,0.078) not found in data'
+An error occurred: '(alpha,beta)=(0.35,0.082) not found in data'
+An error occurred: '(alpha,beta)=(0.35,0.086) not found in data'
+An error occurred: '(alpha,beta)=(0.35,0.094) not found in data'
+An error occurred: '(alpha,beta)=(0.35,0.098) not found in data'
+An error occurred: '(alpha,beta)=(0.4,0.038) not found in data'
+An error occurred: '(alpha,beta)=(0.4,0.034) not found in data'
+An error occurred: '(alpha,beta)=(0.4,0.042) not found in data'
+An error occurred: '(alpha,beta)=(0.4,0.046) not found in data'
+An error occurred: '(alpha,beta)=(0.4,0.054) not found in data'
+An error occurred: '(alpha,beta)=(0.4,0.058) not found in data'
+An error occurred: '(alpha,beta)=(0.4,0.066) not found in data'
+An error occurred: '(alpha,beta)=(0.4,0.062) not found in data'
+An error occurred: '(alpha,beta)=(0.4,0.074) not found in data'
+An error occurred: '(alpha,beta)=(0.4,0.078) not found in data'
+An error occurred: '(alpha,beta)=(0.4,0.086) not found in data'
+An error occurred: '(alpha,beta)=(0.4,0.082) not found in data'
+An error occurred: '(alpha,beta)=(0.4,0.098) not found in data'
+An error occurred: '(alpha,beta)=(0.4,0.094) not found in data'
+An error occurred: '(alpha,beta)=(0.45,0.034) not found in data'
+An error occurred: '(alpha,beta)=(0.45,0.038) not found in data'
+An error occurred: '(alpha,beta)=(0.45,0.042) not found in data'
+An error occurred: '(alpha,beta)=(0.45,0.046) not found in data'
+An error occurred: '(alpha,beta)=(0.45,0.054) not found in data'
+An error occurred: '(alpha,beta)=(0.45,0.058) not found in data'
+An error occurred: '(alpha,beta)=(0.45,0.062) not found in data'
+An error occurred: '(alpha,beta)=(0.45,0.066) not found in data'
+An error occurred: '(alpha,beta)=(0.45,0.074) not found in data'
+An error occurred: '(alpha,beta)=(0.45,0.078) not found in data'
+An error occurred: '(alpha,beta)=(0.45,0.082) not found in data'
+An error occurred: '(alpha,beta)=(0.45,0.086) not found in data'
+An error occurred: '(alpha,beta)=(0.45,0.094) not found in data'
+An error occurred: '(alpha,beta)=(0.45,0.098) not found in data'
+An error occurred: '(alpha,beta)=(0.5,0.034) not found in data'
+An error occurred: '(alpha,beta)=(0.5,0.038) not found in data'
+An error occurred: '(alpha,beta)=(0.5,0.046) not found in data'
+An error occurred: '(alpha,beta)=(0.5,0.042) not found in data'
+An error occurred: '(alpha,beta)=(0.5,0.054) not found in data'
+An error occurred: '(alpha,beta)=(0.5,0.058) not found in data'
+An error occurred: '(alpha,beta)=(0.5,0.062) not found in data'
+An error occurred: '(alpha,beta)=(0.5,0.066) not found in data'
+An error occurred: '(alpha,beta)=(0.5,0.074) not found in data'
+An error occurred: '(alpha,beta)=(0.5,0.078) not found in data'
+An error occurred: '(alpha,beta)=(0.5,0.082) not found in data'
+An error occurred: '(alpha,beta)=(0.5,0.086) not found in data'
+An error occurred: '(alpha,beta)=(0.5,0.094) not found in data'
+An error occurred: '(alpha,beta)=(0.5,0.098) not found in data'
+An error occurred: '(alpha,beta)=(0.55,0.034) not found in data'
+An error occurred: '(alpha,beta)=(0.55,0.038) not found in data'
+An error occurred: '(alpha,beta)=(0.55,0.042) not found in data'
+An error occurred: '(alpha,beta)=(0.55,0.046) not found in data'
+An error occurred: Expecting ',' delimiter: line 1737620 column 35 (char 62774996)
+An error occurred: Expecting ',' delimiter: line 1997413 column 37 (char 72190871)
+An error occurred: Expecting ',' delimiter: line 2200133 column 35 (char 79513688)
+An error occurred: Expecting ',' delimiter: line 2518263 column 34 (char 91021315)
+An error occurred: Expecting ',' delimiter: line 2576108 column 37 (char 93113913)
+An error occurred: Expecting ',' delimiter: line 2777103 column 38 (char 100437365)
+An error occurred: Expecting ',' delimiter: line 3153772 column 36 (char 114038104)
+An error occurred: Expecting ',' delimiter: line 3298169 column 34 (char 119269432)
+An error occurred: Expecting ',' delimiter: line 3500409 column 35 (char 126593146)
+An error occurred: Expecting ',' delimiter: line 3731965 column 35 (char 134963379)
+An error occurred: Expecting ',' delimiter: line 4020060 column 35 (char 145425625)
+An error occurred: Expecting ',' delimiter: line 4165403 column 37 (char 150656987)
+An error occurred: Expecting ',' delimiter: line 4399018 column 38 (char 159026259)
+An error occurred: '(alpha,beta)=(0.55,0.054) not found in data'
+An error occurred: Expecting ',' delimiter: line 4658214 column 35 (char 168442788)
+An error occurred: '(alpha,beta)=(0.55,0.058) not found in data'
+An error occurred: '(alpha,beta)=(0.55,0.062) not found in data'
+An error occurred: Expecting ',' delimiter: line 5005413 column 35 (char 180997338)
+An error occurred: Expecting ',' delimiter: line 5206932 column 36 (char 188321033)
+An error occurred: Expecting ',' delimiter: line 5496949 column 36 (char 198782956)
+An error occurred: Expecting ',' delimiter: line 5871739 column 35 (char 212383569)
+An error occurred: Expecting ',' delimiter: line 5871739 column 35 (char 212383569)
+An error occurred: Expecting ',' delimiter: line 6075574 column 35 (char 219706968)
+An error occurred: Expecting ',' delimiter: line 6104472 column 36 (char 220753069)
+An error occurred: Expecting ',' delimiter: line 6248737 column 35 (char 225984686)
+An error occurred: Expecting ',' delimiter: line 6507647 column 35 (char 235401297)
+An error occurred: Expecting ',' delimiter: line 6855525 column 35 (char 247957228)
+An error occurred: Expecting ',' delimiter: line 7346782 column 35 (char 265742674)
+An error occurred: Expecting ',' delimiter: line 7548853 column 38 (char 273066678)
+An error occurred: Expecting ',' delimiter: line 7750606 column 35 (char 280389525)
+An error occurred: Expecting ',' delimiter: line 7953474 column 35 (char 287713402)
+An error occurred: Expecting ',' delimiter: line 8155129 column 37 (char 295036753)
+An error occurred: Expecting ',' delimiter: line 8386317 column 35 (char 303406010)
+An error occurred: Expecting ',' delimiter: line 8588577 column 35 (char 310730681)
+An error occurred: Expecting ',' delimiter: line 9080362 column 36 (char 328517104)
+An error occurred: Expecting ',' delimiter: line 9341602 column 35 (char 337933780)
+An error occurred: Expecting ',' delimiter: line 9632246 column 33 (char 348396406)
+An error occurred: Expecting ',' delimiter: line 9919712 column 34 (char 358859490)
+An error occurred: Expecting ',' delimiter: line 10267182 column 36 (char 371414580)
+An error occurred: Expecting ',' delimiter: line 10525345 column 34 (char 380829905)
+An error occurred: Expecting ',' delimiter: line 10814456 column 35 (char 391292723)
+An error occurred: Expecting ',' delimiter: line 11276626 column 35 (char 408032777)
+An error occurred: Expecting ',' delimiter: line 11623881 column 34 (char 420588469)
+An error occurred: Expecting ',' delimiter: line 11971919 column 35 (char 433143419)
+An error occurred: Expecting ',' delimiter: line 12376294 column 35 (char 447789814)
+An error occurred: Expecting ',' delimiter: line 12724416 column 36 (char 460345083)
+An error occurred: Expecting ',' delimiter: line 13071645 column 36 (char 472900409)
+An error occurred: Expecting ',' delimiter: line 13448180 column 35 (char 486501517)
+An error occurred: Expecting ',' delimiter: line 13970728 column 36 (char 505335212)
+An error occurred: Expecting ',' delimiter: line 14519390 column 35 (char 525213088)
+An error occurred: Expecting ',' delimiter: line 14751542 column 37 (char 533583341)
+An error occurred: Expecting ',' delimiter: line 15126764 column 35 (char 547184449)
+An error occurred: Expecting ',' delimiter: line 15588388 column 35 (char 563925141)
+An error occurred: Expecting ',' delimiter: line 16080916 column 35 (char 581710543)
+An error occurred: Expecting ',' delimiter: line 16543928 column 35 (char 598450782)
+An error occurred: Expecting ',' delimiter: line 17036229 column 34 (char 616236795)
+An error occurred: Expecting ',' delimiter: line 18105212 column 35 (char 654949392)
+An error occurred: Expecting ',' delimiter: line 18681830 column 35 (char 675875422)
+An error occurred: Expecting ',' delimiter: line 19203225 column 35 (char 694707235)
+An error occurred: Expecting ',' delimiter: line 19665871 column 35 (char 711447225)
+An error occurred: Expecting ',' delimiter: line 20274417 column 35 (char 733418327)
+An error occurred: Expecting ',' delimiter: line 20793975 column 37 (char 752250729)
+An error occurred: Expecting ',' delimiter: line 21401326 column 35 (char 774222466)
+An error occurred: Expecting ',' delimiter: line 22875599 column 35 (char 827580456)
+An error occurred: Expecting ',' delimiter: line 23484348 column 35 (char 849553119)
+An error occurred: Expecting ',' delimiter: line 24090764 column 35 (char 871523465)
+An error occurred: Expecting ',' delimiter: line 24696609 column 35 (char 893495252)
+An error occurred: Expecting ',' delimiter: line 25333853 column 35 (char 916514207)
+An error occurred: Expecting ',' delimiter: line 26056637 column 36 (char 942669791)
+An error occurred: Expecting ',' delimiter: line 26809921 column 36 (char 969872257)
+An error occurred: Expecting ',' delimiter: line 28402006 column 35 (char 1027417383)
+An error occurred: Expecting ',' delimiter: line 29242105 column 37 (char 1057758938)
+An error occurred: Expecting ',' delimiter: line 30108426 column 35 (char 1089146842)
+An error occurred: Expecting ',' delimiter: line 30859867 column 38 (char 1116349443)
+An error occurred: Expecting ',' delimiter: line 31784260 column 39 (char 1149829836)
+An error occurred: Expecting ',' delimiter: line 32563568 column 38 (char 1178076953)
+An error occurred: Expecting ',' delimiter: line 33432347 column 35 (char 1209466344)
+An error occurred: Expecting ',' delimiter: line 35138114 column 37 (char 1271192954)
+An error occurred: Expecting ',' delimiter: line 36264246 column 38 (char 1311996416)
+An error occurred: Expecting ',' delimiter: line 37189833 column 38 (char 1345475798)
+An error occurred: Expecting ',' delimiter: line 38230585 column 35 (char 1383141554)
+An error occurred: Expecting ',' delimiter: line 39385804 column 35 (char 1424990268)
+An error occurred: Expecting ',' delimiter: line 40485471 column 35 (char 1464747516)
+An error occurred: Expecting ',' delimiter: line 41700149 column 35 (char 1508689114)
+An error occurred: Expecting ',' delimiter: line 43695431 column 20 (char 1580882581)
+An error occurred: Expecting ',' delimiter: line 45258204 column 34 (char 1637381346)
+An error occurred: Expecting ',' delimiter: line 46646449 column 34 (char 1687602068)
+An error occurred: Expecting ',' delimiter: line 47890131 column 35 (char 1732589610)
+An error occurred: Expecting ',' delimiter: line 49163906 column 36 (char 1778623311)
+An error occurred: Expecting ',' delimiter: line 50437229 column 36 (char 1824657270)
+An error occurred: Expecting ',' delimiter: line 51855171 column 38 (char 1875923799)
+An error occurred: Expecting ',' delimiter: line 54600812 column 37 (char 1975320263)
+An error occurred: Expecting ',' delimiter: line 56279325 column 35 (char 2036001854)
+An error occurred: Expecting ',' delimiter: line 57929922 column 34 (char 2095638508)
+Alpha: 0.3, Beta: 0.054, Phi: 1.0 Time elapsed: 166.18459796905518 seconds
+Alpha: 0.3, Beta: 0.082, Phi: 1.0 Time elapsed: 161.98068237304688 seconds
+Alpha: 0.35, Beta: 0.034, Phi: 1.0 Time elapsed: 161.32454442977905 seconds
+Alpha: 0.35, Beta: 0.066, Phi: 1.0 Time elapsed: 162.86873865127563 seconds
+Alpha: 0.35, Beta: 0.094, Phi: 1.0 Time elapsed: 164.3108479976654 seconds
+Alpha: 0.4, Beta: 0.05, Phi: 1.0 Time elapsed: 165.49356031417847 seconds
+Alpha: 0.4, Beta: 0.086, Phi: 1.0 Time elapsed: 141.3918845653534 seconds
+Alpha: 0.4, Beta: 0.094, Phi: 1.0 Time elapsed: 129.56562662124634 seconds
+Alpha: 0.45, Beta: 0.05, Phi: 1.0 Time elapsed: 129.7284574508667 seconds
+Alpha: 0.45, Beta: 0.078, Phi: 1.0 Time elapsed: 136.98160648345947 seconds
+Alpha: 0.5, Beta: 0.034, Phi: 1.0 Time elapsed: 143.23043584823608 seconds
+Alpha: 0.5, Beta: 0.058, Phi: 1.0 Time elapsed: 135.43813109397888 seconds
+Alpha: 0.7, Beta: 0.078, Phi: 1.0 Time elapsed: 130.6042902469635 seconds
+Alpha: 0.75, Beta: 0.03, Phi: 1.0 Time elapsed: 130.2887477874756 seconds
+Alpha: 0.75, Beta: 0.054, Phi: 1.0 Time elapsed: 134.6042172908783 seconds
+Alpha: 0.75, Beta: 0.078, Phi: 1.0 Time elapsed: 141.0521218776703 seconds
+Alpha: 0.8, Beta: 0.034, Phi: 1.0 Time elapsed: 140.42518401145935 seconds
+Alpha: 0.8, Beta: 0.062, Phi: 1.0 Time elapsed: 143.6098518371582 seconds
+Alpha: 0.8, Beta: 0.09, Phi: 1.0 Time elapsed: 142.05058407783508 seconds
+Alpha: 0.85, Beta: 0.046, Phi: 1.0 Time elapsed: 142.76532578468323 seconds
+Alpha: 0.85, Beta: 0.074, Phi: 1.0 Time elapsed: 141.9617965221405 seconds
+Alpha: 0.9, Beta: 0.03, Phi: 1.0 Time elapsed: 143.3947286605835 seconds
+Alpha: 0.9, Beta: 0.058, Phi: 1.0 Time elapsed: 144.38448286056519 seconds
+Alpha: 0.9, Beta: 0.086, Phi: 1.0 Time elapsed: 145.38016748428345 seconds
+Alpha: 0.3, Beta: 0.038, Phi: 1.0 Time elapsed: 165.9540195465088 seconds
+Alpha: 0.3, Beta: 0.066, Phi: 1.0 Time elapsed: 161.91622591018677 seconds
+Alpha: 0.35, Beta: 0.03, Phi: 1.0 Time elapsed: 161.1292850971222 seconds
+Alpha: 0.35, Beta: 0.058, Phi: 1.0 Time elapsed: 162.56571745872498 seconds
+Alpha: 0.35, Beta: 0.086, Phi: 1.0 Time elapsed: 164.03041529655457 seconds
+Alpha: 0.4, Beta: 0.042, Phi: 1.0 Time elapsed: 165.34914255142212 seconds
+Alpha: 0.4, Beta: 0.082, Phi: 1.0 Time elapsed: 150.5660789012909 seconds
+Alpha: 0.45, Beta: 0.042, Phi: 1.0 Time elapsed: 140.9215178489685 seconds
+Alpha: 0.45, Beta: 0.07, Phi: 1.0 Time elapsed: 141.2557888031006 seconds
+Alpha: 0.45, Beta: 0.094, Phi: 1.0 Time elapsed: 152.20568537712097 seconds
+Alpha: 0.5, Beta: 0.05, Phi: 1.0 Time elapsed: 159.57466411590576 seconds
+Alpha: 0.7, Beta: 0.09, Phi: 1.0 Time elapsed: 130.609472990036 seconds
+Alpha: 0.75, Beta: 0.042, Phi: 1.0 Time elapsed: 131.5420696735382 seconds
+Alpha: 0.75, Beta: 0.066, Phi: 1.0 Time elapsed: 136.79939675331116 seconds
+Alpha: 0.75, Beta: 0.09, Phi: 1.0 Time elapsed: 141.9311661720276 seconds
+Alpha: 0.8, Beta: 0.042, Phi: 1.0 Time elapsed: 141.30240416526794 seconds
+Alpha: 0.8, Beta: 0.07, Phi: 1.0 Time elapsed: 145.6076304912567 seconds
+Alpha: 0.8, Beta: 0.094, Phi: 1.0 Time elapsed: 140.98498511314392 seconds
+Alpha: 0.85, Beta: 0.05, Phi: 1.0 Time elapsed: 143.34036827087402 seconds
+Alpha: 0.85, Beta: 0.078, Phi: 1.0 Time elapsed: 143.71747946739197 seconds
+Alpha: 0.9, Beta: 0.034, Phi: 1.0 Time elapsed: 144.2149817943573 seconds
+Alpha: 0.9, Beta: 0.062, Phi: 1.0 Time elapsed: 143.979389667511 seconds
+Alpha: 0.9, Beta: 0.09, Phi: 1.0 Time elapsed: 146.63939261436462 seconds
+Alpha: 0.3, Beta: 0.046, Phi: 1.0 Time elapsed: 137.3153669834137 seconds
+Alpha: 0.3, Beta: 0.062, Phi: 1.0 Time elapsed: 136.80566215515137 seconds
+Alpha: 0.3, Beta: 0.09, Phi: 1.0 Time elapsed: 136.13034868240356 seconds
+Alpha: 0.35, Beta: 0.046, Phi: 1.0 Time elapsed: 138.4206621646881 seconds
+Alpha: 0.35, Beta: 0.074, Phi: 1.0 Time elapsed: 135.95462369918823 seconds
+Alpha: 0.4, Beta: 0.03, Phi: 1.0 Time elapsed: 136.79913687705994 seconds
+Alpha: 0.4, Beta: 0.058, Phi: 1.0 Time elapsed: 138.84097933769226 seconds
+Alpha: 0.4, Beta: 0.062, Phi: 1.0 Time elapsed: 133.79711270332336 seconds
+Alpha: 0.4, Beta: 0.09, Phi: 1.0 Time elapsed: 133.55736327171326 seconds
+Alpha: 0.45, Beta: 0.046, Phi: 1.0 Time elapsed: 134.38688468933105 seconds
+Alpha: 0.45, Beta: 0.074, Phi: 1.0 Time elapsed: 148.00891065597534 seconds
+Alpha: 0.5, Beta: 0.03, Phi: 1.0 Time elapsed: 158.00617361068726 seconds
+Alpha: 0.5, Beta: 0.062, Phi: 1.0 Time elapsed: 148.2047758102417 seconds
+Alpha: 0.7, Beta: 0.074, Phi: 1.0 Time elapsed: 141.9745819568634 seconds
+Alpha: 0.75, Beta: 0.034, Phi: 1.0 Time elapsed: 140.72179913520813 seconds
+Alpha: 0.75, Beta: 0.062, Phi: 1.0 Time elapsed: 149.5521194934845 seconds
+Alpha: 0.75, Beta: 0.094, Phi: 1.0 Time elapsed: 150.33507132530212 seconds
+Alpha: 0.8, Beta: 0.05, Phi: 1.0 Time elapsed: 151.66339826583862 seconds
+Alpha: 0.8, Beta: 0.078, Phi: 1.0 Time elapsed: 152.15503072738647 seconds
+Alpha: 0.85, Beta: 0.034, Phi: 1.0 Time elapsed: 151.76724815368652 seconds
+Alpha: 0.85, Beta: 0.062, Phi: 1.0 Time elapsed: 153.54689931869507 seconds
+Alpha: 0.85, Beta: 0.09, Phi: 1.0 Time elapsed: 153.72079706192017 seconds
+Alpha: 0.9, Beta: 0.046, Phi: 1.0 Time elapsed: 154.99071216583252 seconds
+Alpha: 0.9, Beta: 0.074, Phi: 1.0 Time elapsed: 154.43517446517944 seconds
+Alpha: 0.3, Beta: 0.042, Phi: 1.0 Time elapsed: 166.16353487968445 seconds
+Alpha: 0.3, Beta: 0.078, Phi: 1.0 Time elapsed: 162.05976271629333 seconds
+Alpha: 0.35, Beta: 0.038, Phi: 1.0 Time elapsed: 161.2347116470337 seconds
+Alpha: 0.35, Beta: 0.062, Phi: 1.0 Time elapsed: 162.49528288841248 seconds
+Alpha: 0.35, Beta: 0.09, Phi: 1.0 Time elapsed: 163.77048563957214 seconds
+Alpha: 0.4, Beta: 0.046, Phi: 1.0 Time elapsed: 164.86097645759583 seconds
+Alpha: 0.4, Beta: 0.078, Phi: 1.0 Time elapsed: 150.04854798316956 seconds
+Alpha: 0.45, Beta: 0.038, Phi: 1.0 Time elapsed: 140.60568404197693 seconds
+Alpha: 0.45, Beta: 0.062, Phi: 1.0 Time elapsed: 140.96127271652222 seconds
+Alpha: 0.45, Beta: 0.09, Phi: 1.0 Time elapsed: 151.7570822238922 seconds
+Alpha: 0.5, Beta: 0.042, Phi: 1.0 Time elapsed: 159.50662851333618 seconds
+Alpha: 0.7, Beta: 0.066, Phi: 1.0 Time elapsed: 141.59576725959778 seconds
+Alpha: 0.7, Beta: 0.094, Phi: 1.0 Time elapsed: 139.58049297332764 seconds
+Alpha: 0.75, Beta: 0.05, Phi: 1.0 Time elapsed: 148.7210099697113 seconds
+Alpha: 0.75, Beta: 0.082, Phi: 1.0 Time elapsed: 150.3960988521576 seconds
+Alpha: 0.8, Beta: 0.038, Phi: 1.0 Time elapsed: 152.15411257743835 seconds
+Alpha: 0.8, Beta: 0.066, Phi: 1.0 Time elapsed: 152.97583317756653 seconds
+Alpha: 0.8, Beta: 0.098, Phi: 1.0 Time elapsed: 150.7216899394989 seconds
+Alpha: 0.85, Beta: 0.054, Phi: 1.0 Time elapsed: 154.70859241485596 seconds
+Alpha: 0.85, Beta: 0.082, Phi: 1.0 Time elapsed: 153.81787419319153 seconds
+Alpha: 0.9, Beta: 0.038, Phi: 1.0 Time elapsed: 154.68666744232178 seconds
+Alpha: 0.9, Beta: 0.066, Phi: 1.0 Time elapsed: 155.87298607826233 seconds
+Alpha: 0.9, Beta: 0.094, Phi: 1.0 Time elapsed: 148.5603165626526 seconds
+Alpha: 0.3, Beta: 0.034, Phi: 1.0 Time elapsed: 166.00009322166443 seconds
+Alpha: 0.3, Beta: 0.07, Phi: 1.0 Time elapsed: 161.4740445613861 seconds
+Alpha: 0.3, Beta: 0.094, Phi: 1.0 Time elapsed: 160.42728662490845 seconds
+Alpha: 0.35, Beta: 0.05, Phi: 1.0 Time elapsed: 162.58279180526733 seconds
+Alpha: 0.35, Beta: 0.078, Phi: 1.0 Time elapsed: 163.7450807094574 seconds
+Alpha: 0.4, Beta: 0.034, Phi: 1.0 Time elapsed: 165.45286893844604 seconds
+Alpha: 0.4, Beta: 0.07, Phi: 1.0 Time elapsed: 150.38750886917114 seconds
+Alpha: 0.45, Beta: 0.03, Phi: 1.0 Time elapsed: 140.7809054851532 seconds
+Alpha: 0.45, Beta: 0.058, Phi: 1.0 Time elapsed: 141.1363217830658 seconds
+Alpha: 0.45, Beta: 0.086, Phi: 1.0 Time elapsed: 152.0880491733551 seconds
+Alpha: 0.5, Beta: 0.046, Phi: 1.0 Time elapsed: 159.68543124198914 seconds
+Alpha: 0.7, Beta: 0.07, Phi: 1.0 Time elapsed: 142.09036445617676 seconds
+Alpha: 0.7, Beta: 0.098, Phi: 1.0 Time elapsed: 141.47347736358643 seconds
+Alpha: 0.75, Beta: 0.058, Phi: 1.0 Time elapsed: 149.04258942604065 seconds
+Alpha: 0.75, Beta: 0.086, Phi: 1.0 Time elapsed: 150.8098545074463 seconds
+Alpha: 0.8, Beta: 0.046, Phi: 1.0 Time elapsed: 151.006600856781 seconds
+Alpha: 0.8, Beta: 0.074, Phi: 1.0 Time elapsed: 154.14035320281982 seconds
+Alpha: 0.85, Beta: 0.03, Phi: 1.0 Time elapsed: 151.86744022369385 seconds
+Alpha: 0.85, Beta: 0.058, Phi: 1.0 Time elapsed: 153.2505223751068 seconds
+Alpha: 0.85, Beta: 0.086, Phi: 1.0 Time elapsed: 153.86703205108643 seconds
+Alpha: 0.9, Beta: 0.042, Phi: 1.0 Time elapsed: 155.08485317230225 seconds
+Alpha: 0.9, Beta: 0.07, Phi: 1.0 Time elapsed: 154.7085485458374 seconds
+Alpha: 0.9, Beta: 0.098, Phi: 1.0 Time elapsed: 149.0563726425171 seconds
+Alpha: 0.3, Beta: 0.05, Phi: 1.0 Time elapsed: 137.2219579219818 seconds
+Alpha: 0.3, Beta: 0.058, Phi: 1.0 Time elapsed: 136.87954902648926 seconds
+Alpha: 0.3, Beta: 0.086, Phi: 1.0 Time elapsed: 136.04896450042725 seconds
+Alpha: 0.35, Beta: 0.042, Phi: 1.0 Time elapsed: 138.29859972000122 seconds
+Alpha: 0.35, Beta: 0.07, Phi: 1.0 Time elapsed: 135.9243679046631 seconds
+Alpha: 0.35, Beta: 0.098, Phi: 1.0 Time elapsed: 136.4603385925293 seconds
+Alpha: 0.4, Beta: 0.054, Phi: 1.0 Time elapsed: 159.0017306804657 seconds
+Alpha: 0.4, Beta: 0.074, Phi: 1.0 Time elapsed: 150.76113891601562 seconds
+Alpha: 0.45, Beta: 0.034, Phi: 1.0 Time elapsed: 141.52110886573792 seconds
+Alpha: 0.45, Beta: 0.066, Phi: 1.0 Time elapsed: 143.60392117500305 seconds
+Alpha: 0.45, Beta: 0.098, Phi: 1.0 Time elapsed: 151.7020492553711 seconds
+Alpha: 0.5, Beta: 0.054, Phi: 1.0 Time elapsed: 161.19806551933289 seconds
+Alpha: 0.7, Beta: 0.082, Phi: 1.0 Time elapsed: 142.45516991615295 seconds
+Alpha: 0.75, Beta: 0.038, Phi: 1.0 Time elapsed: 141.81950902938843 seconds
+Alpha: 0.75, Beta: 0.07, Phi: 1.0 Time elapsed: 151.79661440849304 seconds
+Alpha: 0.75, Beta: 0.098, Phi: 1.0 Time elapsed: 150.16000270843506 seconds
+Alpha: 0.8, Beta: 0.058, Phi: 1.0 Time elapsed: 152.1422200202942 seconds
+Alpha: 0.8, Beta: 0.086, Phi: 1.0 Time elapsed: 152.86941838264465 seconds
+Alpha: 0.85, Beta: 0.042, Phi: 1.0 Time elapsed: 152.9675223827362 seconds
+Alpha: 0.85, Beta: 0.07, Phi: 1.0 Time elapsed: 150.8202884197235 seconds
+Alpha: 0.85, Beta: 0.098, Phi: 1.0 Time elapsed: 155.1107099056244 seconds
+Alpha: 0.9, Beta: 0.054, Phi: 1.0 Time elapsed: 154.4117774963379 seconds
+Alpha: 0.9, Beta: 0.082, Phi: 1.0 Time elapsed: 152.26949787139893 seconds
+Alpha: 0.3, Beta: 0.03, Phi: 1.0 Time elapsed: 166.1638662815094 seconds
+Alpha: 0.3, Beta: 0.074, Phi: 1.0 Time elapsed: 161.62059926986694 seconds
+Alpha: 0.3, Beta: 0.098, Phi: 1.0 Time elapsed: 160.5284206867218 seconds
+Alpha: 0.35, Beta: 0.054, Phi: 1.0 Time elapsed: 162.31125903129578 seconds
+Alpha: 0.35, Beta: 0.082, Phi: 1.0 Time elapsed: 163.64693117141724 seconds
+Alpha: 0.4, Beta: 0.038, Phi: 1.0 Time elapsed: 165.31844568252563 seconds
+Alpha: 0.4, Beta: 0.066, Phi: 1.0 Time elapsed: 150.327294588089 seconds
+Alpha: 0.4, Beta: 0.098, Phi: 1.0 Time elapsed: 140.22419047355652 seconds
+Alpha: 0.45, Beta: 0.054, Phi: 1.0 Time elapsed: 140.7232642173767 seconds
+Alpha: 0.45, Beta: 0.082, Phi: 1.0 Time elapsed: 152.3807475566864 seconds
+Alpha: 0.5, Beta: 0.038, Phi: 1.0 Time elapsed: 159.67182207107544 seconds
+Alpha: 0.7, Beta: 0.086, Phi: 1.0 Time elapsed: 141.04762983322144 seconds
+Alpha: 0.75, Beta: 0.046, Phi: 1.0 Time elapsed: 140.24796533584595 seconds
+Alpha: 0.75, Beta: 0.074, Phi: 1.0 Time elapsed: 148.45219206809998 seconds
+Alpha: 0.8, Beta: 0.03, Phi: 1.0 Time elapsed: 148.29443454742432 seconds
+Alpha: 0.8, Beta: 0.054, Phi: 1.0 Time elapsed: 151.01972365379333 seconds
+Alpha: 0.8, Beta: 0.082, Phi: 1.0 Time elapsed: 149.5289933681488 seconds
+Alpha: 0.85, Beta: 0.038, Phi: 1.0 Time elapsed: 150.59814524650574 seconds
+Alpha: 0.85, Beta: 0.066, Phi: 1.0 Time elapsed: 150.13559913635254 seconds
+Alpha: 0.85, Beta: 0.094, Phi: 1.0 Time elapsed: 151.3600251674652 seconds
+Alpha: 0.9, Beta: 0.05, Phi: 1.0 Time elapsed: 154.33688950538635 seconds
+Alpha: 0.9, Beta: 0.078, Phi: 1.0 Time elapsed: 150.87360858917236 seconds
+An error occurred: Expecting value: line 5323049 column 13 (char 192505878)
+An error occurred: Expecting ',' delimiter: line 5263797 column 35 (char 190413183)
+An error occurred: Expecting ',' delimiter: line 5901273 column 35 (char 213429603)
+An error occurred: Expecting ',' delimiter: line 5959966 column 34 (char 215522461)
+An error occurred: Expecting ',' delimiter: line 6189640 column 35 (char 223891754)
+An error occurred: Expecting ',' delimiter: line 6739973 column 36 (char 243772247)
+An error occurred: Expecting ',' delimiter: line 6912417 column 36 (char 250049688)
+An error occurred: Expecting ',' delimiter: line 7143806 column 35 (char 258419316)
+An error occurred: Expecting ',' delimiter: line 7403876 column 37 (char 267835241)
+An error occurred: Expecting ',' delimiter: line 7636314 column 36 (char 276205063)
+An error occurred: Expecting ',' delimiter: line 7837545 column 36 (char 283528694)
+An error occurred: Expecting ',' delimiter: line 8356536 column 35 (char 302359806)
+An error occurred: Expecting ',' delimiter: line 8588577 column 35 (char 310730680)
+An error occurred: Expecting ',' delimiter: line 8877152 column 35 (char 321193015)
+An error occurred: Expecting ',' delimiter: line 9225343 column 36 (char 333748794)
+An error occurred: Expecting ',' delimiter: line 9515681 column 36 (char 344211291)
+An error occurred: Expecting ',' delimiter: line 9805144 column 36 (char 354674328)
+An error occurred: Expecting ',' delimiter: line 10468039 column 36 (char 378738160)
+An error occurred: Expecting ',' delimiter: line 10814456 column 35 (char 391292723)
+An error occurred: Expecting ',' delimiter: line 11075243 column 36 (char 400708776)
+An error occurred: Expecting ',' delimiter: line 11565467 column 38 (char 418496121)
+An error occurred: Expecting ',' delimiter: line 11913058 column 35 (char 431050611)
+An error occurred: Expecting ',' delimiter: line 12435088 column 35 (char 449882303)
+An error occurred: Expecting ',' delimiter: line 12318843 column 36 (char 445697601)
+An error occurred: Expecting ',' delimiter: line 12753125 column 36 (char 461391434)
+An error occurred: Expecting ',' delimiter: line 13448180 column 35 (char 486501517)
+An error occurred: Expecting ',' delimiter: line 13854458 column 36 (char 501150007)
+An error occurred: Expecting ',' delimiter: line 14346178 column 37 (char 518935967)
+An error occurred: Expecting ',' delimiter: line 15474069 column 34 (char 559739894)
+An error occurred: Expecting ',' delimiter: line 15040743 column 35 (char 544045608)
+An error occurred: Expecting ',' delimiter: line 15936895 column 34 (char 576479670)
+An error occurred: Expecting ',' delimiter: line 16284596 column 36 (char 589034063)
+An error occurred: Expecting ',' delimiter: line 16746896 column 36 (char 605773927)
+An error occurred: Expecting ',' delimiter: line 17151245 column 35 (char 620421583)
+An error occurred: Expecting ',' delimiter: line 17671776 column 36 (char 639255786)
+An error occurred: Expecting ',' delimiter: line 18769675 column 36 (char 679014040)
+An error occurred: Expecting ',' delimiter: line 19317358 column 35 (char 698891917)
+An error occurred: Expecting ',' delimiter: line 20332271 column 35 (char 735511260)
+An error occurred: Expecting ',' delimiter: line 19868189 column 36 (char 718770569)
+An error occurred: Expecting ',' delimiter: line 20880574 column 35 (char 755388936)
+An error occurred: Expecting ',' delimiter: line 21401326 column 35 (char 774222469)
+An error occurred: Expecting ',' delimiter: line 22731165 column 34 (char 822349706)
+An error occurred: Expecting ',' delimiter: line 22093536 column 34 (char 799332255)
+An error occurred: Expecting ',' delimiter: line 24090764 column 35 (char 871523467)
+An error occurred: Expecting ',' delimiter: line 24813316 column 36 (char 897680520)
+An error occurred: Expecting ',' delimiter: line 25507298 column 34 (char 922791973)
+An error occurred: Expecting ',' delimiter: line 26229686 column 38 (char 948947187)
+An error occurred: Expecting ',' delimiter: line 26867204 column 35 (char 971964660)
+An error occurred: Expecting ',' delimiter: line 27503058 column 34 (char 994982283)
+An error occurred: Expecting ',' delimiter: line 28227828 column 37 (char 1021139785)
+An error occurred: Expecting ',' delimiter: line 30396906 column 38 (char 1099609158)
+An error occurred: Expecting ',' delimiter: line 29675326 column 35 (char 1073453061)
+An error occurred: Expecting ',' delimiter: line 31813029 column 35 (char 1150875918)
+An error occurred: Expecting ',' delimiter: line 32680640 column 38 (char 1182262687)
+An error occurred: Expecting ',' delimiter: line 33633443 column 38 (char 1216790157)
+An error occurred: Expecting ',' delimiter: line 34559648 column 37 (char 1250269416)
+An error occurred: Expecting ',' delimiter: line 35542757 column 35 (char 1285839984)
+An error occurred: Expecting ',' delimiter: line 36960317 column 35 (char 1337105664)
+An error occurred: Expecting ',' delimiter: line 37913001 column 36 (char 1371632490)
+An error occurred: Expecting ',' delimiter: line 39992742 column 35 (char 1446960964)
+An error occurred: Expecting ',' delimiter: line 41006931 column 34 (char 1483579667)
+An error occurred: Expecting ',' delimiter: line 41987888 column 35 (char 1519152377)
+An error occurred: Expecting ',' delimiter: line 43088830 column 35 (char 1558909755)
+An error occurred: Expecting ',' delimiter: line 44245322 column 36 (char 1600762635)
+An error occurred: Expecting ',' delimiter: line 45461514 column 36 (char 1644705516)
+An error occurred: Expecting ',' delimiter: line 47368884 column 37 (char 1713757449)
+An error occurred: Expecting ',' delimiter: line 49423729 column 35 (char 1788039218)
+An error occurred: Expecting ',' delimiter: line 50844044 column 35 (char 1839305869)
+An error occurred: Expecting ',' delimiter: line 54022894 column 34 (char 1954394759)
+An error occurred: Expecting ',' delimiter: line 52550512 column 37 (char 1901034846)
+An error occurred: Expecting ',' delimiter: line 55613707 column 34 (char 2011937860)
+An error occurred: Expecting ',' delimiter: line 57148010 column 34 (char 2067390893)

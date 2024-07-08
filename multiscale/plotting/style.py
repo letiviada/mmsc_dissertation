@@ -20,12 +20,12 @@ def style_and_colormap(colormap='tab20', num_positions = None):
     "text.usetex": True,
     "font.family": "serif",
     "font.serif": "Computer Modern Roman",
-    "font.size": 20,
-    #"axes.labelsize": 20,
-    "axes.titlesize": 20,
-    #"legend.fontsize": 20,
-    #"xtick.labelsize": 20,
-    #"ytick.labelsize": 20
+    "font.size": 18,
+    "axes.labelsize": 18,
+    "axes.titlesize": 18,
+    "legend.fontsize": 18,
+    "xtick.labelsize": 16,
+    "ytick.labelsize": 16
     })
     sns.set_style('darkgrid')
     color_map = plt.get_cmap(colormap,num_positions)

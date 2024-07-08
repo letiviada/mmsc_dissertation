@@ -12,7 +12,7 @@ def model(size):
     data_to_keep = clean_data(filename='performance_indicators_phi_1.0.json')
     data = obtain_data(data_to_keep, 'Termination time')
     inputs, outputs = data.drop('Termination time', axis = 1), data['Termination time']
-    print(inputs.shape, outputs.shape)
+   # print(inputs.shape, outputs.shape)
     X_train_old, X_test, y_train_old, y_test = train_test_split(inputs, outputs, test_size=0.2, random_state=42)
     # Resample data
     X_train, y_train = sampling_data(X_train_old, y_train_old, size)
@@ -49,7 +49,7 @@ def main(num_runs,sizes):
     std_r2_list = []
     for size in sizes:
         print(f"Running model for sample size: {size}")
-        mean_mse, std_mse, mean_r2, std_r2 = run_model(num_runs, size)
+        _, mean_mse, std_mse, mean_r2, std_r2 = run_model(num_runs, size)
         mean_r2_list.append(mean_r2)
         std_r2_list.append(std_r2)
     # Create a DataFrame to store the summary statistics
@@ -58,11 +58,11 @@ def main(num_runs,sizes):
         'Mean R2': mean_r2_list,
         'Std R2': std_r2_list
     })
-    summary_stats.to_csv('summary_statistics_by_sample_size.csv', index=False)
+    summary_stats.to_csv('/home/viadacampos/Documents/mmsc_dissertation/summary_statistics_by_sample_size.csv', index=False)
 
 if __name__ == '__main__':
     num_runs = 10
-    sizes = [10, 20, 30, 40]
+    sizes = np.arange(10,283,2)
     main(num_runs, sizes)
 
     
