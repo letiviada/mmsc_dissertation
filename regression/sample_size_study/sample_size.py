@@ -1,4 +1,6 @@
 from sklearn.model_selection import train_test_split,cross_val_score, GridSearchCV, KFold
+import sys
+sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
 from utils import save_model
 from utils import clean_data, obtain_data, sampling_data
 from sklearn.ensemble import RandomForestRegressor

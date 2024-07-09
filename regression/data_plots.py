@@ -6,7 +6,7 @@ sys.path.append('/Users/letiviada/dissertation_mmsc')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 from multiscale.plotting import view_data_all_outputs, boxplot
 
-def main(outputs:list):
+def dataplots(outputs:list):
     """
     Function that plots figures for the data we have obtained
 
@@ -27,4 +27,4 @@ def main(outputs:list):
 
 if __name__ == '__main__':
     outputs =['Termination time', 'Lifetime'] 
-    main(outputs)
+    dataplots(outputs)

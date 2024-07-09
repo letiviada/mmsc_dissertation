@@ -45,9 +45,6 @@ def clean_data(filename: str = 'performance_indicators_phi_1.0.json'):
     _, data_to_keep = get_data_from_json(filepath)
     
     data_to_keep = data_to_keep[data_to_keep['Lifetime'] <= 200]
-        # Just to check if the value i wanted to remove did it
-    #data.sort_values(by=['alpha', 'beta'], inplace=True)
-    #print(data)
     return data_to_keep
 
 def sampling_data(X, y, size):
