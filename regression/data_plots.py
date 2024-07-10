@@ -6,7 +6,7 @@ sys.path.append('/Users/letiviada/dissertation_mmsc')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 from multiscale.plotting import view_data_all_outputs, boxplot
 
-def dataplots(outputs:list):
+def dataplots(outputs):
     """
     Function that plots figures for the data we have obtained
 
@@ -18,11 +18,7 @@ def dataplots(outputs:list):
     filename = '/home/viadacampos/Documents/mmsc_dissertation/multiscale/results/mono-dispersed/performance_indicators/performance_indicators_phi_1.0.json')
     print(data.describe())
     view_data_all_outputs(data,outputs)
-    boxplot(data, outputs)
-    data_to_keep = clean_data()
-    print(data_to_keep.describe())
-    boxplot(data_to_keep,outputs)
-    view_data_all_outputs(data_to_keep, outputs)
+    plt.show()
     
 
 if __name__ == '__main__':
