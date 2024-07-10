@@ -1,7 +1,9 @@
 import json
 import pandas as pd
+import numpy as np
 import os
-def get_data_from_json(filename:str = '/home/viadacampos/mmsc_dissertaion/multiscale/results/mono-dispersed/performance_indicators/performance_indicators_phi_1.0.json') -> pd.DataFrame:
+from utils.help_functions import create_interp
+def get_data_from_json(filename:str) -> pd.DataFrame:
     """
     Function that gets the json file and processes the data
 
@@ -13,7 +15,15 @@ def get_data_from_json(filename:str = '/home/viadacampos/mmsc_dissertaion/multis
     -------
     ml_data (pd.DataFrame): the data in a pandas DataFrame
     """
-    with open(filename) as f:
+    directory = '/home/viadacampos/Documents/mmsc_dissertation/multiscale/results/mono-dispersed/'
+    filepath = os.path.join(directory, filename)
+    if not os.path.exists(filepath):
+        directory = '/Users/letiviada/dissertation_mmsc/multiscale/results/mono-dispersed/'
+        filepath = os.path.join(directory, filename)
+        if not os.path.exists(filepath):
+            raise FileNotFoundError("JSON file not found in any of the specified directories.")
+
+    with open(filepath) as f:
         data_json = json.load(f)
 
     data_list = []
@@ -26,23 +36,15 @@ def get_data_from_json(filename:str = '/home/viadacampos/mmsc_dissertaion/multis
         data_list.append(record)
 
     ml_data = pd.DataFrame(data_list)
-    data_to_keep = ml_data[['Adhesivity', 'Particle Size', 'Termination time', 'Lifetime']] 
-    return ml_data, data_to_keep
+    #data_to_keep = ml_data[['Adhesivity', 'Particle Size', 'Termination time', 'Lifetime']] 
+    return ml_data
 
-def obtain_data(data_all, output:str, filename: str = '/home/viadacampos/Documents/mmsc_dissertation/multiscale/results/mono-dispersed/performance_indicators/performance_indicators_phi_1.0.json') -> pd.DataFrame:
-  
+def obtain_data(output:str, data_all: str) -> pd.DataFrame:
     data = data_all[['Adhesivity', 'Particle Size', output]]
     return data
 
-def clean_data(filename: str = 'performance_indicators_phi_1.0.json'):
-    directory = '/home/viadacampos/Documents/mmsc_dissertation/multiscale/results/mono-dispersed/performance_indicators/'
-    filepath = os.path.join(directory, filename)
-    if not os.path.exists(filepath):
-        directory = '/Users/letiviada/dissertation_mmsc/multiscale/results/mono-dispersed/performance_indicators/'
-        filepath = os.path.join(directory, filename)
-        if not os.path.exists(filepath):
-            raise FileNotFoundError("JSON file not found in any of the specified directories.")
-    _, data_to_keep = get_data_from_json(filepath)
+def clean_data(filename: str) -> pd.DataFrame:
+    data_to_keep = get_data_from_json(filename)
     
     data_to_keep = data_to_keep[data_to_keep['Lifetime'] <= 200]
     return data_to_keep
@@ -53,3 +55,33 @@ def sampling_data(X, y, size):
 
     return X_new, y_new
 
+def data_time(time:int, names:list, data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Function that creates a new column in the data for the time specified in the names columns
+
+    Parameters:
+    ----------
+    time (int): the time we want to consider
+    names (list): the list of names of the columns we want to consider
+    data (pd.DataFrame): the data we want to consider
+
+    Returns:
+    -------
+    data (pd.DataFrame): the data with the new columns
+    """
+    #data = get_data_from_json(filename)
+    filter_working_indices = data[data['Termination time'] > time].index
+    filter_finished_indices = data[data['Termination time'] <= time].index
+    for name in names:
+        if name == 'Volume Liquid':
+            data.loc[filter_finished_indices,f'{name}_time_{time}'] = data.loc[filter_finished_indices, 'Lifetime']
+            y_axis = 'Throughput'
+        elif name == 'Last Concentration':
+            data.loc[filter_finished_indices,f'{name}_time_{time}'] = data.loc[filter_finished_indices, 'Concentration Outlet']
+            y_axis = 'Concentration Outlet'
+        for index in filter_working_indices:
+            row = data.loc[index]
+            interp_func = create_interp(row, y_axis)
+            data.at[index, f'{name}_time_{time}'] = interp_func(time) if interp_func is not None else np.nan
+    return data
+    

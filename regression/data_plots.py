@@ -14,8 +14,8 @@ def dataplots(outputs):
     ----------
     outputs (list): List of output parameters we are interested in
     """
-    _, data = get_data_from_json(
-    filename = '/home/viadacampos/Documents/mmsc_dissertation/multiscale/results/mono-dispersed/performance_indicators/performance_indicators_phi_1.0.json')
+    data = get_data_from_json(
+    filename = 'performance_indicators/performance_indicators_phi_1.0.json')
     print(data.describe())
     view_data_all_outputs(data,outputs)
     plt.show()
