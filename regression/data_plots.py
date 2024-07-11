@@ -17,7 +17,6 @@ def dataplots(outputs):
     """
     data = get_data_from_json(
     filename = 'performance_indicators/performance_indicators_phi_1.0.json')
-    print(data.describe())
     view_data_all_outputs(data,outputs)
     plt.show()
     

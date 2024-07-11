@@ -45,18 +45,19 @@ def scatter_solutions(inputs,outputs,name):
     _, colors = style_and_colormap(num_positions = 13, colormap = 'tab20b')
     colors = colors.tolist()
     # Plot the results of the model
-    ax[0].plot(outputs['Termination time'] , outputs['Termination time'] , color = colors[1])
-    sns.scatterplot(x = outputs['Termination time'] , y = outputs['Prediction'] , ax = ax[0], color = colors[0])
+    ax[0].plot(outputs[name] , outputs[name] , color = colors[1])
+    sns.scatterplot(x = outputs[name] , y = outputs[name] , ax = ax[0], color = colors[0])
 
     combined = pd.concat([
-                inputs.assign(Termination_time = outputs['Termination time'], Type = 'Actual'),
-                inputs.assign(Termination_time = outputs['Prediction'], Type = 'Prediction')
+                inputs.assign(Solution = outputs[name], Type = 'Actual'),
+                inputs.assign(Solution = outputs['Prediction'], Type = 'Prediction')
                 
     ] )
-    sns.scatterplot(data = combined,x = 'Adhesivity', y = 'Termination_time', 
+    sns.scatterplot(data = combined,x = 'Adhesivity', y = 'Solution', 
                     hue = 'Particle Size', style = 'Type', 
                     palette = colors, ax = ax[1])
-    ax[1].legend(bbox_to_anchor= (1.05,1.0), loc = 'upper right', ncols = 2) 
+    ax[1].legend(bbox_to_anchor= (1.5,1.0), loc = 'upper right', ncols = 2) 
     plt.tight_layout()
-    save_figure(fig, f'regression/figures/data_/solution_regression_{name}')
+    name_save = name.replace(" ", "_").lower()
+    save_figure(fig, f'regression/figures/data_/solution_regression_{name_save}')
     plt.show()

@@ -18,6 +18,5 @@ def change_name_time(output, time):
     -------
     output_name_folder (str): the name of the folder
     """
-    output_name = output.replace(' ', '_').lower()
-    output_name_folder= f'{output_name}_time_{time}'
+    output_name_folder= f'{output}_time_{time}'
     return output_name_folder

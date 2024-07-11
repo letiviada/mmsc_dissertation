@@ -23,11 +23,11 @@ def performance_indicators(alpha,beta,phi,run,filename):
    # lifetime = filter_performance.throughput(tf =[termination_time])
     performance_indicators={
             'time' : time_ev.tolist(),
-            'Termination time': termination_time,
-            'Concentration Outlet': conc_outlet.tolist(),
-            'Throughput':throughput.tolist(),
-            'Efficiency': eff_total,
-            'Lifetime': lifetime
+            'termination_time': termination_time,
+            'concentration_outlet': conc_outlet.tolist(),
+            'throughput':throughput.tolist(),
+            'efficiency': eff_total,
+            'lifetime': lifetime
     }
     return performance_indicators
 

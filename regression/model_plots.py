@@ -22,12 +22,13 @@ def model_eval(output_variable,type_eval):
     
 def main(output_variable, type_eval):  
     inputs, outputs = model_eval(output_variable,type_eval)
-    scatter_solutions(inputs,outputs,type_eval)
+    print(inputs.head(), outputs.head())
+    scatter_solutions(inputs,outputs,output_variable)
     plt.show()
 
 if __name__ == '__main__':
-    names =['test']
-    output_variable = 'Termination time'
+    names =['total']
+    output_variable = 'volume_liquid_time_400'
     for name_eval in names:
         main(output_variable, name_eval) 
 

@@ -41,9 +41,11 @@ def open_data_model(type_eval, output, filename = 'performance_indicators_phi_1.
 
     """
     if type_eval == 'total':
-        data = obtain_data(output, filename)
+        output_data = [output]
+        data = obtain_data(output_data, filename)
         inputs, outputs = data.drop(output, axis = 1), data[output]
     else:
+        output_data = output.replace(' ', '_').lower()
         path_to_data  = os.path.join(model_path, f'{output}/{type_eval}_data.pkl')
         inputs, outputs = joblib.load(path_to_data)
     return inputs, outputs

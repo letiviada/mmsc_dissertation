@@ -31,22 +31,23 @@ def get_data_from_json(filename:str) -> pd.DataFrame:
         _, alpha_beta = key.split('=')
         keys_str = alpha_beta.strip("()").split(',')
         alpha,beta = float(keys_str[0]), float(keys_str[1])
-        record = {'Adhesivity': alpha, 'Particle Size': beta}
+        record = {'adhesivity': alpha, 'particle_size': beta}
         record.update(value)
         data_list.append(record)
 
     ml_data = pd.DataFrame(data_list)
+    
     #data_to_keep = ml_data[['Adhesivity', 'Particle Size', 'Termination time', 'Lifetime']] 
     return ml_data
 
-def obtain_data(output:str, data_all: str) -> pd.DataFrame:
-    data = data_all[['Adhesivity', 'Particle Size', output]]
+def obtain_data(output:list, data_all: pd.DataFrame) -> pd.DataFrame:
+    data = data_all[['adhesivity', 'particle_size']+ output]
     return data
 
 def clean_data(filename: str) -> pd.DataFrame:
     data_to_keep = get_data_from_json(filename)
     
-    data_to_keep = data_to_keep[data_to_keep['Lifetime'] <= 200]
+    data_to_keep = data_to_keep[data_to_keep['lifetime'] <= 200]
     return data_to_keep
 
 def sampling_data(X, y, size):
@@ -70,17 +71,35 @@ def data_time(time:int, names:list, data: pd.DataFrame) -> pd.DataFrame:
     data (pd.DataFrame): the data with the new columns
     """
     #data = get_data_from_json(filename)
-    filter_working_indices = data[data['Termination time'] > time].index
-    filter_finished_indices = data[data['Termination time'] <= time].index
+    filter_working_indices = data[data['termination_time'] > time].index
+    filter_finished_indices = data[data['termination_time'] <= time].index
     for name in names:
-        if name == 'Volume Liquid':
-            data.loc[filter_finished_indices,f'{name}_time_{time}'] = data.loc[filter_finished_indices, 'Lifetime']
-            y_axis = 'Throughput'
-        elif name == 'Last Concentration':
-            data.loc[filter_finished_indices,f'{name}_time_{time}'] = data.loc[filter_finished_indices, 'Concentration Outlet']
-            y_axis = 'Concentration Outlet'
+        if name == 'volume_liquid':
+            data.loc[filter_finished_indices,f'{name}_time_{time}'] = data.loc[filter_finished_indices, 'lifetime']
+            y_axis = 'throughput'
+        elif name == 'last_concentration':
+            data.loc[filter_finished_indices, f'{name}_time_{time}'] = data.loc[filter_finished_indices, 'concentration_outlet'].apply(lambda x: x[-1])
+            y_axis = 'concentration_outlet'
+
         for index in filter_working_indices:
             row = data.loc[index]
             interp_func = create_interp(row, y_axis)
             data.at[index, f'{name}_time_{time}'] = interp_func(time) if interp_func is not None else np.nan
+    return data
+def get_ratio(numerator: str, denominator: str, power: float, data: pd.DataFrame) -> pd.DataFrame:
+    
+    """
+    Function that gets the ratio of two columns in the data
+
+    Parameters:
+    ----------
+    numerator (str): the name of the column we want to consider as the numerator
+    denominator (str): the name of the column we want to consider as the denominator
+    data (pd.DataFrame): the data we want to consider
+
+    Returns:
+    -------
+    data (pd.DataFrame): the data with the new column
+    """
+    data['ratio'] = (data[numerator]) / (data[denominator] ** power)
     return data

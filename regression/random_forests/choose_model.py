@@ -17,13 +17,13 @@ def opt_model(time, outputs:str, filename:str):
     data = data_time(time, outputs, ml_data)
     for output in outputs:
         output_name = f'{output}_time_{time}'
-        data_train = obtain_data(output_name, data)
+        data_train = obtain_data([output_name], data)
         train_model(output_name, data_train)
 
 if __name__ == '__main__':
     filename = 'performance_indicators/performance_indicators_phi_1.0.json'
-    outputs = ['Volume Liquid']
-    #outputs = 'Termination time'
+    outputs = ['volume_liquid']
+    #outputs = ['Termination time']
     time = 400
     #first_model(outputs, filename)
     opt_model(time, outputs, filename)
