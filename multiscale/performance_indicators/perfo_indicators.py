@@ -16,14 +16,15 @@ def performance_indicators(alpha,beta,phi,run,filename):
     filter_performance = FilterPerformance(t_eval=t_eval, u=velocity,c=concentration)
 
     termination_time = filter_performance.termination_time(mu=0.1)
-    time_ev = np.linspace(0,termination_time,101)
-    throughput = filter_performance.throughput(tf=t_eval)
-    _,eff_total = filter_performance.efficiency(t_eval=t_eval)
-   # lifetime = throughput[-1]
-    lifetime = filter_performance.throughput(tf =[termination_time])
+    time_ev = np.linspace(0,termination_time,201)
+    throughput = filter_performance.throughput(tf=time_ev)
+    conc_outlet,eff_total = filter_performance.efficiency(t_eval=time_ev)
+    lifetime = throughput[-1]
+   # lifetime = filter_performance.throughput(tf =[termination_time])
     performance_indicators={
             'time' : time_ev.tolist(),
             'Termination time': termination_time,
+            'Concentration Outlet': conc_outlet.tolist(),
             'Throughput':throughput.tolist(),
             'Efficiency': eff_total,
             'Lifetime': lifetime

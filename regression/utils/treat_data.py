@@ -84,4 +84,3 @@ def data_time(time:int, names:list, data: pd.DataFrame) -> pd.DataFrame:
             interp_func = create_interp(row, y_axis)
             data.at[index, f'{name}_time_{time}'] = interp_func(time) if interp_func is not None else np.nan
     return data
-    
