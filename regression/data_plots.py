@@ -22,5 +22,5 @@ def dataplots(outputs):
     
 
 if __name__ == '__main__':
-    outputs =['Termination time', 'Lifetime'] 
+    outputs =['termination_time', 'lifetime','efficiency'] 
     dataplots(outputs)

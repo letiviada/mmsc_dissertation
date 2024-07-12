@@ -38,5 +38,5 @@ def train_model(output,data):
     # Save the model
     # --------------
     save_model(model_regression, f'regression/models/{output}/model_{output}.pkl')
-    save_model((X_test, y_test), f'regression/models/{output}/test_data_.pkl')
+    save_model((X_test, y_test), f'regression/models/{output}/test_data.pkl')
     save_model((X_train, y_train), f'regression/models/{output}/train_data.pkl')

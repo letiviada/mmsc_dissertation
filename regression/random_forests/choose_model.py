@@ -8,7 +8,7 @@ from utils import obtain_data
 
 def first_model(output:str, filename:str):
     ml_data = get_data_from_json(filename)
-    data = obtain_data(output,ml_data)
+    data = obtain_data([output],ml_data)
     train_model(output, data)
 
 
@@ -22,8 +22,8 @@ def opt_model(time, outputs:str, filename:str):
 
 if __name__ == '__main__':
     filename = 'performance_indicators/performance_indicators_phi_1.0.json'
-    outputs = ['volume_liquid']
-    #outputs = ['Termination time']
+    outputs =['volume_liquid', 'last_concentration']
+    outputs = 'lifetime'
     time = 400
-    #first_model(outputs, filename)
-    opt_model(time, outputs, filename)
+    first_model(outputs, filename)
+  #  opt_model(time, outputs, filename)

@@ -10,9 +10,9 @@ def scatter_histogram(data,output):
     _, colors = style_and_colormap(num_positions = 13, colormap = 'tab20b')#
     fig, ax = create_fig(1,2,dpi = 100)
     colors = colors.tolist()
-    data_plot = data[['Adhesivity', 'Particle Size', output]] 
-    sns.scatterplot(data_plot, x='Adhesivity', y=output, ax=ax[0], size='Particle Size', sizes=(150, 150),
-                    hue='Particle Size', palette=colors[:13], legend=False),
+    data_plot = data[['adhesivity', 'particle_size', output]] 
+    sns.scatterplot(data_plot, x='adhesivity', y=output, ax=ax[0], size='particle_size', sizes=(150, 150),
+                    hue='particle_size', palette=colors[:13], legend=False),
 
    # ax[0].legend(bbox_to_anchor=(0.5, -0.3), loc='lower center', ncols=)
 

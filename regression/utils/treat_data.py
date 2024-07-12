@@ -40,8 +40,13 @@ def get_data_from_json(filename:str) -> pd.DataFrame:
     #data_to_keep = ml_data[['Adhesivity', 'Particle Size', 'Termination time', 'Lifetime']] 
     return ml_data
 
+def obtain_data_1(output:list, data_all: pd.DataFrame) -> pd.DataFrame:
+    data = data_all[['adhesivity', 'particle_size']]
+    for out in output:
+        data[out] = data_all[out]
+    return data
 def obtain_data(output:list, data_all: pd.DataFrame) -> pd.DataFrame:
-    data = data_all[['adhesivity', 'particle_size']+ output]
+    data = data_all[['adhesivity', 'particle_size'] + output] 
     return data
 
 def clean_data(filename: str) -> pd.DataFrame:
