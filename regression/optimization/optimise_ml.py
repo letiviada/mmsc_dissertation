@@ -7,24 +7,25 @@ import matplotlib.pyplot as plt
 from scipy.interpolate import griddata
 import numpy as np
 
-name = 'volume_liquid_time_400'
+
+output_name = 'volume_liquid_time_400'
 time = 400
-n = 0.1
+n = 1
 
 # Machine Learnig Model
-model_volume = open_model('volume_liquid_time_400')
-inputs, outputs_volume = open_data_model('total', 'volume_liquid_time_400', 'performance_indicators/performance_indicators_phi_1.0.json')
+model_volume = open_model(output = 'volume_liquid_time_400', model_path = f'regression/models_polynomial/')
+inputs, outputs_volume = open_data_model('total', 'volume_liquid_time_400', model_path = f'regression/models_polynomial/')
 volume_predictions = model_volume.predict(inputs)
-model_concentration = open_model('last_concentration_time_400')
+model_concentration = open_model(output = 'total_concentration_time_400', model_path=f'regression/models_polynomial/')
 concentration_predictions = model_concentration.predict(inputs)
 ratio = (volume_predictions ** n)/(concentration_predictions)
 
 # Physical Model
-physical_data = get_data_from_json('performance_indicators/performance_indicators_phi_1.0.json')
-inputs, outputs_concentration = open_data_model('total', 'last_concentration_time_400', 'performance_indicators/performance_indicators_phi_1.0.json')
-data = data_time(400, ['volume_liquid', 'last_concentration'], physical_data)
-data_model = obtain_data(['volume_liquid_time_400', 'last_concentration_time_400'], data)
-data_ratio = get_ratio('volume_liquid_time_400', 'last_concentration_time_400',n, data_model)
+physical_data = get_data_from_json('performance_indicators/performance_indicators_standard.json')
+inputs, outputs_concentration = open_data_model('total', 'total_concentration_time_400', model_path = f'regression/models_polynomial/')
+data = data_time(400, ['volume_liquid', 'total_concentration'], physical_data)
+data_model = obtain_data(['volume_liquid_time_400', 'total_concentration_time_400'], data)
+data_ratio = get_ratio('volume_liquid_time_400', 'total_concentration_time_400',n, data_model)
 
 # Add predictions to the data
 data_ratio['volume_predictions'] = volume_predictions

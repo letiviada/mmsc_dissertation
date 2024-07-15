@@ -1,16 +1,15 @@
-from sklearn.model_selection import train_test_split,cross_val_score, GridSearchCV, KFold
+from sklearn.model_selection import train_test_split
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
-from utils import save_model
-from utils import clean_data, obtain_data, sampling_data
+from utils import clean_data, obtain_data, sampling_data, get_data_from_json, save_data_to_csv
+from models import train_model
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import pandas as pd
-import time
 import numpy as np
 
 
-def model(size):
+def model_old(size):
     data_to_keep = clean_data(filename='performance_indicators_phi_1.0.json')
     data = obtain_data(data_to_keep, 'Termination time')
     inputs, outputs = data.drop('Termination time', axis = 1), data['Termination time']
@@ -26,11 +25,17 @@ def model(size):
     r2 = r2_score(y_test, y_pred)
     return mse, r2
 
-def run_model(num_runs,size):
+def sample_size_model(output:str, size: int, filename:str, type_model:str):
+    ml_data = get_data_from_json(filename)
+    data = obtain_data([output],ml_data)
+    mse, r2 = train_model(output, data, size_train = size, type_model=type_model,save = False)
+    return mse, r2
+
+def run_model(output,num_runs,size,filename,type_model):
     mse_list = []
     r2_list = []
     for _ in range(num_runs):
-        mse, r2 = model(size)
+        mse, r2 = sample_size_model(output,size,filename,type_model)
         mse_list.append(mse)
         r2_list.append(r2)
 
@@ -46,12 +51,12 @@ def run_model(num_runs,size):
     
     return results, mean_mse, std_mse, mean_r2, std_r2
 
-def main(num_runs,sizes):
+def main(output,num_runs,sizes,filename,type_model):
     mean_r2_list = []
     std_r2_list = []
     for size in sizes:
         print(f"Running model for sample size: {size}")
-        _, mean_mse, std_mse, mean_r2, std_r2 = run_model(num_runs, size)
+        _, mean_mse, std_mse, mean_r2, std_r2 = run_model(output,num_runs, size,filename,type_model)
         mean_r2_list.append(mean_r2)
         std_r2_list.append(std_r2)
     # Create a DataFrame to store the summary statistics
@@ -60,12 +65,17 @@ def main(num_runs,sizes):
         'Mean R2': mean_r2_list,
         'Std R2': std_r2_list
     })
-    summary_stats.to_csv('/home/viadacampos/Documents/mmsc_dissertation/summary_statistics_by_sample_size.csv', index=False)
+    save_data_to_csv(f'{output}/summary_statistics_{type_model}.csv', index=False)
+    print(f'Sample size study complete for {output} and {type_model}')
 
 if __name__ == '__main__':
+    filename = 'performance_indicators/performance_indicators_phi_1.0.json'
     num_runs = 10
-    sizes = np.arange(10,283,2)
-    main(num_runs, sizes)
+    sizes = np.arange(20,80,2)
+    for output in ['termination_time','lifetime','efficiency']:
+        type_models = ['polynomial','random_forest','gradient_boosting']
+        for type_model in type_models:
+            main(output,num_runs, sizes,filename,type_model)
 
     
     

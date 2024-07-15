@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import os
 from utils.help_functions import create_interp
+from scipy.integrate import quad
 def get_data_from_json(filename:str) -> pd.DataFrame:
     """
     Function that gets the json file and processes the data
@@ -81,14 +82,17 @@ def data_time(time:int, names:list, data: pd.DataFrame) -> pd.DataFrame:
     for name in names:
         if name == 'volume_liquid':
             data.loc[filter_finished_indices,f'{name}_time_{time}'] = data.loc[filter_finished_indices, 'lifetime']
-            y_axis = 'throughput'
-        elif name == 'last_concentration':
-            data.loc[filter_finished_indices, f'{name}_time_{time}'] = data.loc[filter_finished_indices, 'efficiency_time'].apply(lambda x: x[-1])
-            y_axis = 'efficiency_time'
-        for index in filter_working_indices:
-            row = data.loc[index]
-            interp_func = create_interp(row, y_axis)
-            data.at[index, f'{name}_time_{time}'] = interp_func(time) if interp_func is not None else np.nan
+            for index in filter_working_indices:
+                row = data.loc[index]
+                interp_func = create_interp(row, 'throughput')
+                data.at[index, f'{name}_time_{time}'] = interp_func(time) if interp_func is not None else np.nan
+        elif name == 'total_concentration':
+            data.loc[filter_finished_indices, f'{name}_time_{time}'] = data.loc[filter_finished_indices, 'efficiency']
+            # Calculate total concentrratiton processed
+            for index in filter_working_indices:
+                row = data.loc[index]
+                interp_func = create_interp(row, 'efficiency_time')
+                data.at[index, f'{name}_time_{time}'] = quad(interp_func, 0, time)[0] if interp_func is not None else np.nan
     return data
 def get_ratio(numerator: str, denominator: str, power: float, data: pd.DataFrame) -> pd.DataFrame:
     
