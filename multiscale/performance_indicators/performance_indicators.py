@@ -42,7 +42,7 @@ class FilterPerformance:
         """
         c_outlet= self.c[:,-1]
         concent_outlet_interp = interp1d(self.t_eval,c_outlet,kind='linear',fill_value='extrapolate')
-        conc_outlet =  concent_outlet_interp(t_eval)
+        conc_outlet = 1-concent_outlet_interp(t_eval)
 
         efficiency_total = quad(concent_outlet_interp, 0, t_eval[-1])[0]
         return conc_outlet, efficiency_total

@@ -7,6 +7,18 @@ import numpy as np
 import pandas as pd
 
 def scatter_histogram(data,output):
+    """
+    Function that plots the scatter plot and histogram of the data for a given output.
+
+    Parameters:
+    ----------
+    data (pd.DataFrame): the data to plot
+    output (str): the output to plot
+
+    Returns:
+    --------
+    fig (plt.Figure): the figure of the plot
+    """
     _, colors = style_and_colormap(num_positions = 13, colormap = 'tab20b')#
     fig, ax = create_fig(1,2,dpi = 100)
     colors = colors.tolist()
@@ -27,6 +39,18 @@ def view_data_all_outputs(data, outputs ):
         save_figure(fig, f'regression/figures/data_/{output_name}_vs_alpha_beta')
 
 def boxplot(data,outputs):
+    """
+    Function that plots the boxplot of the data for all the outputs.
+
+    Parameters:
+    ----------
+    data (pd.DataFrame): the data to plot
+    outputs (list): the list of outputs to plot
+
+    Returns:
+    --------
+    fig (plt.Figure): the figure of the plot
+    """
     _, colors = style_and_colormap(num_positions = 3, colormap = 'tab20b')
     fig, ax = create_fig(1,len(outputs),dpi = 100)
     colors = colors.tolist()
@@ -39,25 +63,43 @@ def boxplot(data,outputs):
     save_figure(fig, 'regression/figures/data_/box_all_outputs')
     return fig
 
-def scatter_solutions(inputs,outputs,name):
+def scatter_solutions(inputs,outputs,name,type_model):
+    """
+    Function that plots the solutions of the model and the actual values of the data
+
+    Parameters:
+    ----------
+    inputs (pd.DataFrame): the inputs of the model
+    outputs (pd.DataFrame): the outputs of the model
+    name (str): the name of the output
+    type_model (str): the type of model
+
+    Returns:
+    --------
+    None
+    """
     sns.set_theme()
     fig, ax = create_fig(nrows = 1, ncols = 2 ,dpi = 100)
     _, colors = style_and_colormap(num_positions = 13, colormap = 'tab20b')
     colors = colors.tolist()
     # Plot the results of the model
     ax[0].plot(outputs[name] , outputs[name] , color = colors[1])
-    sns.scatterplot(x = outputs[name] , y = outputs[name] , ax = ax[0], color = colors[0])
+    sns.scatterplot(x = outputs[name] , y = outputs['Prediction'] , ax = ax[0], color = colors[0])
 
     combined = pd.concat([
                 inputs.assign(Solution = outputs[name], Type = 'Actual'),
                 inputs.assign(Solution = outputs['Prediction'], Type = 'Prediction')
                 
     ] )
-    sns.scatterplot(data = combined,x = 'Adhesivity', y = 'Solution', 
-                    hue = 'Particle Size', style = 'Type', 
+    sns.scatterplot(data = combined,x = 'adhesivity', y = 'Solution', 
+                    hue = 'particle_size', style = 'Type', 
                     palette = colors, ax = ax[1])
     ax[1].legend(bbox_to_anchor= (1.5,1.0), loc = 'upper right', ncols = 2) 
     plt.tight_layout()
     name_save = name.replace(" ", "_").lower()
-    save_figure(fig, f'regression/figures/data_/solution_regression_{name_save}')
-    plt.show()
+    save_figure(fig, f'regression/figures/data_{type_model}/solution_{name_save}')
+    #plt.show()
+    return fig, ax
+
+def add_all_lines():
+    pass
