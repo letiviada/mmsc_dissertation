@@ -83,9 +83,8 @@ def data_time(time:int, names:list, data: pd.DataFrame) -> pd.DataFrame:
             data.loc[filter_finished_indices,f'{name}_time_{time}'] = data.loc[filter_finished_indices, 'lifetime']
             y_axis = 'throughput'
         elif name == 'last_concentration':
-            data.loc[filter_finished_indices, f'{name}_time_{time}'] = data.loc[filter_finished_indices, 'concentration_outlet'].apply(lambda x: x[-1])
-            y_axis = 'concentration_outlet'
-
+            data.loc[filter_finished_indices, f'{name}_time_{time}'] = data.loc[filter_finished_indices, 'efficiency_time'].apply(lambda x: x[-1])
+            y_axis = 'efficiency_time'
         for index in filter_working_indices:
             row = data.loc[index]
             interp_func = create_interp(row, y_axis)
@@ -106,5 +105,5 @@ def get_ratio(numerator: str, denominator: str, power: float, data: pd.DataFrame
     -------
     data (pd.DataFrame): the data with the new column
     """
-    data['ratio'] = (data[numerator]) / (data[denominator] ** power)
+    data.loc[:, 'ratio'] = (data.loc[:, numerator] ** power) / (data.loc[:, denominator])
     return data
