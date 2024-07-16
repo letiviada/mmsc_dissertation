@@ -1,4 +1,6 @@
 from scipy.interpolate import interp1d
+import pandas as pd
+import numpy as np
 
 def create_interp(data, y_axis):
     x = data['time']
@@ -20,3 +22,9 @@ def change_name_time(output, time):
     """
     output_name_folder= f'{output}_time_{time}'
     return output_name_folder
+
+
+def make_data_frame(dataframe, **kwargs):
+    for array_name, array in kwargs.items():
+        dataframe[array_name] = array
+    return dataframe

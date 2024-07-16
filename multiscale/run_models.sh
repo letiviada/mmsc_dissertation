@@ -2,9 +2,12 @@
 # To run, put in the terminal: bash micro_params.sh
 # Define values for alpha and beta
 #
-alphas=$(seq 0.3 0.02 1.0)
-#betas=$(seq 0.03 0.002 0.4)
-betas=(0.05)
+
+#alphas=$(seq 0.3 0.05 1.0)
+#betas=$(seq 0.03 0.01 0.1)
+#betas=(0.027)
+alphas=(0.2)
+betas=$(seq 0.03 0.01 0.1)
 phis=(1.0)
 num_runs=1
 

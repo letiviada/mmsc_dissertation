@@ -6,32 +6,36 @@ from utils import get_data_from_json, data_time, obtain_data, get_ratio
 import matplotlib.pyplot as plt
 from scipy.interpolate import griddata
 import numpy as np
+from sklearn.metrics import r2_score
+import pandas as pd
 
-name = 'volume_liquid_time_400'
+
+output_name = 'volume_liquid_time_400'
 time = 400
-n = 0.1
+n = 1.0
 
 # Machine Learnig Model
-model_volume = open_model('volume_liquid_time_400')
-inputs, outputs_volume = open_data_model('total', 'volume_liquid_time_400', 'performance_indicators/performance_indicators_phi_1.0.json')
+model_volume = open_model(output = 'volume_liquid_time_400', model_path = f'regression/models_polynomial/')
+inputs, outputs_volume = open_data_model('total', 'volume_liquid_time_400', model_path = f'regression/models_polynomial/')
 volume_predictions = model_volume.predict(inputs)
-model_concentration = open_model('last_concentration_time_400')
+model_concentration = open_model(output = 'total_concentration_time_400', model_path=f'regression/models_gradient_boosting/')
 concentration_predictions = model_concentration.predict(inputs)
 ratio = (volume_predictions ** n)/(concentration_predictions)
 
 # Physical Model
-physical_data = get_data_from_json('performance_indicators/performance_indicators_phi_1.0.json')
-inputs, outputs_concentration = open_data_model('total', 'last_concentration_time_400', 'performance_indicators/performance_indicators_phi_1.0.json')
-data = data_time(400, ['volume_liquid', 'last_concentration'], physical_data)
-data_model = obtain_data(['volume_liquid_time_400', 'last_concentration_time_400'], data)
-data_ratio = get_ratio('volume_liquid_time_400', 'last_concentration_time_400',n, data_model)
+physical_data = get_data_from_json('performance_indicators/performance_indicators_standard.json')
+inputs, outputs_concentration = open_data_model('total', 'total_concentration_time_400', model_path = f'regression/models_polynomial/')
+data = data_time(400, ['volume_liquid', 'total_concentration'], physical_data)
+data_model = obtain_data(['volume_liquid_time_400', 'total_concentration_time_400'], data)
+df_ratio = get_ratio('volume_liquid_time_400', 'total_concentration_time_400',n, data_model)
 
-# Add predictions to the data
-data_ratio['volume_predictions'] = volume_predictions
-data_ratio['concentration_predictions'] = concentration_predictions
-data_ratio['ratio_predictions'] = ratio
+# Create a DataFrame with volume_predictions, ratio, and concentration_predictions
+data_ratio = pd.DataFrame({'volume_predictions': volume_predictions,
+                   'ratio': ratio,
+                   'concentration_predictions': concentration_predictions,
+                   'ratio_predictions': df_ratio['ratio']})
 
-
+print(r2_score(data_ratio['ratio'], data_ratio['ratio_predictions']))
 # Plot solutions
 fig, axs = plt.subplots(1, 3, figsize=(10, 6))
 

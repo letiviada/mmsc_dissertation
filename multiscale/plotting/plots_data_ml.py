@@ -78,9 +78,11 @@ def scatter_solutions(inputs,outputs,name,type_model):
     --------
     None
     """
+    ps_unique_keys = inputs['particle_size'].unique()
+    num_unique_keys = len(ps_unique_keys)
     sns.set_theme()
     fig, ax = create_fig(nrows = 1, ncols = 2 ,dpi = 100)
-    _, colors = style_and_colormap(num_positions = 13, colormap = 'tab20b')
+    _, colors = style_and_colormap(num_positions = num_unique_keys, colormap = 'tab20b')
     colors = colors.tolist()
     # Plot the results of the model
     ax[0].plot(outputs[name] , outputs[name] , color = colors[1])
@@ -101,5 +103,27 @@ def scatter_solutions(inputs,outputs,name,type_model):
     #plt.show()
     return fig, ax
 
-def add_all_lines():
-    pass
+def opt_ml(full_data:pd.DataFrame, name:str, lines:bool, actual: bool, predictions: bool):
+    # Prepare figure, style, and colours
+    # ----------------------------------
+
+    unique_keys = full_data['particle_size'].unique()
+    num_unique_keys = len(unique_keys)
+    _, colors = style_and_colormap(num_positions = num_unique_keys, colormap = 'tab20b')
+    fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
+    colors = colors.tolist()
+    color_mapping = {key: color for key, color in zip(unique_keys, colors)}
+
+    # Plot the results of the model
+    # -----------------------------
+    name_pred = name.split('_time')[0] + '_predictions'
+    if actual == True:
+        sns.scatterplot(data = full_data, x = 'adhesivity', y = name, hue = 'particle_size', palette = color_mapping, ax = ax[0])
+    if predictions  == True:
+        for i, beta_value in enumerate(unique_keys):
+            sorted_data = full_data[full_data['particle_size'] == beta_value].sort_values('adhesivity')
+            if lines == True:
+                ax[0].plot(sorted_data['adhesivity'], sorted_data[name_pred], marker='x', color=colors[i])
+            else:
+                ax[0].scatter(sorted_data['adhesivity'], sorted_data[name_pred], color=colors[i], marker = 'x')
+    plt.show()
