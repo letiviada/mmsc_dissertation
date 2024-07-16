@@ -109,5 +109,11 @@ def get_ratio(numerator: str, denominator: str, power: float, data: pd.DataFrame
     -------
     data (pd.DataFrame): the data with the new column
     """
-    data.loc[:, 'ratio'] = (data.loc[:, numerator] ** power) / (data.loc[:, denominator])
-    return data
+    ratio =  pd.DataFrame(
+        {'adhesivity': data.loc[:, 'adhesivity'],
+            'particle_size': data.loc[:, 'particle_size'],
+            numerator: data.loc[:, numerator],
+            denominator: data.loc[:, denominator],
+        'ratio':(data.loc[:, numerator] ** power) / (data.loc[:, denominator])}
+    )
+    return ratio
