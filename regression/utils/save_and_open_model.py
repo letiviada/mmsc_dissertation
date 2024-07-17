@@ -54,7 +54,7 @@ def open_data_model(type_eval, output, model_path):
     inputs, outputs = joblib.load(path_to_data)
     return inputs, outputs
 
-def save_data_to_csv(data, filename):
+def save_data_to_csv(data,folder, filename):
     """
     Save data to a csv file
 
@@ -65,7 +65,7 @@ def save_data_to_csv(data, filename):
 
     """
     directory = '/home/viadacampos/Documents/mmsc_dissertation/regression/sample_size_study/'
-    filepath = os.path.join(directory, filename)
+    filepath = os.path.join(directory,folder)
     if not os.path.exists(directory):
         directory = '/Users/letiviada/dissertation_mmsc/regression/sample_size_study/'
         filepath = os.path.join(directory, filename)
@@ -74,6 +74,6 @@ def save_data_to_csv(data, filename):
 
     if not os.path.exists(filepath):
         os.makedirs(filepath)
-
-    data.to_csv(filepath, index = False)
-    print(f"Data saved")
+    path_to_save = os.path.join(filepath,filename)
+    data.to_csv(path_to_save, index = False)
+    print(f"Data saved in", path_to_save)

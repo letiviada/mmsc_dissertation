@@ -27,6 +27,6 @@ if __name__ == '__main__':
     output_first = ['lifetime', 'termination_time','efficiency']
     time = 400
     #first_model(output_first, filename,'polynomial')
-    for type_model  in ['polynomial']: #['polynomial','random_forest','gradient_boosting']:
+    for type_model  in  ['polynomial','random_forest','gradient_boosting']:
         opt_model(time, outputs, filename, type_model)
-        #first_model(output_first, filename, type_model)
+        first_model(output_first, filename, type_model)

@@ -1,6 +1,7 @@
 from sklearn.model_selection import train_test_split
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
+sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
 from utils import clean_data, obtain_data, sampling_data, get_data_from_json, save_data_to_csv
 from models import train_model
 from sklearn.ensemble import RandomForestRegressor
@@ -65,15 +66,15 @@ def main(output,num_runs,sizes,filename,type_model):
         'Mean R2': mean_r2_list,
         'Std R2': std_r2_list
     })
-    save_data_to_csv(f'{output}/summary_statistics_{type_model}.csv', index=False)
-    print(f'Sample size study complete for {output} and {type_model}')
+    save_data_to_csv(summary_stats,f'{output}',f'summary_statistics_{type_model}.csv')
+   # print(f'Sample size study complete for {output} and {type_model}')
 
 if __name__ == '__main__':
     filename = 'performance_indicators/performance_indicators_phi_1.0.json'
     num_runs = 10
-    sizes = np.arange(20,80,2)
-    for output in ['termination_time','lifetime','efficiency']:
-        type_models = ['polynomial','random_forest','gradient_boosting']
+    sizes = np.arange(30,181,1)
+    for output in ['efficiency']: #['termination_time','lifetime','efficiency']:
+        type_models = ['polynomial'] #['polynomial','random_forest','gradient_boosting']
         for type_model in type_models:
             main(output,num_runs, sizes,filename,type_model)
 
