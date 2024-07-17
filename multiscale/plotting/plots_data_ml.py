@@ -63,7 +63,7 @@ def boxplot(data,outputs):
     save_figure(fig, 'regression/figures/data_/box_all_outputs')
     return fig
 
-def scatter_solutions(inputs,outputs,name,type_model):
+def scatter_solutions(inputs,outputs,name,type_model,name_eval):
     """
     Function that plots the solutions of the model and the actual values of the data
 
@@ -80,40 +80,80 @@ def scatter_solutions(inputs,outputs,name,type_model):
     """
     ps_unique_keys = inputs['particle_size'].unique()
     num_unique_keys = len(ps_unique_keys)
-    sns.set_theme()
-    fig, ax = create_fig(nrows = 1, ncols = 2 ,dpi = 100)
     _, colors = style_and_colormap(num_positions = num_unique_keys, colormap = 'tab20b')
+    fig, ax = create_fig(nrows = 1, ncols = 2 ,dpi = 100)
     colors = colors.tolist()
+    color_mapping = {key: color for key, color in zip(ps_unique_keys, colors)}
     # Plot the results of the model
     ax[0].plot(outputs[name] , outputs[name] , color = colors[1])
-    sns.scatterplot(x = outputs[name] , y = outputs['Prediction'] , ax = ax[0], color = colors[0])
+    sns.scatterplot(x = outputs[name] , y = outputs['prediction'] , ax = ax[0], color = colors[0])
 
     combined = pd.concat([
-                inputs.assign(Solution = outputs[name], Type = 'Actual'),
-                inputs.assign(Solution = outputs['Prediction'], Type = 'Prediction')
+                inputs.assign(Solution = outputs[name], Type = 'actual'),
+                inputs.assign(Solution = outputs['prediction'], Type = 'prediction')
                 
     ] )
     sns.scatterplot(data = combined,x = 'adhesivity', y = 'Solution', 
                     hue = 'particle_size', style = 'Type', 
-                    palette = colors, ax = ax[1])
+                    palette = color_mapping, ax = ax[1])
     ax[1].legend(bbox_to_anchor= (1.5,1.0), loc = 'upper right', ncols = 2) 
     plt.tight_layout()
     name_save = name.replace(" ", "_").lower()
-    save_figure(fig, f'regression/figures/data_{type_model}/solution_{name_save}')
-    #plt.show()
+    save_figure(fig, f'regression/figures/data_{type_model}/{name_save}/solution_{name_save}_{name_eval}')
     return fig, ax
 
-def opt_ml(full_data:pd.DataFrame, name:str, lines:bool, actual: bool, predictions: bool):
+def model_plot_with_lines_and_scatter(inputs, outputs, name, type_model, data_lines,data_model):
+    ps_unique_keys = inputs['particle_size'].unique()
+    ps2_unique_keys = data_lines['particle_size'].unique()
+    ps_unique_keys = np.unique(ps_unique_keys)
+    ps2_unique_keys = np.unique(ps2_unique_keys)
+    unique_keys = np.unique(np.concatenate((ps_unique_keys, ps2_unique_keys)))
+    num_unique_keys = len(unique_keys)
+    _, colors = style_and_colormap(num_positions = num_unique_keys, colormap = 'tab20b')
+    fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
+    
+    colors = colors.tolist()
+    color_mapping = {key: color for key, color in zip(unique_keys, colors)}
+    # Plot the results of the model
+
+    combined = pd.concat([
+                inputs.assign(Solution = outputs[name])
+    ] )
+    combined = combined.sort_values('particle_size')
+
+    combined2 = pd.concat([
+                inputs.assign(Solution = outputs['prediction'])
+    ] )
+    data_model2 = data_model[data_model['particle_size'].isin(ps2_unique_keys)]
+    combined2 = combined2[combined2['particle_size'].isin(ps2_unique_keys)]
+    combined = combined[combined['particle_size'].isin(ps2_unique_keys)]
+    sns.scatterplot(data = data_model2, x = 'adhesivity', y = name,hue = 'particle_size', palette = color_mapping, ax = ax[0])
+    sns.scatterplot(data = combined2, x = 'adhesivity', y = 'Solution', marker = 'x', 
+                   color = 'k', ax = ax[0], linewidths=2)
+    sns.scatterplot(data = combined,x = 'adhesivity', y = 'Solution', 
+                   color = 'red', ax = ax[0])
+    for i, beta_value in enumerate(ps2_unique_keys):
+        sorted_data_line = data_lines[data_lines['particle_size'] == beta_value].sort_values('adhesivity')
+        ax[0].plot(sorted_data_line['adhesivity'], sorted_data_line[name], color=color_mapping[beta_value])
+    
+    plt.tight_layout()
+    name_save = name.replace(" ", "_").lower()
+    save_figure(fig, f'regression/figures/data_{type_model}/{name_save}/solution_{name_save}_with_lines')
+    plt.show()
+
+
+def opt_ml(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lines:bool,data_line:pd.DataFrame,type_data:str):
     # Prepare figure, style, and colours
     # ----------------------------------
 
     unique_keys = full_data['particle_size'].unique()
-    num_unique_keys = len(unique_keys)
+    unique_keys_pred = data_line['particle_size'].unique()
+    num_unique_keys = max(len(unique_keys),len(unique_keys_pred))
     _, colors = style_and_colormap(num_positions = num_unique_keys, colormap = 'tab20b')
     fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
     colors = colors.tolist()
     color_mapping = {key: color for key, color in zip(unique_keys, colors)}
-
+    full_data = full_data.sort_values('particle_size')
     # Plot the results of the model
     # -----------------------------
     name_pred = name.split('_time')[0] + '_predictions'
@@ -122,8 +162,16 @@ def opt_ml(full_data:pd.DataFrame, name:str, lines:bool, actual: bool, predictio
     if predictions  == True:
         for i, beta_value in enumerate(unique_keys):
             sorted_data = full_data[full_data['particle_size'] == beta_value].sort_values('adhesivity')
+            sorted_data_line = data_line[data_line['particle_size'] == beta_value].sort_values('adhesivity')
             if lines == True:
-                ax[0].plot(sorted_data['adhesivity'], sorted_data[name_pred], marker='x', color=colors[i])
+                ax[0].plot(sorted_data_line['adhesivity'], sorted_data_line[name_pred], color=colors[i])
+            elif lines == True and data_line is None:
+                raise ValueError('Please provide the data for the lines')
             else:
-                ax[0].scatter(sorted_data['adhesivity'], sorted_data[name_pred], color=colors[i], marker = 'x')
+                ax[0].scatter(sorted_data['adhesivity'], sorted_data[name_pred], color=colors[i], marker='x')
+    ax[0].set_xlabel('')
+    ax[0].set_ylabel('')
+    ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left')
+    plt.tight_layout()
+    save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/opt_{name}')
     plt.show()

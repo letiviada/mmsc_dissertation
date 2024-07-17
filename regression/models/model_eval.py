@@ -24,9 +24,9 @@ def model_eval(output_variable,type_eval,type_model):
     # Predict the values
     y_pred = model.predict(inputs)
     outputs = outputs.to_frame()
-    outputs['Prediction'] = y_pred.tolist()
-    mse = mean_squared_error(outputs[output_variable], outputs['Prediction']) 
-    r2 = r2_score(outputs[output_variable], outputs['Prediction'])
+    outputs['prediction'] = y_pred.tolist()
+    mse = mean_squared_error(outputs[output_variable], outputs['prediction']) 
+    r2 = r2_score(outputs[output_variable], outputs['prediction'])
     print(f"Mean squared error, {type_eval} : {mse}")
     print(f"R2 score,{type_eval} : {r2}")
     return inputs, outputs

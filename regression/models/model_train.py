@@ -67,6 +67,7 @@ def train_model(output,data, size_train = 'all',type_model = 'random_forest',sav
         edges, inside = ensure_alpha_inclusion(data, 'particle_size', 'adhesivity')
         inputs_inside, outputs_inside = inside.drop(output, axis = 1), inside[output]
         inputs_edges, outputs_edges = edges.drop(output, axis = 1), edges[output]
+        print(inputs_edges.shape)
 
     # Check if the training set is the whole dataset
         if size_train != 'all':
