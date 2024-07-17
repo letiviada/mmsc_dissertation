@@ -73,7 +73,7 @@ def train_model(output,data, size_train = 'all',type_model = 'random_forest',sav
             left_size_train =  size_train - inputs_edges.shape[0]
             if size_train < inputs_edges.shape[0]:
                 raise ValueError('The size of the points in the edges is larger than the training set')
-            elif left_size_train > inputs_inside.shape[0]:
+            elif left_size_train > 0.8 *  inputs_inside.shape[0]:
                 raise ValueError('The size of the training set is larger than the dataset') 
             else:
                 X_train_1, X_test, y_train_1, y_test = train_test_split(inputs_inside, outputs_inside, test_size=0.2, random_state=42)
@@ -90,21 +90,23 @@ def train_model(output,data, size_train = 'all',type_model = 'random_forest',sav
             y_train = pd.concat([y_train_1, outputs_edges], ignore_index=True)
 
     else:
+        X_train, X_test, y_train, y_test = train_test_split(inputs, outputs, test_size=0.2, random_state=42)
         if size_train != 'all':
             if size_train > X_train.shape[0]:
                 raise ValueError('The size of the training set is larger than the dataset')
             else:
                 X_train, y_train = sampling_data(X_train, y_train, size_train)
-        else:
-            X_train, X_test, y_train, y_test = train_test_split(inputs, outputs, test_size=0.2, random_state=42)
+       # else:
+        #    X_train, X_test, y_train, y_test = train_test_split(inputs, outputs, test_size=0.2, random_state=42)
     # Create the model
     # ----------------
     if type_model == 'gradient_boosting':
         param_grid = {
         'n_estimators': [150,200,300], # Number of trees in the forest
-        'max_depth': [5,10,20], # Maximum depth of the tree
-        'learning_rate': [0.01, 0.1, 1], # Learning rate shrinks the contribution of each tree
-        'ccp_alpha': np.arange(0, 1.1, 0.1), # Complexity parameter used for Minimal Cost-Complexity Pruning
+        'max_depth': [5,6,7], # Maximum depth of the tree
+        'learning_rate': np.linspace(0.05,0.2,5), # Learning rate shrinks the contribution of each tree
+        'subsample': np.arange(0.2,1.1,0.2), 
+        #'ccp_alpha': np.arange(0, 1.1, 0.1), # Complexity parameter used for Minimal Cost-Complexity Pruning
     }
         model_base = GradientBoostingRegressor(random_state=42)
         grid_search = GridSearchCV(model_base, param_grid,
@@ -122,7 +124,7 @@ def train_model(output,data, size_train = 'all',type_model = 'random_forest',sav
 
         model_base = RandomForestRegressor(random_state=42)
         grid_search = GridSearchCV(model_base, param_grid,
-                    cv = 10, n_jobs=-1, verbose=1)
+                    cv = 8, n_jobs=-1, verbose=1)
         grid_search.fit(X_train, y_train)
         print(f"Best parameters: {grid_search.best_estimator_} with score {grid_search.best_score_}")
         model = grid_search.best_estimator_
@@ -130,11 +132,11 @@ def train_model(output,data, size_train = 'all',type_model = 'random_forest',sav
     elif type_model == 'polynomial':
         model_base = make_pipeline(PolynomialFeatures(), Ridge())
         param_grid = {
-            'polynomialfeatures__degree': np.arange(10,15),
-            'ridge__alpha': np.logspace(-10, 0, 11)
+            'polynomialfeatures__degree': np.arange(1,15),
+            'ridge__alpha': np.logspace(-10, 5, 16)
         }
         grid_search = GridSearchCV(model_base, param_grid,
-                    cv = 10, n_jobs=-1, verbose=1)
+                    cv = 5, n_jobs=-1, verbose=1)
         grid_search.fit(X_train, y_train)
         print(f"Best parameters: {grid_search.best_estimator_} with score {grid_search.best_score_}")
         model = grid_search.best_estimator_
@@ -143,8 +145,8 @@ def train_model(output,data, size_train = 'all',type_model = 'random_forest',sav
     y_pred = model.predict(X_test)
     mse = mean_squared_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
-    print(f"Mean squared error: {mse}")
-    print(f"R2 score for test: {r2}")
+    #print(f"Mean squared error: {mse}")
+    #print(f"R2 score for test: {r2}")
 
     # Save the model
     # --------------
