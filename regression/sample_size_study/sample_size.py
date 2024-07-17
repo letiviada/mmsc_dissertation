@@ -2,7 +2,7 @@ from sklearn.model_selection import train_test_split
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
-from utils import clean_data, obtain_data, sampling_data, get_data_from_json, save_data_to_csv
+from utils import clean_data, obtain_data, sampling_data, get_data_from_json, save_data_to_csv, data_time
 from models import train_model
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
@@ -10,33 +10,30 @@ import pandas as pd
 import numpy as np
 
 
-def model_old(size):
-    data_to_keep = clean_data(filename='performance_indicators_phi_1.0.json')
-    data = obtain_data(data_to_keep, 'Termination time')
-    inputs, outputs = data.drop('Termination time', axis = 1), data['Termination time']
-   # print(inputs.shape, outputs.shape)
-    X_train_old, X_test, y_train_old, y_test = train_test_split(inputs, outputs, test_size=0.2, random_state=42)
-    # Resample data
-    X_train, y_train = sampling_data(X_train_old, y_train_old, size)
-    # Create the model
-    random_forest = RandomForestRegressor(n_estimators = 200, max_depth = 20, ccp_alpha = 0.9, random_state = 42)
-    random_forest.fit(X_train, y_train)
-    y_pred = random_forest.predict(X_test)
-    mse = mean_squared_error(y_test, y_pred)
-    r2 = r2_score(y_test, y_pred)
-    return mse, r2
-
 def sample_size_model(output:str, size: int, filename:str, type_model:str):
     ml_data = get_data_from_json(filename)
     data = obtain_data([output],ml_data)
     mse, r2 = train_model(output, data, size_train = size, type_model=type_model,save = False)
     return mse, r2
 
-def run_model(output,num_runs,size,filename,type_model):
+
+def sample_size_model_time(output:str, size:int, time:int, filename:str, type_model:str):
+    ml_data = get_data_from_json(filename)
+    data = data_time(time, [output], ml_data)
+    output_name = f'{output}_time_{time}'
+    data_train = obtain_data([output_name], data)
+    mse, r2 = train_model(output_name, data_train,size_train=size, type_model = type_model, save = False)
+    return mse, r2
+
+def run_model(output,num_runs,size,filename,type_model, time):
     mse_list = []
     r2_list = []
     for _ in range(num_runs):
-        mse, r2 = sample_size_model(output,size,filename,type_model)
+        if time is None:
+            mse, r2 = sample_size_model(output,size,filename,type_model)
+        else:
+            mse, r2 = sample_size_model_time(output,size,time,filename,type_model)
+
         mse_list.append(mse)
         r2_list.append(r2)
 
@@ -52,12 +49,12 @@ def run_model(output,num_runs,size,filename,type_model):
     
     return results, mean_mse, std_mse, mean_r2, std_r2
 
-def main(output,num_runs,sizes,filename,type_model):
+def main(output,num_runs,sizes,filename,type_model,time = None):
     mean_r2_list = []
     std_r2_list = []
     for size in sizes:
         print(f"Running model for sample size: {size}")
-        _, mean_mse, std_mse, mean_r2, std_r2 = run_model(output,num_runs, size,filename,type_model)
+        _, mean_mse, std_mse, mean_r2, std_r2 = run_model(output,num_runs, size,filename,type_model, time)
         mean_r2_list.append(mean_r2)
         std_r2_list.append(std_r2)
     # Create a DataFrame to store the summary statistics
@@ -71,12 +68,9 @@ def main(output,num_runs,sizes,filename,type_model):
 
 if __name__ == '__main__':
     filename = 'performance_indicators/performance_indicators_phi_1.0.json'
-    num_runs = 10
-    sizes = np.arange(30,181,1)
-    for output in ['efficiency']: #['termination_time','lifetime','efficiency']:
+    num_runs = 1
+    sizes = np.arange(179,181,1)
+    for output in ['total_concentration']: #['volume_liquid']: #['termination_time','lifetime','efficiency']:
         type_models = ['polynomial'] #['polynomial','random_forest','gradient_boosting']
         for type_model in type_models:
-            main(output,num_runs, sizes,filename,type_model)
-
-    
-    
+            main(output,num_runs, sizes,filename,type_model,time =400)

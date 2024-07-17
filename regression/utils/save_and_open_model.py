@@ -68,7 +68,7 @@ def save_data_to_csv(data,folder, filename):
     filepath = os.path.join(directory,folder)
     if not os.path.exists(directory):
         directory = '/Users/letiviada/dissertation_mmsc/regression/sample_size_study/'
-        filepath = os.path.join(directory, filename)
+        filepath = os.path.join(directory, folder)
         if not os.path.exists(directory):
             raise FileNotFoundError("The directories do not exist")
 
