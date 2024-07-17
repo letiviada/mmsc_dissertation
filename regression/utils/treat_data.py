@@ -41,11 +41,6 @@ def get_data_from_json(filename:str) -> pd.DataFrame:
     #data_to_keep = ml_data[['Adhesivity', 'Particle Size', 'Termination time', 'Lifetime']] 
     return ml_data
 
-def obtain_data_1(output:list, data_all: pd.DataFrame) -> pd.DataFrame:
-    data = data_all[['adhesivity', 'particle_size']]
-    for out in output:
-        data[out] = data_all[out]
-    return data
 def obtain_data(output:list, data_all: pd.DataFrame) -> pd.DataFrame:
     data = data_all[['adhesivity', 'particle_size'] + output] 
     return data
@@ -57,7 +52,7 @@ def clean_data(filename: str) -> pd.DataFrame:
     return data_to_keep
 
 def sampling_data(X, y, size):
-    X_new = X.sample(size, random_state = 42)
+    X_new = X.sample(size)
     y_new = y.loc[X_new.index]
 
     return X_new, y_new
@@ -117,3 +112,19 @@ def get_ratio(numerator: str, denominator: str, power: float, data: pd.DataFrame
         'ratio':(data.loc[:, numerator] ** power) / (data.loc[:, denominator])}
     )
     return ratio
+
+def ratio_predictions(numerator_predictions, denominator_predictions, n):
+    """
+    Function that calculates the ratio predictions
+
+    Parameters:
+    -----------
+    volume_predictions (np.array): the volume predictions
+    concentration_predictions (np.array): the concentration predictions
+    n (int): the power to which the volume predictions are raised
+
+    Returns:
+    --------
+    ratio (np.array): the ratio predictions
+    """
+    return (numerator_predictions ** n)/(denominator_predictions)
