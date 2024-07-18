@@ -33,7 +33,7 @@ def ml_model(inputs:pd.DataFrame,output:str, time, type_model:str)->tuple:
     predictions = model.predict(inputs)
     return predictions, model
 
-def get_physical_model(outputs:list,time:int,n:int,filename:str)->tuple:
+def get_physical_model(outputs:list,time:int,n:int,filename:str)->pd.DataFrame:
     """
     Function that gets the models from the ML and Pjysical results for a given output and time.
 
@@ -45,9 +45,7 @@ def get_physical_model(outputs:list,time:int,n:int,filename:str)->tuple:
     Returns:
     --------
     data_ratio (pd.DataFrame): the ratio of the physical model
-    data_model (object): the data from the ML model
     """
-    #physical_data = get_data_from_json()
     physical_data = get_data_from_json(filename)
     data = data_time(time, outputs, physical_data)
     volume_name = change_name_time(outputs[0], time)
