@@ -68,9 +68,9 @@ def main(output,num_runs,sizes,filename,type_model,time = None):
 
 if __name__ == '__main__':
     filename = 'performance_indicators/performance_indicators_phi_1.0.json'
-    num_runs = 1
-    sizes = np.arange(179,181,1)
-    for output in ['total_concentration']: #['volume_liquid']: #['termination_time','lifetime','efficiency']:
+    num_runs = 10
+    sizes = np.arange(30,181,1)
+    for output in ['total_concentration','volume_liquid']: #['termination_time','lifetime','efficiency']:
         type_models = ['polynomial'] #['polynomial','random_forest','gradient_boosting']
         for type_model in type_models:
             main(output,num_runs, sizes,filename,type_model,time =400)

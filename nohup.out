@@ -1,0 +1,196 @@
+Running micro simulation...
+Micro computation time: 0 minutes and 0 seconds
+Combining micro_results time: 0 minutes and 0 seconds
+Running macro simulation...
+Macro computation time: 0 minutes and 0 seconds
+Combining results time: 0 minutes and 0 seconds
+Running performance indicators computation...
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+An error occurred: A process in the process pool was terminated abruptly while the future was running or pending.
+Performance Indicators computation time: 0 minutes and 0 seconds
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/combine_results.py", line 96, in <module>
+    combine_results(directory = 'multiscale/results/mono-dispersed/performance_indicators', pattern = 'performance_indicators_alpha_*.json',scale='performance_indicators' )
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/combine_results.py", line 52, in combine_results
+    full_output_path = os.path.join(directory, output_filename)
+UnboundLocalError: local variable 'output_filename' referenced before assignment
+Combining results time: 0 minutes and 0 seconds
+Total execution time: 2 minutes and 40 seconds
+Done!
+Running micro simulation...
+Micro computation time: 0 minutes and 15 seconds
+Combining micro_results time: 0 minutes and 6 seconds
+Running macro simulation...
+Alpha: 0.3, Beta: 0.085, Phi: 1.0 Time elapsed: 3.4230051040649414 seconds
+Alpha: 0.4, Beta: 0.055, Phi: 1.0 Time elapsed: 2.778170585632324 seconds
+Alpha: 0.5, Beta: 0.075, Phi: 1.0 Time elapsed: 2.261263608932495 seconds
+Alpha: 0.6, Beta: 0.045, Phi: 1.0 Time elapsed: 2.8646936416625977 seconds
+Alpha: 0.7, Beta: 0.045, Phi: 1.0 Time elapsed: 2.5253472328186035 seconds
+Alpha: 0.8, Beta: 0.045, Phi: 1.0 Time elapsed: 2.6794519424438477 seconds
+Alpha: 0.9, Beta: 0.045, Phi: 1.0 Time elapsed: 2.8218495845794678 seconds
+Alpha: 1.0, Beta: 0.045, Phi: 1.0 Time elapsed: 2.5287394523620605 seconds
+Alpha: 0.3, Beta: 0.045, Phi: 1.0 Time elapsed: 3.2904212474823 seconds
+Alpha: 0.4, Beta: 0.035, Phi: 1.0 Time elapsed: 2.3644282817840576 seconds
+Alpha: 0.5, Beta: 0.035, Phi: 1.0 Time elapsed: 2.5205729007720947 seconds
+Alpha: 0.6, Beta: 0.035, Phi: 1.0 Time elapsed: 2.8882088661193848 seconds
+Alpha: 0.7, Beta: 0.035, Phi: 1.0 Time elapsed: 2.5358080863952637 seconds
+Alpha: 0.8, Beta: 0.035, Phi: 1.0 Time elapsed: 2.341707468032837 seconds
+Alpha: 0.9, Beta: 0.035, Phi: 1.0 Time elapsed: 3.2244791984558105 seconds
+Alpha: 1.0, Beta: 0.055, Phi: 1.0 Time elapsed: 2.5432240962982178 seconds
+Alpha: 0.3, Beta: 0.035, Phi: 1.0 Time elapsed: 3.591207265853882 seconds
+Alpha: 0.4, Beta: 0.075, Phi: 1.0 Time elapsed: 2.6024506092071533 seconds
+Alpha: 0.5, Beta: 0.055, Phi: 1.0 Time elapsed: 3.149738073348999 seconds
+Alpha: 0.6, Beta: 0.075, Phi: 1.0 Time elapsed: 2.6556997299194336 seconds
+Alpha: 0.7, Beta: 0.075, Phi: 1.0 Time elapsed: 2.489234209060669 seconds
+Alpha: 0.8, Beta: 0.075, Phi: 1.0 Time elapsed: 2.2663989067077637 seconds
+Alpha: 0.9, Beta: 0.065, Phi: 1.0 Time elapsed: 2.369197130203247 seconds
+Alpha: 1.0, Beta: 0.035, Phi: 1.0 Time elapsed: 2.6891307830810547 seconds
+Alpha: 0.3, Beta: 0.095, Phi: 1.0 Time elapsed: 3.6417860984802246 seconds
+Alpha: 0.4, Beta: 0.065, Phi: 1.0 Time elapsed: 2.624316453933716 seconds
+Alpha: 0.5, Beta: 0.065, Phi: 1.0 Time elapsed: 2.6322667598724365 seconds
+Alpha: 0.6, Beta: 0.065, Phi: 1.0 Time elapsed: 2.6292078495025635 seconds
+Alpha: 0.7, Beta: 0.055, Phi: 1.0 Time elapsed: 2.8315391540527344 seconds
+Alpha: 0.8, Beta: 0.065, Phi: 1.0 Time elapsed: 2.5219662189483643 seconds
+Alpha: 0.9, Beta: 0.055, Phi: 1.0 Time elapsed: 2.7039875984191895 seconds
+Alpha: 1.0, Beta: 0.065, Phi: 1.0 Time elapsed: 2.663257360458374 seconds
+Alpha: 0.3, Beta: 0.055, Phi: 1.0 Time elapsed: 3.2999792098999023 seconds
+Alpha: 0.4, Beta: 0.045, Phi: 1.0 Time elapsed: 2.7375593185424805 seconds
+Alpha: 0.5, Beta: 0.045, Phi: 1.0 Time elapsed: 2.625554084777832 seconds
+Alpha: 0.6, Beta: 0.055, Phi: 1.0 Time elapsed: 2.6842007637023926 seconds
+Alpha: 0.7, Beta: 0.065, Phi: 1.0 Time elapsed: 2.8124353885650635 seconds
+Alpha: 0.8, Beta: 0.055, Phi: 1.0 Time elapsed: 2.939096212387085 seconds
+Alpha: 0.9, Beta: 0.075, Phi: 1.0 Time elapsed: 2.6915276050567627 seconds
+Alpha: 1.0, Beta: 0.075, Phi: 1.0 Time elapsed: 2.627152442932129 seconds
+Alpha: 0.3, Beta: 0.065, Phi: 1.0 Time elapsed: 3.8955986499786377 seconds
+Alpha: 0.4, Beta: 0.095, Phi: 1.0 Time elapsed: 3.0538556575775146 seconds
+Alpha: 0.5, Beta: 0.095, Phi: 1.0 Time elapsed: 2.85585618019104 seconds
+Alpha: 0.6, Beta: 0.095, Phi: 1.0 Time elapsed: 2.5089266300201416 seconds
+Alpha: 0.7, Beta: 0.095, Phi: 1.0 Time elapsed: 2.854696273803711 seconds
+Alpha: 0.8, Beta: 0.095, Phi: 1.0 Time elapsed: 2.6274759769439697 seconds
+Alpha: 0.9, Beta: 0.095, Phi: 1.0 Time elapsed: 2.7343719005584717 seconds
+Alpha: 1.0, Beta: 0.095, Phi: 1.0 Time elapsed: 2.730563163757324 seconds
+Alpha: 0.3, Beta: 0.075, Phi: 1.0 Time elapsed: 3.6322336196899414 seconds
+Alpha: 0.4, Beta: 0.085, Phi: 1.0 Time elapsed: 3.0791285037994385 seconds
+Alpha: 0.5, Beta: 0.085, Phi: 1.0 Time elapsed: 2.698563814163208 seconds
+Alpha: 0.6, Beta: 0.085, Phi: 1.0 Time elapsed: 2.7344930171966553 seconds
+Alpha: 0.7, Beta: 0.085, Phi: 1.0 Time elapsed: 2.956794261932373 seconds
+Alpha: 0.8, Beta: 0.085, Phi: 1.0 Time elapsed: 2.5646965503692627 seconds
+Alpha: 0.9, Beta: 0.085, Phi: 1.0 Time elapsed: 2.3408989906311035 seconds
+Alpha: 1.0, Beta: 0.085, Phi: 1.0 Time elapsed: 2.843708038330078 seconds
+Macro computation time: 0 minutes and 28 seconds
+Combining results time: 0 minutes and 29 seconds
+Running performance indicators computation...
+Alpha: 0.3, Beta: 0.085, Phi: 1.0 Time elapsed: 27.43202042579651 seconds
+Alpha: 0.4, Beta: 0.065, Phi: 1.0 Time elapsed: 19.598721981048584 seconds
+Alpha: 0.5, Beta: 0.045, Phi: 1.0 Time elapsed: 20.592066764831543 seconds
+Alpha: 0.6, Beta: 0.045, Phi: 1.0 Time elapsed: 19.97595715522766 seconds
+Alpha: 0.7, Beta: 0.035, Phi: 1.0 Time elapsed: 20.308923482894897 seconds
+Alpha: 0.8, Beta: 0.035, Phi: 1.0 Time elapsed: 21.396334409713745 seconds
+Alpha: 0.9, Beta: 0.045, Phi: 1.0 Time elapsed: 20.671688556671143 seconds
+Alpha: 1.0, Beta: 0.035, Phi: 1.0 Time elapsed: 20.28710150718689 seconds
+Alpha: 0.3, Beta: 0.065, Phi: 1.0 Time elapsed: 26.158541202545166 seconds
+Alpha: 0.4, Beta: 0.035, Phi: 1.0 Time elapsed: 19.8073890209198 seconds
+Alpha: 0.5, Beta: 0.035, Phi: 1.0 Time elapsed: 20.3485906124115 seconds
+Alpha: 0.6, Beta: 0.035, Phi: 1.0 Time elapsed: 21.29616069793701 seconds
+Alpha: 0.7, Beta: 0.045, Phi: 1.0 Time elapsed: 20.481881618499756 seconds
+Alpha: 0.8, Beta: 0.045, Phi: 1.0 Time elapsed: 20.87717056274414 seconds
+Alpha: 0.9, Beta: 0.035, Phi: 1.0 Time elapsed: 21.832598209381104 seconds
+Alpha: 1.0, Beta: 0.045, Phi: 1.0 Time elapsed: 20.268784761428833 seconds
+Alpha: 0.3, Beta: 0.075, Phi: 1.0 Time elapsed: 27.031962156295776 seconds
+Alpha: 0.4, Beta: 0.045, Phi: 1.0 Time elapsed: 20.26916527748108 seconds
+Alpha: 0.5, Beta: 0.055, Phi: 1.0 Time elapsed: 22.227967739105225 seconds
+Alpha: 0.6, Beta: 0.065, Phi: 1.0 Time elapsed: 20.681127548217773 seconds
+Alpha: 0.7, Beta: 0.075, Phi: 1.0 Time elapsed: 19.927953958511353 seconds
+Alpha: 0.8, Beta: 0.075, Phi: 1.0 Time elapsed: 20.511991500854492 seconds
+Alpha: 0.9, Beta: 0.055, Phi: 1.0 Time elapsed: 20.206949949264526 seconds
+Alpha: 1.0, Beta: 0.055, Phi: 1.0 Time elapsed: 20.672294855117798 seconds
+Alpha: 0.3, Beta: 0.095, Phi: 1.0 Time elapsed: 27.185991764068604 seconds
+Alpha: 0.4, Beta: 0.055, Phi: 1.0 Time elapsed: 20.367516040802002 seconds
+Alpha: 0.5, Beta: 0.065, Phi: 1.0 Time elapsed: 21.08022117614746 seconds
+Alpha: 0.6, Beta: 0.055, Phi: 1.0 Time elapsed: 20.974936723709106 seconds
+Alpha: 0.7, Beta: 0.055, Phi: 1.0 Time elapsed: 20.540083646774292 seconds
+Alpha: 0.8, Beta: 0.065, Phi: 1.0 Time elapsed: 20.831117391586304 seconds
+Alpha: 0.9, Beta: 0.075, Phi: 1.0 Time elapsed: 21.323925971984863 seconds
+Alpha: 1.0, Beta: 0.065, Phi: 1.0 Time elapsed: 19.795210599899292 seconds
+Alpha: 0.3, Beta: 0.055, Phi: 1.0 Time elapsed: 28.149646520614624 seconds
+Alpha: 0.4, Beta: 0.075, Phi: 1.0 Time elapsed: 20.836244583129883 seconds
+Alpha: 0.5, Beta: 0.085, Phi: 1.0 Time elapsed: 20.744476795196533 seconds
+Alpha: 0.6, Beta: 0.075, Phi: 1.0 Time elapsed: 20.17284393310547 seconds
+Alpha: 0.7, Beta: 0.065, Phi: 1.0 Time elapsed: 20.140783071517944 seconds
+Alpha: 0.8, Beta: 0.055, Phi: 1.0 Time elapsed: 20.71643567085266 seconds
+Alpha: 0.9, Beta: 0.065, Phi: 1.0 Time elapsed: 21.84179162979126 seconds
+Alpha: 1.0, Beta: 0.075, Phi: 1.0 Time elapsed: 19.728492736816406 seconds
+Alpha: 0.3, Beta: 0.035, Phi: 1.0 Time elapsed: 29.500739097595215 seconds
+Alpha: 0.4, Beta: 0.095, Phi: 1.0 Time elapsed: 19.63800287246704 seconds
+Alpha: 0.5, Beta: 0.095, Phi: 1.0 Time elapsed: 21.479737758636475 seconds
+Alpha: 0.6, Beta: 0.095, Phi: 1.0 Time elapsed: 20.94506025314331 seconds
+Alpha: 0.7, Beta: 0.095, Phi: 1.0 Time elapsed: 20.395971298217773 seconds
+Alpha: 0.8, Beta: 0.095, Phi: 1.0 Time elapsed: 20.37522578239441 seconds
+Alpha: 0.9, Beta: 0.085, Phi: 1.0 Time elapsed: 21.007243394851685 seconds
+Alpha: 1.0, Beta: 0.085, Phi: 1.0 Time elapsed: 19.592785358428955 seconds
+Alpha: 0.3, Beta: 0.045, Phi: 1.0 Time elapsed: 28.69143056869507 seconds
+Alpha: 0.4, Beta: 0.085, Phi: 1.0 Time elapsed: 20.19341731071472 seconds
+Alpha: 0.5, Beta: 0.075, Phi: 1.0 Time elapsed: 21.695265769958496 seconds
+Alpha: 0.6, Beta: 0.085, Phi: 1.0 Time elapsed: 19.98750400543213 seconds
+Alpha: 0.7, Beta: 0.085, Phi: 1.0 Time elapsed: 21.141145706176758 seconds
+Alpha: 0.8, Beta: 0.085, Phi: 1.0 Time elapsed: 20.928685665130615 seconds
+Alpha: 0.9, Beta: 0.095, Phi: 1.0 Time elapsed: 21.37524962425232 seconds
+Alpha: 1.0, Beta: 0.095, Phi: 1.0 Time elapsed: 19.095010995864868 seconds
+Performance Indicators computation time: 0 minutes and 0 seconds
+Combining results time: 0 minutes and 0 seconds
+Total execution time: 4 minutes and 12 seconds
+Done!
