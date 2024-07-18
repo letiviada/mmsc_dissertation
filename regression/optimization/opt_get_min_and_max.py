@@ -21,7 +21,30 @@ def compare_prediction_of_minimum(full_data:pd.DataFrame, output:str)-> pd.DataF
     min_ratio_predictions_row = full_data.loc[[min_ratio_predictions_index]]
 
     rows_compared = pd.concat([min_ratio_row, min_ratio_predictions_row])
-    rows_compared.to_csv('/Users/letiviada/dissertation_mmsc/regression/optimization/comparison.csv', index=False)
+    rows_compared.to_csv('/Users/letiviada/dissertation_mmsc/regression/optimization/comparison_min.csv', index=False)
+    return rows_compared
+
+def compare_prediction_of_maximum(full_data:pd.DataFrame, output:str)-> pd.DataFrame:
+    """
+    Function that gets the prediction of the maximum value of the ratio
+
+    Parameters:
+    -----------
+    full_data (pd.DataFrame): the full dataframe with the predictions
+    output (str): the output to be predicted
+
+    Returns:
+    --------
+    rows_compared (pd.DataFrame): the rows with the maximum ratio and the predictions
+    """
+    max_ratio_index = full_data[output].idxmax()
+    max_ratio_row = full_data.loc[[max_ratio_index]]
+    name_pred= output.split('_time')[0] + '_predictions'
+    max_ratio_predictions_index = full_data[name_pred].idxmax()
+    max_ratio_predictions_row = full_data.loc[[max_ratio_predictions_index]]
+
+    rows_compared = pd.concat([max_ratio_row, max_ratio_predictions_row])
+    rows_compared.to_csv('/Users/letiviada/dissertation_mmsc/regression/optimization/comparison_max.csv', index=False)
     return rows_compared
 
 def predict_minimum(data_predic:pd.DataFrame, output:str)-> pd.DataFrame:

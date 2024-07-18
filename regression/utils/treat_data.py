@@ -82,49 +82,10 @@ def data_time(time:int, names:list, data: pd.DataFrame) -> pd.DataFrame:
                 interp_func = create_interp(row, 'throughput')
                 data.at[index, f'{name}_time_{time}'] = interp_func(time) if interp_func is not None else np.nan
         elif name == 'total_concentration':
-            data.loc[filter_finished_indices, f'{name}_time_{time}'] = data.loc[filter_finished_indices, 'efficiency']
+            data.loc[filter_finished_indices, f'{name}_time_{time}'] = (data.loc[filter_finished_indices, 'efficiency'] / data.loc[filter_finished_indices, 'termination_time'])
             # Calculate total concentrratiton processed
             for index in filter_working_indices:
                 row = data.loc[index]
                 interp_func = create_interp(row, 'efficiency_time')
-                data.at[index, f'{name}_time_{time}'] = quad(interp_func, 0, time)[0] if interp_func is not None else np.nan
+                data.at[index, f'{name}_time_{time}'] = (quad(interp_func, 0, time)[0]/ time) if interp_func is not None else np.nan
     return data
-def get_ratio(numerator: str, denominator: str, power: float, data: pd.DataFrame) -> pd.DataFrame:
-    
-    """
-    Function that gets the ratio of two columns in the data
-
-    Parameters:
-    ----------
-    numerator (str): the name of the column we want to consider as the numerator
-    denominator (str): the name of the column we want to consider as the denominator
-    data (pd.DataFrame): the data we want to consider
-
-    Returns:
-    -------
-    data (pd.DataFrame): the data with the new column
-    """
-    ratio =  pd.DataFrame(
-        {'adhesivity': data.loc[:, 'adhesivity'],
-            'particle_size': data.loc[:, 'particle_size'],
-            numerator: data.loc[:, numerator],
-            denominator: data.loc[:, denominator],
-        'ratio':(data.loc[:, numerator] ** power) / (data.loc[:, denominator])}
-    )
-    return ratio
-
-def ratio_predictions(numerator_predictions, denominator_predictions, n):
-    """
-    Function that calculates the ratio predictions
-
-    Parameters:
-    -----------
-    volume_predictions (np.array): the volume predictions
-    concentration_predictions (np.array): the concentration predictions
-    n (int): the power to which the volume predictions are raised
-
-    Returns:
-    --------
-    ratio (np.array): the ratio predictions
-    """
-    return (numerator_predictions ** n)/(denominator_predictions)
