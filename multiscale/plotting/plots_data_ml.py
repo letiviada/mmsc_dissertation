@@ -145,7 +145,8 @@ def model_plot_with_lines_and_scatter(inputs, outputs, name, type_model, data_li
     plt.show()
 
 
-def opt_ml(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lines:bool,particle_sizes : list = None,data_line:pd.DataFrame = None,type_data:str = 'standard'):
+def opt_ml(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lines:bool,particle_sizes : list = None,
+           data_line:pd.DataFrame = None,type_data:str = 'standard', save: bool = True):
     # Prepare figure, style, and colours
     # ----------------------------------
     if particle_sizes is None:
@@ -182,12 +183,13 @@ def opt_ml(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lin
     ax[0].set_ylabel('')
     ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left')
     plt.tight_layout()
-    if predictions == True and lines == True:
-        save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/opt_{name}_with_predictions_and_lines')
-    elif predictions == True and lines == False:
-        save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/opt_{name}_with_predictions')
-    else:
-        save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/opt_{name}_actual_data')
+    if save == True:
+        if predictions == True and lines == True:
+            save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/opt_{name}_with_predictions_and_lines')
+        elif predictions == True and lines == False:
+            save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/opt_{name}_with_predictions')
+        else:
+            save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/opt_{name}_actual_data')
     plt.show()
 
 def make_loglog(data:pd.DataFrame,name:str,betas:list,type_data:str):

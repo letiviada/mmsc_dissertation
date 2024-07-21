@@ -10,8 +10,10 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
-def make_plots(full_data:pd.DataFrame, output:str,actual: bool, prediction: bool,lines: bool, data_line:pd.DataFrame,type_data:str,particle_sizes: list= None):
-    opt_ml(full_data, output, actual, prediction,lines= lines,data_line=data_line,type_data = type_data, particle_sizes= particle_sizes)
+def make_plots(full_data:pd.DataFrame, output:str,actual: bool, prediction: bool,lines: bool,
+                data_line:pd.DataFrame,type_data:str,particle_sizes: list= None, save: bool = True):
+    opt_ml(full_data, output, actual, prediction,lines = lines,
+           data_line=data_line,type_data = type_data, particle_sizes = particle_sizes, save = save)
 
 def get_data_after_ml(alpha, beta, outputs, time, n, type_model, filename):
     full_data, vol_model, conc_model = get_full_data_and_models(outputs, time, n, type_model,filename)
@@ -22,21 +24,53 @@ def get_data_after_ml(alpha, beta, outputs, time, n, type_model, filename):
     #make_plots(full_data,'total_concentration_time_400', actual = True, prediction = True,lines = False, data_line = data_plots,type_data = 'large')
     make_plots(full_data,'ratio', actual = True, prediction = True,lines = False, data_line = data_plots, type_data = 'large')
     return data_plots
-def get_data_varyiing_n(particle_size):
-    
-    pass
+
 
 if __name__ == '__main__':
     
     # Define the parameters
     filename = 'performance_indicators/performance_indicators_standard.json'
     time = 400
-    n = 1
-    particle_sizes = [0.03,0.04,.05,0.06,0.07,0.08,0000.09]
-    data_ratio = get_physical_model(['volume_liquid','total_concentration'],time,n,filename)
-    #make_plots(data_ratio,'volume_liquid_time_400', actual = True, prediction = False,lines = True, data_line = None,type_data = 'standard') 
-   # make_plots(data_ratio,'total_concentration_time_400', actual = True, prediction = False,lines = False, data_line = None,type_data = 'standard',particle_sizes= particle_sizes)
-    make_loglog(data_ratio,'volume_liquid_time_400', betas = particle_sizes,type_data='standard')
+    n_values = np.arange(0.04,3.25,0.01).round(2)
+    particle_sizes = [0.08]
+    data_ratio = get_physical_model(['volume_liquid','total_concentration'],time,1,filename)
+
+    vol_name = f'volume_liquid_time_{time}'
+    conc_name = f'total_concentration_time_{time}'
+    #make_plots(data_ratio,vol_name, actual = True, prediction = False,lines = True, data_line = None,type_data = 'standard',  particle_sizes= particle_sizes, save= False) 
+   # make_plots(data_ratio,conc_name, actual = True,  prediction = False,lines = False, data_line = None,type_data = 'standard',particle_sizes= particle_sizes, save= False)
+#make_loglog(data_ratio,'volume_liquid_time_400', betas = particle_sizes,type_data='standard')
+
+    data = pd.read_csv('regression/optimization/data_for_n_beta_0.03.csv')
+
+    
+    
+    optimal_adhesivity = []
+    pessimal_filter = []
+  
+    data = data.sort_values(by=f'total_concentration_time_{time}', ascending=True)
+    filtered_data = data[(data[f'total_concentration_time_{time}'] <= 1)]
+    filtered_data = filtered_data[(filtered_data[f'volume_liquid_time_{time}'] > 40)]
+    adhesivity_keys = filtered_data['adhesivity'].unique()  
+    for column in data.columns[4:]:
+            max_value = filtered_data[column].max()
+            min_value = filtered_data[column].min()
+            optimal_adhesivity.append(filtered_data[filtered_data[column] == max_value]['adhesivity'].values[0])
+            pessimal_filter.append(filtered_data[filtered_data[column] == min_value]['adhesivity'].values[0])
+    
+    plt.plot(n_values, optimal_adhesivity, label='Optimal')
+    plt.plot(n_values, pessimal_filter, label = 'Pessimal')
+    plt.xlabel('n')
+    plt.ylabel('Adhesivity')
+    plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+    plt.tight_layout()
     plt.show()
+    #plt.xlabel('Adhesivity')
+    #plt.ylabel('Value')
+   # plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+   # plt.tight_layout()
+   # plt.show()
+
+
 
 
