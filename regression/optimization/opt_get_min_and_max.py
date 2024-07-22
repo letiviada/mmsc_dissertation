@@ -66,11 +66,11 @@ def get_data_varying_n(particle_sizes,n_values, time, filename):
     # Assume get_physical_model now returns data for all particle sizes
 
     for n in n_values:
-        data = get_physical_model(['volume_liquid', 'total_concentration'], time, n, filename)
+        data = get_physical_model(['volume_liquid', 'removed_particles'], time, n, filename)
         data_sorted = data.sort_values(['particle_size', 'adhesivity'])
-        data_sorted[f'ratio_{n}'] = data_sorted['ratio']
-        all_data = pd.concat([all_data, data_sorted[f'ratio_{n}']], axis=1)
-    all_data = pd.concat([data_sorted[['particle_size', 'adhesivity', f'volume_liquid_time_{time}', f'total_concentration_time_{time}']],all_data], axis=1)
+        data_sorted[f'product_{n}'] = data_sorted['product']
+        all_data = pd.concat([all_data, data_sorted[f'product_{n}']], axis=1)
+    all_data = pd.concat([data_sorted[['particle_size', 'adhesivity', f'volume_liquid_time_{time}', f'removed_particles_time_{time}']],all_data], axis=1)
 
     # Group by particle size and save each group to a separate file
     for particle_size in particle_sizes:
@@ -82,10 +82,10 @@ def get_data_varying_n(particle_sizes,n_values, time, filename):
 
 if __name__ == '__main__':
     # Define the parameters
-    filename = 'performance_indicators/performance_indicators_phi_1.0.json'
+    filename = 'performance_indicators/performance_indicators_opt.json'
     time = 400
     n = 1
-    outputs = ['volume_liquid', 'total_concentration']
+    outputs = ['volume_liquid', 'removed_particles']
     type_model = ['polynomial', 'gradient_boosting']
 
     # Get the data we have used to train the models

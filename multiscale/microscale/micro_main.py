@@ -45,7 +45,7 @@ def compute_and_save(alpha, beta, num_runs):
         # Compute results
         if num_runs > 1:
             G_initial = poly_dispersed(mean=0.5,sigma=0.3)
-        results_with_G, results, time_passed = compute_results(alpha, beta, G_initial, tau_values, l=2.0)
+        results_with_G, results, time_passed = compute_results(alpha, beta, G_initial, tau_values, l=1.0)
 
         run_results = {
             'run': run,

@@ -5,8 +5,8 @@
 
 alphas=$(seq 0.0 0.05 1.0)
 #betas=$(seq 0.03 0.01 0.1)
-betas=(0.09)
-phis=(1.0)
+betas=(0.08)
+phis=(4.0)
 num_runs=1
 
 

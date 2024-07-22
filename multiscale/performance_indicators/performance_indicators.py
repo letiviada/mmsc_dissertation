@@ -25,7 +25,7 @@ class FilterPerformance:
         throughput (np.ndarray): The throughput of the filter.
         """
         velocity = interp1d(self.t_eval, self.u, kind='cubic', fill_value='extrapolate')
-        throughput = np.array([quad(velocity, 0, time)[0] for time in tf])
+        throughput = np.array([quad(velocity, 0, time, limit = 75)[0] for time in tf])
         return throughput
 
     def efficiency(self,t_eval) -> np.ndarray:
@@ -43,9 +43,10 @@ class FilterPerformance:
         c_outlet= self.c[:,-1]
         concent_outlet_interp = interp1d(self.t_eval,c_outlet,kind='cubic',fill_value='extrapolate')
         conc_outlet = concent_outlet_interp(t_eval)
+        removed_particles =  1 - conc_outlet
 
         efficiency_total = quad(concent_outlet_interp, 0, t_eval[-1])[0]
-        return conc_outlet, efficiency_total
+        return conc_outlet,removed_particles, efficiency_total
 
     def termination_time(self, mu: float) -> float:
         """
@@ -63,11 +64,11 @@ class FilterPerformance:
         velocity = interp1d(self.t_eval, self.u, kind='cubic', fill_value='extrapolate')
         def velocity_minus_mu(t):
             return velocity(t) - mu
-        if velocity(0) * velocity(self.t_eval[-1]) > 0:
-            print('The filter never reaches the minimum velocity')
-            return self.t_eval[-1]
-        termination_time = root_scalar(velocity_minus_mu, bracket=[0, self.t_eval[-1]])
-        if termination_time.converged:
-            return termination_time.root
+        if velocity_minus_mu(0) * velocity_minus_mu(self.t_eval[-1])>0:
+            return self.t_eval[-1] 
         else:
-            return None
+            termination_time = root_scalar(velocity_minus_mu, bracket=[0, self.t_eval[-1]])
+            if termination_time.converged:
+                return termination_time.root
+            else:
+                return None
