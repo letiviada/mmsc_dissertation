@@ -5,7 +5,7 @@ import numpy as np
 def create_interp(data, y_axis):
     x = data['time']
     y = data[y_axis]
-    return interp1d(x, y, kind='linear', fill_value="extrapolate")
+    return interp1d(x, y, kind='cubic', fill_value="extrapolate")
 
 def change_name_time(output, time):
     """

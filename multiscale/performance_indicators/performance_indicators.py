@@ -41,7 +41,7 @@ class FilterPerformance:
         efficiency (np.ndarray): The efficiency of the filter.
         """
         c_outlet= self.c[:,-1]
-        concent_outlet_interp = interp1d(self.t_eval,c_outlet,kind='linear',fill_value='extrapolate')
+        concent_outlet_interp = interp1d(self.t_eval,c_outlet,kind='cubic',fill_value='extrapolate')
         conc_outlet = concent_outlet_interp(t_eval)
 
         efficiency_total = quad(concent_outlet_interp, 0, t_eval[-1])[0]
