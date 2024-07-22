@@ -19,24 +19,27 @@ def scatter_histogram(data,output):
     --------
     fig (plt.Figure): the figure of the plot
     """
+    ps_unique_keys = data['particle_size'].unique()
+    num_unique_keys = len(ps_unique_keys)
     _, colors = style_and_colormap(num_positions = 13, colormap = 'tab20b')#
-    fig, ax = create_fig(1,2,dpi = 100)
+    fig, ax = create_fig(1,1,dpi = 100)
     colors = colors.tolist()
+    color_mapping = {key: color for key, color in zip(ps_unique_keys, colors)}
     data_plot = data[['adhesivity', 'particle_size', output]] 
-    sns.scatterplot(data_plot, x='adhesivity', y=output, ax=ax[0], size='particle_size', sizes=(150, 150),
-                    hue='particle_size', palette=colors[:13], legend=False),
-
-   # ax[0].legend(bbox_to_anchor=(0.5, -0.3), loc='lower center', ncols=)
-
-    sns.histplot(data = data, x = output, ax = ax[1], bins = 15, kde = True, color = colors[7])
-    plt.tight_layout
+    sns.scatterplot(data_plot, x='adhesivity', y=output, ax=ax[0], 
+                    hue='particle_size',palette=color_mapping, legend = 'full')
+    ax[0].collections[0].set_sizes([150]) 
+    ax[0].legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+    #sns.histplot(data = data, x = output, ax = ax[1], bins = 15, kde = True, color = colors[7])
+    plt.tight_layout()
     return fig
+
 
 def view_data_all_outputs(data, outputs ):
     for output in outputs:
         output_name = output.replace(" ", "_")
         fig = scatter_histogram(data, output)
-        save_figure(fig, f'regression/figures/data_/{output_name}_vs_alpha_beta')
+        save_figure(fig, f'regression/figures/data/{output_name}_vs_alpha_beta')
 
 def boxplot(data,outputs):
     """
@@ -228,5 +231,26 @@ def make_loglog(data:pd.DataFrame,name:str,betas:list,type_data:str):
     plt.tight_layout()
     save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/loglog_{name}')
 
+def plot_optimal_adhesivity(particle_size,n_values, data, time):
+    _, colors = style_and_colormap(num_positions = 2, colormap = 'tab20b')
+    fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
 
+    optimal_adhesivity = []
+    pessimal_filter = []
+    data = data.sort_values(by=f'removed_particles_time_{time}', ascending=True)
+    filtered_data = data[(data[f'removed_particles_time_{time}'] <= 1)]
+    filtered_data = filtered_data[(filtered_data[f'volume_liquid_time_{time}'] > 40)] 
+    for column in data.columns[4:]:
+            max_value = filtered_data[column].max()
+            min_value = filtered_data[column].min()
+            optimal_adhesivity.append(filtered_data[filtered_data[column] == max_value]['adhesivity'].values[0])
+            pessimal_filter.append(filtered_data[filtered_data[column] == min_value]['adhesivity'].values[0])
+    
+    ax[0].scatter(n_values, optimal_adhesivity, label='Optimal', color = colors[0])
+    #ax[0].plot(n_values, pessimal_filter, label = 'Pessimal', color=colors[-1])
+    
+    ax[0].legend(loc='center left', bbox_to_anchor=(1, 0.5))
+    plt.tight_layout()
+    save_figure(fig, f'regression/figures/optimization/particle_size_{particle_size}/optimal_adhesivity')
+    plt.show()
    

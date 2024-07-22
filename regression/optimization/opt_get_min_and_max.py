@@ -48,23 +48,9 @@ def compare_prediction_of_maximum(full_data:pd.DataFrame, output:str)-> pd.DataF
     rows_compared.to_csv('/Users/letiviada/dissertation_mmsc/regression/optimization/comparison_max.csv', index=False)
     return rows_compared
 
-def get_data_varying_n(particle_size_value, n_values,time, filename):
-    data_for_n = pd.DataFrame()
-    for n in n_values:
-        data_for_this_n = pd.DataFrame()
-        data_ratio = get_physical_model(['volume_liquid','total_concentration'],time,n,filename)
-        data_ratio= data_ratio[data_ratio['particle_size'] == particle_size_value].sort_values('adhesivity')
-        data_for_this_n[f'ratio_{n}'] = data_ratio['ratio']
-        data_for_n = pd.concat([data_for_n,data_for_this_n], axis = 1)
-    data_for_n = pd.concat([data_ratio['adhesivity'],data_ratio[f'volume_liquid_time_{time}'], data_ratio[f'total_concentration_time_{time}'],data_for_n], axis = 1) 
-    data_for_n.to_csv(f'/Users/letiviada/dissertation_mmsc/regression/optimization/data_for_n_beta_{particle_size_value}.csv', index=False)   
-    print('Data saved')
-    return data_for_n
-
 def get_data_varying_n(particle_sizes,n_values, time, filename):
     all_data = pd.DataFrame()
-    # Assume get_physical_model now returns data for all particle sizes
-
+    
     for n in n_values:
         data = get_physical_model(['volume_liquid', 'removed_particles'], time, n, filename)
         data_sorted = data.sort_values(['particle_size', 'adhesivity'])
@@ -72,7 +58,6 @@ def get_data_varying_n(particle_sizes,n_values, time, filename):
         all_data = pd.concat([all_data, data_sorted[f'product_{n}']], axis=1)
     all_data = pd.concat([data_sorted[['particle_size', 'adhesivity', f'volume_liquid_time_{time}', f'removed_particles_time_{time}']],all_data], axis=1)
 
-    # Group by particle size and save each group to a separate file
     for particle_size in particle_sizes:
         data_for_particle_size = pd.DataFrame()
         data_for_particle_size = all_data[all_data['particle_size'] == particle_size]

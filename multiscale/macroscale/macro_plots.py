@@ -63,4 +63,4 @@ if __name__ == '__main__':
     parameters=["reactivity","darcy_velocity"]
     for alpha, beta in tqdm(alpha_beta_pairs):
         for parameter in tqdm(parameters):
-            main(alpha, beta, args.phi,f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{args.phi}.json',parameter)
+            main(alpha, beta, args.phi,f'multiscale/results/mono-dispersed/macroscale/macro_results_plots.json',parameter)

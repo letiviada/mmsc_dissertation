@@ -48,7 +48,8 @@ def obtain_data(output:list, data_all: pd.DataFrame) -> pd.DataFrame:
 def clean_data(filename: str) -> pd.DataFrame:
     data_to_keep = get_data_from_json(filename)
     
-    data_to_keep = data_to_keep[data_to_keep['lifetime'] <= 200]
+    data_to_keep = data_to_keep[data_to_keep['termination_time'] <= 2000]
+    data_to_keep.rename(columns={'lifetime': 'total_throughput'}, inplace=True)
     return data_to_keep
 
 def sampling_data(X, y, size):

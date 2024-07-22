@@ -5,7 +5,7 @@ sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 from regression.models.model_eval import model_eval
 from multiscale.plotting import scatter_solutions, model_plot_with_lines_and_scatter
 from optimization.opt_get_models import ml_model
-from regression.utils import get_data_from_json, obtain_data, change_name_time 
+from regression.utils import clean_data, obtain_data, change_name_time 
 import numpy as np
 import pandas as pd
 
@@ -19,7 +19,7 @@ def get_data_lines(input1, input2, output_variable, type_model):
     return data
 
 def get_large_set_of_data(output_variable,filename):
-    physical_data = get_data_from_json(filename)
+    physical_data = clean_data(filename)
     data_model = obtain_data([output_variable], physical_data)
     return data_model
 
@@ -34,9 +34,9 @@ def main(output_variable, name_eval, type_model,filename):
 
 if __name__ == '__main__':
     names =['train']
-    filename = 'performance_indicators/performance_indicators_phi_1.0.json'
+    filename = 'performance_indicators/performance_indicators_phi_4.0.json'
     #output_variable = 'volume_liquid_time_400'
-    output_variables = ['termination_time', 'lifetime','efficiency']
+    output_variables = ['termination_time', 'total_throughput','efficiency']
 
     for output_variable in output_variables:
         for name_eval in names:

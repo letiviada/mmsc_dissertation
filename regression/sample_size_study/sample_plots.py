@@ -22,10 +22,11 @@ def get_plots_size_sample(metric):
     ax[0].set_ylabel('Mean R2 Score')
     #ax[0].set_xlim(38.5, 181)
     ax[0].set_yticks(np.arange(0, 1.05, 0.05)) 
-    ax[0].set_xticks(np.arange(40, 181, 10))
+    ax[0].set_xticks(np.arange(30, 181, 10))
+    ax[0].set_ylim(0,1.05)
     ax[0].legend(loc = 'lower right')
     plt.tight_layout()
-    save_figure(fig, 'regression/figures/sample_size/comparison_{metric}')
+    save_figure(fig, f'regression/figures/sample_size/comparison_{metric}')
     plt.show()
 
 get_plots_size_sample('termination_time')
