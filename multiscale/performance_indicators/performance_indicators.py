@@ -63,6 +63,9 @@ class FilterPerformance:
         velocity = interp1d(self.t_eval, self.u, kind='cubic', fill_value='extrapolate')
         def velocity_minus_mu(t):
             return velocity(t) - mu
+        if velocity(0) * velocity(self.t_eval[-1]) > 0:
+            print('The filter never reaches the minimum velocity')
+            return self.t_eval[-1]
         termination_time = root_scalar(velocity_minus_mu, bracket=[0, self.t_eval[-1]])
         if termination_time.converged:
             return termination_time.root

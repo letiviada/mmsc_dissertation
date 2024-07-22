@@ -3,9 +3,9 @@
 # Define values for alpha and beta
 #
 
-alphas=$(seq 0.3 0.05 1.0)
-betas=$(seq 0.03 0.01 0.1)
-alphas=(0.2)
+alphas=$(seq 0.0 0.05 1.0)
+#betas=$(seq 0.03 0.01 0.1)
+betas=(0.09)
 phis=(1.0)
 num_runs=1
 
@@ -63,7 +63,7 @@ echo "Performance Indicators computation time: $minutes minutes and $seconds sec
 
 # Combine individual micro result files into one JSON file and delete them
 combine_start_time=$(date +%s)
-#python3 multiscale/combine_results.py performance_indicators --num_runs $num_runs
+python3 multiscale/combine_results.py performance_indicators --num_runs $num_runs
 combine_end_time=$(date +%s)
 combine_time=$((combine_end_time - combine_start_time))
 minutes=$((combine_time / 60))
