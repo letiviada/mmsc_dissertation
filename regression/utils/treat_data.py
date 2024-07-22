@@ -87,5 +87,18 @@ def data_time(time:int, names:list, data: pd.DataFrame) -> pd.DataFrame:
             for index in filter_working_indices:
                 row = data.loc[index]
                 interp_func = create_interp(row, 'efficiency_time')
-                data.at[index, f'{name}_time_{time}'] = (quad(interp_func, 0, time)[0]/ time) if interp_func is not None else np.nan
+                if row['adhesivity'] == 0.0:
+                    data.at[index, f'{name}_time_{time}'] = 1
+                else:
+                    data.at[index, f'{name}_time_{time}'] = (quad(interp_func, 0, time)[0]/ time) if interp_func is not None else np.nan
+        elif name == 'removed_particles':
+            data.loc[filter_finished_indices, f'{name}_time_{time}'] = 1 - (data.loc[filter_finished_indices, 'efficiency'] / data.loc[filter_finished_indices, 'termination_time'])
+            # Calculate total concentrratiton processed
+            for index in filter_working_indices:
+                row = data.loc[index]
+                interp_func = create_interp(row, 'removed_particles')
+                if row['adhesivity'] == 0.0:
+                    data.at[index, f'{name}_time_{time}'] = 0
+                else:
+                    data.at[index, f'{name}_time_{time}'] = (quad(interp_func, 0, time)[0]/ time) if interp_func is not None else np.nan
     return data

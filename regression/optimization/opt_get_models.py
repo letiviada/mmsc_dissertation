@@ -2,7 +2,7 @@ import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
 from utils import open_model, change_name_time, ratio_predictions
-from utils import get_data_from_json, data_time, obtain_data, get_ratio, make_data_frame
+from utils import get_data_from_json, data_time, obtain_data, get_ratio, make_data_frame, get_product
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 sys.path.append('/Users/letiviada/dissertation_mmsc')
 import pandas as pd
@@ -51,7 +51,7 @@ def get_physical_model(outputs:list,time:int,n:int,filename:str)->pd.DataFrame:
     volume_name = change_name_time(outputs[0], time)
     concentration_name = change_name_time(outputs[1], time)
     data_model = obtain_data([volume_name, concentration_name], data)
-    data_ratio = get_ratio(volume_name, concentration_name,n, data_model) 
+    data_ratio = get_product(volume_name, concentration_name,n, data_model) 
     return data_ratio
 
 def get_full_data_and_models(outputs:list, time: int, n:int, type_model: list,filename:str):

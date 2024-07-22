@@ -29,14 +29,14 @@ def get_data_after_ml(alpha, beta, outputs, time, n, type_model, filename):
 if __name__ == '__main__':
     
     # Define the parameters
-    filename = 'performance_indicators/performance_indicators_phi_1.0.json'
+    filename = 'performance_indicators/performance_indicators_opt.json'
     time = 400
     n_values = np.arange(0.04,3.25,0.01).round(2)
     particle_sizes = [0.08]
-    data_ratio = get_physical_model(['volume_liquid','total_concentration'],time,1,filename)
+    data_ratio = get_physical_model(['volume_liquid','removed_particles'],time,1,filename)
 
     vol_name = f'volume_liquid_time_{time}'
-    conc_name = f'total_concentration_time_{time}'
+    conc_name = f'removed_particles_time_{time}'
     make_plots(data_ratio,vol_name, actual = True, prediction = False,lines = True, data_line = None,type_data = 'standard',  particle_sizes= particle_sizes, save= False) 
     make_plots(data_ratio,conc_name, actual = True,  prediction = False,lines = False, data_line = None,type_data = 'standard',particle_sizes= particle_sizes, save= False)
 #make_loglog(data_ratio,'volume_liquid_time_400', betas = particle_sizes,type_data='standard')
@@ -48,8 +48,8 @@ if __name__ == '__main__':
     optimal_adhesivity = []
     pessimal_filter = []
   
-    data = data.sort_values(by=f'total_concentration_time_{time}', ascending=True)
-    filtered_data = data[(data[f'total_concentration_time_{time}'] <= 1)]
+    data = data.sort_values(by=f'removed_particles_time_{time}', ascending=True)
+    filtered_data = data[(data[f'removed_particles_time_{time}'] <= 1)]
     filtered_data = filtered_data[(filtered_data[f'volume_liquid_time_{time}'] > 40)]
     adhesivity_keys = filtered_data['adhesivity'].unique()  
     for column in data.columns[4:]:
