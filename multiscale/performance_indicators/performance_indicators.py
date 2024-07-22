@@ -45,8 +45,9 @@ class FilterPerformance:
         conc_outlet = concent_outlet_interp(t_eval)
         removed_particles =  1 - conc_outlet
 
-        efficiency_total = quad(concent_outlet_interp, 0, t_eval[-1])[0]
-        return conc_outlet,removed_particles, efficiency_total
+        avg_efficiency = (quad(concent_outlet_interp, 0, t_eval[-1])[0]) / (t_eval[-1])
+        avg_removed_particles = 1 - avg_efficiency
+        return conc_outlet,removed_particles, avg_efficiency, avg_removed_particles
 
     def termination_time(self, mu: float) -> float:
         """
