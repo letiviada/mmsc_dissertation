@@ -82,7 +82,7 @@ def get_data_varying_n(particle_sizes,n_values, time, filename):
 
 if __name__ == '__main__':
     # Define the parameters
-    filename = 'performance_indicators/performance_indicators_standard.json'
+    filename = 'performance_indicators/performance_indicators_phi_1.0.json'
     time = 400
     n = 1
     outputs = ['volume_liquid', 'total_concentration']
@@ -95,6 +95,7 @@ if __name__ == '__main__':
     # Get the data for the varying n
     n_values = np.arange(0.04,3.25,0.01).round(2)
     particle_sizes = np.linspace(0.03, 0.09, 7).round(2)
+    particle_sizes = [0.08]
     data = get_data_varying_n(particle_sizes,n_values,time,filename)
 
 
