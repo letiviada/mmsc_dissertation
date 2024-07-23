@@ -64,10 +64,10 @@ def save_data_to_csv(data,folder, filename):
     filename (str): the name of the file to save the data
 
     """
-    directory = '/home/viadacampos/Documents/mmsc_dissertation/regression/sample_size_study/'
+    directory = '/home/viadacampos/Documents/mmsc_dissertation/regression/'
     filepath = os.path.join(directory,folder)
     if not os.path.exists(directory):
-        directory = '/Users/letiviada/dissertation_mmsc/regression/sample_size_study/'
+        directory = '/Users/letiviada/dissertation_mmsc/regression/'
         filepath = os.path.join(directory, folder)
         if not os.path.exists(directory):
             raise FileNotFoundError("The directories do not exist")

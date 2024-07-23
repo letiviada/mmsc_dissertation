@@ -20,7 +20,7 @@ def get_data_for_opt(models: list, names_models: list, input1: np.ndarray, input
     alpha_beta_grid = np.array(np.meshgrid(input1, input2)).T.reshape(-1, 2)
     inputs = pd.DataFrame(alpha_beta_grid, columns=['adhesivity', 'particle_size'])
     data = pd.DataFrame()
-    for i,model in enumerate(models):
+    for i, model in enumerate(models):
         prediction = model.predict(inputs)
         output_name = f'{names_models[i]}_predictions'
         name_col = [output_name]

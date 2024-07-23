@@ -2,7 +2,7 @@ import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
 from utils import open_model, change_name_time, ratio_predictions
-from utils import get_data_from_json, data_time, obtain_data, get_ratio, make_data_frame, get_product
+from utils import get_data_from_json, data_time, obtain_data, make_data_frame, get_product
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 sys.path.append('/Users/letiviada/dissertation_mmsc')
 import pandas as pd
@@ -54,7 +54,7 @@ def get_physical_model(outputs:list,time:int,n:int,filename:str)->pd.DataFrame:
     data_ratio = get_product(volume_name, concentration_name,n, data_model) 
     return data_ratio
 
-def get_full_data_and_models(outputs:list, time: int, n:int, type_model: list,filename:str):
+def get_full_data_and_models(outputs:list, time: int, n:int, type_model: list,filename:str)->tuple:
     """
     Function that getsthefull dataframe with the predictions for the numerrtor, denominator and ratio
 
@@ -78,7 +78,7 @@ def get_full_data_and_models(outputs:list, time: int, n:int, type_model: list,fi
     denominator_predictions,den_model = ml_model(inputs,outputs[1], time,type_model[1])
     ratio = ratio_predictions(numerator_predictions, denominator_predictions, n)
 
-    column_names= ['ratio_predictions'] +[f'{output}_predictions' for output in outputs]
+    column_names = ['ratio_predictions'] +[f'{output}_predictions' for output in outputs]
     data_arrays = [ratio, numerator_predictions, denominator_predictions]
     cols = {column_name: array for column_name, array in zip(column_names, data_arrays)}
     full_data = make_data_frame(df_ratio, **cols)

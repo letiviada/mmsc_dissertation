@@ -236,21 +236,38 @@ def plot_optimal_adhesivity(particle_size,n_values, data, time):
     fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
 
     optimal_adhesivity = []
-    pessimal_filter = []
     data = data.sort_values(by=f'removed_particles_time_{time}', ascending=True)
-    filtered_data = data[(data[f'removed_particles_time_{time}'] <= 1)]
-    filtered_data = filtered_data[(filtered_data[f'volume_liquid_time_{time}'] > 40)] 
+    filtered_data = data[(data[f'particle_size'] == particle_size)]
     for column in data.columns[4:]:
             max_value = filtered_data[column].max()
-            min_value = filtered_data[column].min()
             optimal_adhesivity.append(filtered_data[filtered_data[column] == max_value]['adhesivity'].values[0])
-            pessimal_filter.append(filtered_data[filtered_data[column] == min_value]['adhesivity'].values[0])
     
     ax[0].scatter(n_values, optimal_adhesivity, label='Optimal', color = colors[0])
-    #ax[0].plot(n_values, pessimal_filter, label = 'Pessimal', color=colors[-1])
-    
-    ax[0].legend(loc='center left', bbox_to_anchor=(1, 0.5))
+    ax[0].set_xlabel('n')
+    ax[0].set_ylabel('Optimal adhesivity')
     plt.tight_layout()
     save_figure(fig, f'regression/figures/optimization/particle_size_{particle_size}/optimal_adhesivity')
+    plt.show()
+
+def get_plots_size_sample(metric):
+    summary_stats_poly = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_polynomial.csv')
+    summary_stats_gb = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_gradient_boosting.csv')
+    summary_stats_rf = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_random_forest.csv')
+
+    _, colors = style_and_colormap(num_positions=3)
+    fig, ax = create_fig(1,1, dpi = 100)
+
+    ax[0].scatter(summary_stats_poly['Sample Size'], summary_stats_poly['Mean R2'], color = colors[0], marker = 'x', label = 'Polynomial')
+    ax[0].scatter(summary_stats_gb['Sample Size'], summary_stats_gb['Mean R2'], color = colors[1], marker = 'x', label = 'Gradient Boosting')
+    ax[0].scatter(summary_stats_rf['Sample Size'], summary_stats_rf['Mean R2'], color = colors[2], marker = 'x', label = 'Random Forest')
+    ax[0].set_xlabel('Sample Size')
+    ax[0].set_ylabel('Mean R2 Score')
+    #ax[0].set_xlim(38.5, 181)
+    ax[0].set_yticks(np.arange(0, 1.05, 0.05)) 
+    ax[0].set_xticks(np.arange(30, 181, 10))
+    ax[0].set_ylim(0,1.05)
+    ax[0].legend(loc = 'lower right')
+    plt.tight_layout()
+    save_figure(fig, f'regression/figures/sample_size/comparison_{metric}')
     plt.show()
    

@@ -18,7 +18,6 @@ def dataplots(outputs):
     data = clean_data(filename = 'performance_indicators/performance_indicators_standard.json')
     view_data_all_outputs(data,outputs)
     plt.show()
-    
 
 if __name__ == '__main__':
     outputs =['termination_time', 'total_throughput','efficiency'] 

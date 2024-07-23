@@ -63,7 +63,7 @@ def main(output,num_runs,sizes,filename,type_model,time = None):
         'Mean R2': mean_r2_list,
         'Std R2': std_r2_list
     })
-    save_data_to_csv(summary_stats,f'{output}',f'summary_statistics_{type_model}.csv')
+    save_data_to_csv(summary_stats,f'sample_size_study/{output}',f'summary_statistics_{type_model}.csv')
    # print(f'Sample size study complete for {output} and {type_model}')
 
 if __name__ == '__main__':
