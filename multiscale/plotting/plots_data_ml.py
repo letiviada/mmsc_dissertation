@@ -231,18 +231,25 @@ def make_loglog(data:pd.DataFrame,name:str,betas:list,type_data:str):
     plt.tight_layout()
     save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/loglog_{name}')
 
-def plot_optimal_adhesivity(particle_size,n_values, data, time):
-    _, colors = style_and_colormap(num_positions = 2, colormap = 'tab20b')
-    fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
+def plot_optimal_adhesivity(particle_sizes,n_values, data, time):
 
-    optimal_adhesivity = []
-    data = data.sort_values(by=f'removed_particles_time_{time}', ascending=True)
-    filtered_data = data[(data[f'particle_size'] == particle_size)]
-    for column in data.columns[4:]:
-            max_value = filtered_data[column].max()
-            optimal_adhesivity.append(filtered_data[filtered_data[column] == max_value]['adhesivity'].values[0])
-    
-    ax[0].scatter(n_values, optimal_adhesivity, label='Optimal', color = colors[0])
+    _, colors = style_and_colormap(num_positions = len(particle_sizes), colormap = 'tab20b')
+    fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
+    colors = colors.tolist()
+    color_mapping = {key: color for key, color in zip(particle_sizes, colors)}
+
+    for particle_size in particle_sizes:
+        optimal_adhesivity = []
+        filtered_data = data[(data[f'particle_size'] == particle_size)]
+        df = pd.DataFrame({'adhesivity': filtered_data['adhesivity'],
+                          'particle_size': filtered_data['particle_size'],
+                          'n': filtered_data['n'],
+                          'product': filtered_data['product']})
+        for n_value in n_values:
+            filtered_df = df[df['n'] == n_value]
+            max_product = filtered_df['product'].max()
+            optimal_adhesivity.append(filtered_df[filtered_df['product'] == max_product]['adhesivity'].values[0])
+        ax[0].scatter(n_values, optimal_adhesivity, label='Optimal', color = color_mapping[particle_size])
     ax[0].set_xlabel('n')
     ax[0].set_ylabel('Optimal adhesivity')
     plt.tight_layout()
