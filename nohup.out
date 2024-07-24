@@ -229,3 +229,111 @@ Performance Indicators computation time: 0 minutes and 0 seconds
 Combining results time: 0 minutes and 0 seconds
 Total execution time: 13 minutes and 2 seconds
 Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Done!
+Generating plots for the macroscale model
+Done!
+Generating plots for the performance indicators
+Done!

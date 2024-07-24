@@ -8,4 +8,4 @@ import pandas as pd
 
 data = pd.read_csv('regression/optimization/optimum_values.csv')
 output = 'adhesivity'
-train_model(output, data, size_train = 'all', type_model = 'polynomial', save = True)
+train_model(output, data, size_train = 'all', type_model = 'gradient_boosting', save = True)
