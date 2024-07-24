@@ -2,8 +2,8 @@ from scipy.interpolate import interp1d
 import pandas as pd
 import numpy as np
 
-def create_interp(data, y_axis):
-    x = data['time']
+def create_interp(data,x_axis, y_axis):
+    x = data[x_axis]
     y = data[y_axis]
     return interp1d(x, y, kind='cubic', fill_value="extrapolate")
 

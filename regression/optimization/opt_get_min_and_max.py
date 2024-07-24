@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from opt_get_models import  get_physical_model
+from opt_get_models import  get_physical_model_time
 from utils import save_data_to_csv
 
 
@@ -50,11 +50,11 @@ def compare_prediction_of_maximum(full_data:pd.DataFrame, output:str)-> pd.DataF
     rows_compared.to_csv('/Users/letiviada/dissertation_mmsc/regression/optimization/comparison_max.csv', index=False)
     return rows_compared
 
-def get_data_varying_n( n_values, time, filename):
+def time_model_varying_n( n_values, time, filename):
     all_data = pd.DataFrame()
     optimum_values = pd.DataFrame()
     for n in n_values:
-        data = get_physical_model(['volume_liquid', 'removed_particles'], time, n, filename)
+        data = get_physical_model_time(['volume_liquid', 'removed_particles'], time, n, filename)
         data_sorted = data.sort_values(['particle_size', 'adhesivity'])
         
         data_sorted['n'] = n 
@@ -83,7 +83,7 @@ if __name__ == '__main__':
 
     # Get the data for the varying n
     n_values = np.arange(0.01,3,0.01).round(2)
-    data = get_data_varying_n(n_values,time,filename)
+    data = time_model_varying_n(n_values,time,filename)
 
 
 

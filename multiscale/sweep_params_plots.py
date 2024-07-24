@@ -20,17 +20,20 @@ def main(alphas: list, betas: list,phi:float,name:str):
     for beta in betas:    
         for alpha in alphas:
             # Load k_values, j_values, tau_eval
-            k_values, j_values, tau_eval = load_k_j(alpha, beta,run = 0,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
-            darcy_velocity = load_any(alpha,beta, 'darcy_velocity', run = 0, filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
-            concentration  = load_any(alpha,beta,'concentration',run=0,filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
+            k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+            darcy_velocity = load_any(alpha,beta, 'darcy_velocity', run = None, filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
+            darcy_velocity = [0 if v < 0.1 else v for v in darcy_velocity]
+            concentration  = load_any(alpha,beta,'concentration',run=None,filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
             # Append to respective lists
             k_values_list.append(k_values)
             j_values_list.append(j_values)
+
+
             u_values_list.append(darcy_velocity)
             c_values_list.append(concentration[-1,:])
     tau_values_list.append(tau_eval)
-    t_eval = load_any(alpha,beta,'time_eval', run = 0, filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
-    x_eval = load_any(alpha,beta,'x_eval',run = 0,filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
+    t_eval = load_any(alpha,beta,'time_eval', run = None, filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
+    x_eval = load_any(alpha,beta,'x_eval',run = None,filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
 
 # Plot the results
     # ----------------
