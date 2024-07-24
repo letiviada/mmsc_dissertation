@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
     data = pd.read_csv('regression/optimization/optimum_values.csv')
     #plot_optimal_adhesivity([0.03,0.08],n_values,data, time)
-    plot_optimum([0.03,0.08],data)
+    plot_optimum(data,[0.03,0.08],predictions = False)
 
-
+ 
 

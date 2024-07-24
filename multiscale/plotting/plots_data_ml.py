@@ -256,16 +256,43 @@ def plot_optimal_adhesivity(particle_sizes,n_values, data, time):
     save_figure(fig, f'regression/figures/optimization/particle_size_{particle_size}/optimal_adhesivity')
     plt.show()
 
-def plot_optimum(particle_sizes,data):
+def plot_optimum(data:pd.DataFrame,particle_sizes : list = 'all', actual: bool = True, predictions: bool = True, save: bool = True):
+    """
+    Function that plots the optimum for adhesivity for the different particle sizes.
+
+    Parameters:
+    ----------
+    data (pd.DataFrame): the data to plot
+    particle_sizes (list): the list of particle sizes to plot
+    actual (bool): whether to plot the actual data
+    predictions (bool): whether to plot the predictions
+    save (bool): whether to save the figure
+
+    Returns:
+    --------
+    None
+    """
+    if particle_sizes == 'all':
+        particle_sizes = data['particle_size'].unique()
     _, colors = style_and_colormap(num_positions = len(particle_sizes), colormap = 'tab20b')
     colors = colors.tolist()
     color_mapping = {key: color for key, color in zip(particle_sizes, colors)}
+
     for particle_size in particle_sizes:
         fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
         filtered_data = data[(data[f'particle_size'] == particle_size)]
-        ax[0].scatter(x = filtered_data['n'], y =  filtered_data['adhesivity'], color = color_mapping[particle_size])
-    
-        save_figure(fig, f'regression/figures/optimization/particle_size_{particle_size}/optimal_adhesivity')
+        if actual == True:
+            ax[0].scatter(filtered_data['n'], filtered_data['adhesivity'], color = color_mapping[particle_size], label = 'Physical Model')
+        if predictions == True:
+            ax[0].scatter(filtered_data['n'], filtered_data['adhesivity_predictions'], marker = 'x', color = color_mapping[particle_size], label = 'ML Model')
+            filename = f'regression/figures/optimization/optimal_adhesivity/particle_size_{particle_size}_ml'
+        else: 
+            filename = f'regression/figures/optimization/optimal_adhesivity/particle_size_{particle_size}'
+        if save == True:
+            ax[0].legend(loc = 'lower right', bbox_to_anchor=(1.05, 1))
+            plt.tight_layout()  
+
+            save_figure(fig,filename)
         plt.show()
 
 
