@@ -1,3 +1,4 @@
+
 #!/bin/bash
 # To run, put in the terminal: bash micro_params.sh
 # Define values for alpha and beta

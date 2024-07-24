@@ -4,8 +4,8 @@ import json
 import numpy as np
 
 def check_json_files(filename,directory = 'multiscale/results/mono-dispersed/', file_extension = ".json"):
-    alpha_values = np.around(np.arange(0.3, 1.05, 0.05), 2)
-    beta_values = np.around(np.arange(0.03, 0.105, 0.005), 3)
+    alpha_values = np.around(np.arange(0.0, 1.05, 0.05), 2)
+    beta_values = np.around(np.arange(0.01, 0.105, 0.005), 3)
 # Construct the full path to the file
     filepath = os.path.join(directory, filename)
     
@@ -25,7 +25,7 @@ def check_json_files(filename,directory = 'multiscale/results/mono-dispersed/', 
         print(f"File '{filename}' not found in directory '{directory}' or does not match the file extension '{file_extension}'.")
     print('Done')
 # Call the function  
-check_json_files("performance_indicators/performance_indicators_standard_basic.json")
+check_json_files("performance_indicators/performance_indicators_phi_4.0.json")
 
 
 

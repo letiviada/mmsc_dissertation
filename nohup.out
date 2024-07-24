@@ -1,329 +1,695 @@
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+    data = load_results(filename)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
+    with open(filename, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Done!
+Generating plots for the macroscale model
+Done!
+Generating plots for the performance indicators
+Done!
+Running micro simulation...
+Micro computation time: 0 minutes and 20 seconds
+Combining micro_results time: 0 minutes and 3 seconds
+Running macro simulation...
+Alpha: 0.0, Beta: 0.065, Phi: 4.0 Time elapsed: 2.2355802059173584 seconds
+Alpha: 0.1, Beta: 0.015, Phi: 4.0 Time elapsed: 1.6295742988586426 seconds
+Alpha: 0.1, Beta: 0.085, Phi: 4.0 Time elapsed: 1.6205878257751465 seconds
+Alpha: 0.2, Beta: 0.075, Phi: 4.0 Time elapsed: 1.6374664306640625 seconds
+Alpha: 0.3, Beta: 0.055, Phi: 4.0 Time elapsed: 1.678762435913086 seconds
+Alpha: 0.4, Beta: 0.035, Phi: 4.0 Time elapsed: 1.6619911193847656 seconds
+Alpha: 0.5, Beta: 0.015, Phi: 4.0 Time elapsed: 1.5231144428253174 seconds
+Alpha: 0.5, Beta: 0.065, Phi: 4.0 Time elapsed: 1.601363182067871 seconds
+Alpha: 0.6, Beta: 0.055, Phi: 4.0 Time elapsed: 1.648768663406372 seconds
+Alpha: 0.7, Beta: 0.025, Phi: 4.0 Time elapsed: 1.7192203998565674 seconds
+Alpha: 0.8, Beta: 0.015, Phi: 4.0 Time elapsed: 1.5521340370178223 seconds
+Alpha: 0.8, Beta: 0.075, Phi: 4.0 Time elapsed: 1.5314202308654785 seconds
+Alpha: 0.9, Beta: 0.055, Phi: 4.0 Time elapsed: 1.540750503540039 seconds
+Alpha: 1.0, Beta: 0.045, Phi: 4.0 Time elapsed: 1.5704843997955322 seconds
+Alpha: 0.0, Beta: 0.015, Phi: 4.0 Time elapsed: 2.2524867057800293 seconds
+Alpha: 0.1, Beta: 0.035, Phi: 4.0 Time elapsed: 1.6696958541870117 seconds
+Alpha: 0.2, Beta: 0.015, Phi: 4.0 Time elapsed: 1.5922942161560059 seconds
+Alpha: 0.2, Beta: 0.065, Phi: 4.0 Time elapsed: 1.640343189239502 seconds
+Alpha: 0.3, Beta: 0.045, Phi: 4.0 Time elapsed: 1.6956777572631836 seconds
+Alpha: 0.4, Beta: 0.025, Phi: 4.0 Time elapsed: 1.746016263961792 seconds
+Alpha: 0.4, Beta: 0.095, Phi: 4.0 Time elapsed: 1.6135139465332031 seconds
+Alpha: 0.5, Beta: 0.075, Phi: 4.0 Time elapsed: 1.5916388034820557 seconds
+Alpha: 0.6, Beta: 0.045, Phi: 4.0 Time elapsed: 1.7453253269195557 seconds
+Alpha: 0.7, Beta: 0.035, Phi: 4.0 Time elapsed: 1.6304833889007568 seconds
+Alpha: 0.7, Beta: 0.095, Phi: 4.0 Time elapsed: 1.6571385860443115 seconds
+Alpha: 0.8, Beta: 0.085, Phi: 4.0 Time elapsed: 1.6741306781768799 seconds
+Alpha: 0.9, Beta: 0.065, Phi: 4.0 Time elapsed: 1.5789568424224854 seconds
+Alpha: 1.0, Beta: 0.035, Phi: 4.0 Time elapsed: 1.685091257095337 seconds
+Alpha: 0.0, Beta: 0.075, Phi: 4.0 Time elapsed: 2.0774457454681396 seconds
+Alpha: 0.0, Beta: 0.095, Phi: 4.0 Time elapsed: 1.7307178974151611 seconds
+Alpha: 0.1, Beta: 0.075, Phi: 4.0 Time elapsed: 1.6180102825164795 seconds
+Alpha: 0.2, Beta: 0.055, Phi: 4.0 Time elapsed: 1.670365571975708 seconds
+Alpha: 0.3, Beta: 0.035, Phi: 4.0 Time elapsed: 1.629789113998413 seconds
+Alpha: 0.4, Beta: 0.015, Phi: 4.0 Time elapsed: 1.5206248760223389 seconds
+Alpha: 0.4, Beta: 0.085, Phi: 4.0 Time elapsed: 1.7928526401519775 seconds
+Alpha: 0.5, Beta: 0.085, Phi: 4.0 Time elapsed: 1.8273630142211914 seconds
+Alpha: 0.6, Beta: 0.065, Phi: 4.0 Time elapsed: 1.6450450420379639 seconds
+Alpha: 0.7, Beta: 0.045, Phi: 4.0 Time elapsed: 1.7053539752960205 seconds
+Alpha: 0.8, Beta: 0.025, Phi: 4.0 Time elapsed: 1.6281230449676514 seconds
+Alpha: 0.8, Beta: 0.095, Phi: 4.0 Time elapsed: 1.6454341411590576 seconds
+Alpha: 0.9, Beta: 0.075, Phi: 4.0 Time elapsed: 1.5322542190551758 seconds
+Alpha: 1.0, Beta: 0.055, Phi: 4.0 Time elapsed: 1.5651233196258545 seconds
+Alpha: 0.0, Beta: 0.025, Phi: 4.0 Time elapsed: 2.300678253173828 seconds
+Alpha: 0.1, Beta: 0.055, Phi: 4.0 Time elapsed: 1.7712581157684326 seconds
+Alpha: 0.2, Beta: 0.025, Phi: 4.0 Time elapsed: 1.765509843826294 seconds
+Alpha: 0.2, Beta: 0.095, Phi: 4.0 Time elapsed: 1.6482479572296143 seconds
+Alpha: 0.3, Beta: 0.075, Phi: 4.0 Time elapsed: 1.634432077407837 seconds
+Alpha: 0.4, Beta: 0.055, Phi: 4.0 Time elapsed: 1.5376458168029785 seconds
+Alpha: 0.5, Beta: 0.035, Phi: 4.0 Time elapsed: 1.5761988162994385 seconds
+Alpha: 0.6, Beta: 0.015, Phi: 4.0 Time elapsed: 1.6434180736541748 seconds
+Alpha: 0.6, Beta: 0.085, Phi: 4.0 Time elapsed: 1.717552661895752 seconds
+Alpha: 0.7, Beta: 0.065, Phi: 4.0 Time elapsed: 1.6184041500091553 seconds
+Alpha: 0.8, Beta: 0.045, Phi: 4.0 Time elapsed: 1.712782382965088 seconds
+Alpha: 0.9, Beta: 0.025, Phi: 4.0 Time elapsed: 1.7578461170196533 seconds
+Alpha: 0.9, Beta: 0.095, Phi: 4.0 Time elapsed: 1.5972697734832764 seconds
+Alpha: 1.0, Beta: 0.075, Phi: 4.0 Time elapsed: 1.6887505054473877 seconds
+Alpha: 0.0, Beta: 0.055, Phi: 4.0 Time elapsed: 2.239149808883667 seconds
+Alpha: 0.1, Beta: 0.025, Phi: 4.0 Time elapsed: 1.7031559944152832 seconds
+Alpha: 0.1, Beta: 0.095, Phi: 4.0 Time elapsed: 1.692584753036499 seconds
+Alpha: 0.2, Beta: 0.085, Phi: 4.0 Time elapsed: 1.6472809314727783 seconds
+Alpha: 0.3, Beta: 0.065, Phi: 4.0 Time elapsed: 1.7104504108428955 seconds
+Alpha: 0.4, Beta: 0.045, Phi: 4.0 Time elapsed: 1.6744067668914795 seconds
+Alpha: 0.5, Beta: 0.025, Phi: 4.0 Time elapsed: 1.6543114185333252 seconds
+Alpha: 0.5, Beta: 0.095, Phi: 4.0 Time elapsed: 1.7517976760864258 seconds
+Alpha: 0.6, Beta: 0.075, Phi: 4.0 Time elapsed: 1.6470720767974854 seconds
+Alpha: 0.7, Beta: 0.055, Phi: 4.0 Time elapsed: 1.6800506114959717 seconds
+Alpha: 0.8, Beta: 0.035, Phi: 4.0 Time elapsed: 1.7044384479522705 seconds
+Alpha: 0.9, Beta: 0.015, Phi: 4.0 Time elapsed: 1.5725815296173096 seconds
+Alpha: 0.9, Beta: 0.085, Phi: 4.0 Time elapsed: 1.5708448886871338 seconds
+Alpha: 1.0, Beta: 0.065, Phi: 4.0 Time elapsed: 1.6319527626037598 seconds
+Alpha: 0.0, Beta: 0.035, Phi: 4.0 Time elapsed: 2.264291763305664 seconds
+Alpha: 0.1, Beta: 0.045, Phi: 4.0 Time elapsed: 1.873265027999878 seconds
+Alpha: 0.2, Beta: 0.035, Phi: 4.0 Time elapsed: 1.7657227516174316 seconds
+Alpha: 0.3, Beta: 0.015, Phi: 4.0 Time elapsed: 1.8133883476257324 seconds
+Alpha: 0.3, Beta: 0.085, Phi: 4.0 Time elapsed: 1.562507152557373 seconds
+Alpha: 0.4, Beta: 0.065, Phi: 4.0 Time elapsed: 1.674985408782959 seconds
+Alpha: 0.5, Beta: 0.045, Phi: 4.0 Time elapsed: 1.745593547821045 seconds
+Alpha: 0.6, Beta: 0.025, Phi: 4.0 Time elapsed: 1.5931999683380127 seconds
+Alpha: 0.6, Beta: 0.095, Phi: 4.0 Time elapsed: 1.5620734691619873 seconds
+Alpha: 0.7, Beta: 0.075, Phi: 4.0 Time elapsed: 1.577338695526123 seconds
+Alpha: 0.8, Beta: 0.055, Phi: 4.0 Time elapsed: 1.6713862419128418 seconds
+Alpha: 0.9, Beta: 0.035, Phi: 4.0 Time elapsed: 1.6768975257873535 seconds
+Alpha: 1.0, Beta: 0.015, Phi: 4.0 Time elapsed: 1.4889740943908691 seconds
+Alpha: 1.0, Beta: 0.085, Phi: 4.0 Time elapsed: 1.5702173709869385 seconds
+Alpha: 0.0, Beta: 0.085, Phi: 4.0 Time elapsed: 1.5710639953613281 seconds
+Alpha: 0.1, Beta: 0.065, Phi: 4.0 Time elapsed: 1.76582670211792 seconds
+Alpha: 0.2, Beta: 0.045, Phi: 4.0 Time elapsed: 1.5525062084197998 seconds
+Alpha: 0.3, Beta: 0.025, Phi: 4.0 Time elapsed: 1.5138471126556396 seconds
+Alpha: 0.3, Beta: 0.095, Phi: 4.0 Time elapsed: 1.6001150608062744 seconds
+Alpha: 0.4, Beta: 0.075, Phi: 4.0 Time elapsed: 1.6506588459014893 seconds
+Alpha: 0.5, Beta: 0.055, Phi: 4.0 Time elapsed: 1.5722568035125732 seconds
+Alpha: 0.6, Beta: 0.035, Phi: 4.0 Time elapsed: 1.5579643249511719 seconds
+Alpha: 0.7, Beta: 0.015, Phi: 4.0 Time elapsed: 1.5800087451934814 seconds
+Alpha: 0.7, Beta: 0.085, Phi: 4.0 Time elapsed: 1.5705161094665527 seconds
+Alpha: 0.8, Beta: 0.065, Phi: 4.0 Time elapsed: 1.5977365970611572 seconds
+Alpha: 0.9, Beta: 0.045, Phi: 4.0 Time elapsed: 1.5924623012542725 seconds
+Alpha: 1.0, Beta: 0.025, Phi: 4.0 Time elapsed: 1.5621817111968994 seconds
+Alpha: 1.0, Beta: 0.095, Phi: 4.0 Time elapsed: 1.4753975868225098 seconds
+An error occurred: [Errno 17] File exists: 'multiscale/results/mono-dispersed/macroscale'
+Macro computation time: 0 minutes and 32 seconds
+Combining results time: 0 minutes and 59 seconds
+Running performance indicators computation...
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 52, in load_k_j
+    raise KeyError(f'(alpha,beta)=({alpha},{beta}) not found in data')
+KeyError: '(alpha,beta)=(0.1,0.01) not found in data'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 52, in load_k_j
+    raise KeyError(f'(alpha,beta)=({alpha},{beta}) not found in data')
+KeyError: '(alpha,beta)=(0.1,0.01) not found in data'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 52, in load_k_j
+    raise KeyError(f'(alpha,beta)=({alpha},{beta}) not found in data')
+KeyError: '(alpha,beta)=(0.1,0.08) not found in data'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 52, in load_k_j
+    raise KeyError(f'(alpha,beta)=({alpha},{beta}) not found in data')
+KeyError: '(alpha,beta)=(0.8,0.01) not found in data'
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Traceback (most recent call last):
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
+    main(args.alphas, args.betas, args.phis, args.name)
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
+    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 52, in load_k_j
+    raise KeyError(f'(alpha,beta)=({alpha},{beta}) not found in data')
+KeyError: '(alpha,beta)=(0.1,0.09) not found in data'
+Alpha: 0.0, Beta: 0.035, Phi: 4.0 Time elapsed: 41.85714244842529 seconds
+Alpha: 0.1, Beta: 0.025, Phi: 4.0 Time elapsed: 35.99618744850159 seconds
+Alpha: 0.1, Beta: 0.085, Phi: 4.0 Time elapsed: 35.19966220855713 seconds
+Alpha: 0.2, Beta: 0.065, Phi: 4.0 Time elapsed: 34.91559433937073 seconds
+Alpha: 0.3, Beta: 0.045, Phi: 4.0 Time elapsed: 35.37054657936096 seconds
+Alpha: 0.4, Beta: 0.025, Phi: 4.0 Time elapsed: 34.91789269447327 seconds
+Alpha: 0.4, Beta: 0.095, Phi: 4.0 Time elapsed: 34.859060287475586 seconds
+Alpha: 0.5, Beta: 0.075, Phi: 4.0 Time elapsed: 33.20997381210327 seconds
+Alpha: 0.6, Beta: 0.055, Phi: 4.0 Time elapsed: 35.32499408721924 seconds
+Alpha: 0.7, Beta: 0.035, Phi: 4.0 Time elapsed: 36.971779584884644 seconds
+Alpha: 0.8, Beta: 0.015, Phi: 4.0 Time elapsed: 34.24755311012268 seconds
+Alpha: 0.8, Beta: 0.085, Phi: 4.0 Time elapsed: 34.36053109169006 seconds
+Alpha: 0.9, Beta: 0.055, Phi: 4.0 Time elapsed: 34.31907677650452 seconds
+Alpha: 1.0, Beta: 0.035, Phi: 4.0 Time elapsed: 34.51993441581726 seconds
+Alpha: 0.0, Beta: 0.075, Phi: 4.0 Time elapsed: 41.11957836151123 seconds
+Alpha: 0.0, Beta: 0.095, Phi: 4.0 Time elapsed: 33.44113850593567 seconds
+Alpha: 0.1, Beta: 0.075, Phi: 4.0 Time elapsed: 35.341517210006714 seconds
+Alpha: 0.2, Beta: 0.055, Phi: 4.0 Time elapsed: 34.715043783187866 seconds
+Alpha: 0.3, Beta: 0.035, Phi: 4.0 Time elapsed: 35.43244671821594 seconds
+Alpha: 0.4, Beta: 0.015, Phi: 4.0 Time elapsed: 34.12352728843689 seconds
+Alpha: 0.4, Beta: 0.085, Phi: 4.0 Time elapsed: 36.03832244873047 seconds
+Alpha: 0.5, Beta: 0.065, Phi: 4.0 Time elapsed: 35.12518644332886 seconds
+Alpha: 0.6, Beta: 0.045, Phi: 4.0 Time elapsed: 35.140393018722534 seconds
+Alpha: 0.7, Beta: 0.025, Phi: 4.0 Time elapsed: 36.976022481918335 seconds
+Alpha: 0.7, Beta: 0.095, Phi: 4.0 Time elapsed: 35.36732339859009 seconds
+Alpha: 0.8, Beta: 0.075, Phi: 4.0 Time elapsed: 34.69473171234131 seconds
+Alpha: 0.9, Beta: 0.065, Phi: 4.0 Time elapsed: 35.14282536506653 seconds
+Alpha: 1.0, Beta: 0.045, Phi: 4.0 Time elapsed: 34.28147578239441 seconds
+Alpha: 0.0, Beta: 0.015, Phi: 4.0 Time elapsed: 42.74499440193176 seconds
+Alpha: 0.1, Beta: 0.045, Phi: 4.0 Time elapsed: 35.54566264152527 seconds
+Alpha: 0.2, Beta: 0.015, Phi: 4.0 Time elapsed: 36.83871793746948 seconds
+Alpha: 0.2, Beta: 0.095, Phi: 4.0 Time elapsed: 35.55505967140198 seconds
+Alpha: 0.3, Beta: 0.065, Phi: 4.0 Time elapsed: 34.522655963897705 seconds
+Alpha: 0.4, Beta: 0.035, Phi: 4.0 Time elapsed: 35.138556480407715 seconds
+Alpha: 0.5, Beta: 0.015, Phi: 4.0 Time elapsed: 35.473889112472534 seconds
+Alpha: 0.5, Beta: 0.085, Phi: 4.0 Time elapsed: 34.734092473983765 seconds
+Alpha: 0.6, Beta: 0.065, Phi: 4.0 Time elapsed: 34.30955147743225 seconds
+Alpha: 0.7, Beta: 0.045, Phi: 4.0 Time elapsed: 35.66321539878845 seconds
+Alpha: 0.8, Beta: 0.025, Phi: 4.0 Time elapsed: 34.4446165561676 seconds
+Alpha: 0.8, Beta: 0.095, Phi: 4.0 Time elapsed: 34.48510718345642 seconds
+Alpha: 0.9, Beta: 0.075, Phi: 4.0 Time elapsed: 34.73389410972595 seconds
+Alpha: 1.0, Beta: 0.055, Phi: 4.0 Time elapsed: 34.224398136138916 seconds
+Alpha: 0.0, Beta: 0.025, Phi: 4.0 Time elapsed: 41.4322624206543 seconds
+Alpha: 0.1, Beta: 0.015, Phi: 4.0 Time elapsed: 37.24496293067932 seconds
+Alpha: 0.2, Beta: 0.025, Phi: 4.0 Time elapsed: 36.12088060379028 seconds
+Alpha: 0.2, Beta: 0.075, Phi: 4.0 Time elapsed: 35.95575213432312 seconds
+Alpha: 0.3, Beta: 0.075, Phi: 4.0 Time elapsed: 35.42531204223633 seconds
+Alpha: 0.4, Beta: 0.045, Phi: 4.0 Time elapsed: 34.89724278450012 seconds
+Alpha: 0.5, Beta: 0.025, Phi: 4.0 Time elapsed: 35.16278672218323 seconds
+Alpha: 0.5, Beta: 0.095, Phi: 4.0 Time elapsed: 35.98843216896057 seconds
+Alpha: 0.6, Beta: 0.075, Phi: 4.0 Time elapsed: 34.54560375213623 seconds
+Alpha: 0.7, Beta: 0.055, Phi: 4.0 Time elapsed: 37.004108905792236 seconds
+Alpha: 0.8, Beta: 0.045, Phi: 4.0 Time elapsed: 35.00080108642578 seconds
+Alpha: 0.9, Beta: 0.025, Phi: 4.0 Time elapsed: 33.505454540252686 seconds
+Alpha: 0.9, Beta: 0.085, Phi: 4.0 Time elapsed: 34.73975396156311 seconds
+Alpha: 1.0, Beta: 0.065, Phi: 4.0 Time elapsed: 33.23391532897949 seconds
+Alpha: 0.0, Beta: 0.065, Phi: 4.0 Time elapsed: 42.69942593574524 seconds
+Alpha: 0.1, Beta: 0.035, Phi: 4.0 Time elapsed: 37.148491859436035 seconds
+Alpha: 0.2, Beta: 0.035, Phi: 4.0 Time elapsed: 36.051674365997314 seconds
+Alpha: 0.3, Beta: 0.015, Phi: 4.0 Time elapsed: 36.66966938972473 seconds
+Alpha: 0.3, Beta: 0.085, Phi: 4.0 Time elapsed: 33.97863745689392 seconds
+Alpha: 0.4, Beta: 0.065, Phi: 4.0 Time elapsed: 35.161906719207764 seconds
+Alpha: 0.5, Beta: 0.035, Phi: 4.0 Time elapsed: 34.62139582633972 seconds
+Alpha: 0.6, Beta: 0.015, Phi: 4.0 Time elapsed: 36.18204951286316 seconds
+Alpha: 0.6, Beta: 0.085, Phi: 4.0 Time elapsed: 34.78623819351196 seconds
+Alpha: 0.7, Beta: 0.065, Phi: 4.0 Time elapsed: 36.99764966964722 seconds
+Alpha: 0.8, Beta: 0.055, Phi: 4.0 Time elapsed: 35.35547590255737 seconds
+Alpha: 0.9, Beta: 0.035, Phi: 4.0 Time elapsed: 34.4563364982605 seconds
+Alpha: 1.0, Beta: 0.015, Phi: 4.0 Time elapsed: 33.96239733695984 seconds
+Alpha: 1.0, Beta: 0.085, Phi: 4.0 Time elapsed: 33.15884232521057 seconds
+Alpha: 0.0, Beta: 0.055, Phi: 4.0 Time elapsed: 43.02163529396057 seconds
+Alpha: 0.1, Beta: 0.055, Phi: 4.0 Time elapsed: 35.15420174598694 seconds
+Alpha: 0.1, Beta: 0.095, Phi: 4.0 Time elapsed: 36.72029113769531 seconds
+Alpha: 0.2, Beta: 0.085, Phi: 4.0 Time elapsed: 35.595614433288574 seconds
+Alpha: 0.3, Beta: 0.055, Phi: 4.0 Time elapsed: 35.77929425239563 seconds
+Alpha: 0.4, Beta: 0.055, Phi: 4.0 Time elapsed: 36.56052041053772 seconds
+Alpha: 0.5, Beta: 0.045, Phi: 4.0 Time elapsed: 34.934011936187744 seconds
+Alpha: 0.6, Beta: 0.025, Phi: 4.0 Time elapsed: 35.76051902770996 seconds
+Alpha: 0.6, Beta: 0.095, Phi: 4.0 Time elapsed: 34.76558828353882 seconds
+Alpha: 0.7, Beta: 0.075, Phi: 4.0 Time elapsed: 35.16943621635437 seconds
+Alpha: 0.8, Beta: 0.035, Phi: 4.0 Time elapsed: 34.93604516983032 seconds
+Alpha: 0.9, Beta: 0.015, Phi: 4.0 Time elapsed: 35.32421350479126 seconds
+Alpha: 0.9, Beta: 0.095, Phi: 4.0 Time elapsed: 34.09210705757141 seconds
+Alpha: 1.0, Beta: 0.075, Phi: 4.0 Time elapsed: 33.637253761291504 seconds
+Alpha: 0.0, Beta: 0.085, Phi: 4.0 Time elapsed: 35.100255727767944 seconds
+Alpha: 0.1, Beta: 0.065, Phi: 4.0 Time elapsed: 34.9162437915802 seconds
+Alpha: 0.2, Beta: 0.045, Phi: 4.0 Time elapsed: 36.86531448364258 seconds
+Alpha: 0.3, Beta: 0.025, Phi: 4.0 Time elapsed: 36.91305327415466 seconds
+Alpha: 0.3, Beta: 0.095, Phi: 4.0 Time elapsed: 34.46830487251282 seconds
+Alpha: 0.4, Beta: 0.075, Phi: 4.0 Time elapsed: 34.49086880683899 seconds
+Alpha: 0.5, Beta: 0.055, Phi: 4.0 Time elapsed: 34.144495248794556 seconds
+Alpha: 0.6, Beta: 0.035, Phi: 4.0 Time elapsed: 36.46350598335266 seconds
+Alpha: 0.7, Beta: 0.015, Phi: 4.0 Time elapsed: 37.61985540390015 seconds
+Alpha: 0.7, Beta: 0.085, Phi: 4.0 Time elapsed: 34.202136754989624 seconds
+Alpha: 0.8, Beta: 0.065, Phi: 4.0 Time elapsed: 33.88572025299072 seconds
+Alpha: 0.9, Beta: 0.045, Phi: 4.0 Time elapsed: 33.38917946815491 seconds
+Alpha: 1.0, Beta: 0.025, Phi: 4.0 Time elapsed: 34.79403853416443 seconds
+Alpha: 1.0, Beta: 0.095, Phi: 4.0 Time elapsed: 30.76093888282776 seconds
+An error occurred: '(alpha,beta)=(0.0,0.045) not found in data'
+Performance Indicators computation time: 0 minutes and 0 seconds
+Combining results time: 0 minutes and 1 seconds
+Total execution time: 10 minutes and 23 seconds
+Done!
 Running micro simulation...
 Micro computation time: 0 minutes and 22 seconds
-Combining micro_results time: 0 minutes and 5 seconds
+Combining micro_results time: 0 minutes and 4 seconds
 Running macro simulation...
-Alpha: 0.0, Beta: 0.02, Phi: 4.0 Time elapsed: 3.0755279064178467 seconds
-Alpha: 0.1, Beta: 0.02, Phi: 4.0 Time elapsed: 2.3588693141937256 seconds
-Alpha: 0.1, Beta: 0.1, Phi: 4.0 Time elapsed: 2.361370801925659 seconds
-Alpha: 0.2, Beta: 0.08, Phi: 4.0 Time elapsed: 2.167391538619995 seconds
-Alpha: 0.3, Beta: 0.05, Phi: 4.0 Time elapsed: 2.3865668773651123 seconds
-Alpha: 0.4, Beta: 0.02, Phi: 4.0 Time elapsed: 2.165632724761963 seconds
-Alpha: 0.4, Beta: 0.08, Phi: 4.0 Time elapsed: 2.076469898223877 seconds
-Alpha: 0.5, Beta: 0.05, Phi: 4.0 Time elapsed: 1.9911024570465088 seconds
-Alpha: 0.6, Beta: 0.02, Phi: 4.0 Time elapsed: 2.1299281120300293 seconds
-Alpha: 0.6, Beta: 0.09, Phi: 4.0 Time elapsed: 2.043076992034912 seconds
-Alpha: 0.7, Beta: 0.06, Phi: 4.0 Time elapsed: 2.047192335128784 seconds
-Alpha: 0.8, Beta: 0.03, Phi: 4.0 Time elapsed: 1.9412274360656738 seconds
-Alpha: 0.8, Beta: 0.1, Phi: 4.0 Time elapsed: 2.1229512691497803 seconds
-Alpha: 0.9, Beta: 0.07, Phi: 4.0 Time elapsed: 2.0891764163970947 seconds
-Alpha: 1.0, Beta: 0.04, Phi: 4.0 Time elapsed: 2.0179972648620605 seconds
-Alpha: 0.0, Beta: 0.07, Phi: 4.0 Time elapsed: 3.0824484825134277 seconds
-Alpha: 0.1, Beta: 0.03, Phi: 4.0 Time elapsed: 2.210297107696533 seconds
-Alpha: 0.1, Beta: 0.08, Phi: 4.0 Time elapsed: 2.3627865314483643 seconds
-Alpha: 0.2, Beta: 0.07, Phi: 4.0 Time elapsed: 2.204303026199341 seconds
-Alpha: 0.3, Beta: 0.04, Phi: 4.0 Time elapsed: 2.4045584201812744 seconds
-Alpha: 0.4, Beta: 0.01, Phi: 4.0 Time elapsed: 2.2839903831481934 seconds
-Alpha: 0.4, Beta: 0.09, Phi: 4.0 Time elapsed: 2.2050719261169434 seconds
-Alpha: 0.5, Beta: 0.06, Phi: 4.0 Time elapsed: 2.3815832138061523 seconds
-Alpha: 0.6, Beta: 0.03, Phi: 4.0 Time elapsed: 1.9389457702636719 seconds
-Alpha: 0.6, Beta: 0.1, Phi: 4.0 Time elapsed: 2.0252773761749268 seconds
-Alpha: 0.7, Beta: 0.07, Phi: 4.0 Time elapsed: 2.1862051486968994 seconds
-Alpha: 0.8, Beta: 0.04, Phi: 4.0 Time elapsed: 2.1189303398132324 seconds
-Alpha: 0.9, Beta: 0.01, Phi: 4.0 Time elapsed: 2.073108673095703 seconds
-Alpha: 0.9, Beta: 0.08, Phi: 4.0 Time elapsed: 2.0228214263916016 seconds
-Alpha: 1.0, Beta: 0.05, Phi: 4.0 Time elapsed: 2.07924222946167 seconds
-Alpha: 0.0, Beta: 0.06, Phi: 4.0 Time elapsed: 3.031141757965088 seconds
-Alpha: 0.1, Beta: 0.01, Phi: 4.0 Time elapsed: 2.404073715209961 seconds
-Alpha: 0.1, Beta: 0.09, Phi: 4.0 Time elapsed: 2.04050612449646 seconds
-Alpha: 0.2, Beta: 0.05, Phi: 4.0 Time elapsed: 2.377702236175537 seconds
-Alpha: 0.3, Beta: 0.03, Phi: 4.0 Time elapsed: 2.1281626224517822 seconds
-Alpha: 0.3, Beta: 0.1, Phi: 4.0 Time elapsed: 2.075227737426758 seconds
-Alpha: 0.4, Beta: 0.07, Phi: 4.0 Time elapsed: 2.187253713607788 seconds
-Alpha: 0.5, Beta: 0.04, Phi: 4.0 Time elapsed: 2.148559093475342 seconds
-Alpha: 0.6, Beta: 0.01, Phi: 4.0 Time elapsed: 2.045342206954956 seconds
-Alpha: 0.6, Beta: 0.07, Phi: 4.0 Time elapsed: 2.0625269412994385 seconds
-Alpha: 0.7, Beta: 0.03, Phi: 4.0 Time elapsed: 1.9799137115478516 seconds
-Alpha: 0.7, Beta: 0.09, Phi: 4.0 Time elapsed: 1.9747209548950195 seconds
-Alpha: 0.8, Beta: 0.06, Phi: 4.0 Time elapsed: 2.0153253078460693 seconds
-Alpha: 0.9, Beta: 0.03, Phi: 4.0 Time elapsed: 1.939539909362793 seconds
-Alpha: 0.9, Beta: 0.09, Phi: 4.0 Time elapsed: 1.999138593673706 seconds
-Alpha: 1.0, Beta: 0.06, Phi: 4.0 Time elapsed: 2.0978903770446777 seconds
-Alpha: 0.0, Beta: 0.03, Phi: 4.0 Time elapsed: 3.2594244480133057 seconds
-Alpha: 0.1, Beta: 0.04, Phi: 4.0 Time elapsed: 2.2823500633239746 seconds
-Alpha: 0.2, Beta: 0.01, Phi: 4.0 Time elapsed: 2.167630672454834 seconds
-Alpha: 0.2, Beta: 0.06, Phi: 4.0 Time elapsed: 2.0700454711914062 seconds
-Alpha: 0.3, Beta: 0.02, Phi: 4.0 Time elapsed: 2.0182764530181885 seconds
-Alpha: 0.3, Beta: 0.08, Phi: 4.0 Time elapsed: 2.229219913482666 seconds
-Alpha: 0.4, Beta: 0.05, Phi: 4.0 Time elapsed: 2.066871166229248 seconds
-Alpha: 0.5, Beta: 0.02, Phi: 4.0 Time elapsed: 2.003274917602539 seconds
-Alpha: 0.5, Beta: 0.08, Phi: 4.0 Time elapsed: 2.019996166229248 seconds
-Alpha: 0.6, Beta: 0.04, Phi: 4.0 Time elapsed: 1.9925224781036377 seconds
-Alpha: 0.7, Beta: 0.01, Phi: 4.0 Time elapsed: 2.05293607711792 seconds
-Alpha: 0.7, Beta: 0.08, Phi: 4.0 Time elapsed: 1.9868559837341309 seconds
-Alpha: 0.8, Beta: 0.05, Phi: 4.0 Time elapsed: 2.1186771392822266 seconds
-Alpha: 0.9, Beta: 0.02, Phi: 4.0 Time elapsed: 2.0995116233825684 seconds
-Alpha: 0.9, Beta: 0.1, Phi: 4.0 Time elapsed: 2.183648109436035 seconds
-Alpha: 1.0, Beta: 0.07, Phi: 4.0 Time elapsed: 2.0243113040924072 seconds
-Alpha: 0.0, Beta: 0.01, Phi: 4.0 Time elapsed: 2.92077374458313 seconds
-Alpha: 0.0, Beta: 0.09, Phi: 4.0 Time elapsed: 2.1958539485931396 seconds
-Alpha: 0.1, Beta: 0.06, Phi: 4.0 Time elapsed: 2.004220485687256 seconds
-Alpha: 0.2, Beta: 0.02, Phi: 4.0 Time elapsed: 2.364346742630005 seconds
-Alpha: 0.3, Beta: 0.01, Phi: 4.0 Time elapsed: 2.220548391342163 seconds
-Alpha: 0.3, Beta: 0.09, Phi: 4.0 Time elapsed: 2.0590744018554688 seconds
-Alpha: 0.4, Beta: 0.06, Phi: 4.0 Time elapsed: 2.254812002182007 seconds
-Alpha: 0.5, Beta: 0.03, Phi: 4.0 Time elapsed: 2.0751564502716064 seconds
-Alpha: 0.5, Beta: 0.1, Phi: 4.0 Time elapsed: 2.29180645942688 seconds
-Alpha: 0.6, Beta: 0.08, Phi: 4.0 Time elapsed: 2.053595781326294 seconds
-Alpha: 0.7, Beta: 0.04, Phi: 4.0 Time elapsed: 2.063594341278076 seconds
-Alpha: 0.8, Beta: 0.01, Phi: 4.0 Time elapsed: 1.9844372272491455 seconds
-Alpha: 0.8, Beta: 0.07, Phi: 4.0 Time elapsed: 2.0290064811706543 seconds
-Alpha: 0.9, Beta: 0.04, Phi: 4.0 Time elapsed: 2.062889337539673 seconds
-Alpha: 1.0, Beta: 0.01, Phi: 4.0 Time elapsed: 2.2611751556396484 seconds
-Alpha: 1.0, Beta: 0.08, Phi: 4.0 Time elapsed: 2.011884927749634 seconds
-Alpha: 0.0, Beta: 0.05, Phi: 4.0 Time elapsed: 2.9386003017425537 seconds
-Alpha: 0.0, Beta: 0.08, Phi: 4.0 Time elapsed: 2.3540360927581787 seconds
-Alpha: 0.1, Beta: 0.07, Phi: 4.0 Time elapsed: 2.170403003692627 seconds
-Alpha: 0.2, Beta: 0.03, Phi: 4.0 Time elapsed: 2.038397789001465 seconds
-Alpha: 0.2, Beta: 0.09, Phi: 4.0 Time elapsed: 2.0794456005096436 seconds
-Alpha: 0.3, Beta: 0.07, Phi: 4.0 Time elapsed: 2.1482784748077393 seconds
-Alpha: 0.4, Beta: 0.04, Phi: 4.0 Time elapsed: 2.23913836479187 seconds
-Alpha: 0.5, Beta: 0.01, Phi: 4.0 Time elapsed: 2.1589977741241455 seconds
-Alpha: 0.5, Beta: 0.09, Phi: 4.0 Time elapsed: 1.9869844913482666 seconds
-Alpha: 0.6, Beta: 0.05, Phi: 4.0 Time elapsed: 2.185150384902954 seconds
-Alpha: 0.7, Beta: 0.02, Phi: 4.0 Time elapsed: 1.9951703548431396 seconds
-Alpha: 0.7, Beta: 0.1, Phi: 4.0 Time elapsed: 2.3539228439331055 seconds
-Alpha: 0.8, Beta: 0.08, Phi: 4.0 Time elapsed: 2.083155632019043 seconds
-Alpha: 0.9, Beta: 0.05, Phi: 4.0 Time elapsed: 2.3296327590942383 seconds
-Alpha: 1.0, Beta: 0.02, Phi: 4.0 Time elapsed: 2.051062822341919 seconds
-Alpha: 1.0, Beta: 0.09, Phi: 4.0 Time elapsed: 2.0114238262176514 seconds
-Alpha: 0.0, Beta: 0.04, Phi: 4.0 Time elapsed: 3.0082876682281494 seconds
-Alpha: 0.0, Beta: 0.1, Phi: 4.0 Time elapsed: 2.1826066970825195 seconds
-Alpha: 0.1, Beta: 0.05, Phi: 4.0 Time elapsed: 2.286686420440674 seconds
-Alpha: 0.2, Beta: 0.04, Phi: 4.0 Time elapsed: 2.0836400985717773 seconds
-Alpha: 0.2, Beta: 0.1, Phi: 4.0 Time elapsed: 2.036555528640747 seconds
-Alpha: 0.3, Beta: 0.06, Phi: 4.0 Time elapsed: 1.9604382514953613 seconds
-Alpha: 0.4, Beta: 0.03, Phi: 4.0 Time elapsed: 2.018681764602661 seconds
-Alpha: 0.4, Beta: 0.1, Phi: 4.0 Time elapsed: 2.240055561065674 seconds
-Alpha: 0.5, Beta: 0.07, Phi: 4.0 Time elapsed: 2.4463934898376465 seconds
-Alpha: 0.6, Beta: 0.06, Phi: 4.0 Time elapsed: 2.536094903945923 seconds
-Alpha: 0.7, Beta: 0.05, Phi: 4.0 Time elapsed: 2.055070400238037 seconds
-Alpha: 0.8, Beta: 0.02, Phi: 4.0 Time elapsed: 2.1141557693481445 seconds
-Alpha: 0.8, Beta: 0.09, Phi: 4.0 Time elapsed: 2.202282428741455 seconds
-Alpha: 0.9, Beta: 0.06, Phi: 4.0 Time elapsed: 2.08988618850708 seconds
-Alpha: 1.0, Beta: 0.03, Phi: 4.0 Time elapsed: 1.934877634048462 seconds
-Alpha: 1.0, Beta: 0.1, Phi: 4.0 Time elapsed: 2.0012869834899902 seconds
+Alpha: 0.0, Beta: 0.04, Phi: 4.0 Time elapsed: 2.8910276889801025 seconds
+Alpha: 0.0, Beta: 0.09, Phi: 4.0 Time elapsed: 2.22196102142334 seconds
+Alpha: 0.1, Beta: 0.06, Phi: 4.0 Time elapsed: 2.4303040504455566 seconds
+Alpha: 0.2, Beta: 0.08, Phi: 4.0 Time elapsed: 2.120349645614624 seconds
+Alpha: 0.3, Beta: 0.02, Phi: 4.0 Time elapsed: 2.1166422367095947 seconds
+Alpha: 0.3, Beta: 0.09, Phi: 4.0 Time elapsed: 2.261911153793335 seconds
+Alpha: 0.4, Beta: 0.07, Phi: 4.0 Time elapsed: 2.2193603515625 seconds
+Alpha: 0.5, Beta: 0.05, Phi: 4.0 Time elapsed: 1.9583892822265625 seconds
+Alpha: 0.5, Beta: 0.1, Phi: 4.0 Time elapsed: 2.1626861095428467 seconds
+Alpha: 0.6, Beta: 0.08, Phi: 4.0 Time elapsed: 2.078813076019287 seconds
+Alpha: 0.7, Beta: 0.05, Phi: 4.0 Time elapsed: 2.172917604446411 seconds
+Alpha: 0.8, Beta: 0.02, Phi: 4.0 Time elapsed: 2.1297667026519775 seconds
+Alpha: 0.8, Beta: 0.1, Phi: 4.0 Time elapsed: 2.1970407962799072 seconds
+Alpha: 0.9, Beta: 0.07, Phi: 4.0 Time elapsed: 2.1177890300750732 seconds
+Alpha: 1.0, Beta: 0.04, Phi: 4.0 Time elapsed: 2.02763032913208 seconds
+Alpha: 0.0, Beta: 0.05, Phi: 4.0 Time elapsed: 2.761551856994629 seconds
+Alpha: 0.0, Beta: 0.08, Phi: 4.0 Time elapsed: 2.4186291694641113 seconds
+Alpha: 0.1, Beta: 0.07, Phi: 4.0 Time elapsed: 2.4193131923675537 seconds
+Alpha: 0.2, Beta: 0.07, Phi: 4.0 Time elapsed: 2.28342342376709 seconds
+Alpha: 0.3, Beta: 0.05, Phi: 4.0 Time elapsed: 2.22593355178833 seconds
+Alpha: 0.4, Beta: 0.02, Phi: 4.0 Time elapsed: 2.1027817726135254 seconds
+Alpha: 0.4, Beta: 0.09, Phi: 4.0 Time elapsed: 2.272334575653076 seconds
+Alpha: 0.5, Beta: 0.06, Phi: 4.0 Time elapsed: 2.187922477722168 seconds
+Alpha: 0.6, Beta: 0.03, Phi: 4.0 Time elapsed: 2.083753824234009 seconds
+Alpha: 0.6, Beta: 0.1, Phi: 4.0 Time elapsed: 2.048705816268921 seconds
+Alpha: 0.7, Beta: 0.07, Phi: 4.0 Time elapsed: 2.2911341190338135 seconds
+Alpha: 0.8, Beta: 0.04, Phi: 4.0 Time elapsed: 2.1368939876556396 seconds
+Alpha: 0.9, Beta: 0.01, Phi: 4.0 Time elapsed: 2.0157558917999268 seconds
+Alpha: 0.9, Beta: 0.08, Phi: 4.0 Time elapsed: 2.200932264328003 seconds
+Alpha: 1.0, Beta: 0.05, Phi: 4.0 Time elapsed: 2.0488743782043457 seconds
+Alpha: 0.0, Beta: 0.06, Phi: 4.0 Time elapsed: 2.9289002418518066 seconds
+Alpha: 0.0, Beta: 0.1, Phi: 4.0 Time elapsed: 2.1127986907958984 seconds
+Alpha: 0.1, Beta: 0.05, Phi: 4.0 Time elapsed: 2.0028843879699707 seconds
+Alpha: 0.2, Beta: 0.02, Phi: 4.0 Time elapsed: 2.1528239250183105 seconds
+Alpha: 0.2, Beta: 0.09, Phi: 4.0 Time elapsed: 2.0768885612487793 seconds
+Alpha: 0.3, Beta: 0.06, Phi: 4.0 Time elapsed: 1.910740613937378 seconds
+Alpha: 0.4, Beta: 0.03, Phi: 4.0 Time elapsed: 2.0995426177978516 seconds
+Alpha: 0.4, Beta: 0.1, Phi: 4.0 Time elapsed: 2.0493452548980713 seconds
+Alpha: 0.5, Beta: 0.07, Phi: 4.0 Time elapsed: 2.0803959369659424 seconds
+Alpha: 0.6, Beta: 0.04, Phi: 4.0 Time elapsed: 1.9919686317443848 seconds
+Alpha: 0.7, Beta: 0.01, Phi: 4.0 Time elapsed: 1.974492073059082 seconds
+Alpha: 0.7, Beta: 0.08, Phi: 4.0 Time elapsed: 2.2202231884002686 seconds
+Alpha: 0.8, Beta: 0.05, Phi: 4.0 Time elapsed: 2.11545467376709 seconds
+Alpha: 0.9, Beta: 0.02, Phi: 4.0 Time elapsed: 1.9366590976715088 seconds
+Alpha: 0.9, Beta: 0.09, Phi: 4.0 Time elapsed: 2.023207664489746 seconds
+Alpha: 1.0, Beta: 0.06, Phi: 4.0 Time elapsed: 1.9170403480529785 seconds
+Alpha: 0.0, Beta: 0.02, Phi: 4.0 Time elapsed: 2.988703727722168 seconds
+Alpha: 0.1, Beta: 0.01, Phi: 4.0 Time elapsed: 2.1916425228118896 seconds
+Alpha: 0.1, Beta: 0.09, Phi: 4.0 Time elapsed: 2.0627329349517822 seconds
+Alpha: 0.2, Beta: 0.03, Phi: 4.0 Time elapsed: 2.3178799152374268 seconds
+Alpha: 0.3, Beta: 0.04, Phi: 4.0 Time elapsed: 2.220344066619873 seconds
+Alpha: 0.3, Beta: 0.1, Phi: 4.0 Time elapsed: 2.1610023975372314 seconds
+Alpha: 0.4, Beta: 0.08, Phi: 4.0 Time elapsed: 2.0166571140289307 seconds
+Alpha: 0.5, Beta: 0.03, Phi: 4.0 Time elapsed: 2.1611526012420654 seconds
+Alpha: 0.6, Beta: 0.01, Phi: 4.0 Time elapsed: 2.0007967948913574 seconds
+Alpha: 0.6, Beta: 0.07, Phi: 4.0 Time elapsed: 2.1161746978759766 seconds
+Alpha: 0.7, Beta: 0.04, Phi: 4.0 Time elapsed: 1.9924674034118652 seconds
+Alpha: 0.7, Beta: 0.1, Phi: 4.0 Time elapsed: 1.9872479438781738 seconds
+Alpha: 0.8, Beta: 0.06, Phi: 4.0 Time elapsed: 2.096027135848999 seconds
+Alpha: 0.9, Beta: 0.03, Phi: 4.0 Time elapsed: 2.0547449588775635 seconds
+Alpha: 0.9, Beta: 0.1, Phi: 4.0 Time elapsed: 1.930905818939209 seconds
+Alpha: 1.0, Beta: 0.07, Phi: 4.0 Time elapsed: 1.876981496810913 seconds
+Alpha: 0.0, Beta: 0.07, Phi: 4.0 Time elapsed: 3.066086530685425 seconds
+Alpha: 0.1, Beta: 0.03, Phi: 4.0 Time elapsed: 2.1290946006774902 seconds
+Alpha: 0.1, Beta: 0.08, Phi: 4.0 Time elapsed: 2.2540910243988037 seconds
+Alpha: 0.2, Beta: 0.05, Phi: 4.0 Time elapsed: 2.0937304496765137 seconds
+Alpha: 0.3, Beta: 0.01, Phi: 4.0 Time elapsed: 2.2032008171081543 seconds
+Alpha: 0.3, Beta: 0.08, Phi: 4.0 Time elapsed: 2.139803647994995 seconds
+Alpha: 0.4, Beta: 0.05, Phi: 4.0 Time elapsed: 1.9877581596374512 seconds
+Alpha: 0.5, Beta: 0.02, Phi: 4.0 Time elapsed: 2.0723917484283447 seconds
+Alpha: 0.5, Beta: 0.09, Phi: 4.0 Time elapsed: 2.135999917984009 seconds
+Alpha: 0.6, Beta: 0.06, Phi: 4.0 Time elapsed: 2.09556245803833 seconds
+Alpha: 0.7, Beta: 0.03, Phi: 4.0 Time elapsed: 2.007171392440796 seconds
+Alpha: 0.7, Beta: 0.09, Phi: 4.0 Time elapsed: 2.2622604370117188 seconds
+Alpha: 0.8, Beta: 0.08, Phi: 4.0 Time elapsed: 1.940159797668457 seconds
+Alpha: 0.9, Beta: 0.05, Phi: 4.0 Time elapsed: 2.164618968963623 seconds
+Alpha: 1.0, Beta: 0.01, Phi: 4.0 Time elapsed: 1.9133458137512207 seconds
+Alpha: 1.0, Beta: 0.08, Phi: 4.0 Time elapsed: 1.8597042560577393 seconds
+Alpha: 0.0, Beta: 0.03, Phi: 4.0 Time elapsed: 3.0338568687438965 seconds
+Alpha: 0.1, Beta: 0.02, Phi: 4.0 Time elapsed: 2.2771427631378174 seconds
+Alpha: 0.1, Beta: 0.1, Phi: 4.0 Time elapsed: 2.101612091064453 seconds
+Alpha: 0.2, Beta: 0.04, Phi: 4.0 Time elapsed: 2.092130184173584 seconds
+Alpha: 0.2, Beta: 0.1, Phi: 4.0 Time elapsed: 2.092289924621582 seconds
+Alpha: 0.3, Beta: 0.07, Phi: 4.0 Time elapsed: 2.0546457767486572 seconds
+Alpha: 0.4, Beta: 0.04, Phi: 4.0 Time elapsed: 2.1672332286834717 seconds
+Alpha: 0.5, Beta: 0.01, Phi: 4.0 Time elapsed: 2.1408934593200684 seconds
+Alpha: 0.5, Beta: 0.08, Phi: 4.0 Time elapsed: 2.134669542312622 seconds
+Alpha: 0.6, Beta: 0.05, Phi: 4.0 Time elapsed: 2.1844897270202637 seconds
+Alpha: 0.7, Beta: 0.02, Phi: 4.0 Time elapsed: 2.271709680557251 seconds
+Alpha: 0.8, Beta: 0.01, Phi: 4.0 Time elapsed: 1.9757277965545654 seconds
+Alpha: 0.8, Beta: 0.07, Phi: 4.0 Time elapsed: 2.1536648273468018 seconds
+Alpha: 0.9, Beta: 0.04, Phi: 4.0 Time elapsed: 2.171799659729004 seconds
+Alpha: 1.0, Beta: 0.02, Phi: 4.0 Time elapsed: 2.2201929092407227 seconds
+Alpha: 1.0, Beta: 0.1, Phi: 4.0 Time elapsed: 1.9760024547576904 seconds
+Alpha: 0.0, Beta: 0.01, Phi: 4.0 Time elapsed: 3.010816812515259 seconds
+Alpha: 0.1, Beta: 0.04, Phi: 4.0 Time elapsed: 2.4057295322418213 seconds
+Alpha: 0.2, Beta: 0.01, Phi: 4.0 Time elapsed: 1.989797592163086 seconds
+Alpha: 0.2, Beta: 0.06, Phi: 4.0 Time elapsed: 2.232736349105835 seconds
+Alpha: 0.3, Beta: 0.03, Phi: 4.0 Time elapsed: 2.2093465328216553 seconds
+Alpha: 0.4, Beta: 0.01, Phi: 4.0 Time elapsed: 2.088606595993042 seconds
+Alpha: 0.4, Beta: 0.06, Phi: 4.0 Time elapsed: 2.123908042907715 seconds
+Alpha: 0.5, Beta: 0.04, Phi: 4.0 Time elapsed: 2.2667860984802246 seconds
+Alpha: 0.6, Beta: 0.02, Phi: 4.0 Time elapsed: 2.1142990589141846 seconds
+Alpha: 0.6, Beta: 0.09, Phi: 4.0 Time elapsed: 2.198342800140381 seconds
+Alpha: 0.7, Beta: 0.06, Phi: 4.0 Time elapsed: 2.0361616611480713 seconds
+Alpha: 0.8, Beta: 0.03, Phi: 4.0 Time elapsed: 2.007345199584961 seconds
+Alpha: 0.8, Beta: 0.09, Phi: 4.0 Time elapsed: 1.9835989475250244 seconds
+Alpha: 0.9, Beta: 0.06, Phi: 4.0 Time elapsed: 2.007859706878662 seconds
+Alpha: 1.0, Beta: 0.03, Phi: 4.0 Time elapsed: 1.9418516159057617 seconds
+Alpha: 1.0, Beta: 0.09, Phi: 4.0 Time elapsed: 1.871617317199707 seconds
 Macro computation time: 0 minutes and 44 seconds
-Combining results time: 0 minutes and 56 seconds
+Combining results time: 1 minutes and 4 seconds
 Running performance indicators computation...
-Alpha: 0.0, Beta: 0.06, Phi: 4.0 Time elapsed: 47.1832959651947 seconds
-Alpha: 0.0, Beta: 0.1, Phi: 4.0 Time elapsed: 40.56417751312256 seconds
-Alpha: 0.1, Beta: 0.06, Phi: 4.0 Time elapsed: 40.40421175956726 seconds
-Alpha: 0.2, Beta: 0.02, Phi: 4.0 Time elapsed: 41.87510824203491 seconds
-Alpha: 0.3, Beta: 0.03, Phi: 4.0 Time elapsed: 40.38281869888306 seconds
-Alpha: 0.3, Beta: 0.09, Phi: 4.0 Time elapsed: 40.86197900772095 seconds
-Alpha: 0.4, Beta: 0.06, Phi: 4.0 Time elapsed: 38.64582109451294 seconds
-Alpha: 0.5, Beta: 0.02, Phi: 4.0 Time elapsed: 38.44936156272888 seconds
-Alpha: 0.5, Beta: 0.08, Phi: 4.0 Time elapsed: 39.410260915756226 seconds
-Alpha: 0.6, Beta: 0.05, Phi: 4.0 Time elapsed: 39.677056312561035 seconds
-Alpha: 0.7, Beta: 0.03, Phi: 4.0 Time elapsed: 40.10063052177429 seconds
-Alpha: 0.8, Beta: 0.03, Phi: 4.0 Time elapsed: 40.294413805007935 seconds
-Alpha: 0.8, Beta: 0.09, Phi: 4.0 Time elapsed: 39.830193519592285 seconds
-Alpha: 0.9, Beta: 0.07, Phi: 4.0 Time elapsed: 47.52995038032532 seconds
-Alpha: 1.0, Beta: 0.04, Phi: 4.0 Time elapsed: 46.778581380844116 seconds
-Alpha: 0.0, Beta: 0.07, Phi: 4.0 Time elapsed: 48.16081619262695 seconds
-Alpha: 0.1, Beta: 0.03, Phi: 4.0 Time elapsed: 41.8100163936615 seconds
-Alpha: 0.1, Beta: 0.1, Phi: 4.0 Time elapsed: 40.663177728652954 seconds
-Alpha: 0.2, Beta: 0.07, Phi: 4.0 Time elapsed: 39.91292667388916 seconds
-Alpha: 0.3, Beta: 0.05, Phi: 4.0 Time elapsed: 41.06172490119934 seconds
-Alpha: 0.4, Beta: 0.01, Phi: 4.0 Time elapsed: 40.551326513290405 seconds
-Alpha: 0.4, Beta: 0.08, Phi: 4.0 Time elapsed: 39.272939920425415 seconds
-Alpha: 0.5, Beta: 0.05, Phi: 4.0 Time elapsed: 39.382975578308105 seconds
-Alpha: 0.6, Beta: 0.02, Phi: 4.0 Time elapsed: 40.8741090297699 seconds
-Alpha: 0.6, Beta: 0.1, Phi: 4.0 Time elapsed: 39.30275893211365 seconds
-Alpha: 0.7, Beta: 0.07, Phi: 4.0 Time elapsed: 38.36875677108765 seconds
-Alpha: 0.8, Beta: 0.04, Phi: 4.0 Time elapsed: 38.75872993469238 seconds
-Alpha: 0.9, Beta: 0.01, Phi: 4.0 Time elapsed: 42.30335783958435 seconds
-Alpha: 0.9, Beta: 0.08, Phi: 4.0 Time elapsed: 47.605286836624146 seconds
-Alpha: 1.0, Beta: 0.05, Phi: 4.0 Time elapsed: 46.888110637664795 seconds
-Alpha: 0.0, Beta: 0.02, Phi: 4.0 Time elapsed: 48.07473945617676 seconds
-Alpha: 0.1, Beta: 0.02, Phi: 4.0 Time elapsed: 41.33962678909302 seconds
-Alpha: 0.1, Beta: 0.09, Phi: 4.0 Time elapsed: 39.482171058654785 seconds
-Alpha: 0.2, Beta: 0.05, Phi: 4.0 Time elapsed: 40.091164112091064 seconds
-Alpha: 0.2, Beta: 0.09, Phi: 4.0 Time elapsed: 39.468266248703 seconds
-Alpha: 0.3, Beta: 0.06, Phi: 4.0 Time elapsed: 39.39196753501892 seconds
-Alpha: 0.4, Beta: 0.03, Phi: 4.0 Time elapsed: 39.945860385894775 seconds
-Alpha: 0.4, Beta: 0.1, Phi: 4.0 Time elapsed: 38.639793395996094 seconds
-Alpha: 0.5, Beta: 0.07, Phi: 4.0 Time elapsed: 37.96449828147888 seconds
-Alpha: 0.6, Beta: 0.04, Phi: 4.0 Time elapsed: 39.051902770996094 seconds
-Alpha: 0.7, Beta: 0.01, Phi: 4.0 Time elapsed: 38.69165921211243 seconds
-Alpha: 0.7, Beta: 0.08, Phi: 4.0 Time elapsed: 38.769840717315674 seconds
-Alpha: 0.8, Beta: 0.05, Phi: 4.0 Time elapsed: 39.22161293029785 seconds
-Alpha: 0.9, Beta: 0.02, Phi: 4.0 Time elapsed: 42.61558294296265 seconds
-Alpha: 0.9, Beta: 0.09, Phi: 4.0 Time elapsed: 45.13344168663025 seconds
-Alpha: 1.0, Beta: 0.06, Phi: 4.0 Time elapsed: 36.673349380493164 seconds
-Alpha: 0.0, Beta: 0.05, Phi: 4.0 Time elapsed: 48.26817011833191 seconds
-Alpha: 0.1, Beta: 0.04, Phi: 4.0 Time elapsed: 41.81256055831909 seconds
-Alpha: 0.2, Beta: 0.01, Phi: 4.0 Time elapsed: 41.318668365478516 seconds
-Alpha: 0.2, Beta: 0.08, Phi: 4.0 Time elapsed: 38.32170796394348 seconds
-Alpha: 0.3, Beta: 0.02, Phi: 4.0 Time elapsed: 40.37057542800903 seconds
-Alpha: 0.3, Beta: 0.07, Phi: 4.0 Time elapsed: 39.92133641242981 seconds
-Alpha: 0.4, Beta: 0.04, Phi: 4.0 Time elapsed: 40.665419816970825 seconds
-Alpha: 0.5, Beta: 0.04, Phi: 4.0 Time elapsed: 38.801878452301025 seconds
-Alpha: 0.5, Beta: 0.1, Phi: 4.0 Time elapsed: 40.42971730232239 seconds
-Alpha: 0.6, Beta: 0.08, Phi: 4.0 Time elapsed: 38.66212844848633 seconds
-Alpha: 0.7, Beta: 0.06, Phi: 4.0 Time elapsed: 38.75394034385681 seconds
-Alpha: 0.8, Beta: 0.01, Phi: 4.0 Time elapsed: 40.70111680030823 seconds
-Alpha: 0.8, Beta: 0.1, Phi: 4.0 Time elapsed: 39.40170335769653 seconds
-Alpha: 0.9, Beta: 0.06, Phi: 4.0 Time elapsed: 42.98618769645691 seconds
-Alpha: 1.0, Beta: 0.01, Phi: 4.0 Time elapsed: 42.083914279937744 seconds
-Alpha: 1.0, Beta: 0.07, Phi: 4.0 Time elapsed: 34.752537965774536 seconds
-Alpha: 0.0, Beta: 0.03, Phi: 4.0 Time elapsed: 46.713292360305786 seconds
-Alpha: 0.0, Beta: 0.09, Phi: 4.0 Time elapsed: 41.2235848903656 seconds
-Alpha: 0.1, Beta: 0.07, Phi: 4.0 Time elapsed: 40.79090881347656 seconds
-Alpha: 0.2, Beta: 0.04, Phi: 4.0 Time elapsed: 40.46485233306885 seconds
-Alpha: 0.3, Beta: 0.01, Phi: 4.0 Time elapsed: 42.24954605102539 seconds
-Alpha: 0.3, Beta: 0.1, Phi: 4.0 Time elapsed: 40.76157021522522 seconds
-Alpha: 0.4, Beta: 0.09, Phi: 4.0 Time elapsed: 40.080939292907715 seconds
-Alpha: 0.5, Beta: 0.06, Phi: 4.0 Time elapsed: 39.1799521446228 seconds
-Alpha: 0.6, Beta: 0.03, Phi: 4.0 Time elapsed: 38.611721992492676 seconds
-Alpha: 0.6, Beta: 0.09, Phi: 4.0 Time elapsed: 38.24856996536255 seconds
-Alpha: 0.7, Beta: 0.05, Phi: 4.0 Time elapsed: 39.1276478767395 seconds
-Alpha: 0.8, Beta: 0.02, Phi: 4.0 Time elapsed: 39.137919187545776 seconds
-Alpha: 0.8, Beta: 0.08, Phi: 4.0 Time elapsed: 40.40739393234253 seconds
-Alpha: 0.9, Beta: 0.05, Phi: 4.0 Time elapsed: 42.58337211608887 seconds
-Alpha: 0.9, Beta: 0.1, Phi: 4.0 Time elapsed: 44.42640447616577 seconds
-Alpha: 1.0, Beta: 0.08, Phi: 4.0 Time elapsed: 34.758474826812744 seconds
-Alpha: 0.0, Beta: 0.04, Phi: 4.0 Time elapsed: 47.44886612892151 seconds
-Alpha: 0.1, Beta: 0.01, Phi: 4.0 Time elapsed: 40.70445513725281 seconds
-Alpha: 0.1, Beta: 0.08, Phi: 4.0 Time elapsed: 40.348750829696655 seconds
-Alpha: 0.2, Beta: 0.03, Phi: 4.0 Time elapsed: 40.6834352016449 seconds
-Alpha: 0.2, Beta: 0.1, Phi: 4.0 Time elapsed: 40.98698353767395 seconds
-Alpha: 0.3, Beta: 0.08, Phi: 4.0 Time elapsed: 41.34326243400574 seconds
-Alpha: 0.4, Beta: 0.07, Phi: 4.0 Time elapsed: 38.53589940071106 seconds
-Alpha: 0.5, Beta: 0.03, Phi: 4.0 Time elapsed: 39.55561423301697 seconds
-Alpha: 0.6, Beta: 0.01, Phi: 4.0 Time elapsed: 39.091344594955444 seconds
-Alpha: 0.6, Beta: 0.07, Phi: 4.0 Time elapsed: 38.9501166343689 seconds
-Alpha: 0.7, Beta: 0.04, Phi: 4.0 Time elapsed: 39.58542013168335 seconds
-Alpha: 0.7, Beta: 0.1, Phi: 4.0 Time elapsed: 39.01756477355957 seconds
-Alpha: 0.8, Beta: 0.07, Phi: 4.0 Time elapsed: 39.16932439804077 seconds
-Alpha: 0.9, Beta: 0.04, Phi: 4.0 Time elapsed: 48.585750341415405 seconds
-Alpha: 1.0, Beta: 0.03, Phi: 4.0 Time elapsed: 46.89140796661377 seconds
-Alpha: 1.0, Beta: 0.1, Phi: 4.0 Time elapsed: 32.55324721336365 seconds
-Alpha: 0.0, Beta: 0.01, Phi: 4.0 Time elapsed: 46.30117750167847 seconds
-Alpha: 0.0, Beta: 0.08, Phi: 4.0 Time elapsed: 41.09320664405823 seconds
-Alpha: 0.1, Beta: 0.05, Phi: 4.0 Time elapsed: 42.4167914390564 seconds
-Alpha: 0.2, Beta: 0.06, Phi: 4.0 Time elapsed: 40.4249541759491 seconds
-Alpha: 0.3, Beta: 0.04, Phi: 4.0 Time elapsed: 41.56315302848816 seconds
-Alpha: 0.4, Beta: 0.02, Phi: 4.0 Time elapsed: 39.15219759941101 seconds
-Alpha: 0.4, Beta: 0.05, Phi: 4.0 Time elapsed: 37.42313551902771 seconds
-Alpha: 0.5, Beta: 0.01, Phi: 4.0 Time elapsed: 40.229384899139404 seconds
-Alpha: 0.5, Beta: 0.09, Phi: 4.0 Time elapsed: 39.249327659606934 seconds
-Alpha: 0.6, Beta: 0.06, Phi: 4.0 Time elapsed: 38.00413990020752 seconds
-Alpha: 0.7, Beta: 0.02, Phi: 4.0 Time elapsed: 39.622453451156616 seconds
-Alpha: 0.7, Beta: 0.09, Phi: 4.0 Time elapsed: 38.60166049003601 seconds
-Alpha: 0.8, Beta: 0.06, Phi: 4.0 Time elapsed: 38.50009274482727 seconds
-Alpha: 0.9, Beta: 0.03, Phi: 4.0 Time elapsed: 49.58313965797424 seconds
-Alpha: 1.0, Beta: 0.02, Phi: 4.0 Time elapsed: 46.8250994682312 seconds
-Alpha: 1.0, Beta: 0.09, Phi: 4.0 Time elapsed: 33.63745427131653 seconds
+Alpha: 0.0, Beta: 0.06, Phi: 4.0 Time elapsed: 46.966511726379395 seconds
+Alpha: 0.0, Beta: 0.1, Phi: 4.0 Time elapsed: 39.302279233932495 seconds
+Alpha: 0.1, Beta: 0.07, Phi: 4.0 Time elapsed: 39.29468321800232 seconds
+Alpha: 0.2, Beta: 0.03, Phi: 4.0 Time elapsed: 41.22174620628357 seconds
+Alpha: 0.3, Beta: 0.01, Phi: 4.0 Time elapsed: 40.852165937423706 seconds
+Alpha: 0.3, Beta: 0.08, Phi: 4.0 Time elapsed: 39.275240421295166 seconds
+Alpha: 0.4, Beta: 0.05, Phi: 4.0 Time elapsed: 39.60502505302429 seconds
+Alpha: 0.5, Beta: 0.03, Phi: 4.0 Time elapsed: 38.66611194610596 seconds
+Alpha: 0.5, Beta: 0.1, Phi: 4.0 Time elapsed: 39.47007369995117 seconds
+Alpha: 0.6, Beta: 0.06, Phi: 4.0 Time elapsed: 38.303794145584106 seconds
+Alpha: 0.7, Beta: 0.03, Phi: 4.0 Time elapsed: 38.927210569381714 seconds
+Alpha: 0.7, Beta: 0.1, Phi: 4.0 Time elapsed: 40.822495460510254 seconds
+Alpha: 0.8, Beta: 0.07, Phi: 4.0 Time elapsed: 38.4836311340332 seconds
+Alpha: 0.9, Beta: 0.04, Phi: 4.0 Time elapsed: 40.89909815788269 seconds
+Alpha: 1.0, Beta: 0.03, Phi: 4.0 Time elapsed: 40.532710790634155 seconds
+Alpha: 0.0, Beta: 0.01, Phi: 4.0 Time elapsed: 48.25239896774292 seconds
+Alpha: 0.1, Beta: 0.04, Phi: 4.0 Time elapsed: 40.58828139305115 seconds
+Alpha: 0.1, Beta: 0.09, Phi: 4.0 Time elapsed: 41.54648542404175 seconds
+Alpha: 0.2, Beta: 0.07, Phi: 4.0 Time elapsed: 40.931413412094116 seconds
+Alpha: 0.3, Beta: 0.05, Phi: 4.0 Time elapsed: 41.51723265647888 seconds
+Alpha: 0.4, Beta: 0.02, Phi: 4.0 Time elapsed: 40.02871227264404 seconds
+Alpha: 0.4, Beta: 0.09, Phi: 4.0 Time elapsed: 38.3764750957489 seconds
+Alpha: 0.5, Beta: 0.06, Phi: 4.0 Time elapsed: 38.4472074508667 seconds
+Alpha: 0.6, Beta: 0.03, Phi: 4.0 Time elapsed: 38.69449520111084 seconds
+Alpha: 0.6, Beta: 0.09, Phi: 4.0 Time elapsed: 39.28844666481018 seconds
+Alpha: 0.7, Beta: 0.05, Phi: 4.0 Time elapsed: 39.73560428619385 seconds
+Alpha: 0.8, Beta: 0.04, Phi: 4.0 Time elapsed: 38.515908002853394 seconds
+Alpha: 0.9, Beta: 0.01, Phi: 4.0 Time elapsed: 39.055156230926514 seconds
+Alpha: 0.9, Beta: 0.08, Phi: 4.0 Time elapsed: 39.45098304748535 seconds
+Alpha: 1.0, Beta: 0.05, Phi: 4.0 Time elapsed: 39.32164430618286 seconds
+Alpha: 0.0, Beta: 0.02, Phi: 4.0 Time elapsed: 46.51327419281006 seconds
+Alpha: 0.0, Beta: 0.09, Phi: 4.0 Time elapsed: 39.35027861595154 seconds
+Alpha: 0.1, Beta: 0.06, Phi: 4.0 Time elapsed: 41.8282995223999 seconds
+Alpha: 0.2, Beta: 0.04, Phi: 4.0 Time elapsed: 38.850783824920654 seconds
+Alpha: 0.2, Beta: 0.1, Phi: 4.0 Time elapsed: 38.79149341583252 seconds
+Alpha: 0.3, Beta: 0.07, Phi: 4.0 Time elapsed: 39.156227350234985 seconds
+Alpha: 0.4, Beta: 0.04, Phi: 4.0 Time elapsed: 39.88961124420166 seconds
+Alpha: 0.5, Beta: 0.01, Phi: 4.0 Time elapsed: 39.6155743598938 seconds
+Alpha: 0.5, Beta: 0.08, Phi: 4.0 Time elapsed: 37.75048828125 seconds
+Alpha: 0.6, Beta: 0.05, Phi: 4.0 Time elapsed: 38.180320262908936 seconds
+Alpha: 0.7, Beta: 0.02, Phi: 4.0 Time elapsed: 37.67386436462402 seconds
+Alpha: 0.7, Beta: 0.08, Phi: 4.0 Time elapsed: 38.145719051361084 seconds
+Alpha: 0.8, Beta: 0.05, Phi: 4.0 Time elapsed: 38.543421268463135 seconds
+Alpha: 0.9, Beta: 0.02, Phi: 4.0 Time elapsed: 40.183605909347534 seconds
+Alpha: 0.9, Beta: 0.09, Phi: 4.0 Time elapsed: 37.97666621208191 seconds
+Alpha: 1.0, Beta: 0.06, Phi: 4.0 Time elapsed: 33.19835710525513 seconds
+Alpha: 0.0, Beta: 0.07, Phi: 4.0 Time elapsed: 45.9767107963562 seconds
+Alpha: 0.0, Beta: 0.08, Phi: 4.0 Time elapsed: 37.73945474624634 seconds
+Alpha: 0.1, Beta: 0.05, Phi: 4.0 Time elapsed: 39.96133041381836 seconds
+Alpha: 0.2, Beta: 0.02, Phi: 4.0 Time elapsed: 40.667256116867065 seconds
+Alpha: 0.2, Beta: 0.09, Phi: 4.0 Time elapsed: 39.42878293991089 seconds
+Alpha: 0.3, Beta: 0.06, Phi: 4.0 Time elapsed: 38.48202157020569 seconds
+Alpha: 0.4, Beta: 0.03, Phi: 4.0 Time elapsed: 38.87537384033203 seconds
+Alpha: 0.4, Beta: 0.1, Phi: 4.0 Time elapsed: 39.624722719192505 seconds
+Alpha: 0.5, Beta: 0.07, Phi: 4.0 Time elapsed: 38.815309047698975 seconds
+Alpha: 0.6, Beta: 0.04, Phi: 4.0 Time elapsed: 38.59721899032593 seconds
+Alpha: 0.7, Beta: 0.01, Phi: 4.0 Time elapsed: 40.43826150894165 seconds
+Alpha: 0.7, Beta: 0.09, Phi: 4.0 Time elapsed: 38.38984537124634 seconds
+Alpha: 0.8, Beta: 0.06, Phi: 4.0 Time elapsed: 38.27525997161865 seconds
+Alpha: 0.9, Beta: 0.03, Phi: 4.0 Time elapsed: 39.86794447898865 seconds
+Alpha: 0.9, Beta: 0.1, Phi: 4.0 Time elapsed: 39.32361102104187 seconds
+Alpha: 1.0, Beta: 0.07, Phi: 4.0 Time elapsed: 32.38581967353821 seconds
+Alpha: 0.0, Beta: 0.05, Phi: 4.0 Time elapsed: 48.02522563934326 seconds
+Alpha: 0.1, Beta: 0.03, Phi: 4.0 Time elapsed: 40.91958498954773 seconds
+Alpha: 0.1, Beta: 0.1, Phi: 4.0 Time elapsed: 40.427063941955566 seconds
+Alpha: 0.2, Beta: 0.05, Phi: 4.0 Time elapsed: 39.88901233673096 seconds
+Alpha: 0.3, Beta: 0.02, Phi: 4.0 Time elapsed: 38.58665895462036 seconds
+Alpha: 0.3, Beta: 0.09, Phi: 4.0 Time elapsed: 39.20010161399841 seconds
+Alpha: 0.4, Beta: 0.06, Phi: 4.0 Time elapsed: 38.282020568847656 seconds
+Alpha: 0.5, Beta: 0.02, Phi: 4.0 Time elapsed: 39.15784025192261 seconds
+Alpha: 0.5, Beta: 0.09, Phi: 4.0 Time elapsed: 40.281078577041626 seconds
+Alpha: 0.6, Beta: 0.07, Phi: 4.0 Time elapsed: 39.821518898010254 seconds
+Alpha: 0.7, Beta: 0.04, Phi: 4.0 Time elapsed: 39.15750217437744 seconds
+Alpha: 0.8, Beta: 0.01, Phi: 4.0 Time elapsed: 39.64294791221619 seconds
+Alpha: 0.8, Beta: 0.08, Phi: 4.0 Time elapsed: 38.972599029541016 seconds
+Alpha: 0.9, Beta: 0.05, Phi: 4.0 Time elapsed: 39.121772050857544 seconds
+Alpha: 1.0, Beta: 0.02, Phi: 4.0 Time elapsed: 39.267367124557495 seconds
+Alpha: 1.0, Beta: 0.08, Phi: 4.0 Time elapsed: 31.419292211532593 seconds
+Alpha: 0.0, Beta: 0.03, Phi: 4.0 Time elapsed: 47.990875005722046 seconds
+Alpha: 0.1, Beta: 0.02, Phi: 4.0 Time elapsed: 41.15183353424072 seconds
+Alpha: 0.2, Beta: 0.01, Phi: 4.0 Time elapsed: 41.446385860443115 seconds
+Alpha: 0.2, Beta: 0.08, Phi: 4.0 Time elapsed: 39.93508839607239 seconds
+Alpha: 0.3, Beta: 0.03, Phi: 4.0 Time elapsed: 39.76918077468872 seconds
+Alpha: 0.4, Beta: 0.01, Phi: 4.0 Time elapsed: 40.02959847450256 seconds
+Alpha: 0.4, Beta: 0.08, Phi: 4.0 Time elapsed: 38.65337872505188 seconds
+Alpha: 0.5, Beta: 0.04, Phi: 4.0 Time elapsed: 39.984514474868774 seconds
+Alpha: 0.6, Beta: 0.02, Phi: 4.0 Time elapsed: 39.16670346260071 seconds
+Alpha: 0.6, Beta: 0.08, Phi: 4.0 Time elapsed: 39.553571462631226 seconds
+Alpha: 0.7, Beta: 0.06, Phi: 4.0 Time elapsed: 38.340628147125244 seconds
+Alpha: 0.8, Beta: 0.02, Phi: 4.0 Time elapsed: 38.312244176864624 seconds
+Alpha: 0.8, Beta: 0.09, Phi: 4.0 Time elapsed: 38.161197662353516 seconds
+Alpha: 0.9, Beta: 0.06, Phi: 4.0 Time elapsed: 38.69846034049988 seconds
+Alpha: 1.0, Beta: 0.01, Phi: 4.0 Time elapsed: 39.619343757629395 seconds
+Alpha: 1.0, Beta: 0.09, Phi: 4.0 Time elapsed: 31.497650146484375 seconds
+Alpha: 0.0, Beta: 0.04, Phi: 4.0 Time elapsed: 47.23255705833435 seconds
+Alpha: 0.1, Beta: 0.01, Phi: 4.0 Time elapsed: 40.60740780830383 seconds
+Alpha: 0.1, Beta: 0.08, Phi: 4.0 Time elapsed: 41.60938572883606 seconds
+Alpha: 0.2, Beta: 0.06, Phi: 4.0 Time elapsed: 41.5074360370636 seconds
+Alpha: 0.3, Beta: 0.04, Phi: 4.0 Time elapsed: 38.21887016296387 seconds
+Alpha: 0.3, Beta: 0.1, Phi: 4.0 Time elapsed: 40.63383769989014 seconds
+Alpha: 0.4, Beta: 0.07, Phi: 4.0 Time elapsed: 39.271827697753906 seconds
+Alpha: 0.5, Beta: 0.05, Phi: 4.0 Time elapsed: 39.524619579315186 seconds
+Alpha: 0.6, Beta: 0.01, Phi: 4.0 Time elapsed: 40.59759259223938 seconds
+Alpha: 0.6, Beta: 0.1, Phi: 4.0 Time elapsed: 38.94577431678772 seconds
+Alpha: 0.7, Beta: 0.07, Phi: 4.0 Time elapsed: 38.24334216117859 seconds
+Alpha: 0.8, Beta: 0.03, Phi: 4.0 Time elapsed: 39.47448921203613 seconds
+Alpha: 0.8, Beta: 0.1, Phi: 4.0 Time elapsed: 38.81804871559143 seconds
+Alpha: 0.9, Beta: 0.07, Phi: 4.0 Time elapsed: 38.753074169158936 seconds
+Alpha: 1.0, Beta: 0.04, Phi: 4.0 Time elapsed: 39.11202144622803 seconds
+Alpha: 1.0, Beta: 0.1, Phi: 4.0 Time elapsed: 30.527764558792114 seconds
 Performance Indicators computation time: 0 minutes and 0 seconds
-Combining results time: 0 minutes and 0 seconds
-Total execution time: 13 minutes and 2 seconds
+Combining results time: 0 minutes and 1 seconds
+Total execution time: 12 minutes and 49 seconds
 Done!
 Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
 Traceback (most recent call last):
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
     main(args.alphas, args.betas, args.phis, args.name)
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
-    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 24, in main
+    darcy_velocity = load_any(alpha,beta, 'darcy_velocity', run = None, filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 77, in load_any
     data = load_results(filename)
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
     with open(filename, 'r') as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/macroscale/macro_results_phi_[4.0].json'
 Done!
 Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
 Traceback (most recent call last):
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
     main(args.alphas, args.betas, args.phis, args.name)
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
-    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 24, in main
+    darcy_velocity = load_any(alpha,beta, 'darcy_velocity', run = None, filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 77, in load_any
     data = load_results(filename)
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
     with open(filename, 'r') as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/macroscale/macro_results_phi_[4.0].json'
 Done!
 Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
 Traceback (most recent call last):
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
     main(args.alphas, args.betas, args.phis, args.name)
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
-    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 24, in main
+    darcy_velocity = load_any(alpha,beta, 'darcy_velocity', run = None, filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 77, in load_any
     data = load_results(filename)
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
     with open(filename, 'r') as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/macroscale/macro_results_phi_[4.0].json'
 Done!
 Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
 Traceback (most recent call last):
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
     main(args.alphas, args.betas, args.phis, args.name)
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
-    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 24, in main
+    darcy_velocity = load_any(alpha,beta, 'darcy_velocity', run = None, filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 77, in load_any
     data = load_results(filename)
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
     with open(filename, 'r') as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/macroscale/macro_results_phi_[4.0].json'
 Done!
 Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
 Traceback (most recent call last):
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
     main(args.alphas, args.betas, args.phis, args.name)
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
-    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 24, in main
+    darcy_velocity = load_any(alpha,beta, 'darcy_velocity', run = None, filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 77, in load_any
     data = load_results(filename)
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
     with open(filename, 'r') as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/macroscale/macro_results_phi_[4.0].json'
 Done!
 Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
 Traceback (most recent call last):
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
     main(args.alphas, args.betas, args.phis, args.name)
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
-    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 24, in main
+    darcy_velocity = load_any(alpha,beta, 'darcy_velocity', run = None, filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 77, in load_any
     data = load_results(filename)
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
     with open(filename, 'r') as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/macroscale/macro_results_phi_[4.0].json'
 Done!
 Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
 Traceback (most recent call last):
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
     main(args.alphas, args.betas, args.phis, args.name)
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
-    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 24, in main
+    darcy_velocity = load_any(alpha,beta, 'darcy_velocity', run = None, filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 77, in load_any
     data = load_results(filename)
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
     with open(filename, 'r') as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/macroscale/macro_results_phi_[4.0].json'
 Done!
 Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
 Traceback (most recent call last):
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 59, in <module>
     main(args.alphas, args.betas, args.phis, args.name)
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 23, in main
-    k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
-  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 50, in load_k_j
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/sweep_params_plots.py", line 24, in main
+    darcy_velocity = load_any(alpha,beta, 'darcy_velocity', run = None, filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
+  File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 77, in load_any
     data = load_results(filename)
   File "/home/viadacampos/Documents/mmsc_dissertation/multiscale/utils/load_and_save.py", line 17, in load_results
     with open(filename, 'r') as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/microscale/micro_results.json'
+FileNotFoundError: [Errno 2] No such file or directory: 'multiscale/results/mono-dispersed/macroscale/macro_results_phi_[4.0].json'
 Done!
 Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
 Done!
