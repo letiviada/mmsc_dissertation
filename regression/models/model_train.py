@@ -145,8 +145,8 @@ def train_model(output,data, size_train = 'all',type_model = 'random_forest',sav
     y_pred = model.predict(X_test)
     mse = mean_squared_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
-    #print(f"Mean squared error: {mse}")
-    #print(f"R2 score for test: {r2}")
+    print(f"Mean squared error: {mse}")
+    print(f"R2 score for test: {r2}")
 
     # Save the model
     # --------------

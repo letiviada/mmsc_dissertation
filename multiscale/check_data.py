@@ -1,3 +1,4 @@
+
 import os
 import json
 import numpy as np
@@ -24,7 +25,7 @@ def check_json_files(filename,directory = 'multiscale/results/mono-dispersed/', 
         print(f"File '{filename}' not found in directory '{directory}' or does not match the file extension '{file_extension}'.")
     print('Done')
 # Call the function  
-check_json_files("performance_indicators/performance_indicators_phi_1.0.json")
+check_json_files("performance_indicators/performance_indicators_standard_basic.json")
 
 
 

@@ -16,7 +16,7 @@ def plot_time(t_eval,x_eval,funct,title = None,colormap = 'tab20b',style = 'seab
     Returns:
     fig (matplotlib.figure.Figure): Figure for the function 
     """
-    _, colors = style_and_colormap(style = style, colormap=colormap, num_positions = len(t_eval))
+    _, colors = style_and_colormap( colormap=colormap, num_positions = len(t_eval))
     nrows, ncols = 1,1
     fig, ax = create_fig(nrows, ncols, title = title)
     for t_idx,t in enumerate(t_eval):
@@ -50,7 +50,7 @@ def plot_one_dim(x_eval,functs,title = None, colormap = 'tab20b',style = 'seabor
     Returns:
     fig (matplotlib.figure.Figure): Figure for the function 
     """
-    _, colors = style_and_colormap(style = style, colormap=colormap, num_positions = len(functs))
+    _, colors = style_and_colormap( colormap=colormap, num_positions = len(functs))
     nrows, ncols = 1,1
     fig, ax = create_fig(nrows, ncols, title = title)
     for i in range(len(functs)):
