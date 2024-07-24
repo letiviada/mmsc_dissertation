@@ -288,10 +288,11 @@ def plot_optimum(data:pd.DataFrame,particle_sizes : list = 'all', actual: bool =
             filename = f'regression/figures/optimization/optimal_adhesivity/particle_size_{particle_size}_ml'
         else: 
             filename = f'regression/figures/optimization/optimal_adhesivity/particle_size_{particle_size}'
+        sns.despine()
         if save == True:
             ax[0].legend(loc = 'lower right', bbox_to_anchor=(1.05, 1))
             plt.tight_layout()  
-
+        
             save_figure(fig,filename)
         plt.show()
 
