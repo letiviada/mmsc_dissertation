@@ -33,7 +33,7 @@ def ml_model(inputs:pd.DataFrame,output:str, time, type_model:str)->tuple:
     predictions = model.predict(inputs)
     return predictions, model
 
-def get_physical_model(outputs:list,time:int,n:int,filename:str)->pd.DataFrame:
+def get_physical_model_time(outputs:list,time:int,n:int,filename:str)->pd.DataFrame:
     """
     Function that gets the models from the ML and Pjysical results for a given output and time.
 
@@ -71,7 +71,7 @@ def get_full_data_and_models(outputs:list, time: int, n:int, type_model: list,fi
     num_model (object): the model for the numerator
     den_model (object): the model for the denominator
     """
-    df_ratio = get_physical_model(outputs, time,n,filename)
+    df_ratio = get_physical_model_time(outputs, time,n,filename)
     inputs = df_ratio[['adhesivity', 'particle_size']]
 
     numerator_predictions,num_model = ml_model(inputs,outputs[0], time, type_model[0])

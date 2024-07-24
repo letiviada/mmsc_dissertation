@@ -256,6 +256,19 @@ def plot_optimal_adhesivity(particle_sizes,n_values, data, time):
     save_figure(fig, f'regression/figures/optimization/particle_size_{particle_size}/optimal_adhesivity')
     plt.show()
 
+def plot_optimum(particle_sizes,data):
+    _, colors = style_and_colormap(num_positions = len(particle_sizes), colormap = 'tab20b')
+    colors = colors.tolist()
+    color_mapping = {key: color for key, color in zip(particle_sizes, colors)}
+    for particle_size in particle_sizes:
+        fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
+        filtered_data = data[(data[f'particle_size'] == particle_size)]
+        ax[0].scatter(x = filtered_data['n'], y =  filtered_data['adhesivity'], color = color_mapping[particle_size])
+    
+        save_figure(fig, f'regression/figures/optimization/particle_size_{particle_size}/optimal_adhesivity')
+        plt.show()
+
+
 def get_plots_size_sample(metric):
     summary_stats_poly = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_polynomial.csv')
     summary_stats_gb = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_gradient_boosting.csv')

@@ -1,6 +1,6 @@
 import os
 import joblib
-from utils.treat_data import obtain_data, clean_data
+from utils.obtain_and_clean_data import obtain_data, clean_data
 def save_model(model, model_path):
     """
     Save the ML model
