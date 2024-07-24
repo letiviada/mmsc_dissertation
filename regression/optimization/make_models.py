@@ -102,3 +102,4 @@ def get_data_opt_adhesivity_plots(data,type_model = 'random_forest')->tuple:
     predictions = ml_model.predict(inputs)
     data['adhesivity_predictions'] = predictions
     return  data, ml_model
+

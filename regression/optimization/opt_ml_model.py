@@ -3,7 +3,7 @@ import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
 from models.model_train import  train_model
-from opt_get_models import  get_data_opt_adhesivity_plots
+from regression.optimization.make_models import  get_data_opt_adhesivity_plots
 sys.path.append('/Users/letiviada/dissertation_mmsc/multiscale/')
 sys.path.append('/home/viadacampos/Documents/dissertation_mmsc/multiscale/')
 from multiscale.plotting import plot_optimum

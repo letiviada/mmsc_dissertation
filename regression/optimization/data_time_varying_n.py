@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from opt_get_models import  get_physical_model_time
+from regression.optimization.make_models import  get_physical_model_time
 from utils import save_data_to_csv
 
 def time_model_varying_n( n_values, time, filename):
@@ -30,12 +30,8 @@ if __name__ == '__main__':
     # Define the parameters
     filename = 'performance_indicators/performance_indicators_standard_basic.json'
     time = 400
-    n = 1
-    outputs = ['volume_liquid', 'removed_particles']
-    type_model = ['polynomial', 'gradient_boosting']
-
-    # Get the data for the varying n
     n_values = np.arange(0.01,3,0.01).round(2)
+    
     data = time_model_varying_n(n_values,time,filename)
 
 

@@ -28,7 +28,7 @@ def style_and_colormap(colormap='tab20', num_positions = None):
     "ytick.labelsize": 30
     })
     sns.set_style('ticks')
-    
+    plt.grid(False)
     color_map = plt.get_cmap(colormap,num_positions)
     colors = None
     if num_positions is not None:
