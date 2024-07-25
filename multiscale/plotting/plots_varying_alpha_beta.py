@@ -24,9 +24,10 @@ def plot_adhesivity(data:pd.DataFrame, output:str, particle_sizes:list, save: bo
     fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
     for particle_size in particle_sizes:
         data_particle_size = data[data['particle_size'] == particle_size]
-        sns.scatterplot(x = data_particle_size['adhesivity'],y =  data_particle_size[output], ax=ax[0], color=color_mapping[particle_size])
-    plt.show()
+        sns.scatterplot(x = data_particle_size['adhesivity'],y =  data_particle_size[output], ax=ax[0], color=color_mapping[particle_size],
+                         label = f'Particle size: {particle_size}')
     if save:
         filepath = f'regression/figures/{output}/adhesivity_plot'
         save_figure(fig, filepath)
+    return fig, ax
     

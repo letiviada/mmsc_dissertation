@@ -4,7 +4,7 @@ sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 sys.path.append('/Users/letiviada/dissertation_mmsc')
 from opt_get_large_data import get_data_for_opt
-from regression.optimization.make_models import get_full_data_and_models, get_physical_model_time
+from regression.optimization_time.make_models import get_full_data_and_models, get_physical_model_time
 from multiscale.plotting import opt_ml, make_loglog, plot_optimal_adhesivity, plot_optimum
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     filename = 'performance_indicators/performance_indicators_standard_basic.json'
     time = 400
     n_values = np.arange(0.04,3.25,0.05).round(2)
-    particle_sizes = [0.03,0.06,0.09]
+    particle_sizes = [0.06]
     data_ratio = get_physical_model_time(['volume_liquid','removed_particles'],time,1,filename)
 
     vol_name = f'volume_liquid_time_{time}'
@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
     data = pd.read_csv('regression/optimization/optimum_values.csv')
     #plot_optimal_adhesivity([0.03,0.08],n_values,data, time)
-    plot_optimum(data,[0.03,0.08],predictions = False)
+    plot_optimum(data,[0.06],predictions = False)
 
  
 

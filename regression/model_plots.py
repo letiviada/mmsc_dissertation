@@ -4,7 +4,7 @@ sys.path.append('/Users/letiviada/dissertation_mmsc')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 from regression.models.model_eval import model_eval
 from multiscale.plotting import scatter_solutions, model_plot_with_lines_and_scatter
-from regression.optimization.make_models import ml_model
+from regression.optimization_time.make_models import ml_model
 from regression.utils import clean_data, obtain_data, change_name_time 
 import numpy as np
 import pandas as pd

@@ -256,7 +256,7 @@ def plot_optimal_adhesivity(particle_sizes,n_values, data, time):
     save_figure(fig, f'regression/figures/optimization/particle_size_{particle_size}/optimal_adhesivity')
     plt.show()
 
-def plot_optimum(data:pd.DataFrame,particle_sizes : list = 'all', actual: bool = True, predictions: bool = True, save: bool = True):
+def plot_optimum(data:pd.DataFrame,particle_sizes : list = 'all', actual: bool = True, predictions: bool = True, save: bool = True):    
     """
     Function that plots the optimum for adhesivity for the different particle sizes.
 
@@ -272,22 +272,22 @@ def plot_optimum(data:pd.DataFrame,particle_sizes : list = 'all', actual: bool =
     --------
     None
     """
-    if particle_sizes == 'all':
-        particle_sizes = data['particle_size'].unique()
+    #if particle_sizes == 'all':
+      #  particle_sizes = data['particle_size'].unique()
     _, colors = style_and_colormap(num_positions = len(particle_sizes), colormap = 'tab20b')
     colors = colors.tolist()
     color_mapping = {key: color for key, color in zip(particle_sizes, colors)}
 
-    for particle_size in particle_sizes:
+    for part_size in particle_sizes:
         fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
-        filtered_data = data[(data[f'particle_size'] == particle_size)]
+        filtered_data = data[data['particle_size'] == part_size]
         if actual == True:
-            ax[0].scatter(filtered_data['n'], filtered_data['adhesivity'], color = color_mapping[particle_size], label = 'Physical Model')
+            ax[0].scatter(filtered_data['n'], filtered_data['adhesivity'], color = color_mapping[part_size], label = 'Physical Model')
         if predictions == True:
-            ax[0].scatter(filtered_data['n'], filtered_data['adhesivity_predictions'], marker = 'x', color = color_mapping[particle_size], label = 'ML Model')
-            filename = f'regression/figures/optimization/optimal_adhesivity/particle_size_{particle_size}_ml'
+            ax[0].scatter(filtered_data['n'], filtered_data['adhesivity_predictions'], marker = 'x', color = color_mapping[part_size], label = 'ML Model')
+            filename = f'regression/figures/optimization/optimal_adhesivity/particle_size_{part_size}_ml'
         else: 
-            filename = f'regression/figures/optimization/optimal_adhesivity/particle_size_{particle_size}'
+            filename = f'regression/figures/optimization/optimal_adhesivity/particle_size_{part_size}'
         sns.despine()
         if save == True:
             ax[0].legend(loc = 'lower right', bbox_to_anchor=(1.05, 1))

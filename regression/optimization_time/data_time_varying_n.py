@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from regression.optimization.make_models import  get_physical_model_time
+from regression.optimization_time.make_models import  get_physical_model_time
 from utils import save_data_to_csv
 
 def time_model_varying_n( n_values, time, filename):
@@ -22,8 +22,8 @@ def time_model_varying_n( n_values, time, filename):
     
     all_data = all_data[['adhesivity', 'particle_size', 'n', 'product']]
     optimum_values = optimum_values[['adhesivity', 'particle_size', 'n']]
-    save_data_to_csv(all_data,'optimization', 'data_varying_n.csv')  
-    save_data_to_csv(optimum_values,'optimization', 'optimum_values.csv')
+    save_data_to_csv(all_data,'optimization_time/data', 'data_varying_n.csv')  
+    save_data_to_csv(optimum_values,'optimization_time/data', 'optimum_values.csv')
     return all_data
 
 if __name__ == '__main__':
