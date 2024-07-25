@@ -4,7 +4,7 @@ from .style import style_and_colormap
 import numpy as np
 import seaborn as sns
 
-def plot_time(t_eval,x_eval,funct,title = None,colormap = 'tab20b',style = 'seaborn-v0_8'):
+def plot_time(t_eval,x_eval,funct,title = None,colormap = 'tab10',style = 'seaborn-v0_8'):
     """
     Plot for evaluating a function that depends on time and space, it has x-axis for space, y-axis for function and shows different times
     with an arrow pointing in the direction of time.
@@ -22,7 +22,7 @@ def plot_time(t_eval,x_eval,funct,title = None,colormap = 'tab20b',style = 'seab
     fig, ax = create_fig(nrows, ncols, title = title)
     for t_idx,t in enumerate(t_eval):
         color = colors[t_idx]
-        ax[0].plot(x_eval,funct[t_idx,:],color = color, linewidth = 2, label=f't = {t:.2f}')
+        ax[0].plot(x_eval,funct[t_idx,:],color = color, linewidth = 5, label=f't = {t:.2f}')
     # Calculate direction of growth for arrows
     mid_index = len(x_eval) // 2 
     start_point = (x_eval[mid_index], funct[0, mid_index] - 0.02 )  # t = 0 function
@@ -41,7 +41,7 @@ def plot_time(t_eval,x_eval,funct,title = None,colormap = 'tab20b',style = 'seab
     #fig.subplots_adjust(hspace=0.7, wspace=0.2)
     return fig
 
-def plot_one_dim(x_eval,functs,title = None, colormap = 'tab20b',style = 'seaborn-v0_8', funct_type = None):
+def plot_one_dim(x_eval,functs,title = None, colormap = 'tab10',style = 'seaborn-v0_8', funct_type = None):
     """
     Plot for evaluating a function depending on only one variable
 
@@ -64,11 +64,11 @@ def plot_one_dim(x_eval,functs,title = None, colormap = 'tab20b',style = 'seabor
             filtered_idx = funct_array >= 0.1
             filtered_y = funct_array[filtered_idx]
             filtered_x = x_eval_array[filtered_idx]
-            ax[0].plot(filtered_x,filtered_y,color = color, linewidth = 2, label = i)
+            ax[0].plot(filtered_x,filtered_y,color = color, linewidth = 5, label = i)
         else:
-            ax[0].plot(x_eval,funct,color = color, linewidth = 2, label= i)
+            ax[0].plot(x_eval,funct,color = color, linewidth = 5, label= i)
     if funct_type == 'velocity':
-        ax[0].axhline(y=0.1,color='orange',linestyle='--',linewidth=2)
+        ax[0].axhline(y=0.1,color='orange',linestyle='--',linewidth=5)
 # Set limits to restrict the left domain to start at x=0, y=0
     ax[0].set_xlim(left=0)
     fig.tight_layout()

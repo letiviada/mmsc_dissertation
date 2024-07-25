@@ -30,6 +30,6 @@ def data_throughput(throughput:float, data: pd.DataFrame) -> pd.DataFrame:
         if row['adhesivity'] == 0.0:
             data.at[index, f'avg_retained_particles_throughput_{throughput}'] = 0.0
         else:
-            data.at[index, f'avg_retained_particles_throughput_{throughput}'] = (quad(interp_func_efficiency, 0,time_throughput)[0]/ time_throughput) if interp_func_efficiency is not None else np.nan
+            data.at[index, f'avg_retained_particles_throughput_{throughput}'] = (quad(interp_func_efficiency, 0,time_throughput)[0]) / time_throughput if interp_func_efficiency is not None else np.nan
     data_sorted = data.sort_values(['particle_size', 'adhesivity'])          
     return data_sorted

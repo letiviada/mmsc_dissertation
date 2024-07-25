@@ -38,16 +38,12 @@ def main(alphas: list, betas: list,phi:float,name:str):
 # Plot the results
     # ----------------
     fig_k = plot_one_dim(tau_values_list[0],k_values_list)
-    fig_k.grid(False)
     save_figure(fig_k, f'multiscale/figures/mono-dispersed/microscale/permeability/k_{name}')
     fig_j = plot_one_dim(tau_values_list[0],j_values_list)
-    fig_j.grid(False)
     save_figure(fig_j, f'multiscale/figures/mono-dispersed/microscale/adhesivity/j_{name}')
     fig_u = plot_one_dim(t_eval, [v for v in u_values_list if v != 0], funct_type='velocity')
-    fig_u.grid(False)
     save_figure(fig_u,f'multiscale/figures/mono-dispersed/macroscale/darcy_velocity/varying_parameters/darcy_velocity_{name}')
     fig_c = plot_one_dim(x_eval,c_values_list)
-    fig_c.grid(False)
     save_figure(fig_c,f'multiscale/figures/mono-dispersed/macroscale/concentration/varying_parameters/concentration_{name}')
 
 
