@@ -32,7 +32,7 @@ def plot_time(t_eval,x_eval,funct,title = None,colormap = 'tab20b',style = 'seab
     # Add text "Time" at the end of the arrow
     ax[0].text(end_point[0] + 0.05, end_point[1], 'Time', fontsize=18, verticalalignment='bottom')    
     ax[0].set_xlabel('$x$')
-    ax[0].grid(True)# Set limits to restrict the left domain to start at x=0, y=0
+# Set limits to restrict the left domain to start at x=0, y=0
     ax[0].set_xlim(left=0)
     ax[0].set_ylim(bottom=0)
     ax[0].legend( loc = 'center left',bbox_to_anchor= (1,0.5))
@@ -58,10 +58,18 @@ def plot_one_dim(x_eval,functs,title = None, colormap = 'tab20b',style = 'seabor
     for i in range(len(functs)):
         color = colors[i]
         funct = functs[i]
-        ax[0].plot(x_eval,funct,color = color, linewidth = 2, label= i)
+        if funct_type == 'velocity':
+            funct_array = np.array(funct)
+            x_eval_array = np.array(x_eval)
+            filtered_idx = funct_array >= 0.1
+            filtered_y = funct_array[filtered_idx]
+            filtered_x = x_eval_array[filtered_idx]
+            ax[0].plot(filtered_x,filtered_y,color = color, linewidth = 2, label = i)
+        else:
+            ax[0].plot(x_eval,funct,color = color, linewidth = 2, label= i)
     if funct_type == 'velocity':
         ax[0].axhline(y=0.1,color='orange',linestyle='--',linewidth=2)
-    ax[0].grid(True)# Set limits to restrict the left domain to start at x=0, y=0
+# Set limits to restrict the left domain to start at x=0, y=0
     ax[0].set_xlim(left=0)
     fig.tight_layout()
     sns.despine()

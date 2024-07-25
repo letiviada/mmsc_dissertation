@@ -10,7 +10,7 @@ def main(alphas: list, betas: list,phi:float,name:str):
     u_values_list =[] 
     tau_values_list = []
     c_values_list = []
-
+    phi = 4.0
     # Get k and j values for each alpha and beta constant
     # ---------------------------------------------------
     if isinstance(betas, float):
