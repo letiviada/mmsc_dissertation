@@ -20,15 +20,15 @@ def style_and_colormap(colormap='tab20', num_positions = None):
     "text.usetex": True,
     "font.family": "serif",
     "font.serif": "Computer Modern Roman",
-    "font.size": 30,
-    "axes.labelsize": 30,
-    "axes.titlesize": 18,
-    "legend.fontsize": 18,
-    "xtick.labelsize": 30,
-    "ytick.labelsize": 30
+    "font.size": 36,
+    "axes.labelsize": 36,
+    "axes.titlesize": 36,
+    "legend.fontsize": 36,
+    "xtick.labelsize": 36,
+    "ytick.labelsize": 36
     })
     sns.set_style('ticks')
-    plt.grid(False)
+   # plt.grid(False)
     color_map = plt.get_cmap(colormap,num_positions)
     colors = None
     if num_positions is not None:

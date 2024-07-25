@@ -3,7 +3,7 @@
 phi=4.0
 
 # Define values for alpha and beta
-alphas=$(seq 0.1 0.1 0.9)
+alphas=$(seq 0.1 0.1 1.0)
 betas=(0.01)
 name="beta_0.01_alpha_varying"
 echo "Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.01"
@@ -18,7 +18,7 @@ python3  multiscale/sweep_params_plots.py --alphas "${alphas2[@]}" --betas $beta
 echo "Done!"
 
 # Define values for alpha and beta
-alphas=$(seq 0.1 0.1 0.9)
+alphas=$(seq 0.1 0.1 1.0)
 betas=(0.02)
 name="beta_0.02_alpha_varying"
 echo "Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02"
@@ -33,7 +33,7 @@ python3  multiscale/sweep_params_plots.py --alphas "${alphas2[@]}" --betas $beta
 echo "Done!"
 
 # Define values for alpha and beta
-alphas=$(seq 0.1 0.1 0.9)
+alphas=$(seq 0.1 0.1 1.0)
 betas=(0.03)
 name="beta_0.03_alpha_varying"
 echo "Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.03"
@@ -55,7 +55,7 @@ python3  multiscale/sweep_params_plots.py --alphas "${alphas2[@]}" --betas $beta
 echo "Done!"
 
 # Define values for alpha and beta
-alphas=$(seq 0.1 0.1 0.9)
+alphas=$(seq 0.1 0.1 1.0)
 betas=(0.04)
 name="beta_0.04_alpha_varying"
 echo "Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.04"
@@ -70,7 +70,7 @@ python3  multiscale/sweep_params_plots.py --alphas "${alphas2[@]}" --betas $beta
 echo "Done!"
 
 # Define values for alpha and beta
-alphas=$(seq 0.1 0.1 0.9)
+alphas=$(seq 0.1 0.1 1.0)
 betas=(0.05)
 name="beta_0.05_alpha_varying"
 echo "Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.05"
@@ -79,7 +79,7 @@ echo "Done!"
 
 
 # Define values for alpha and beta
-alphas=$(seq 0.1 0.1 0.9)
+alphas=$(seq 0.1 0.1 1.0)
 betas=(0.06)
 name="beta_0.06_alpha_varying"
 echo "Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.06"
@@ -94,7 +94,7 @@ python3  multiscale/sweep_params_plots.py --alphas "${alphas2[@]}" --betas $beta
 echo "Done!"
 
 # Define values for alpha and beta
-alphas=$(seq 0.1 0.1 0.9)
+alphas=$(seq 0.1 0.1 1.0)
 betas=(0.07)
 name="beta_0.07_alpha_varying"
 echo "Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.07"
@@ -110,7 +110,7 @@ echo "Done!"
 
 
 # Define values for alpha and beta
-alphas=$(seq 0.1 0.1 0.9)
+alphas=$(seq 0.1 0.1 1.0)
 betas=(0.08)
 name="beta_0.08_alpha_varying"
 echo "Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.08"
@@ -125,7 +125,7 @@ python3  multiscale/sweep_params_plots.py --alphas "${alphas2[@]}" --betas $beta
 echo "Done!"
 
 # Define values for alpha and beta
-alphas=$(seq 0.1 0.1 0.9)
+alphas=$(seq 0.1 0.1 1.0)
 betas=(0.09)
 name="beta_0.09_alpha_varying"
 echo "Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.09"
@@ -140,7 +140,7 @@ python3  multiscale/sweep_params_plots.py --alphas "${alphas2[@]}" --betas $beta
 echo "Done!"
 
 # Define values for alpha and beta
-alphas=$(seq 0.1 0.1 0.9)
+alphas=$(seq 0.1 0.1 1.0)
 betas=(0.1)
 name="beta_0.1_alpha_varying"
 echo "Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.1"
