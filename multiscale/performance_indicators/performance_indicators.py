@@ -42,7 +42,7 @@ class FilterPerformance:
         """
         c_outlet= self.c[:,-1]
         velocity = self.u
-        flux = c_outlet * velocity
+        flux = np.multiply(velocity,c_outlet)
         flux_interp = interp1d(self.t_eval,flux,kind='cubic',fill_value='extrapolate')
         total_flux = quad(flux_interp, 0, t_eval[-1])[0]
         flux_out = np.array([quad(velocity, 0, time, limit = 75)[0] for time in t_eval])
