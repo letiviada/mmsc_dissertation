@@ -41,13 +41,20 @@ class FilterPerformance:
         efficiency (np.ndarray): The efficiency of the filter.
         """
         c_outlet= self.c[:,-1]
-        concent_outlet_interp = interp1d(self.t_eval,c_outlet,kind='cubic',fill_value='extrapolate')
-        conc_outlet = concent_outlet_interp(t_eval)
-        removed_particles =  1 - conc_outlet
+        velocity = self.u
+        flux = c_outlet * velocity
+        flux_interp = interp1d(self.t_eval,flux,kind='cubic',fill_value='extrapolate')
+        total_flux = quad(flux_interp, 0, t_eval[-1])[0]
+        flux_out = np.array([quad(velocity, 0, time, limit = 75)[0] for time in t_eval])
+        #concent_outlet_interp = interp1d(self.t_eval,c_outlet,kind='cubic',fill_value='extrapolate')
+        #conc_outlet = concent_outlet_interp(t_eval)
+        #removed_particles =  1 - conc_outlet
 
-        avg_efficiency = (quad(concent_outlet_interp, 0, t_eval[-1])[0]) / (t_eval[-1])
-        avg_removed_particles = 1 - avg_efficiency
-        return conc_outlet,removed_particles, avg_efficiency, avg_removed_particles
+        #avg_efficiency = (quad(concent_outlet_interp, 0, t_eval[-1])[0]) / (t_eval[-1])
+        #avg_removed_particles = 1 - avg_efficiency
+        #return conc_outlet,removed_particles, avg_efficiency, avg_removed_particles
+        return total_flux, flux_out
+
 
     def termination_time(self, mu: float) -> float:
         """

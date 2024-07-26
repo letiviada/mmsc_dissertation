@@ -22,9 +22,9 @@ def opt_model(time, outputs:str, filename:str, type_model:str):
 if __name__ == '__main__':
     filename = 'performance_indicators/performance_indicators_standard_basic.json'
     outputs = ['volume_liquid', 'removed_particles']
-    output_first = ['total_throughput', 'termination_time','efficiency']
+    output_first = ['total_throughput']#, 'termination_time','efficiency']
     time = 400
     #first_model(output_first, filename,'polynomial')
-    for type_model  in  ['polynomial', 'random_forest','gradient_boosting']:
+    for type_model  in  ['polynomial']:#, 'random_forest','gradient_boosting']:
         #opt_model(time, outputs, filename, type_model)
         first_model(output_first, filename, type_model)

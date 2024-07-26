@@ -4,9 +4,8 @@ sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 sys.path.append('/Users/letiviada/dissertation_mmsc')
 from opt_get_large_data import get_data_for_opt
-from regression.optimization_time.make_models import get_full_data_and_models, get_physical_model_time
-from multiscale.plotting import opt_ml, make_loglog, plot_optimal_adhesivity, plot_optimum
-import matplotlib.pyplot as plt
+from make_models import get_full_data_and_models, get_physical_model_time
+from multiscale.plotting import opt_ml, make_loglog, plot_optimum
 import pandas as pd
 import numpy as np
 

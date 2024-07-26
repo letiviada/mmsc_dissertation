@@ -4,10 +4,24 @@ import numpy as np
 import os
 from utils.help_functions import create_interp
 from scipy.integrate import quad
+from scipy.stats.qmc import LatinHypercube
 
-def sampling_data(X, y, size):
-    X_new = X.sample(size)
-    y_new = y.loc[X_new.index]
+def sampling_data(X, y, size:int, method:str='random'):
+    if method == 'random':
+        X_new = X.sample(size)
+        y_new = y.loc[X_new.index]
+    elif method == 'latin_hypercube':
+        X_np = X.values if isinstance(X, pd.DataFrame) else X
+        y_np = y.values if isinstance(y, pd.Series) else y
+
+        if size == 'all':
+            size = 0.8 * X_np.shape[0]
+        
+        sampler = LatinHypercube(d = 2)
+        lhs_samples = sampler.random(size)
+        
+    else:
+        raise ValueError("Invalid sampling method. Please choose 'random' or 'latin_hypercube'.")
 
     return X_new, y_new
 

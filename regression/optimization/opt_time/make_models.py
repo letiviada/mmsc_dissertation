@@ -84,22 +84,5 @@ def get_full_data_and_models(outputs:list, time: int, n:int, type_model: list,fi
     full_data = make_data_frame(df_ratio, **cols)
     return full_data, num_model, den_model
 
-def get_data_opt_adhesivity_plots(data,type_model = 'random_forest')->tuple:
-    """
-    Function that gets the data for the adhesivity plots
 
-    Parameters:
-    -----------
-    data (pd.DataFrame): the data to be considered
-
-    Returns:
-    --------
-    data_plots (pd.DataFrame): the data for the plots
-    """
-    model_path = f'regression/models_{type_model}/'
-    ml_model = open_model('adhesivity',model_path=model_path)
-    inputs = data.drop('adhesivity', axis=1)
-    predictions = ml_model.predict(inputs)
-    data['adhesivity_predictions'] = predictions
-    return  data, ml_model
 

@@ -23,9 +23,9 @@ def throughput_model_varying_n(n_values, throughput, data):
    #all_data = pd.concat([all_data, cols_to_drop], axis=1)
     data_no_n = data_model.drop(columns = ['n', 'product'])
     optimum_values = optimum_values[['adhesivity', 'particle_size', 'n']]
-    save_data_to_csv(all_data,f'opt_throughput/data/throughput_{throughput}', 'data_varying_n_min.csv')  
-    save_data_to_csv(optimum_values,f'opt_throughput/data/throughput_{throughput}', 'optimum_values_product.csv')
-    save_data_to_csv(data_no_n,f'opt_throughput/data/throughput_{throughput}', 'data_for_sums.csv')
+    save_data_to_csv(all_data,f'optimization/opt_throughput/data/throughput_{throughput}', 'data_varying_n_min.csv')  
+    save_data_to_csv(optimum_values,f'optimization/opt_throughput/data/throughput_{throughput}', 'optimum_values_product.csv')
+    save_data_to_csv(data_no_n,f'optimization/opt_throughput/data/throughput_{throughput}', 'data_for_sums.csv')
     return all_data, optimum_values, data_no_n
 
 if __name__ == '__main__':

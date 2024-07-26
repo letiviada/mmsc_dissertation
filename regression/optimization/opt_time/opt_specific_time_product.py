@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from regression.optimization_time.make_models import  get_physical_model_time
+from make_models import  get_physical_model_time
 from utils import save_data_to_csv
 
 def time_model_varying_n( n_values, time, filename):

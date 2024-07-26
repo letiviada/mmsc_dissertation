@@ -11,7 +11,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
 import pandas as pd
 
-def ensure_alpha_inclusion(data, beta_col, alpha_col):
+def ensure_alpha_inclusion(data:pd.DataFrame, beta_col:str, alpha_col:str):
     """
     Function to ensure that the training dataset has at least one row for each beta value with the minimum and maximum alpha values.
 
@@ -45,7 +45,7 @@ def ensure_alpha_inclusion(data, beta_col, alpha_col):
 
     return edge_rows, remaining_data
 
-def train_model(output,data, size_train = 'all',type_model = 'random_forest',save = True):
+def train_model(output:str,data:pd.DataFrame, size_train = 'all',size_sampling:str = 'random',type_model:str = 'random_forest',save:bool = True):
     """
     Function that trains a model for given output, dataset and type of model. Tunes hyperparameters using GridSearchCV, 
     fits and predicts the model for the best score and saves the model, the full dataset, the training and test data.
@@ -77,7 +77,7 @@ def train_model(output,data, size_train = 'all',type_model = 'random_forest',sav
                 raise ValueError('The size of the training set is larger than the dataset') 
             else:
                 X_train_1, X_test, y_train_1, y_test = train_test_split(inputs_inside, outputs_inside, test_size=0.2, random_state=42)
-                X_train_1, y_train_1 = sampling_data(X_train_1, y_train_1, left_size_train)
+                X_train_1, y_train_1 = sampling_data(X_train_1, y_train_1, left_size_train, method = size_sampling)
             
         else:
             X_train_1, X_test, y_train_1, y_test = train_test_split(inputs_inside, outputs_inside, test_size=0.2, random_state=42)
@@ -95,7 +95,7 @@ def train_model(output,data, size_train = 'all',type_model = 'random_forest',sav
             if size_train > X_train.shape[0]:
                 raise ValueError('The size of the training set is larger than the dataset')
             else:
-                X_train, y_train = sampling_data(X_train, y_train, size_train)
+                X_train, y_train = sampling_data(X_train, y_train, size_train, method = size_sampling)
        # else:
         #    X_train, X_test, y_train, y_test = train_test_split(inputs, outputs, test_size=0.2, random_state=42)
     # Create the model

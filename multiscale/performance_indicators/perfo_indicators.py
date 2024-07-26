@@ -18,18 +18,20 @@ def performance_indicators(alpha,beta,phi,run,filename):
     termination_time = filter_performance.termination_time(mu=0.1)
     time_ev = np.linspace(0,termination_time,201)
     throughput = filter_performance.throughput(tf=time_ev)
-    efficiency,removed_particles,avg_eff, avg_removed_particles = filter_performance.efficiency(t_eval=time_ev)
+    flux_out, flux_out_time = filter_performance.efficiency(t_eval=time_ev)
     lifetime = throughput[-1]
-   # lifetime = filter_performance.throughput(tf =[termination_time])
+    not_removed_particles = flux_out / lifetime
+    retained_time = np.divide(flux_out_time, throughput, out=np.ones_like(flux_out_time), where=throughput!=0)
+    efficiency = 1 - not_removed_particles
+    efficiency_time = 1 - retained_time
     performance_indicators={
             'time' : time_ev.tolist(),
             'termination_time': termination_time,
-            'removed_particles': removed_particles.tolist(),
-            'avg_removed_particles': avg_removed_particles,
             'throughput':throughput.tolist(),
-            'efficiency': efficiency.tolist(),
-            'avg_efficiency': avg_eff,
-            'lifetime': lifetime
+            'lifetime': lifetime,
+            'flux_out_time': flux_out_time.tolist(),
+            'efficiency': efficiency,
+            'efficiency_time': efficiency_time.tolist(),
     }
     return performance_indicators
 
