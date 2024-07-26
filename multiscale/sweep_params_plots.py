@@ -22,7 +22,7 @@ def main(alphas: list, betas: list,phi:float,name:str):
             # Load k_values, j_values, tau_eval
             k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
             darcy_velocity = load_any(alpha,beta, 'darcy_velocity', run = None, filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
-            darcy_velocity = [0 if v < 0.1 else v for v in darcy_velocity] 
+         #   darcy_velocity = [0 if v < 0.1 else v for v in darcy_velocity] 
             concentration  = load_any(alpha,beta,'concentration',run=None,filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
             # Append to respective lists
             k_values_list.append(k_values)
@@ -41,7 +41,7 @@ def main(alphas: list, betas: list,phi:float,name:str):
     save_figure(fig_k, f'multiscale/figures/mono-dispersed/microscale/permeability/k_{name}')
     fig_j = plot_one_dim(tau_values_list[0],j_values_list)
     save_figure(fig_j, f'multiscale/figures/mono-dispersed/microscale/adhesivity/j_{name}')
-    fig_u = plot_one_dim(t_eval, [v for v in u_values_list if v != 0], funct_type='velocity')
+    fig_u = plot_one_dim(t_eval, u_values_list, funct_type='velocity')
     save_figure(fig_u,f'multiscale/figures/mono-dispersed/macroscale/darcy_velocity/varying_parameters/darcy_velocity_{name}')
     fig_c = plot_one_dim(x_eval,c_values_list)
     save_figure(fig_c,f'multiscale/figures/mono-dispersed/macroscale/concentration/varying_parameters/concentration_{name}')
