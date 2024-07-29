@@ -5,8 +5,8 @@ sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression/')
 from utils import open_model
 from models.model_train import  train_model
 sys.path.append('/Users/letiviada/dissertation_mmsc/multiscale/')
-sys.path.append('/home/viadacampos/Documents/dissertation_mmsc/multiscale/')
-from multiscale.plotting import plot_optimum
+sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/multiscale/')
+from plotting import plot_optimum
 import pandas as pd
 
 def get_data_opt_adhesivity_plots(data,name_model,type_model = 'random_forest')->tuple:
@@ -55,5 +55,5 @@ def train_and_plot_opt_adhesivity(model: str,value:int, train:bool, plot: bool, 
         plot_optimum(data_pred,particle_sizes ='all', actual= True, predictions = False, save = True)
 
 if __name__ == '__main__':
-    train_and_plot_opt_adhesivity(model = 'throughput', value = 100, train = True, plot = False, type_model = 'gradient_boosting')
-    train_and_plot_opt_adhesivity(model = 'time', value = 400, train = True, plot = False, type_model = 'gradient_boosting')
+    train_and_plot_opt_adhesivity(model = 'throughput', value = 100, train = False, plot = True, type_model = 'gradient_boosting')
+    train_and_plot_opt_adhesivity(model = 'time', value = 400, train = False, plot = True, type_model = 'gradient_boosting')
