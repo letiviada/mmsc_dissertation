@@ -45,7 +45,7 @@ class FilterPerformance:
         flux = np.multiply(velocity,c_outlet)
         flux_interp = interp1d(self.t_eval,flux,kind='cubic',fill_value='extrapolate')
         total_flux = quad(flux_interp, 0, t_eval[-1])[0]
-        flux_out = np.array([quad(velocity, 0, time, limit = 75)[0] for time in t_eval])
+        flux_out = np.array([quad(flux_interp, 0, time, limit = 75)[0] for time in t_eval])
         #concent_outlet_interp = interp1d(self.t_eval,c_outlet,kind='cubic',fill_value='extrapolate')
         #conc_outlet = concent_outlet_interp(t_eval)
         #removed_particles =  1 - conc_outlet

@@ -5,7 +5,7 @@ import numpy as np
 
 def check_json_files(filename,directory = 'multiscale/results/mono-dispersed/', file_extension = ".json"):
     alpha_values = np.around(np.arange(0.0, 1.05, 0.05), 2)
-    beta_values = np.around(np.arange(0.01, 0.105, 0.005), 3)
+    beta_values = np.around(np.arange(0.01, 0.105, 0.01), 3)
 # Construct the full path to the file
     filepath = os.path.join(directory, filename)
     
