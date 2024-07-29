@@ -10,6 +10,7 @@ def main(alphas: list, betas: list,phi:float,name:str):
     u_values_list =[] 
     tau_values_list = []
     c_values_list = []
+    r_t_values_list = []
     phi = 4.0
     # Get k and j values for each alpha and beta constant
     # ---------------------------------------------------
@@ -22,15 +23,14 @@ def main(alphas: list, betas: list,phi:float,name:str):
             # Load k_values, j_values, tau_eval
             k_values, j_values, tau_eval = load_k_j(alpha, beta,run = None,filename = 'multiscale/results/mono-dispersed/microscale/micro_results.json')
             darcy_velocity = load_any(alpha,beta, 'darcy_velocity', run = None, filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
-         #   darcy_velocity = [0 if v < 0.1 else v for v in darcy_velocity] 
             concentration  = load_any(alpha,beta,'concentration',run=None,filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
+            reactivity = load_any(alpha,beta,'reactivity',run=None,filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
             # Append to respective lists
             k_values_list.append(k_values)
             j_values_list.append(j_values)
-
-
             u_values_list.append(darcy_velocity)
             c_values_list.append(concentration[-1,:])
+            r_t_values_list.append(reactivity[:,-1])
     tau_values_list.append(tau_eval)
     t_eval = load_any(alpha,beta,'time_eval', run = None, filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
     x_eval = load_any(alpha,beta,'x_eval',run = None,filename = f'multiscale/results/mono-dispersed/macroscale/macro_results_phi_{phi}.json')
@@ -45,7 +45,8 @@ def main(alphas: list, betas: list,phi:float,name:str):
     save_figure(fig_u,f'multiscale/figures/mono-dispersed/macroscale/darcy_velocity/varying_parameters/darcy_velocity_{name}')
     fig_c = plot_one_dim(x_eval,c_values_list)
     save_figure(fig_c,f'multiscale/figures/mono-dispersed/macroscale/concentration/varying_parameters/concentration_{name}')
-
+    fig_r_t = plot_one_dim(t_eval,r_t_values_list)
+    save_figure(fig_r_t,f'multiscale/figures/mono-dispersed/macroscale/reactivity/varying_parameters/reactivity_{name}')
 
 if __name__ == '__main__':
     
