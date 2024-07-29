@@ -15,7 +15,7 @@ def dataplots(outputs):
     ----------
     outputs (list): List of output parameters we are interested in
     """
-    data = clean_data(filename = 'performance_indicators/performance_indicators_standard.json')
+    data = clean_data(filename = 'performance_indicators/performance_indicators_standard_basic.json')
     view_data_all_outputs(data,outputs)
     plt.show()
 

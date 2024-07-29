@@ -1,3 +1,4 @@
+
 import pandas as pd
 import numpy as np
 from make_models import  get_physical_model_time
@@ -7,11 +8,11 @@ def time_model_varying_n( n_values, time, filename):
     all_data = pd.DataFrame()
     optimum_values = pd.DataFrame()
     for n in n_values:
-        data = get_physical_model_time(['volume_liquid', 'removed_particles'], time, n, filename)
+        data = get_physical_model_time(['volume_liquid', 'total_concentration'], time, n, filename)
         data_sorted = data.sort_values(['particle_size', 'adhesivity'])
         
         data_sorted['n'] = n 
-        data_sorted.drop(columns = [f'volume_liquid_time_{time}', f'removed_particles_time_{time}'], inplace=True)
+        data_sorted.drop(columns = [f'volume_liquid_time_{time}', f'total_concentration_time_{time}'], inplace=True)
         all_data = pd.concat([all_data, data_sorted], ignore_index=True)
         for particle_size in data_sorted['particle_size'].unique():
             filtered_df = data_sorted[data_sorted['particle_size'] == particle_size]
@@ -22,8 +23,8 @@ def time_model_varying_n( n_values, time, filename):
     
     all_data = all_data[['adhesivity', 'particle_size', 'n', 'product']]
     optimum_values = optimum_values[['adhesivity', 'particle_size', 'n']]
-    save_data_to_csv(all_data,'optimization_time/data', 'data_varying_n.csv')  
-    save_data_to_csv(optimum_values,'optimization_time/data', 'optimum_values.csv')
+    save_data_to_csv(all_data,'opt_time/data', 'data_varying_n.csv')  
+    save_data_to_csv(optimum_values,'opt_time/data', 'optimum_values.csv')
     return all_data
 
 if __name__ == '__main__':
