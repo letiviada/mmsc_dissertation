@@ -452,3 +452,31 @@ Performance Indicators computation time: 0 minutes and 0 seconds
 Combining results time: 0 minutes and 1 seconds
 Total execution time: 4 minutes and 52 seconds
 Done!
+Fitting 5 folds for each of 224 candidates, totalling 1120 fits
+Best parameters: Pipeline(steps=[('polynomialfeatures', PolynomialFeatures(degree=np.int64(5))),
+                ('ridge', Ridge(alpha=np.float64(1e-10)))]) with score 0.9988325073548976
+Mean squared error: 3.8939712586179307
+R2 score for test: 0.9990238901030943
+Model saved at regression/models_polynomial/total_throughput/model_total_throughput.pkl
+Model saved at regression/models_polynomial/total_throughput/test_data.pkl
+Model saved at regression/models_polynomial/total_throughput/train_data.pkl
+Model saved at regression/models_polynomial/total_throughput/total_data.pkl
+Fitting 8 folds for each of 99 candidates, totalling 792 fits
+Best parameters: RandomForestRegressor(ccp_alpha=np.float64(0.0), max_depth=10, n_estimators=200,
+                      random_state=42) with score 0.964078182111767
+Mean squared error: 55.809037062390615
+R2 score for test: 0.9879912303513885
+Model saved at regression/models_random_forest/total_throughput/model_total_throughput.pkl
+Model saved at regression/models_random_forest/total_throughput/test_data.pkl
+Model saved at regression/models_random_forest/total_throughput/train_data.pkl
+Model saved at regression/models_random_forest/total_throughput/total_data.pkl
+Fitting 10 folds for each of 225 candidates, totalling 2250 fits
+Best parameters: GradientBoostingRegressor(learning_rate=np.float64(0.05), max_depth=6,
+                          n_estimators=300, random_state=42,
+                          subsample=np.float64(0.2)) with score 0.9938612405014859
+Mean squared error: 10.679612431527273
+R2 score for test: 0.9977020028945619
+Model saved at regression/models_gradient_boosting/total_throughput/model_total_throughput.pkl
+Model saved at regression/models_gradient_boosting/total_throughput/test_data.pkl
+Model saved at regression/models_gradient_boosting/total_throughput/train_data.pkl
+Model saved at regression/models_gradient_boosting/total_throughput/total_data.pkl
