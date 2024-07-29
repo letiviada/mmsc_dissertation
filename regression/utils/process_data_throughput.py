@@ -24,12 +24,12 @@ def data_throughput(throughput:float, data: pd.DataFrame) -> pd.DataFrame:
     for index in filter_working_indices:
         row = data.loc[index]
         interp_func_time = create_interp(row, 'throughput','time')
-        interp_func_efficiency = create_interp(row,'time', 'efficiency_time')
+        interp_func_flux_out = create_interp(row,'time', 'flux_out_time')
         time_throughput = interp_func_time(throughput) if interp_func_time is not None else np.nan
         data.at[index, f'time_throughput_{throughput}'] = time_throughput
         if row['adhesivity'] == 0.0:
-            data.at[index, f'avg_retained_particles_throughput_{throughput}'] = 0.0
+            data.at[index, f'avg_retained_particles_throughput_{throughput}'] = 1.0
         else:
-            data.at[index, f'avg_retained_particles_throughput_{throughput}'] = (quad(interp_func_efficiency, 0,time_throughput)[0]) / time_throughput if interp_func_efficiency is not None else np.nan
+            data.at[index, f'avg_retained_particles_throughput_{throughput}'] = (interp_func_flux_out(time_throughput)) / throughput if interp_func_flux_out is not None else np.nan
     data_sorted = data.sort_values(['particle_size', 'adhesivity'])          
     return data_sorted

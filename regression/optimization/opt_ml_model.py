@@ -44,7 +44,7 @@ def train_and_plot_opt_adhesivity(model: str,value:int, train:bool, plot: bool, 
     
     """
     data = pd.read_csv(f'regression/optimization/opt_{model}/data/{model}_{value}/optimum_values.csv')
-    output = 'adhesivity'
+    output = f'adhesivity_{model}_{value}'
 
     if train ==True:
         train_model(output, data, size_train = 'all', type_model = type_model, save = True)
@@ -56,4 +56,4 @@ def train_and_plot_opt_adhesivity(model: str,value:int, train:bool, plot: bool, 
 
 if __name__ == '__main__':
    # train_and_plot_opt_adhesivity(model = 'throughput', value = 100, train = False, plot = False, type_model = 'gradient_boosting')
-    train_and_plot_opt_adhesivity(model = 'time', value = 400, train = False, plot = False, type_model = 'gradient_boosting')
+    train_and_plot_opt_adhesivity(model = 'time', value = 400, train = False, plot = True, type_model = 'gradient_boosting')

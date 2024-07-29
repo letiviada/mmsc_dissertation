@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 import matplotlib.pyplot as plt
 
-filename = f'regression/opt_throughput/data/throughput_100/data_for_sums.csv'
+filename = f'regression/optimization/opt_throughput/data/throughput_100/data_for_sums.csv'
 data = pd.read_csv(filename)
 
 
@@ -40,6 +40,6 @@ for time_weight in weight_combinations:
 # Convert results to DataFrame for easier plotting
 results_df = pd.DataFrame(results, columns=['n', 'adhesivity', 'Optimal Time', 'Optimal Retained', 'Optimal Score'])
 results_df['particle_size'] = 0.06
-results_df.to_csv('regression/opt_throughput/data/throughput_100/results_sum.csv', index=False)
+results_df.to_csv('regression/optimization/opt_throughput/data/throughput_100/results_sum.csv', index=False)
 
 

@@ -36,7 +36,7 @@ def main(output_variable, name_eval, type_model,filename):
 
 if __name__ == '__main__':
     names =['train']
-    filename = 'performance_indicators/performance_indicators_phi_4.0.json'
+    filename = 'performance_indicators/performance_indicators_standard_basic.json'
     #output_variable = 'volume_liquid_time_400'
     output_variables = ['termination_time', 'total_throughput','efficiency']
 

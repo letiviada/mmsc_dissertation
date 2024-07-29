@@ -141,7 +141,7 @@ def model_plot_with_lines_and_scatter(inputs, outputs, name, type_model, data_li
     for i, beta_value in enumerate(ps2_unique_keys):
         sorted_data_line = data_lines[data_lines['particle_size'] == beta_value].sort_values('adhesivity')
         ax[0].plot(sorted_data_line['adhesivity'], sorted_data_line[name], color=color_mapping[beta_value])
-    
+    ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left')
     plt.tight_layout()
     name_save = name.replace(" ", "_").lower()
     save_figure(fig, f'regression/figures/data_{type_model}/{name_save}/solution_{name_save}_with_lines')
@@ -185,6 +185,7 @@ def opt_ml(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lin
     ax[0].set_xlabel('')
     ax[0].set_ylabel('')
     ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left')
+    ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left', bbox_transform=plt.gcf().transFigure)
     plt.tight_layout()
     if save == True:
         if predictions == True and lines == True:
