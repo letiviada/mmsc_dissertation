@@ -23,13 +23,14 @@ def time_model_varying_n( n_values, time, filename):
     
     all_data = all_data[['adhesivity', 'particle_size', 'n', 'product']]
     optimum_values = optimum_values[['adhesivity', 'particle_size', 'n']]
-    save_data_to_csv(all_data,'opt_time/data', 'data_varying_n.csv')  
-    save_data_to_csv(optimum_values,'opt_time/data', 'optimum_values.csv')
+    optimum_values.rename(columns={'adhesivity': f'adhesivity_time_{time}'}, inplace=True)
+    save_data_to_csv(all_data,f'optimization/opt_time/data/time_{time}', 'data_varying_n.csv')  
+    save_data_to_csv(optimum_values,f'optimization/opt_time/data/time_{time}', 'optimum_values.csv')
     return all_data
 
 if __name__ == '__main__':
     # Define the parameters
-    filename = 'performance_indicators/performance_indicators_standard_basic.json'
+    filename = 'performance_indicators/performance_indicators_opt.json'
     time = 400
     n_values = np.arange(0.01,3,0.01).round(2)
     

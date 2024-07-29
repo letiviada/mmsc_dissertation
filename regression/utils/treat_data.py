@@ -56,7 +56,7 @@ def data_time(time:int, names:list, data: pd.DataFrame) -> pd.DataFrame:
                 row = data.loc[index]
                 interp_func = create_interp(row, 'time','efficiency_time')
                 if row['adhesivity'] == 0.0:
-                    data.at[index, f'{name}_time_{time}'] = 1
+                    data.at[index, f'{name}_time_{time}'] = 0.0
                 else:
                     data.at[index, f'{name}_time_{time}'] = interp_func(time) if interp_func is not None else np.nan
     return data

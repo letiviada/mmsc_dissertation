@@ -44,7 +44,7 @@ def train_and_plot_opt_adhesivity(model: str,value:int, train:bool, plot: bool, 
     
     """
     data = pd.read_csv(f'regression/optimization/opt_{model}/data/{model}_{value}/optimum_values.csv')
-    output = f'adhesivity'
+    output = f'adhesivity_{model}_{value}'
 
     if train ==True:
         train_model(output, data, size_train = 'all', type_model = type_model, save = True)
