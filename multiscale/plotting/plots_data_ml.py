@@ -257,7 +257,7 @@ def plot_optimal_adhesivity(particle_sizes,n_values, data, time):
     save_figure(fig, f'regression/figures/optimization/particle_size_{particle_size}/optimal_adhesivity')
     plt.show()
 
-def plot_optimum(data:pd.DataFrame,particle_sizes : list = 'all', actual: bool = True, predictions: bool = True, save: bool = True):    
+def plot_optimum(data:pd.DataFrame,model_value:str,particle_sizes : list = 'all',  actual: bool = True, predictions: bool = True, save: bool = True):    
     """
     Function that plots the optimum for adhesivity for the different particle sizes.
 
@@ -283,12 +283,12 @@ def plot_optimum(data:pd.DataFrame,particle_sizes : list = 'all', actual: bool =
         fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
         filtered_data = data[data['particle_size'] == part_size]
         if actual == True:
-            ax[0].scatter(filtered_data['n'], filtered_data['adhesivity'], color = color_mapping[part_size], label = 'Physical Model')
+            ax[0].scatter(filtered_data['n'], filtered_data[f'adhesivity_{model_value}'], color = color_mapping[part_size], label = 'Physical Model')
         if predictions == True:
             ax[0].scatter(filtered_data['n'], filtered_data['adhesivity_predictions'], marker = 'x', color = color_mapping[part_size], label = 'ML Model')
-            filename = f'regression/figures/optimization/optimal_adhesivity/particle_size_{part_size}_ml'
+            filename = f'regression/figures/optimization/optimal_adhesivity_{model_value}/particle_size_{part_size}_ml'
         else: 
-            filename = f'regression/figures/optimization/optimal_adhesivity/particle_size_{part_size}'
+            filename = f'regression/figures/optimization/optimal_adhesivity_{model_value}/particle_size_{part_size}'
         sns.despine()
         if save == True:
             ax[0].legend(loc = 'lower right', bbox_to_anchor=(1.05, 1))

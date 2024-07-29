@@ -23,7 +23,7 @@ def get_data_opt_adhesivity_plots(data,name_model,type_model = 'random_forest')-
     """
     model_path = f'regression/models_{type_model}/'
     ml_model = open_model(f'adhesivity_{name_model}',model_path=model_path)
-    inputs = data.drop('adhesivity', axis=1)
+    inputs = data.drop(f'adhesivity_{name_model}', axis=1)
     predictions = ml_model.predict(inputs)
     data['adhesivity_predictions'] = predictions
     return  data, ml_model
@@ -50,10 +50,11 @@ def train_and_plot_opt_adhesivity(model: str,value:int, train:bool, plot: bool, 
         train_model(output, data, size_train = 'all', type_model = type_model, save = True)
 
     if plot == True:
-        data_pred, model = get_data_opt_adhesivity_plots(data, name_model = f'{model}_{value}',type_model = type_model)
+        data_pred, model1 = get_data_opt_adhesivity_plots(data, name_model = f'{model}_{value}',type_model = type_model)
         # Plot the data
-        plot_optimum(data_pred,particle_sizes ='all', actual= True, predictions = False, save = True)
+        model_value =  f'{model}_{value}'
+        plot_optimum(data_pred,model_value,particle_sizes ='all', actual= True, predictions = False, save = True)
 
 if __name__ == '__main__':
     train_and_plot_opt_adhesivity(model = 'throughput', value = 100, train = False, plot = True, type_model = 'gradient_boosting')
-    train_and_plot_opt_adhesivity(model = 'time', value = 400, train = False, plot = True, type_model = 'gradient_boosting')
+    train_and_plot_opt_adhesivity(model = 'time', value = 400, train = True, plot = True, type_model = 'gradient_boosting')
