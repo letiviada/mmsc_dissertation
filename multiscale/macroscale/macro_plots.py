@@ -2,6 +2,7 @@ import argparse
 import numpy as np
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc')
+sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 from multiscale.plotting import plot_time, save_figure, plot_one_dim
 import matplotlib.pyplot as plt
 from multiscale.utils import load_any
@@ -10,14 +11,14 @@ from tqdm import tqdm
 
 def main(alpha,beta,phi,filename,parameter):
     # Load values
-    t_eval = load_any(alpha,beta,'time_eval',run = 0,filename=filename)
-    x_eval = load_any(alpha,beta,'x_eval',run =0,filename= filename)
+    t_eval = load_any(alpha,beta,'time_eval',run = None,filename=filename)
+    x_eval = load_any(alpha,beta,'x_eval',run = None,filename= filename)
      # Time points of interest
-    time_points = [0,10, 50, 100, 250, 500, 750, 1000, 1250,1500]
+    time_points = [0,50,100,150,200,250,300,350,400,450]
     # Find indices of the time points in t_eval
     indices = [np.abs(t_eval - t_point).argmin() for t_point in time_points]
 
-    param = load_any(alpha,beta,parameter,run = 0,filename=filename)
+    param = load_any(alpha,beta,parameter,run = None,filename=filename)
     if parameter == 'darcy_velocity':
         u=param
         fig =  plot_one_dim(t_eval, [u],funct_type='velocity')
@@ -60,7 +61,7 @@ if __name__ == '__main__':
     alpha_beta_pairs = alpha_beta_pairs(args.alpha_values, args.beta_values)
     parameters=["auxiliar_variable", "concentration", "darcy_velocity",
                  "permeability", "adhesivity", "reactivity"]
-    parameters=["reactivity","darcy_velocity"]
+    #parameters=["reactivity","darcy_velocity"]
     for alpha, beta in tqdm(alpha_beta_pairs):
         for parameter in tqdm(parameters):
             main(alpha, beta, args.phi,f'multiscale/results/mono-dispersed/macroscale/macro_results_plots.json',parameter)

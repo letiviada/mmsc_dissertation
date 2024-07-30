@@ -4,10 +4,10 @@
 # Define values for alpha and beta
 #
 
-alphas=$(seq 0.0 0.05 1.0)
+alphas=$(seq 0.0 0.1 1.0)
 betas=$(seq 0.01 0.01 0.1)
-#betas=(0.09)
-#alphas=(0.9)
+#betas=(0.02)
+#alphas=(0.6)
 phis=(4.0)
 num_runs=1
 

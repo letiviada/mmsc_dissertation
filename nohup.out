@@ -1,485 +1,3 @@
-Running micro simulation...
-Micro computation time: 0 minutes and 31 seconds
-Combining micro_results time: 0 minutes and 8 seconds
-Running macro simulation...
-Alpha: 0.3, Beta: 0.04, Phi: 4.0 Time elapsed: 3.286224126815796 seconds
-Alpha: 0.3, Beta: 0.08, Phi: 4.0 Time elapsed: 2.5646047592163086 seconds
-Alpha: 0.35, Beta: 0.07, Phi: 4.0 Time elapsed: 2.435716390609741 seconds
-Alpha: 0.4, Beta: 0.04, Phi: 4.0 Time elapsed: 2.4870598316192627 seconds
-Alpha: 0.45, Beta: 0.01, Phi: 4.0 Time elapsed: 2.448669672012329 seconds
-Alpha: 0.45, Beta: 0.09, Phi: 4.0 Time elapsed: 2.4431145191192627 seconds
-Alpha: 0.5, Beta: 0.06, Phi: 4.0 Time elapsed: 2.4880526065826416 seconds
-Alpha: 0.55, Beta: 0.03, Phi: 4.0 Time elapsed: 2.502000570297241 seconds
-Alpha: 0.55, Beta: 0.1, Phi: 4.0 Time elapsed: 2.4255385398864746 seconds
-Alpha: 0.6, Beta: 0.08, Phi: 4.0 Time elapsed: 2.3618698120117188 seconds
-Alpha: 0.65, Beta: 0.04, Phi: 4.0 Time elapsed: 2.344122886657715 seconds
-Alpha: 0.7, Beta: 0.02, Phi: 4.0 Time elapsed: 2.2928695678710938 seconds
-Alpha: 0.7, Beta: 0.08, Phi: 4.0 Time elapsed: 2.418658494949341 seconds
-Alpha: 0.75, Beta: 0.06, Phi: 4.0 Time elapsed: 2.2942912578582764 seconds
-Alpha: 0.8, Beta: 0.02, Phi: 4.0 Time elapsed: 2.2154319286346436 seconds
-Alpha: 0.8, Beta: 0.09, Phi: 4.0 Time elapsed: 2.3575546741485596 seconds
-Alpha: 0.85, Beta: 0.06, Phi: 4.0 Time elapsed: 2.566328525543213 seconds
-Alpha: 0.9, Beta: 0.03, Phi: 4.0 Time elapsed: 2.423811435699463 seconds
-Alpha: 0.9, Beta: 0.1, Phi: 4.0 Time elapsed: 2.519270181655884 seconds
-Alpha: 0.95, Beta: 0.07, Phi: 4.0 Time elapsed: 2.5907864570617676 seconds
-Alpha: 1.0, Beta: 0.04, Phi: 4.0 Time elapsed: 2.3832247257232666 seconds
-Alpha: 0.3, Beta: 0.01, Phi: 4.0 Time elapsed: 3.5354552268981934 seconds
-Alpha: 0.35, Beta: 0.03, Phi: 4.0 Time elapsed: 2.474268674850464 seconds
-Alpha: 0.35, Beta: 0.09, Phi: 4.0 Time elapsed: 2.644648551940918 seconds
-Alpha: 0.4, Beta: 0.08, Phi: 4.0 Time elapsed: 2.4229629039764404 seconds
-Alpha: 0.45, Beta: 0.04, Phi: 4.0 Time elapsed: 2.592437505722046 seconds
-Alpha: 0.5, Beta: 0.01, Phi: 4.0 Time elapsed: 2.236690044403076 seconds
-Alpha: 0.5, Beta: 0.08, Phi: 4.0 Time elapsed: 2.4196133613586426 seconds
-Alpha: 0.55, Beta: 0.05, Phi: 4.0 Time elapsed: 2.2792742252349854 seconds
-Alpha: 0.6, Beta: 0.01, Phi: 4.0 Time elapsed: 2.205970048904419 seconds
-Alpha: 0.6, Beta: 0.07, Phi: 4.0 Time elapsed: 2.5326762199401855 seconds
-Alpha: 0.65, Beta: 0.05, Phi: 4.0 Time elapsed: 2.3452444076538086 seconds
-Alpha: 0.7, Beta: 0.01, Phi: 4.0 Time elapsed: 2.4910435676574707 seconds
-Alpha: 0.7, Beta: 0.09, Phi: 4.0 Time elapsed: 2.2939493656158447 seconds
-Alpha: 0.75, Beta: 0.05, Phi: 4.0 Time elapsed: 2.7373642921447754 seconds
-Alpha: 0.8, Beta: 0.03, Phi: 4.0 Time elapsed: 2.605414628982544 seconds
-Alpha: 0.8, Beta: 0.1, Phi: 4.0 Time elapsed: 2.4402472972869873 seconds
-Alpha: 0.85, Beta: 0.07, Phi: 4.0 Time elapsed: 2.715871810913086 seconds
-Alpha: 0.9, Beta: 0.04, Phi: 4.0 Time elapsed: 2.578155040740967 seconds
-Alpha: 0.95, Beta: 0.01, Phi: 4.0 Time elapsed: 2.5573415756225586 seconds
-Alpha: 0.95, Beta: 0.08, Phi: 4.0 Time elapsed: 2.618720531463623 seconds
-Alpha: 1.0, Beta: 0.05, Phi: 4.0 Time elapsed: 2.28334379196167 seconds
-Alpha: 0.3, Beta: 0.03, Phi: 4.0 Time elapsed: 3.5935466289520264 seconds
-Alpha: 0.35, Beta: 0.04, Phi: 4.0 Time elapsed: 2.5208656787872314 seconds
-Alpha: 0.4, Beta: 0.01, Phi: 4.0 Time elapsed: 2.416105031967163 seconds
-Alpha: 0.4, Beta: 0.07, Phi: 4.0 Time elapsed: 2.566338300704956 seconds
-Alpha: 0.45, Beta: 0.05, Phi: 4.0 Time elapsed: 2.541724681854248 seconds
-Alpha: 0.5, Beta: 0.02, Phi: 4.0 Time elapsed: 2.5856857299804688 seconds
-Alpha: 0.5, Beta: 0.09, Phi: 4.0 Time elapsed: 2.2299139499664307 seconds
-Alpha: 0.55, Beta: 0.06, Phi: 4.0 Time elapsed: 2.2497446537017822 seconds
-Alpha: 0.6, Beta: 0.03, Phi: 4.0 Time elapsed: 2.402404546737671 seconds
-Alpha: 0.6, Beta: 0.1, Phi: 4.0 Time elapsed: 2.4079530239105225 seconds
-Alpha: 0.65, Beta: 0.07, Phi: 4.0 Time elapsed: 2.329796552658081 seconds
-Alpha: 0.7, Beta: 0.04, Phi: 4.0 Time elapsed: 2.231492280960083 seconds
-Alpha: 0.75, Beta: 0.01, Phi: 4.0 Time elapsed: 2.317692518234253 seconds
-Alpha: 0.75, Beta: 0.08, Phi: 4.0 Time elapsed: 2.7109978199005127 seconds
-Alpha: 0.8, Beta: 0.05, Phi: 4.0 Time elapsed: 2.5651986598968506 seconds
-Alpha: 0.85, Beta: 0.01, Phi: 4.0 Time elapsed: 2.6930742263793945 seconds
-Alpha: 0.85, Beta: 0.09, Phi: 4.0 Time elapsed: 2.511612892150879 seconds
-Alpha: 0.9, Beta: 0.05, Phi: 4.0 Time elapsed: 2.5909652709960938 seconds
-Alpha: 0.95, Beta: 0.02, Phi: 4.0 Time elapsed: 2.465618371963501 seconds
-Alpha: 0.95, Beta: 0.09, Phi: 4.0 Time elapsed: 2.4975242614746094 seconds
-Alpha: 1.0, Beta: 0.06, Phi: 4.0 Time elapsed: 2.321739912033081 seconds
-Alpha: 0.3, Beta: 0.06, Phi: 4.0 Time elapsed: 3.4219789505004883 seconds
-Alpha: 0.3, Beta: 0.1, Phi: 4.0 Time elapsed: 2.525583505630493 seconds
-Alpha: 0.35, Beta: 0.08, Phi: 4.0 Time elapsed: 2.398639440536499 seconds
-Alpha: 0.4, Beta: 0.03, Phi: 4.0 Time elapsed: 2.508685827255249 seconds
-Alpha: 0.4, Beta: 0.1, Phi: 4.0 Time elapsed: 2.6680657863616943 seconds
-Alpha: 0.45, Beta: 0.1, Phi: 4.0 Time elapsed: 2.428783655166626 seconds
-Alpha: 0.5, Beta: 0.07, Phi: 4.0 Time elapsed: 2.477893114089966 seconds
-Alpha: 0.55, Beta: 0.04, Phi: 4.0 Time elapsed: 2.543412685394287 seconds
-Alpha: 0.6, Beta: 0.02, Phi: 4.0 Time elapsed: 2.443614959716797 seconds
-Alpha: 0.6, Beta: 0.09, Phi: 4.0 Time elapsed: 2.318181037902832 seconds
-Alpha: 0.65, Beta: 0.06, Phi: 4.0 Time elapsed: 2.4750847816467285 seconds
-Alpha: 0.7, Beta: 0.03, Phi: 4.0 Time elapsed: 2.3583734035491943 seconds
-Alpha: 0.7, Beta: 0.1, Phi: 4.0 Time elapsed: 2.33012318611145 seconds
-Alpha: 0.75, Beta: 0.07, Phi: 4.0 Time elapsed: 2.473475694656372 seconds
-Alpha: 0.8, Beta: 0.04, Phi: 4.0 Time elapsed: 2.7562010288238525 seconds
-Alpha: 0.85, Beta: 0.02, Phi: 4.0 Time elapsed: 2.6028361320495605 seconds
-Alpha: 0.85, Beta: 0.08, Phi: 4.0 Time elapsed: 2.6274795532226562 seconds
-Alpha: 0.9, Beta: 0.06, Phi: 4.0 Time elapsed: 2.615354299545288 seconds
-Alpha: 0.95, Beta: 0.03, Phi: 4.0 Time elapsed: 2.430966854095459 seconds
-Alpha: 0.95, Beta: 0.1, Phi: 4.0 Time elapsed: 2.6995460987091064 seconds
-Alpha: 1.0, Beta: 0.07, Phi: 4.0 Time elapsed: 2.295889139175415 seconds
-Alpha: 0.3, Beta: 0.02, Phi: 4.0 Time elapsed: 3.49035382270813 seconds
-Alpha: 0.35, Beta: 0.02, Phi: 4.0 Time elapsed: 2.568225622177124 seconds
-Alpha: 0.35, Beta: 0.1, Phi: 4.0 Time elapsed: 2.3160972595214844 seconds
-Alpha: 0.4, Beta: 0.06, Phi: 4.0 Time elapsed: 2.5042998790740967 seconds
-Alpha: 0.45, Beta: 0.03, Phi: 4.0 Time elapsed: 2.325654983520508 seconds
-Alpha: 0.45, Beta: 0.07, Phi: 4.0 Time elapsed: 2.3659369945526123 seconds
-Alpha: 0.5, Beta: 0.04, Phi: 4.0 Time elapsed: 2.2389423847198486 seconds
-Alpha: 0.55, Beta: 0.01, Phi: 4.0 Time elapsed: 2.175333023071289 seconds
-Alpha: 0.55, Beta: 0.08, Phi: 4.0 Time elapsed: 2.4840853214263916 seconds
-Alpha: 0.6, Beta: 0.05, Phi: 4.0 Time elapsed: 2.3933427333831787 seconds
-Alpha: 0.65, Beta: 0.02, Phi: 4.0 Time elapsed: 2.1577935218811035 seconds
-Alpha: 0.65, Beta: 0.09, Phi: 4.0 Time elapsed: 2.3076915740966797 seconds
-Alpha: 0.7, Beta: 0.06, Phi: 4.0 Time elapsed: 2.359018087387085 seconds
-Alpha: 0.75, Beta: 0.02, Phi: 4.0 Time elapsed: 2.4365251064300537 seconds
-Alpha: 0.75, Beta: 0.09, Phi: 4.0 Time elapsed: 2.485002040863037 seconds
-Alpha: 0.8, Beta: 0.07, Phi: 4.0 Time elapsed: 2.5084340572357178 seconds
-Alpha: 0.85, Beta: 0.05, Phi: 4.0 Time elapsed: 2.582350730895996 seconds
-Alpha: 0.9, Beta: 0.01, Phi: 4.0 Time elapsed: 2.427537679672241 seconds
-Alpha: 0.9, Beta: 0.08, Phi: 4.0 Time elapsed: 2.332866668701172 seconds
-Alpha: 0.95, Beta: 0.04, Phi: 4.0 Time elapsed: 2.4643635749816895 seconds
-Alpha: 1.0, Beta: 0.01, Phi: 4.0 Time elapsed: 2.4060909748077393 seconds
-Alpha: 1.0, Beta: 0.08, Phi: 4.0 Time elapsed: 2.1653289794921875 seconds
-Alpha: 0.3, Beta: 0.05, Phi: 4.0 Time elapsed: 3.476285219192505 seconds
-Alpha: 0.35, Beta: 0.01, Phi: 4.0 Time elapsed: 2.353520631790161 seconds
-Alpha: 0.35, Beta: 0.06, Phi: 4.0 Time elapsed: 2.4562714099884033 seconds
-Alpha: 0.4, Beta: 0.02, Phi: 4.0 Time elapsed: 2.5084197521209717 seconds
-Alpha: 0.4, Beta: 0.09, Phi: 4.0 Time elapsed: 2.50789737701416 seconds
-Alpha: 0.45, Beta: 0.08, Phi: 4.0 Time elapsed: 2.4208760261535645 seconds
-Alpha: 0.5, Beta: 0.05, Phi: 4.0 Time elapsed: 2.4477388858795166 seconds
-Alpha: 0.55, Beta: 0.02, Phi: 4.0 Time elapsed: 2.3960518836975098 seconds
-Alpha: 0.55, Beta: 0.09, Phi: 4.0 Time elapsed: 2.3839709758758545 seconds
-Alpha: 0.6, Beta: 0.06, Phi: 4.0 Time elapsed: 2.2889785766601562 seconds
-Alpha: 0.65, Beta: 0.03, Phi: 4.0 Time elapsed: 2.3716206550598145 seconds
-Alpha: 0.65, Beta: 0.1, Phi: 4.0 Time elapsed: 2.3381381034851074 seconds
-Alpha: 0.7, Beta: 0.07, Phi: 4.0 Time elapsed: 2.3222222328186035 seconds
-Alpha: 0.75, Beta: 0.04, Phi: 4.0 Time elapsed: 2.3482134342193604 seconds
-Alpha: 0.8, Beta: 0.01, Phi: 4.0 Time elapsed: 2.2536184787750244 seconds
-Alpha: 0.8, Beta: 0.08, Phi: 4.0 Time elapsed: 2.4488108158111572 seconds
-Alpha: 0.85, Beta: 0.04, Phi: 4.0 Time elapsed: 2.6421802043914795 seconds
-Alpha: 0.9, Beta: 0.02, Phi: 4.0 Time elapsed: 2.459815502166748 seconds
-Alpha: 0.9, Beta: 0.09, Phi: 4.0 Time elapsed: 2.5615077018737793 seconds
-Alpha: 0.95, Beta: 0.05, Phi: 4.0 Time elapsed: 2.5340824127197266 seconds
-Alpha: 1.0, Beta: 0.02, Phi: 4.0 Time elapsed: 2.5136537551879883 seconds
-Alpha: 1.0, Beta: 0.1, Phi: 4.0 Time elapsed: 2.1626219749450684 seconds
-Alpha: 0.3, Beta: 0.07, Phi: 4.0 Time elapsed: 3.1886651515960693 seconds
-Alpha: 0.3, Beta: 0.09, Phi: 4.0 Time elapsed: 2.2890167236328125 seconds
-Alpha: 0.35, Beta: 0.05, Phi: 4.0 Time elapsed: 2.6694042682647705 seconds
-Alpha: 0.4, Beta: 0.05, Phi: 4.0 Time elapsed: 2.4200408458709717 seconds
-Alpha: 0.45, Beta: 0.02, Phi: 4.0 Time elapsed: 2.285871744155884 seconds
-Alpha: 0.45, Beta: 0.06, Phi: 4.0 Time elapsed: 2.2167341709136963 seconds
-Alpha: 0.5, Beta: 0.03, Phi: 4.0 Time elapsed: 2.2319583892822266 seconds
-Alpha: 0.5, Beta: 0.1, Phi: 4.0 Time elapsed: 2.2859442234039307 seconds
-Alpha: 0.55, Beta: 0.07, Phi: 4.0 Time elapsed: 2.2954459190368652 seconds
-Alpha: 0.6, Beta: 0.04, Phi: 4.0 Time elapsed: 2.2819175720214844 seconds
-Alpha: 0.65, Beta: 0.01, Phi: 4.0 Time elapsed: 2.29901385307312 seconds
-Alpha: 0.65, Beta: 0.08, Phi: 4.0 Time elapsed: 2.396540880203247 seconds
-Alpha: 0.7, Beta: 0.05, Phi: 4.0 Time elapsed: 2.5289087295532227 seconds
-Alpha: 0.75, Beta: 0.03, Phi: 4.0 Time elapsed: 2.458078622817993 seconds
-Alpha: 0.75, Beta: 0.1, Phi: 4.0 Time elapsed: 2.25532603263855 seconds
-Alpha: 0.8, Beta: 0.06, Phi: 4.0 Time elapsed: 2.463749647140503 seconds
-Alpha: 0.85, Beta: 0.03, Phi: 4.0 Time elapsed: 2.480191230773926 seconds
-Alpha: 0.85, Beta: 0.1, Phi: 4.0 Time elapsed: 2.479773998260498 seconds
-Alpha: 0.9, Beta: 0.07, Phi: 4.0 Time elapsed: 2.6610960960388184 seconds
-Alpha: 0.95, Beta: 0.06, Phi: 4.0 Time elapsed: 2.519320487976074 seconds
-Alpha: 1.0, Beta: 0.03, Phi: 4.0 Time elapsed: 2.448557138442993 seconds
-Alpha: 1.0, Beta: 0.09, Phi: 4.0 Time elapsed: 2.1662795543670654 seconds
-Macro computation time: 1 minutes and 6 seconds
-Combining results time: 1 minutes and 20 seconds
-Running performance indicators computation...
-Running micro simulation...
-Alpha: 0.3, Beta: 0.02, Phi: 4.0 Time elapsed: 108.43594598770142 seconds
-Alpha: 0.3, Beta: 0.1, Phi: 4.0 Time elapsed: 103.73175740242004 seconds
-Alpha: 0.35, Beta: 0.06, Phi: 4.0 Time elapsed: 105.38890218734741 seconds
-Alpha: 0.4, Beta: 0.08, Phi: 4.0 Time elapsed: 105.04567813873291 seconds
-Alpha: 0.45, Beta: 0.02, Phi: 4.0 Time elapsed: 102.55383920669556 seconds
-Alpha: 0.45, Beta: 0.1, Phi: 4.0 Time elapsed: 95.96863460540771 seconds
-Alpha: 0.5, Beta: 0.06, Phi: 4.0 Time elapsed: 102.72500491142273 seconds
-Alpha: 0.55, Beta: 0.04, Phi: 4.0 Time elapsed: 100.78436803817749 seconds
-Alpha: 0.55, Beta: 0.09, Phi: 4.0 Time elapsed: 101.49834680557251 seconds
-Alpha: 0.6, Beta: 0.07, Phi: 4.0 Time elapsed: 96.79391932487488 seconds
-Alpha: 0.65, Beta: 0.02, Phi: 4.0 Time elapsed: 107.47276139259338 seconds
-Alpha: 0.7, Beta: 0.03, Phi: 4.0 Time elapsed: 101.2532045841217 seconds
-Alpha: 0.7, Beta: 0.06, Phi: 4.0 Time elapsed: 101.12288451194763 seconds
-Alpha: 0.75, Beta: 0.06, Phi: 4.0 Time elapsed: 107.39357542991638 seconds
-Alpha: 0.8, Beta: 0.02, Phi: 4.0 Time elapsed: 111.25572085380554 seconds
-Alpha: 0.8, Beta: 0.07, Phi: 4.0 Time elapsed: 123.25246453285217 seconds
-Alpha: 0.85, Beta: 0.04, Phi: 4.0 Time elapsed: 106.18891263008118 seconds
-Alpha: 0.9, Beta: 0.04, Phi: 4.0 Time elapsed: 114.2649438381195 seconds
-Alpha: 0.9, Beta: 0.09, Phi: 4.0 Time elapsed: 109.54508900642395 seconds
-Alpha: 0.95, Beta: 0.06, Phi: 4.0 Time elapsed: 109.78761053085327 seconds
-Alpha: 1.0, Beta: 0.01, Phi: 4.0 Time elapsed: 127.58315849304199 seconds
-Alpha: 0.3, Beta: 0.04, Phi: 4.0 Time elapsed: 111.20688581466675 seconds
-Alpha: 0.35, Beta: 0.03, Phi: 4.0 Time elapsed: 104.1395161151886 seconds
-Alpha: 0.4, Beta: 0.01, Phi: 4.0 Time elapsed: 101.32831120491028 seconds
-Alpha: 0.4, Beta: 0.05, Phi: 4.0 Time elapsed: 110.26129627227783 seconds
-Alpha: 0.45, Beta: 0.04, Phi: 4.0 Time elapsed: 97.3620297908783 seconds
-Alpha: 0.45, Beta: 0.09, Phi: 4.0 Time elapsed: 99.73748016357422 seconds
-Alpha: 0.5, Beta: 0.08, Phi: 4.0 Time elapsed: 99.03336787223816 seconds
-Alpha: 0.55, Beta: 0.01, Phi: 4.0 Time elapsed: 103.97381162643433 seconds
-Alpha: 0.6, Beta: 0.03, Phi: 4.0 Time elapsed: 98.59119081497192 seconds
-Alpha: 0.6, Beta: 0.06, Phi: 4.0 Time elapsed: 96.8949499130249 seconds
-Alpha: 0.65, Beta: 0.01, Phi: 4.0 Time elapsed: 105.32012557983398 seconds
-Alpha: 0.65, Beta: 0.1, Phi: 4.0 Time elapsed: 105.28174090385437 seconds
-Alpha: 0.7, Beta: 0.1, Phi: 4.0 Time elapsed: 99.12963271141052 seconds
-Alpha: 0.75, Beta: 0.05, Phi: 4.0 Time elapsed: 111.30273723602295 seconds
-Alpha: 0.8, Beta: 0.04, Phi: 4.0 Time elapsed: 106.57640171051025 seconds
-Alpha: 0.8, Beta: 0.06, Phi: 4.0 Time elapsed: 121.08808779716492 seconds
-Alpha: 0.85, Beta: 0.03, Phi: 4.0 Time elapsed: 110.42157053947449 seconds
-Alpha: 0.9, Beta: 0.06, Phi: 4.0 Time elapsed: 113.34288883209229 seconds
-Alpha: 0.9, Beta: 0.08, Phi: 4.0 Time elapsed: 110.37784433364868 seconds
-Alpha: 0.95, Beta: 0.08, Phi: 4.0 Time elapsed: 109.90017342567444 seconds
-Alpha: 1.0, Beta: 0.03, Phi: 4.0 Time elapsed: 125.88397693634033 seconds
-Alpha: 1.0, Beta: 0.1, Phi: 4.0 Time elapsed: 55.35785698890686 seconds
-Alpha: 0.3, Beta: 0.01, Phi: 4.0 Time elapsed: 108.00454783439636 seconds
-Alpha: 0.3, Beta: 0.09, Phi: 4.0 Time elapsed: 103.87855887413025 seconds
-Alpha: 0.35, Beta: 0.05, Phi: 4.0 Time elapsed: 105.41464734077454 seconds
-Alpha: 0.4, Beta: 0.07, Phi: 4.0 Time elapsed: 103.85011339187622 seconds
-Alpha: 0.4, Beta: 0.09, Phi: 4.0 Time elapsed: 100.03995966911316 seconds
-Alpha: 0.45, Beta: 0.07, Phi: 4.0 Time elapsed: 99.16473865509033 seconds
-Alpha: 0.5, Beta: 0.03, Phi: 4.0 Time elapsed: 102.89185428619385 seconds
-Alpha: 0.55, Beta: 0.03, Phi: 4.0 Time elapsed: 102.33597588539124 seconds
-Alpha: 0.6, Beta: 0.01, Phi: 4.0 Time elapsed: 102.78258514404297 seconds
-Alpha: 0.6, Beta: 0.09, Phi: 4.0 Time elapsed: 94.92031526565552 seconds
-Alpha: 0.65, Beta: 0.05, Phi: 4.0 Time elapsed: 103.77116537094116 seconds
-Alpha: 0.65, Beta: 0.09, Phi: 4.0 Time elapsed: 105.45086860656738 seconds
-Alpha: 0.7, Beta: 0.07, Phi: 4.0 Time elapsed: 98.91258835792542 seconds
-Alpha: 0.75, Beta: 0.04, Phi: 4.0 Time elapsed: 107.92905926704407 seconds
-Alpha: 0.8, Beta: 0.01, Phi: 4.0 Time elapsed: 112.51954698562622 seconds
-Alpha: 0.8, Beta: 0.09, Phi: 4.0 Time elapsed: 124.64887595176697 seconds
-Alpha: 0.85, Beta: 0.08, Phi: 4.0 Time elapsed: 103.8097288608551 seconds
-Alpha: 0.85, Beta: 0.1, Phi: 4.0 Time elapsed: 114.34980607032776 seconds
-Alpha: 0.9, Beta: 0.07, Phi: 4.0 Time elapsed: 110.94908237457275 seconds
-Alpha: 0.95, Beta: 0.1, Phi: 4.0 Time elapsed: 109.29998779296875 seconds
-Alpha: 1.0, Beta: 0.02, Phi: 4.0 Time elapsed: 126.15157842636108 seconds
-Alpha: 1.0, Beta: 0.08, Phi: 4.0 Time elapsed: 55.64428091049194 seconds
-Alpha: 0.3, Beta: 0.05, Phi: 4.0 Time elapsed: 111.53875136375427 seconds
-Alpha: 0.35, Beta: 0.04, Phi: 4.0 Time elapsed: 103.30679106712341 seconds
-Alpha: 0.35, Beta: 0.1, Phi: 4.0 Time elapsed: 102.20400023460388 seconds
-Alpha: 0.4, Beta: 0.06, Phi: 4.0 Time elapsed: 104.6052393913269 seconds
-Alpha: 0.45, Beta: 0.01, Phi: 4.0 Time elapsed: 104.86909246444702 seconds
-Alpha: 0.5, Beta: 0.02, Phi: 4.0 Time elapsed: 98.9133791923523 seconds
-Alpha: 0.5, Beta: 0.09, Phi: 4.0 Time elapsed: 97.64568018913269 seconds
-Alpha: 0.55, Beta: 0.02, Phi: 4.0 Time elapsed: 101.55035972595215 seconds
-Alpha: 0.55, Beta: 0.1, Phi: 4.0 Time elapsed: 99.47471737861633 seconds
-Alpha: 0.6, Beta: 0.04, Phi: 4.0 Time elapsed: 99.11111855506897 seconds
-Alpha: 0.65, Beta: 0.06, Phi: 4.0 Time elapsed: 106.99945616722107 seconds
-Alpha: 0.7, Beta: 0.02, Phi: 4.0 Time elapsed: 102.65784978866577 seconds
-Alpha: 0.7, Beta: 0.09, Phi: 4.0 Time elapsed: 98.10190391540527 seconds
-Alpha: 0.75, Beta: 0.03, Phi: 4.0 Time elapsed: 109.25938534736633 seconds
-Alpha: 0.8, Beta: 0.03, Phi: 4.0 Time elapsed: 114.92437887191772 seconds
-Alpha: 0.85, Beta: 0.02, Phi: 4.0 Time elapsed: 120.5136399269104 seconds
-Alpha: 0.85, Beta: 0.05, Phi: 4.0 Time elapsed: 105.1178617477417 seconds
-Alpha: 0.9, Beta: 0.01, Phi: 4.0 Time elapsed: 115.1809253692627 seconds
-Alpha: 0.95, Beta: 0.03, Phi: 4.0 Time elapsed: 108.72471380233765 seconds
-Alpha: 0.95, Beta: 0.05, Phi: 4.0 Time elapsed: 111.58268737792969 seconds
-Alpha: 1.0, Beta: 0.05, Phi: 4.0 Time elapsed: 125.52904009819031 seconds
-Alpha: 0.3, Beta: 0.03, Phi: 4.0 Time elapsed: 108.52636528015137 seconds
-Alpha: 0.35, Beta: 0.01, Phi: 4.0 Time elapsed: 105.72418546676636 seconds
-Alpha: 0.35, Beta: 0.09, Phi: 4.0 Time elapsed: 100.56666278839111 seconds
-Alpha: 0.4, Beta: 0.02, Phi: 4.0 Time elapsed: 108.11348938941956 seconds
-Alpha: 0.45, Beta: 0.03, Phi: 4.0 Time elapsed: 98.66413950920105 seconds
-Alpha: 0.45, Beta: 0.08, Phi: 4.0 Time elapsed: 99.45694327354431 seconds
-Alpha: 0.5, Beta: 0.05, Phi: 4.0 Time elapsed: 103.2083158493042 seconds
-Alpha: 0.55, Beta: 0.05, Phi: 4.0 Time elapsed: 101.62097191810608 seconds
-Alpha: 0.6, Beta: 0.02, Phi: 4.0 Time elapsed: 102.94766759872437 seconds
-Alpha: 0.6, Beta: 0.1, Phi: 4.0 Time elapsed: 94.30050873756409 seconds
-Alpha: 0.65, Beta: 0.04, Phi: 4.0 Time elapsed: 103.73957085609436 seconds
-Alpha: 0.65, Beta: 0.08, Phi: 4.0 Time elapsed: 105.85937690734863 seconds
-Alpha: 0.7, Beta: 0.08, Phi: 4.0 Time elapsed: 97.44890809059143 seconds
-Alpha: 0.75, Beta: 0.02, Phi: 4.0 Time elapsed: 113.7393045425415 seconds
-Alpha: 0.8, Beta: 0.05, Phi: 4.0 Time elapsed: 107.82351565361023 seconds
-Alpha: 0.8, Beta: 0.08, Phi: 4.0 Time elapsed: 124.6437623500824 seconds
-Alpha: 0.85, Beta: 0.07, Phi: 4.0 Time elapsed: 104.52101826667786 seconds
-Alpha: 0.9, Beta: 0.03, Phi: 4.0 Time elapsed: 114.45689654350281 seconds
-Alpha: 0.9, Beta: 0.1, Phi: 4.0 Time elapsed: 109.58944988250732 seconds
-Alpha: 0.95, Beta: 0.07, Phi: 4.0 Time elapsed: 111.89328908920288 seconds
-Alpha: 1.0, Beta: 0.07, Phi: 4.0 Time elapsed: 124.21052718162537 seconds
-Alpha: 1.0, Beta: 0.09, Phi: 4.0 Time elapsed: 55.37259793281555 seconds
-Alpha: 0.3, Beta: 0.06, Phi: 4.0 Time elapsed: 107.50353837013245 seconds
-Alpha: 0.3, Beta: 0.08, Phi: 4.0 Time elapsed: 106.07224345207214 seconds
-Alpha: 0.35, Beta: 0.07, Phi: 4.0 Time elapsed: 102.94617748260498 seconds
-Alpha: 0.4, Beta: 0.04, Phi: 4.0 Time elapsed: 105.04747653007507 seconds
-Alpha: 0.4, Beta: 0.1, Phi: 4.0 Time elapsed: 99.12607622146606 seconds
-Alpha: 0.45, Beta: 0.06, Phi: 4.0 Time elapsed: 99.80233812332153 seconds
-Alpha: 0.5, Beta: 0.04, Phi: 4.0 Time elapsed: 106.34847378730774 seconds
-Alpha: 0.55, Beta: 0.06, Phi: 4.0 Time elapsed: 95.51655912399292 seconds
-Alpha: 0.55, Beta: 0.07, Phi: 4.0 Time elapsed: 104.94369077682495 seconds
-Alpha: 0.6, Beta: 0.08, Phi: 4.0 Time elapsed: 97.68770956993103 seconds
-Alpha: 0.65, Beta: 0.07, Phi: 4.0 Time elapsed: 105.53126668930054 seconds
-Alpha: 0.7, Beta: 0.04, Phi: 4.0 Time elapsed: 103.03073120117188 seconds
-Alpha: 0.75, Beta: 0.01, Phi: 4.0 Time elapsed: 101.8029432296753 seconds
-Alpha: 0.75, Beta: 0.08, Phi: 4.0 Time elapsed: 103.71756434440613 seconds
-Alpha: 0.75, Beta: 0.09, Phi: 4.0 Time elapsed: 112.85759973526001 seconds
-Alpha: 0.8, Beta: 0.1, Phi: 4.0 Time elapsed: 124.22764420509338 seconds
-Alpha: 0.85, Beta: 0.06, Phi: 4.0 Time elapsed: 104.80374932289124 seconds
-Alpha: 0.9, Beta: 0.02, Phi: 4.0 Time elapsed: 114.55661916732788 seconds
-Alpha: 0.95, Beta: 0.01, Phi: 4.0 Time elapsed: 107.72285747528076 seconds
-Alpha: 0.95, Beta: 0.04, Phi: 4.0 Time elapsed: 113.36277508735657 seconds
-Alpha: 1.0, Beta: 0.06, Phi: 4.0 Time elapsed: 125.04891180992126 seconds
-Alpha: 0.3, Beta: 0.07, Phi: 4.0 Time elapsed: 110.91841983795166 seconds
-Alpha: 0.35, Beta: 0.02, Phi: 4.0 Time elapsed: 103.00679779052734 seconds
-Alpha: 0.35, Beta: 0.08, Phi: 4.0 Time elapsed: 101.7346556186676 seconds
-Alpha: 0.4, Beta: 0.03, Phi: 4.0 Time elapsed: 111.69787001609802 seconds
-Alpha: 0.45, Beta: 0.05, Phi: 4.0 Time elapsed: 98.42197585105896 seconds
-Alpha: 0.5, Beta: 0.01, Phi: 4.0 Time elapsed: 97.30783081054688 seconds
-Alpha: 0.5, Beta: 0.07, Phi: 4.0 Time elapsed: 99.43905663490295 seconds
-Alpha: 0.5, Beta: 0.1, Phi: 4.0 Time elapsed: 101.9208574295044 seconds
-Alpha: 0.55, Beta: 0.08, Phi: 4.0 Time elapsed: 99.76001310348511 seconds
-Alpha: 0.6, Beta: 0.05, Phi: 4.0 Time elapsed: 98.91392612457275 seconds
-Alpha: 0.65, Beta: 0.03, Phi: 4.0 Time elapsed: 106.58457779884338 seconds
-Alpha: 0.7, Beta: 0.01, Phi: 4.0 Time elapsed: 101.0326828956604 seconds
-Alpha: 0.7, Beta: 0.05, Phi: 4.0 Time elapsed: 103.07609033584595 seconds
-Alpha: 0.75, Beta: 0.07, Phi: 4.0 Time elapsed: 105.26110172271729 seconds
-Alpha: 0.75, Beta: 0.1, Phi: 4.0 Time elapsed: 114.76141738891602 seconds
-Alpha: 0.85, Beta: 0.01, Phi: 4.0 Time elapsed: 125.09377694129944 seconds
-Alpha: 0.85, Beta: 0.09, Phi: 4.0 Time elapsed: 102.6032452583313 seconds
-Alpha: 0.9, Beta: 0.05, Phi: 4.0 Time elapsed: 113.96062588691711 seconds
-Alpha: 0.95, Beta: 0.02, Phi: 4.0 Time elapsed: 109.91874098777771 seconds
-Alpha: 0.95, Beta: 0.09, Phi: 4.0 Time elapsed: 110.49942135810852 seconds
-Alpha: 1.0, Beta: 0.04, Phi: 4.0 Time elapsed: 126.1718282699585 seconds
-Performance Indicators computation time: 0 minutes and 0 seconds
-Combining results time: 0 minutes and 0 seconds
-Total execution time: 41 minutes and 24 seconds
-Done!
-Running micro simulation...
-Micro computation time: 0 minutes and 13 seconds
-Combining micro_results time: 0 minutes and 8 seconds
-Running macro simulation...
-Alpha: 0.0, Beta: 0.05, Phi: 4.0 Time elapsed: 4.0263566970825195 seconds
-Alpha: 0.05, Beta: 0.04, Phi: 4.0 Time elapsed: 2.697326898574829 seconds
-Alpha: 0.05, Beta: 0.1, Phi: 4.0 Time elapsed: 2.5452053546905518 seconds
-Alpha: 0.1, Beta: 0.06, Phi: 4.0 Time elapsed: 2.4679181575775146 seconds
-Alpha: 0.15, Beta: 0.03, Phi: 4.0 Time elapsed: 2.4863169193267822 seconds
-Alpha: 0.15, Beta: 0.09, Phi: 4.0 Time elapsed: 2.8485405445098877 seconds
-Alpha: 0.2, Beta: 0.07, Phi: 4.0 Time elapsed: 2.4743194580078125 seconds
-Alpha: 0.25, Beta: 0.04, Phi: 4.0 Time elapsed: 2.6529645919799805 seconds
-Alpha: 0.0, Beta: 0.06, Phi: 4.0 Time elapsed: 3.929532766342163 seconds
-Alpha: 0.05, Beta: 0.02, Phi: 4.0 Time elapsed: 2.803936719894409 seconds
-Alpha: 0.05, Beta: 0.09, Phi: 4.0 Time elapsed: 2.6836276054382324 seconds
-Alpha: 0.1, Beta: 0.07, Phi: 4.0 Time elapsed: 2.862205743789673 seconds
-Alpha: 0.15, Beta: 0.04, Phi: 4.0 Time elapsed: 2.644792318344116 seconds
-Alpha: 0.2, Beta: 0.01, Phi: 4.0 Time elapsed: 2.631035089492798 seconds
-Alpha: 0.2, Beta: 0.08, Phi: 4.0 Time elapsed: 2.680074453353882 seconds
-Alpha: 0.25, Beta: 0.05, Phi: 4.0 Time elapsed: 2.5559980869293213 seconds
-Alpha: 0.0, Beta: 0.07, Phi: 4.0 Time elapsed: 4.0021750926971436 seconds
-Alpha: 0.05, Beta: 0.03, Phi: 4.0 Time elapsed: 2.806398391723633 seconds
-Alpha: 0.1, Beta: 0.01, Phi: 4.0 Time elapsed: 2.94789457321167 seconds
-Alpha: 0.1, Beta: 0.08, Phi: 4.0 Time elapsed: 2.6589012145996094 seconds
-Alpha: 0.15, Beta: 0.05, Phi: 4.0 Time elapsed: 2.6858842372894287 seconds
-Alpha: 0.2, Beta: 0.02, Phi: 4.0 Time elapsed: 2.535269260406494 seconds
-Alpha: 0.2, Beta: 0.09, Phi: 4.0 Time elapsed: 2.787142753601074 seconds
-Alpha: 0.25, Beta: 0.06, Phi: 4.0 Time elapsed: 2.630922794342041 seconds
-Alpha: 0.0, Beta: 0.04, Phi: 4.0 Time elapsed: 3.6227869987487793 seconds
-Alpha: 0.0, Beta: 0.08, Phi: 4.0 Time elapsed: 2.7231462001800537 seconds
-Alpha: 0.05, Beta: 0.06, Phi: 4.0 Time elapsed: 2.583674430847168 seconds
-Alpha: 0.1, Beta: 0.03, Phi: 4.0 Time elapsed: 2.5109848976135254 seconds
-Alpha: 0.1, Beta: 0.09, Phi: 4.0 Time elapsed: 2.4708139896392822 seconds
-Alpha: 0.15, Beta: 0.06, Phi: 4.0 Time elapsed: 2.647199869155884 seconds
-Alpha: 0.2, Beta: 0.03, Phi: 4.0 Time elapsed: 2.4999172687530518 seconds
-Alpha: 0.2, Beta: 0.1, Phi: 4.0 Time elapsed: 2.485273599624634 seconds
-Alpha: 0.25, Beta: 0.07, Phi: 4.0 Time elapsed: 2.3469154834747314 seconds
-Alpha: 0.0, Beta: 0.01, Phi: 4.0 Time elapsed: 3.6979706287384033 seconds
-Alpha: 0.0, Beta: 0.09, Phi: 4.0 Time elapsed: 2.590991973876953 seconds
-Alpha: 0.05, Beta: 0.05, Phi: 4.0 Time elapsed: 2.81003737449646 seconds
-Alpha: 0.1, Beta: 0.04, Phi: 4.0 Time elapsed: 2.5321462154388428 seconds
-Alpha: 0.15, Beta: 0.01, Phi: 4.0 Time elapsed: 2.6202590465545654 seconds
-Alpha: 0.15, Beta: 0.08, Phi: 4.0 Time elapsed: 2.44736647605896 seconds
-Alpha: 0.2, Beta: 0.04, Phi: 4.0 Time elapsed: 2.485542058944702 seconds
-Alpha: 0.25, Beta: 0.01, Phi: 4.0 Time elapsed: 2.488215446472168 seconds
-Alpha: 0.25, Beta: 0.08, Phi: 4.0 Time elapsed: 2.3454031944274902 seconds
-Alpha: 0.0, Beta: 0.03, Phi: 4.0 Time elapsed: 3.7717173099517822 seconds
-Alpha: 0.0, Beta: 0.1, Phi: 4.0 Time elapsed: 2.632291555404663 seconds
-Alpha: 0.05, Beta: 0.07, Phi: 4.0 Time elapsed: 2.5401346683502197 seconds
-Alpha: 0.1, Beta: 0.02, Phi: 4.0 Time elapsed: 2.657029151916504 seconds
-Alpha: 0.1, Beta: 0.1, Phi: 4.0 Time elapsed: 2.549692153930664 seconds
-Alpha: 0.15, Beta: 0.07, Phi: 4.0 Time elapsed: 2.552809476852417 seconds
-Alpha: 0.2, Beta: 0.05, Phi: 4.0 Time elapsed: 2.640185594558716 seconds
-Alpha: 0.25, Beta: 0.02, Phi: 4.0 Time elapsed: 2.715592861175537 seconds
-Alpha: 0.25, Beta: 0.1, Phi: 4.0 Time elapsed: 2.337622880935669 seconds
-Alpha: 0.0, Beta: 0.02, Phi: 4.0 Time elapsed: 3.9021832942962646 seconds
-Alpha: 0.05, Beta: 0.01, Phi: 4.0 Time elapsed: 2.6677801609039307 seconds
-Alpha: 0.05, Beta: 0.08, Phi: 4.0 Time elapsed: 2.596019744873047 seconds
-Alpha: 0.1, Beta: 0.05, Phi: 4.0 Time elapsed: 2.7349393367767334 seconds
-Alpha: 0.15, Beta: 0.02, Phi: 4.0 Time elapsed: 2.632463216781616 seconds
-Alpha: 0.15, Beta: 0.1, Phi: 4.0 Time elapsed: 2.46209454536438 seconds
-Alpha: 0.2, Beta: 0.06, Phi: 4.0 Time elapsed: 2.5463671684265137 seconds
-Alpha: 0.25, Beta: 0.03, Phi: 4.0 Time elapsed: 2.5158629417419434 seconds
-Alpha: 0.25, Beta: 0.09, Phi: 4.0 Time elapsed: 2.438251495361328 seconds
-Macro computation time: 0 minutes and 30 seconds
-Combining results time: 0 minutes and 31 seconds
-Running performance indicators computation...
-/home/viadacampos/Documents/mmsc_dissertation/multiscale/performance_indicators/performance_indicators.py:47: IntegrationWarning: The maximum number of subdivisions (50) has been achieved.
-  If increasing the limit yields no improvement it is advised to analyze 
-  the integrand in order to determine the difficulties.  If the position of a 
-  local difficulty can be determined (singularity, discontinuity) one will 
-  probably gain from splitting up the interval and calling the integrator 
-  on the subranges.  Perhaps a special-purpose integrator should be used.
-  total_flux = quad(flux_interp, 0, t_eval[-1])[0]
-/home/viadacampos/Documents/mmsc_dissertation/multiscale/performance_indicators/performance_indicators.py:48: IntegrationWarning: The occurrence of roundoff error is detected, which prevents 
-  the requested tolerance from being achieved.  The error may be 
-  underestimated.
-  flux_out = np.array([quad(flux_interp, 0, time, limit = 75)[0] for time in t_eval])
-Alpha: 0.0, Beta: 0.03, Phi: 4.0 Time elapsed: 26.02225971221924 seconds
-Alpha: 0.05, Beta: 0.03, Phi: 4.0 Time elapsed: 23.77631425857544 seconds
-Alpha: 0.05, Beta: 0.1, Phi: 4.0 Time elapsed: 23.905889749526978 seconds
-Alpha: 0.1, Beta: 0.05, Phi: 4.0 Time elapsed: 24.220499277114868 seconds
-Alpha: 0.15, Beta: 0.03, Phi: 4.0 Time elapsed: 24.678218841552734 seconds
-Alpha: 0.15, Beta: 0.1, Phi: 4.0 Time elapsed: 22.9398672580719 seconds
-Alpha: 0.2, Beta: 0.07, Phi: 4.0 Time elapsed: 23.049402236938477 seconds
-Alpha: 0.25, Beta: 0.04, Phi: 4.0 Time elapsed: 22.806416034698486 seconds
-Alpha: 0.0, Beta: 0.02, Phi: 4.0 Time elapsed: 26.364644289016724 seconds
-Alpha: 0.05, Beta: 0.04, Phi: 4.0 Time elapsed: 23.319994688034058 seconds
-Alpha: 0.05, Beta: 0.09, Phi: 4.0 Time elapsed: 25.104326963424683 seconds
-Alpha: 0.1, Beta: 0.07, Phi: 4.0 Time elapsed: 22.943495750427246 seconds
-Alpha: 0.15, Beta: 0.02, Phi: 4.0 Time elapsed: 25.82614254951477 seconds
-Alpha: 0.2, Beta: 0.02, Phi: 4.0 Time elapsed: 24.789630651474 seconds
-Alpha: 0.2, Beta: 0.09, Phi: 4.0 Time elapsed: 22.501837015151978 seconds
-Alpha: 0.25, Beta: 0.05, Phi: 4.0 Time elapsed: 22.24001169204712 seconds
-Alpha: 0.0, Beta: 0.01, Phi: 4.0 Time elapsed: 25.75097346305847 seconds
-Alpha: 0.05, Beta: 0.01, Phi: 4.0 Time elapsed: 22.539509296417236 seconds
-Alpha: 0.05, Beta: 0.08, Phi: 4.0 Time elapsed: 26.5504789352417 seconds
-Alpha: 0.1, Beta: 0.08, Phi: 4.0 Time elapsed: 24.17183232307434 seconds
-Alpha: 0.15, Beta: 0.04, Phi: 4.0 Time elapsed: 24.340348482131958 seconds
-Alpha: 0.2, Beta: 0.01, Phi: 4.0 Time elapsed: 24.76975131034851 seconds
-Alpha: 0.2, Beta: 0.08, Phi: 4.0 Time elapsed: 22.78438115119934 seconds
-Alpha: 0.25, Beta: 0.06, Phi: 4.0 Time elapsed: 22.86760187149048 seconds
-Alpha: 0.0, Beta: 0.06, Phi: 4.0 Time elapsed: 24.8317129611969 seconds
-Alpha: 0.0, Beta: 0.08, Phi: 4.0 Time elapsed: 20.479099988937378 seconds
-Alpha: 0.05, Beta: 0.06, Phi: 4.0 Time elapsed: 24.538594245910645 seconds
-Alpha: 0.1, Beta: 0.02, Phi: 4.0 Time elapsed: 24.737449407577515 seconds
-Alpha: 0.1, Beta: 0.09, Phi: 4.0 Time elapsed: 21.958881616592407 seconds
-Alpha: 0.15, Beta: 0.06, Phi: 4.0 Time elapsed: 22.87392258644104 seconds
-Alpha: 0.2, Beta: 0.03, Phi: 4.0 Time elapsed: 23.570504903793335 seconds
-Alpha: 0.2, Beta: 0.1, Phi: 4.0 Time elapsed: 22.100059986114502 seconds
-Alpha: 0.25, Beta: 0.07, Phi: 4.0 Time elapsed: 19.323259830474854 seconds
-Alpha: 0.0, Beta: 0.07, Phi: 4.0 Time elapsed: 24.945453882217407 seconds
-Alpha: 0.0, Beta: 0.09, Phi: 4.0 Time elapsed: 20.280619621276855 seconds
-Alpha: 0.05, Beta: 0.05, Phi: 4.0 Time elapsed: 25.894367933273315 seconds
-Alpha: 0.1, Beta: 0.04, Phi: 4.0 Time elapsed: 24.191192865371704 seconds
-Alpha: 0.1, Beta: 0.1, Phi: 4.0 Time elapsed: 23.29133677482605 seconds
-Alpha: 0.15, Beta: 0.07, Phi: 4.0 Time elapsed: 23.04106831550598 seconds
-Alpha: 0.2, Beta: 0.04, Phi: 4.0 Time elapsed: 23.73508858680725 seconds
-Alpha: 0.25, Beta: 0.01, Phi: 4.0 Time elapsed: 24.648768424987793 seconds
-Alpha: 0.25, Beta: 0.08, Phi: 4.0 Time elapsed: 17.78113889694214 seconds
-Alpha: 0.0, Beta: 0.04, Phi: 4.0 Time elapsed: 25.855759620666504 seconds
-Alpha: 0.05, Beta: 0.02, Phi: 4.0 Time elapsed: 24.186419248580933 seconds
-Alpha: 0.1, Beta: 0.01, Phi: 4.0 Time elapsed: 24.34574842453003 seconds
-Alpha: 0.1, Beta: 0.06, Phi: 4.0 Time elapsed: 25.08410668373108 seconds
-Alpha: 0.15, Beta: 0.05, Phi: 4.0 Time elapsed: 23.1405131816864 seconds
-Alpha: 0.15, Beta: 0.09, Phi: 4.0 Time elapsed: 22.541293144226074 seconds
-Alpha: 0.2, Beta: 0.06, Phi: 4.0 Time elapsed: 22.35526967048645 seconds
-Alpha: 0.25, Beta: 0.03, Phi: 4.0 Time elapsed: 22.826954126358032 seconds
-Alpha: 0.25, Beta: 0.1, Phi: 4.0 Time elapsed: 17.64477849006653 seconds
-Alpha: 0.0, Beta: 0.05, Phi: 4.0 Time elapsed: 25.452128171920776 seconds
-Alpha: 0.0, Beta: 0.1, Phi: 4.0 Time elapsed: 20.57832360267639 seconds
-Alpha: 0.05, Beta: 0.07, Phi: 4.0 Time elapsed: 24.32987117767334 seconds
-Alpha: 0.1, Beta: 0.03, Phi: 4.0 Time elapsed: 25.06618332862854 seconds
-Alpha: 0.15, Beta: 0.01, Phi: 4.0 Time elapsed: 24.230184316635132 seconds
-Alpha: 0.15, Beta: 0.08, Phi: 4.0 Time elapsed: 23.227133750915527 seconds
-Alpha: 0.2, Beta: 0.05, Phi: 4.0 Time elapsed: 22.507145643234253 seconds
-Alpha: 0.25, Beta: 0.02, Phi: 4.0 Time elapsed: 24.734545469284058 seconds
-Alpha: 0.25, Beta: 0.09, Phi: 4.0 Time elapsed: 17.825488090515137 seconds
-Performance Indicators computation time: 0 minutes and 0 seconds
-Combining results time: 0 minutes and 1 seconds
-Total execution time: 4 minutes and 52 seconds
-Done!
-Fitting 5 folds for each of 224 candidates, totalling 1120 fits
-Best parameters: Pipeline(steps=[('polynomialfeatures', PolynomialFeatures(degree=np.int64(5))),
-                ('ridge', Ridge(alpha=np.float64(1e-10)))]) with score 0.9988325073548976
-Mean squared error: 3.8939712586179307
-R2 score for test: 0.9990238901030943
-Model saved at regression/models_polynomial/total_throughput/model_total_throughput.pkl
-Model saved at regression/models_polynomial/total_throughput/test_data.pkl
-Model saved at regression/models_polynomial/total_throughput/train_data.pkl
-Model saved at regression/models_polynomial/total_throughput/total_data.pkl
-Fitting 8 folds for each of 99 candidates, totalling 792 fits
-Best parameters: RandomForestRegressor(ccp_alpha=np.float64(0.0), max_depth=10, n_estimators=200,
-                      random_state=42) with score 0.964078182111767
-Mean squared error: 55.809037062390615
-R2 score for test: 0.9879912303513885
-Model saved at regression/models_random_forest/total_throughput/model_total_throughput.pkl
-Model saved at regression/models_random_forest/total_throughput/test_data.pkl
-Model saved at regression/models_random_forest/total_throughput/train_data.pkl
-Model saved at regression/models_random_forest/total_throughput/total_data.pkl
-Fitting 10 folds for each of 225 candidates, totalling 2250 fits
-Best parameters: GradientBoostingRegressor(learning_rate=np.float64(0.05), max_depth=6,
-                          n_estimators=300, random_state=42,
-                          subsample=np.float64(0.2)) with score 0.9938612405014859
-Mean squared error: 10.679612431527273
-R2 score for test: 0.9977020028945619
-Model saved at regression/models_gradient_boosting/total_throughput/model_total_throughput.pkl
-Model saved at regression/models_gradient_boosting/total_throughput/test_data.pkl
-Model saved at regression/models_gradient_boosting/total_throughput/train_data.pkl
-Model saved at regression/models_gradient_boosting/total_throughput/total_data.pkl
 Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.01
 Done!
 Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
@@ -520,3 +38,516 @@ Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.1
 Done!
 Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
 Done!
+  0%|          | 0/64 [00:00<?, ?it/s]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:12<01:01, 12.22s/it][A
+ 33%|███▎      | 2/6 [00:15<00:26,  6.70s/it][A
+ 50%|█████     | 3/6 [00:17<00:14,  4.90s/it][A
+ 67%|██████▋   | 4/6 [00:20<00:08,  4.03s/it][A
+ 83%|████████▎ | 5/6 [00:23<00:03,  3.50s/it][A
+100%|██████████| 6/6 [00:27<00:00,  3.74s/it][A100%|██████████| 6/6 [00:27<00:00,  4.55s/it]
+  2%|▏         | 1/64 [00:27<28:38, 27.28s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:13,  2.61s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.57s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.31s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.44s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.48s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.68s/it][A100%|██████████| 6/6 [00:15<00:00,  2.57s/it]
+  3%|▎         | 2/64 [00:42<20:59, 20.31s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.56s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.59s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.32s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.46s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.46s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.63s/it][A100%|██████████| 6/6 [00:15<00:00,  2.55s/it]
+  5%|▍         | 3/64 [00:57<18:18, 18.02s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.59s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.62s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.33s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.45s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.45s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.60s/it][A100%|██████████| 6/6 [00:15<00:00,  2.53s/it]
+  6%|▋         | 4/64 [01:13<16:54, 16.91s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.57s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.66s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.31s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.39s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.41s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.63s/it][A100%|██████████| 6/6 [00:15<00:00,  2.53s/it]
+  8%|▊         | 5/64 [01:28<16:01, 16.29s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:13,  2.73s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.62s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.29s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.41s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.50s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.65s/it][A100%|██████████| 6/6 [00:15<00:00,  2.56s/it]
+  9%|▉         | 6/64 [01:43<15:26, 15.98s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.51s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.50s/it][A
+ 50%|█████     | 3/6 [00:08<00:08,  2.79s/it][A
+ 67%|██████▋   | 4/6 [00:10<00:05,  2.68s/it][A
+ 83%|████████▎ | 5/6 [00:13<00:02,  2.63s/it][A
+100%|██████████| 6/6 [00:16<00:00,  2.73s/it][A100%|██████████| 6/6 [00:16<00:00,  2.69s/it]
+ 11%|█         | 7/64 [01:59<15:13, 16.03s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.57s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.61s/it][A
+ 50%|█████     | 3/6 [00:07<00:07,  2.36s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.43s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.45s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.60s/it][A100%|██████████| 6/6 [00:15<00:00,  2.53s/it]
+ 12%|█▎        | 8/64 [02:15<14:42, 15.77s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.55s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.52s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.22s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.34s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.40s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.61s/it][A100%|██████████| 6/6 [00:14<00:00,  2.49s/it]
+ 14%|█▍        | 9/64 [02:30<14:13, 15.51s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.48s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.52s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.27s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.39s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.44s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.65s/it][A100%|██████████| 6/6 [00:15<00:00,  2.53s/it]
+ 16%|█▌        | 10/64 [02:45<13:52, 15.41s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.52s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.52s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.22s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.40s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.42s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.59s/it][A100%|██████████| 6/6 [00:14<00:00,  2.49s/it]
+ 17%|█▋        | 11/64 [03:00<13:29, 15.28s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.45s/it][A
+ 33%|███▎      | 2/6 [00:04<00:09,  2.49s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.25s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.33s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.38s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.58s/it][A100%|██████████| 6/6 [00:14<00:00,  2.47s/it]
+ 19%|█▉        | 12/64 [03:15<13:07, 15.14s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.50s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.57s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.27s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.37s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.40s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.60s/it][A100%|██████████| 6/6 [00:15<00:00,  2.50s/it]
+ 20%|██        | 13/64 [03:30<12:50, 15.11s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:13,  2.60s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.56s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.26s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.39s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.45s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.67s/it][A100%|██████████| 6/6 [00:15<00:00,  2.54s/it]
+ 22%|██▏       | 14/64 [03:45<12:38, 15.17s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.52s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.52s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.23s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.37s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.47s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.63s/it][A100%|██████████| 6/6 [00:15<00:00,  2.52s/it]
+ 23%|██▎       | 15/64 [04:00<12:22, 15.15s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.48s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.52s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.26s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.40s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.44s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.61s/it][A100%|██████████| 6/6 [00:15<00:00,  2.51s/it]
+ 25%|██▌       | 16/64 [04:15<12:05, 15.12s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.58s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.62s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.27s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.37s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.41s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.62s/it][A100%|██████████| 6/6 [00:15<00:00,  2.52s/it]
+ 27%|██▋       | 17/64 [04:30<11:51, 15.13s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.55s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.53s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.22s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.36s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.42s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.64s/it][A100%|██████████| 6/6 [00:15<00:00,  2.51s/it]
+ 28%|██▊       | 18/64 [04:45<11:35, 15.12s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.46s/it][A
+ 33%|███▎      | 2/6 [00:04<00:09,  2.46s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.20s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.35s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.47s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.63s/it][A100%|██████████| 6/6 [00:15<00:00,  2.50s/it]
+ 30%|██▉       | 19/64 [05:00<11:18, 15.09s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.46s/it][A
+ 33%|███▎      | 2/6 [00:04<00:09,  2.47s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.30s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.37s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.40s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.59s/it][A100%|██████████| 6/6 [00:14<00:00,  2.49s/it]
+ 31%|███▏      | 20/64 [05:15<11:01, 15.04s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.43s/it][A
+ 33%|███▎      | 2/6 [00:04<00:09,  2.49s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.20s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.33s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.39s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.59s/it][A100%|██████████| 6/6 [00:14<00:00,  2.47s/it]
+ 33%|███▎      | 21/64 [05:30<10:43, 14.98s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:03<00:18,  3.60s/it][A
+ 33%|███▎      | 2/6 [00:06<00:11,  2.94s/it][A
+ 50%|█████     | 3/6 [00:07<00:07,  2.43s/it][A
+ 67%|██████▋   | 4/6 [00:10<00:04,  2.44s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.44s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.64s/it][A100%|██████████| 6/6 [00:15<00:00,  2.64s/it]
+ 34%|███▍      | 22/64 [05:46<10:39, 15.23s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:03<00:15,  3.16s/it][A
+ 33%|███▎      | 2/6 [00:05<00:11,  2.76s/it][A
+ 50%|█████     | 3/6 [00:07<00:07,  2.36s/it][A
+ 67%|██████▋   | 4/6 [00:10<00:04,  2.45s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.47s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.65s/it][A100%|██████████| 6/6 [00:15<00:00,  2.60s/it]
+ 36%|███▌      | 23/64 [06:02<10:29, 15.35s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:03<00:15,  3.15s/it][A
+ 33%|███▎      | 2/6 [00:05<00:11,  2.83s/it][A
+ 50%|█████     | 3/6 [00:10<00:11,  3.89s/it][A
+ 67%|██████▋   | 4/6 [00:13<00:06,  3.33s/it][A
+ 83%|████████▎ | 5/6 [00:15<00:03,  3.03s/it][A
+100%|██████████| 6/6 [00:18<00:00,  3.02s/it][A100%|██████████| 6/6 [00:18<00:00,  3.15s/it]
+ 38%|███▊      | 24/64 [06:20<10:56, 16.41s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.54s/it][A
+ 33%|███▎      | 2/6 [00:04<00:09,  2.49s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.21s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.32s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.40s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.70s/it][A100%|██████████| 6/6 [00:15<00:00,  2.53s/it]
+ 39%|███▉      | 25/64 [06:36<10:25, 16.04s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.52s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.51s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.24s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.35s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.42s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.62s/it][A100%|██████████| 6/6 [00:15<00:00,  2.50s/it]
+ 41%|████      | 26/64 [06:51<09:57, 15.74s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.46s/it][A
+ 33%|███▎      | 2/6 [00:04<00:09,  2.49s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.26s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.35s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.39s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.56s/it][A100%|██████████| 6/6 [00:14<00:00,  2.47s/it]
+ 42%|████▏     | 27/64 [07:05<09:31, 15.46s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.49s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.61s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.28s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.37s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.41s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.60s/it][A100%|██████████| 6/6 [00:15<00:00,  2.51s/it]
+ 44%|████▍     | 28/64 [07:20<09:12, 15.34s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.48s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.51s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.22s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.35s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.43s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.59s/it][A100%|██████████| 6/6 [00:14<00:00,  2.48s/it]
+ 45%|████▌     | 29/64 [07:35<08:52, 15.21s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:04<00:21,  4.22s/it][A
+ 33%|███▎      | 2/6 [00:06<00:12,  3.21s/it][A
+ 50%|█████     | 3/6 [00:08<00:07,  2.64s/it][A
+ 67%|██████▋   | 4/6 [00:11<00:05,  2.63s/it][A
+ 83%|████████▎ | 5/6 [00:13<00:02,  2.58s/it][A
+100%|██████████| 6/6 [00:16<00:00,  2.71s/it][A100%|██████████| 6/6 [00:16<00:00,  2.79s/it]
+ 47%|████▋     | 30/64 [07:52<08:52, 15.68s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:14,  2.81s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.67s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.32s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.38s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.41s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.58s/it][A100%|██████████| 6/6 [00:15<00:00,  2.52s/it]
+ 48%|████▊     | 31/64 [08:07<08:31, 15.51s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:03<00:16,  3.26s/it][A
+ 33%|███▎      | 2/6 [00:05<00:11,  2.80s/it][A
+ 50%|█████     | 3/6 [00:07<00:07,  2.40s/it][A
+ 67%|██████▋   | 4/6 [00:10<00:04,  2.45s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.49s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.63s/it][A100%|██████████| 6/6 [00:15<00:00,  2.61s/it]
+ 50%|█████     | 32/64 [08:23<08:17, 15.56s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.48s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.53s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.23s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.37s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.41s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.59s/it][A100%|██████████| 6/6 [00:14<00:00,  2.48s/it]
+ 52%|█████▏    | 33/64 [08:38<07:56, 15.37s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.48s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.55s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.25s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.35s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.39s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.59s/it][A100%|██████████| 6/6 [00:14<00:00,  2.49s/it]
+ 53%|█████▎    | 34/64 [08:53<07:37, 15.24s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.57s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.53s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.24s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.35s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.42s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.58s/it][A100%|██████████| 6/6 [00:14<00:00,  2.49s/it]
+ 55%|█████▍    | 35/64 [09:08<07:19, 15.15s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.50s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.52s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.26s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.37s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.41s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.58s/it][A100%|██████████| 6/6 [00:14<00:00,  2.49s/it]
+ 56%|█████▋    | 36/64 [09:23<07:02, 15.08s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.45s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.55s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.26s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.34s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.40s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.58s/it][A100%|██████████| 6/6 [00:14<00:00,  2.48s/it]
+ 58%|█████▊    | 37/64 [09:38<06:45, 15.02s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.56s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.52s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.25s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.35s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.39s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.57s/it][A100%|██████████| 6/6 [00:14<00:00,  2.48s/it]
+ 59%|█████▉    | 38/64 [09:52<06:29, 14.98s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:03<00:15,  3.18s/it][A
+ 33%|███▎      | 2/6 [00:05<00:11,  2.82s/it][A
+ 50%|█████     | 3/6 [00:07<00:07,  2.39s/it][A
+ 67%|██████▋   | 4/6 [00:10<00:04,  2.45s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.52s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.65s/it][A100%|██████████| 6/6 [00:15<00:00,  2.62s/it]
+ 61%|██████    | 39/64 [10:08<06:20, 15.21s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:14,  2.84s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.66s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.31s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.42s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.44s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.59s/it][A100%|██████████| 6/6 [00:15<00:00,  2.54s/it]
+ 62%|██████▎   | 40/64 [10:23<06:05, 15.21s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.47s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.53s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.26s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.37s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.42s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.61s/it][A100%|██████████| 6/6 [00:15<00:00,  2.50s/it]
+ 64%|██████▍   | 41/64 [10:38<05:48, 15.15s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.53s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.51s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.24s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.36s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.43s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.60s/it][A100%|██████████| 6/6 [00:14<00:00,  2.50s/it]
+ 66%|██████▌   | 42/64 [10:53<05:32, 15.10s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.53s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.53s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.23s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.37s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.43s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.60s/it][A100%|██████████| 6/6 [00:15<00:00,  2.50s/it]
+ 67%|██████▋   | 43/64 [11:08<05:16, 15.07s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.49s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.52s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.31s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.40s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.42s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.62s/it][A100%|██████████| 6/6 [00:15<00:00,  2.52s/it]
+ 69%|██████▉   | 44/64 [11:24<05:01, 15.08s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.48s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.55s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.25s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.34s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.40s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.59s/it][A100%|██████████| 6/6 [00:14<00:00,  2.49s/it]
+ 70%|███████   | 45/64 [11:38<04:45, 15.05s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.55s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.53s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.23s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.35s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.41s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.59s/it][A100%|██████████| 6/6 [00:14<00:00,  2.49s/it]
+ 72%|███████▏  | 46/64 [11:53<04:30, 15.02s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:03<00:15,  3.19s/it][A
+ 33%|███▎      | 2/6 [00:05<00:11,  2.82s/it][A
+ 50%|█████     | 3/6 [00:07<00:07,  2.45s/it][A
+ 67%|██████▋   | 4/6 [00:10<00:04,  2.44s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.44s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.61s/it][A100%|██████████| 6/6 [00:15<00:00,  2.59s/it]
+ 73%|███████▎  | 47/64 [12:09<04:18, 15.19s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.60s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.59s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.26s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.36s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.41s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.63s/it][A100%|██████████| 6/6 [00:15<00:00,  2.52s/it]
+ 75%|███████▌  | 48/64 [12:24<04:02, 15.17s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.43s/it][A
+ 33%|███▎      | 2/6 [00:04<00:09,  2.48s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.22s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.35s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.39s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.59s/it][A100%|██████████| 6/6 [00:14<00:00,  2.48s/it]
+ 77%|███████▋  | 49/64 [12:39<03:46, 15.08s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.52s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.59s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.26s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.36s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.38s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.56s/it][A100%|██████████| 6/6 [00:14<00:00,  2.48s/it]
+ 78%|███████▊  | 50/64 [12:54<03:30, 15.02s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.55s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.55s/it][A
+ 50%|█████     | 3/6 [00:07<00:06,  2.26s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.36s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.38s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.60s/it][A100%|██████████| 6/6 [00:14<00:00,  2.50s/it]
+ 80%|███████▉  | 51/64 [13:09<03:15, 15.01s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.48s/it][A
+ 33%|███▎      | 2/6 [00:04<00:09,  2.49s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.23s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.34s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.45s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.62s/it][A100%|██████████| 6/6 [00:14<00:00,  2.50s/it]
+ 81%|████████▏ | 52/64 [13:24<03:00, 15.01s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.48s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.51s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.26s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.34s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.38s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.54s/it][A100%|██████████| 6/6 [00:14<00:00,  2.46s/it]
+ 83%|████████▎ | 53/64 [13:39<02:44, 14.93s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:11,  2.39s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.51s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.23s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.35s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.41s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.61s/it][A100%|██████████| 6/6 [00:14<00:00,  2.49s/it]
+ 84%|████████▍ | 54/64 [13:54<02:29, 14.93s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:03<00:15,  3.19s/it][A
+ 33%|███▎      | 2/6 [00:05<00:11,  2.81s/it][A
+ 50%|█████     | 3/6 [00:07<00:07,  2.38s/it][A
+ 67%|██████▋   | 4/6 [00:10<00:04,  2.43s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.48s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.66s/it][A100%|██████████| 6/6 [00:15<00:00,  2.61s/it]
+ 86%|████████▌ | 55/64 [14:09<02:16, 15.16s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:14,  2.81s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.63s/it][A
+ 50%|█████     | 3/6 [00:08<00:08,  2.70s/it][A
+ 67%|██████▋   | 4/6 [00:10<00:05,  2.68s/it][A
+ 83%|████████▎ | 5/6 [00:13<00:02,  2.64s/it][A
+100%|██████████| 6/6 [00:16<00:00,  2.76s/it][A100%|██████████| 6/6 [00:16<00:00,  2.72s/it]
+ 88%|████████▊ | 56/64 [14:26<02:04, 15.51s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.47s/it][A
+ 33%|███▎      | 2/6 [00:05<00:10,  2.55s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.24s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.34s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.43s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.65s/it][A100%|██████████| 6/6 [00:15<00:00,  2.52s/it]
+ 89%|████████▉ | 57/64 [14:41<01:47, 15.39s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.45s/it][A
+ 33%|███▎      | 2/6 [00:04<00:10,  2.50s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.20s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.32s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.42s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.61s/it][A100%|██████████| 6/6 [00:14<00:00,  2.49s/it]
+ 91%|█████████ | 58/64 [14:56<01:31, 15.25s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.44s/it][A
+ 33%|███▎      | 2/6 [00:04<00:10,  2.50s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.24s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.40s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.43s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.60s/it][A100%|██████████| 6/6 [00:14<00:00,  2.50s/it]
+ 92%|█████████▏| 59/64 [15:11<01:15, 15.17s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.43s/it][A
+ 33%|███▎      | 2/6 [00:04<00:09,  2.50s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.20s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.29s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.34s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.55s/it][A100%|██████████| 6/6 [00:14<00:00,  2.44s/it]
+ 94%|█████████▍| 60/64 [15:25<01:00, 15.01s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.52s/it][A
+ 33%|███▎      | 2/6 [00:04<00:09,  2.49s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.21s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.31s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.39s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.57s/it][A100%|██████████| 6/6 [00:14<00:00,  2.47s/it]
+ 95%|█████████▌| 61/64 [15:40<00:44, 14.95s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:12,  2.41s/it][A
+ 33%|███▎      | 2/6 [00:04<00:09,  2.44s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.19s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.32s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.36s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.54s/it][A100%|██████████| 6/6 [00:14<00:00,  2.44s/it]
+ 97%|█████████▋| 62/64 [15:55<00:29, 14.85s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:02<00:11,  2.40s/it][A
+ 33%|███▎      | 2/6 [00:04<00:09,  2.47s/it][A
+ 50%|█████     | 3/6 [00:06<00:06,  2.19s/it][A
+ 67%|██████▋   | 4/6 [00:09<00:04,  2.29s/it][A
+ 83%|████████▎ | 5/6 [00:11<00:02,  2.35s/it][A
+100%|██████████| 6/6 [00:14<00:00,  2.53s/it][A100%|██████████| 6/6 [00:14<00:00,  2.43s/it]
+ 98%|█████████▊| 63/64 [16:09<00:14, 14.77s/it]
+  0%|          | 0/6 [00:00<?, ?it/s][A
+ 17%|█▋        | 1/6 [00:03<00:16,  3.35s/it][A
+ 33%|███▎      | 2/6 [00:05<00:11,  2.81s/it][A
+ 50%|█████     | 3/6 [00:07<00:07,  2.39s/it][A
+ 67%|██████▋   | 4/6 [00:10<00:04,  2.41s/it][A
+ 83%|████████▎ | 5/6 [00:12<00:02,  2.42s/it][A
+100%|██████████| 6/6 [00:15<00:00,  2.60s/it][A100%|██████████| 6/6 [00:15<00:00,  2.59s/it]
+100%|██████████| 64/64 [16:25<00:00, 14.99s/it]100%|██████████| 64/64 [16:25<00:00, 15.39s/it]
