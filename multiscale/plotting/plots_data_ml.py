@@ -273,14 +273,14 @@ def plot_optimum(data:pd.DataFrame,model_value:str,particle_sizes : list = 'all'
     --------
     None
     """
-    #if particle_sizes == 'all':
-      #  particle_sizes = data['particle_size'].unique()
+    if particle_sizes == 'all':
+        particle_sizes = data['particle_size'].unique()
     _, colors = style_and_colormap(num_positions = len(particle_sizes), colormap = 'tab20b')
     colors = colors.tolist()
     color_mapping = {key: color for key, color in zip(particle_sizes, colors)}
-
+    fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
     for part_size in particle_sizes:
-        fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
+        
         filtered_data = data[data['particle_size'] == part_size]
         if actual == True:
             ax[0].scatter(filtered_data['n'], filtered_data[f'adhesivity_{model_value}'], color = color_mapping[part_size], label = 'Physical Model')
@@ -290,12 +290,19 @@ def plot_optimum(data:pd.DataFrame,model_value:str,particle_sizes : list = 'all'
         else: 
             filename = f'regression/figures/optimization/optimal_adhesivity_{model_value}/particle_size_{part_size}'
         sns.despine()
-        if save == True:
-            ax[0].legend(loc = 'lower right', bbox_to_anchor=(1.05, 1))
-            plt.tight_layout()  
+        ax[0].legend(loc = 'lower right', bbox_to_anchor=(1.05, 1))
+        if max(filtered_data['adhesivity_predictions']) > 0.0:
+            ax[0].set_yticks(np.arange(0, max(filtered_data['adhesivity_predictions']) + 0.05, 0.2))
+            ax[0].set_yticks(np.arange(0, 1+ 0.05, 0.2))
+
         
-            save_figure(fig,filename)
-        plt.show()
+        else:
+            ax[0].set_yticks(np.arange(0, max(filtered_data['adhesivity_predictions']) + 0.05, 0.1))
+        if save == True:
+            pass
+    plt.tight_layout()  
+            #save_figure(fig,filename)
+    plt.show()
 
 
 def get_plots_size_sample(metric):

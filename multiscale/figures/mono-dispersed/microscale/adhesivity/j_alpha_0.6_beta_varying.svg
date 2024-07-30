@@ -6,7 +6,7 @@
    version="1.1"
    id="svg262"
    sodipodi:docname="j_alpha_0.6_beta_varying.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -26,14 +26,16 @@
      inkscape:document-units="pt"
      showgrid="false"
      inkscape:zoom="0.48958333"
-     inkscape:cx="720"
-     inkscape:cy="548.42553"
-     inkscape:window-width="1398"
-     inkscape:window-height="550"
+     inkscape:cx="650.5532"
+     inkscape:cy="425.87234"
+     inkscape:window-width="1400"
+     inkscape:window-height="790"
      inkscape:window-x="0"
-     inkscape:window-y="28"
+     inkscape:window-y="25"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg262" />
+     inkscape:current-layer="svg262"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
   <metadata
      id="metadata2">
     <rdf:RDF>
@@ -839,7 +841,7 @@
      id="path299" />
   <g
      inkscape:label=""
-     transform="matrix(3.4052783,0,0,3.4052783,44.005486,-53.082719)"
+     transform="matrix(3.4052783,0,0,3.4052783,41.005486,-45.582719)"
      id="g1844"
      style="stroke-width:0.293662">
     <g
@@ -945,7 +947,7 @@
   </g>
   <g
      inkscape:label=""
-     transform="matrix(5.4468085,0,0,5.4468085,39.23265,120.94368)"
+     transform="matrix(5.4468085,0,0,5.4468085,39.23265,117.94368)"
      id="g2326"
      style="stroke-width:0.183594">
     <g
@@ -967,7 +969,7 @@
   </g>
   <g
      inkscape:label=""
-     transform="matrix(4.9042146,0,0,4.9042146,-463.34318,-121.91737)"
+     transform="matrix(4.9042146,0,0,4.9042146,-438.92829,-117.7007)"
      id="g2795"
      style="stroke-width:0.203906">
     <g

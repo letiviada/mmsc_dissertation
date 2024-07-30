@@ -71,3 +71,21 @@ def clean_data_throughput(filename: str,throughput:float) -> pd.DataFrame:
     data_to_keep = data_to_keep[data_to_keep['lifetime'] >= throughput]
     data_to_keep.rename(columns={'lifetime': 'total_throughput'}, inplace=True)
     return data_to_keep
+
+def clean_data_efficiency(filename: str,efficiency:float) -> pd.DataFrame:
+    """
+    Function that cleans the data by removing the data with throughput lower than the specified value
+
+    Parameters:
+    ----------
+    filename (str): the name of the json file
+    throughput (float): the throughput value to be considered
+
+    Returns:
+    -------
+    data_to_keep (pd.DataFrame): the data with the throughput higher than the specified
+    
+    """
+    data_to_keep = get_data_from_json(filename)
+    data_to_keep = data_to_keep[data_to_keep['efficiency'] >= efficiency]
+    return data_to_keep

@@ -25,7 +25,7 @@ def sampling_data(X, y, size:int, method:str='random'):
 
     return X_new, y_new
 
-def data_time(time:int, names:list, data: pd.DataFrame) -> pd.DataFrame:
+def data_time_old(time:int, names:list, data: pd.DataFrame) -> pd.DataFrame:
     """
     Function that creates a new column in the data for the time specified in the names columns
 
