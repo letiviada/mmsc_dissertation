@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def create_fig(nrows, ncols, title = None, figsize=(15, 8), dpi=300):
+def create_fig(nrows, ncols, title = None, figsize=(15, 10.5), dpi=300):
     """
     Create a figure and axes.
 
