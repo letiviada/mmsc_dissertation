@@ -480,3 +480,43 @@ Model saved at regression/models_gradient_boosting/total_throughput/model_total_
 Model saved at regression/models_gradient_boosting/total_throughput/test_data.pkl
 Model saved at regression/models_gradient_boosting/total_throughput/train_data.pkl
 Model saved at regression/models_gradient_boosting/total_throughput/total_data.pkl
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.01
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.02
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.03
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.04
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.05
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.06
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.07
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.08
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.09
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with alpha varying and beta = 0.1
+Done!
+Producing plots for k(s),j(s),u(t),c(t,x) with beta varying
+Done!
