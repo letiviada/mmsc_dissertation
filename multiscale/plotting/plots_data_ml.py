@@ -227,8 +227,8 @@ def make_loglog(data:pd.DataFrame,name:str,betas:list,type_data:str):
                   10**(intercept + 0.005) * data_ratio_ordered[data_ratio_ordered['particle_size'] == beta]['adhesivity']**slope,
                   color = colors[i], linestyle = '--', label = f'Beta {beta},Order {order:.2f}')
     ax[0].set_xlabel('Stickiness')
-    ax[0].set_ylabel('Volume Liquid Time 400')
-    ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left', ncols =2)
+    ax[0].set_ylabel(f'{name}')
+    ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left', ncols = 1)
     plt.tight_layout()
     save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/loglog_{name}')
 
