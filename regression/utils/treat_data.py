@@ -4,24 +4,40 @@ import numpy as np
 import os
 from utils.help_functions import create_interp
 from scipy.integrate import quad
-from scipy.stats.qmc import LatinHypercube
+from idaes.core.surrogate.pysmo.sampling import LatinHypercubeSampling
+from scipy.stats.qmc import LatinHypercube, scale
+from sklearn.neighbors import NearestNeighbors
 
 def sampling_data(X, y, size:int, method:str='random'):
     if method == 'random':
         X_new = X.sample(size)
         y_new = y.loc[X_new.index]
     elif method == 'latin_hypercube':
-        X_np = X.values if isinstance(X, pd.DataFrame) else X
-        y_np = y.values if isinstance(y, pd.Series) else y
-
-        if size == 'all':
-            size = 0.8 * X_np.shape[0]
+        size = int(size)
+        unique_points = pd.DataFrame()
+    
+        while len(unique_points) < size:
+        # Define the Latin Hypercube sampler
+            lhs_scipy = LatinHypercube(d=2)
+            sample = lhs_scipy.random(n=size * 2)  # Generate more points than needed to ensure we get enough unique points
+            l_bounds = np.array([X['adhesivity'].min(), X['particle_size'].min()])
+            u_bounds = np.array([X['adhesivity'].max(), X['particle_size'].max()])
+            sample_scaled = scale(sample, l_bounds, u_bounds)
+            
+            # Create a DataFrame from the scaled sample
+            sample_df = pd.DataFrame(sample_scaled, columns=['adhesivity', 'particle_size'])
+            
+            # Find the nearest neighbors in the original dataset
+            nbrs = NearestNeighbors(n_neighbors=1, algorithm='ball_tree').fit(X[['adhesivity', 'particle_size']])
+            distances, indices = nbrs.kneighbors(sample_df)
+            closest_points = X.iloc[indices.flatten()]
         
-        sampler = LatinHypercube(d = 2)
-        lhs_samples = sampler.random(size)
-        
-    else:
-        raise ValueError("Invalid sampling method. Please choose 'random' or 'latin_hypercube'.")
+        # Combine and ensure the points are unique
+            unique_points = pd.concat([unique_points, closest_points]).drop_duplicates(subset=['adhesivity', 'particle_size'])
+        unique_points = unique_points.head(size)
+        X_new = unique_points[['adhesivity','particle_size']]
+        y_new = y.loc[X_new.index]
+        print(size, y_new.shape)
 
     return X_new, y_new
 

@@ -14,7 +14,7 @@ def main(alpha,beta,phi,filename,parameter):
     t_eval = load_any(alpha,beta,'time_eval',run = None,filename=filename)
     x_eval = load_any(alpha,beta,'x_eval',run = None,filename= filename)
      # Time points of interest
-    time_points = [0,50,100,150,200,250,300,350,400,450]
+    time_points = [0,100,200,300,400,500,600,700,800,900,1000]
     # Find indices of the time points in t_eval
     indices = [np.abs(t_eval - t_point).argmin() for t_point in time_points]
 
@@ -59,9 +59,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     alpha_beta_pairs = alpha_beta_pairs(args.alpha_values, args.beta_values)
-    parameters=["auxiliar_variable", "concentration", "darcy_velocity",
-                 "permeability", "adhesivity", "reactivity"]
+    #parameters=["auxiliar_variable", "concentration", "darcy_velocity",
+               #  "permeability", "adhesivity", "reactivity"]
     #parameters=["reactivity","darcy_velocity"]
+    parameters=["reactivity", "auxiliar_variable"]
     for alpha, beta in tqdm(alpha_beta_pairs):
         for parameter in tqdm(parameters):
             main(alpha, beta, args.phi,f'multiscale/results/mono-dispersed/macroscale/macro_results_plots.json',parameter)
