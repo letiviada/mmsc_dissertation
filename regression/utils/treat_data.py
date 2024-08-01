@@ -4,7 +4,6 @@ import numpy as np
 import os
 from utils.help_functions import create_interp
 from scipy.integrate import quad
-from idaes.core.surrogate.pysmo.sampling import LatinHypercubeSampling
 from scipy.stats.qmc import LatinHypercube, scale
 from sklearn.neighbors import NearestNeighbors
 

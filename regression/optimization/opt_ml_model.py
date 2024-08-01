@@ -54,8 +54,8 @@ def train_and_plot_opt_adhesivity(model: str, value:int, train:bool, plot: bool,
         data_pred, model1 = get_data_opt_adhesivity_plots(data, name_model = f'{model}_{value}',type_model = type_model)
         # Plot the data
         model_value =  f'{model}_{value}'
-        plot_optimum(data_pred,model_value,particle_sizes ='all', actual= True, predictions = False, save = True)
+        plot_optimum(data_pred,model_value,particle_sizes ='all', actual= True, predictions = True, save = True)
 
 if __name__ == '__main__':
-    train_and_plot_opt_adhesivity(model = 'throughput', value = 100, train = False, plot = True, type_model = 'gradient_boosting')
-    train_and_plot_opt_adhesivity(model = 'time', value = 400, train = False, plot = True, type_model = 'gradient_boosting')
+    train_and_plot_opt_adhesivity(model = 'throughput', value = 100, train = True, plot = True, type_model = 'gradient_boosting')
+   # train_and_plot_opt_adhesivity(model = 'time', value = 400, train = False, plot = True, type_model = 'gradient_boosting')
