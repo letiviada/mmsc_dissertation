@@ -154,16 +154,4 @@ echo "Producing plots for k(s),j(s),u(t),c(t,x) with beta varying"
 python3  multiscale/sweep_params_plots.py --alphas "${alphas2[@]}" --betas $betas2 --name "$name2" --phis "${phi[@]}"
 echo "Done!"
 
-# Generate sequences
-alpha_values=$(seq 0.1 0.1 1.0)
-beta_values=$(seq 0.01 0.01 0.1)
 
-#parameter=("auxiliar_variable") # "concentration" #"darcy_velocity", "permeability", "adhesivity", "reactivity")
-#echo "Generating plots for the macroscale model"
-#python3 multiscale/macroscale/macro_plots.py --alpha_values $alpha_values --beta_values $beta_values --phi $phi #--parameter "{$parameter[@]}"
-#echo "Done!"
-
-# 
-#echo "Generating plots for the performance indicators"
-#python3 multiscale/performance_plots.py --alpha_values $alpha_values --beta_values $beta_values --phi $phi #--parameter "{$parameter[@]}"
-#echo "Done!"

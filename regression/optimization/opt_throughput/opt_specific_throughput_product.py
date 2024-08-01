@@ -48,7 +48,7 @@ if __name__ == '__main__':
     # Ensures that the data can reach the necessary throughpu
     data_model = data_throughput(throughput,data) # Gets the data for the specific throughput
     # Varying the importance of time
-    n_values = np.arange(0,10.05,0.01)
+    n_values = np.arange(0.1,10.05,0.1).round(2)
     throughput_model_varying_n(n_values, throughput, data_model) 
 
 

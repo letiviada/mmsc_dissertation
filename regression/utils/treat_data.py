@@ -4,7 +4,6 @@ import numpy as np
 import os
 from utils.help_functions import create_interp
 from scipy.integrate import quad
-from idaes.core.surrogate.pysmo.sampling import LatinHypercubeSampling
 from scipy.stats.qmc import LatinHypercube, scale
 from sklearn.neighbors import NearestNeighbors
 
@@ -35,9 +34,11 @@ def sampling_data(X, y, size:int, method:str='random'):
         # Combine and ensure the points are unique
             unique_points = pd.concat([unique_points, closest_points]).drop_duplicates(subset=['adhesivity', 'particle_size'])
         unique_points = unique_points.head(size)
-        X_new = unique_points[['adhesivity','particle_size']]
+        
+        X_new = unique_points
+        #print(X_new.columns)
         y_new = y.loc[X_new.index]
-        print(size, y_new.shape)
+        #print(size, y_new.shape)
 
     return X_new, y_new
 

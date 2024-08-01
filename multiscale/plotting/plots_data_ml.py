@@ -278,9 +278,9 @@ def plot_optimum(data:pd.DataFrame,model_value:str,particle_sizes : list = 'all'
     _, colors = style_and_colormap(num_positions = len(particle_sizes), colormap = 'tab20b')
     colors = colors.tolist()
     color_mapping = {key: color for key, color in zip(particle_sizes, colors)}
-    fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
+    
     for part_size in particle_sizes:
-        
+        fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
         filtered_data = data[data['particle_size'] == part_size]
         if actual == True:
             ax[0].scatter(filtered_data['n'], filtered_data[f'adhesivity_{model_value}'], color = color_mapping[part_size], label = 'Physical Model')
@@ -298,9 +298,10 @@ def plot_optimum(data:pd.DataFrame,model_value:str,particle_sizes : list = 'all'
         
         else:
             ax[0].set_yticks(np.arange(0, max(filtered_data['adhesivity_predictions']) + 0.05, 0.1))
+        plt.tight_layout()  
         if save == True:
-            pass
-    plt.tight_layout()  
+            save_figure(fig, filename)
+    
             #save_figure(fig,filename)
     plt.show()
 

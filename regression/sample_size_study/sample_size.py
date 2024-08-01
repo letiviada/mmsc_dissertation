@@ -13,6 +13,7 @@ import numpy as np
 def sample_size_model(output:str, size: int, filename:str, type_model:str, sampling_method:str):
     ml_data = get_data_from_json(filename)
     data = obtain_data([output],ml_data)
+   # data = clean_data(data_b)
     mse, r2 = train_model(output, data, size_train = size, type_model=type_model,size_sampling = sampling_method,save = False)
     return mse, r2
 
@@ -68,11 +69,11 @@ def main(output,num_runs,sizes,filename,type_model,sampling_method,time = None):
 
 if __name__ == '__main__':
     filename = 'performance_indicators/performance_indicators_sample_size.json'
-    num_runs = 1
-    sizes = np.arange(100,181,10)
+    num_runs = 10
+    sizes = np.arange(31,181,1)
     sampling_methods = ['latin_hypercube']
-    type_models = ['polynomial'] #['polynomial','random_forest','gradient_boosting']
-    for output in ['termination_time']:#,'lifetime','efficiency']:
+    type_models = ['gradient_boosting'] #['polynomial','random_forest','gradient_boosting']
+    for output in ['termination_time']: #,'efficiency']:
         for type_model in type_models:
             for sampling_method in sampling_methods:
                 main(output,num_runs, sizes,filename,type_model, sampling_method  = sampling_method)
