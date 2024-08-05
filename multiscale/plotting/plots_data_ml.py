@@ -307,24 +307,31 @@ def plot_optimum(data:pd.DataFrame,model_value:str,particle_sizes : list = 'all'
 
 
 def get_plots_size_sample(metric):
-    summary_stats_poly = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_polynomial.csv')
+    summary_stats_poly = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_polynomial_random.csv')
     summary_stats_gb = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_gradient_boosting.csv')
-    summary_stats_rf = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_random_forest.csv')
+    summary_stats_rf = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_random_forest_random.csv')
+    summary_stats_poly_lhs = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_polynomial_latin_hypercube.csv')
+    #summary_stats_gb_lhs = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_gradient_boosting_latin_hypercube.csv')
+    summary_stats_rf_lhs = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_random_forest_latin_hypercube.csv')
 
-    _, colors = style_and_colormap(num_positions=3)
-    fig, ax = create_fig(1,1, dpi = 100)
+    _, colors = style_and_colormap(num_positions=6)
+    fig, ax = create_fig(1,1,dpi = 100)
 
-    ax[0].scatter(summary_stats_poly['Sample Size'], summary_stats_poly['Mean R2'], color = colors[0], marker = 'x', label = 'Polynomial')
-    ax[0].scatter(summary_stats_gb['Sample Size'], summary_stats_gb['Mean R2'], color = colors[1], marker = 'x', label = 'Gradient Boosting')
-    ax[0].scatter(summary_stats_rf['Sample Size'], summary_stats_rf['Mean R2'], color = colors[2], marker = 'x', label = 'Random Forest')
+    ax[0].scatter(summary_stats_poly['Sample Size'], summary_stats_poly['Mean R2'], color = colors[0], marker = 'x', label = 'Polynomial Random')
+    ax[0].scatter(summary_stats_gb['Sample Size'], summary_stats_gb['Mean R2'], color = colors[1], marker = 'x', label = 'GB Random')
+    ax[0].scatter(summary_stats_rf['Sample Size'], summary_stats_rf['Mean R2'], color = colors[2], marker = 'x', label = 'RF Random')
+
+    ax[0].scatter(summary_stats_poly_lhs['Sample Size'], summary_stats_poly_lhs['Mean R2'], color = colors[3], marker = 'x', label = 'Polynomial LHS')
+    #ax[0].scatter(summary_stats_gb_lhs['Sample Size'], summary_stats_gb_lhs['Mean R2'], color = colors[4], marker = 'x', label = 'GB LHS')
+    ax[0].scatter(summary_stats_rf_lhs['Sample Size'], summary_stats_rf_lhs['Mean R2'], color = colors[5], marker = 'x', label = 'RF LHS')
     ax[0].set_xlabel('Sample Size')
     ax[0].set_ylabel('Mean R2 Score')
     #ax[0].set_xlim(38.5, 181)
-    ax[0].set_yticks(np.arange(0, 1.05, 0.05)) 
+    ax[0].set_yticks(np.arange(0.7, 1.05, 0.05)) 
     ax[0].set_xticks(np.arange(30, 181, 10))
-    ax[0].set_ylim(0,1.05)
+    ax[0].set_ylim(0.7,1.05)
     ax[0].legend(loc = 'lower right')
     plt.tight_layout()
-    save_figure(fig, f'regression/figures/sample_size/comparison_{metric}')
+    save_figure(fig, f'regression/figures/sample_size/comparison_{metric}_both')
     plt.show()
    

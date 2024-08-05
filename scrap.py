@@ -1,7 +1,7 @@
 import numpy as np
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression/')
-from regression.utils import get_data_from_json
+from regression.utils_r import get_data_from_json
 from scipy.stats.qmc import LatinHypercube, scale
 import matplotlib.pyplot as plt 
 import pandas as pd

@@ -1,7 +1,7 @@
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
-from utils import clean_data_efficiency, data_efficiency, save_data_to_csv, get_ratio
+from utils_r import clean_data_efficiency, data_efficiency, save_data_to_csv, get_ratio
 import pandas as pd
 import numpy as np
 

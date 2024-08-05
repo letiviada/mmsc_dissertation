@@ -5,7 +5,7 @@ sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 from regression.models.model_eval import model_eval
 from multiscale.plotting import scatter_solutions
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
-from utils import open_model
+from utils_r import open_model
 import numpy as np
 import pandas as pd
 from itertools import product

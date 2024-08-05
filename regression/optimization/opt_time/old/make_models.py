@@ -1,8 +1,8 @@
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
-from utils import open_model, change_name_time, ratio_predictions
-from utils import get_data_from_json, data_time, obtain_data, make_data_frame, get_product
+from utils_r import open_model, change_name_time, ratio_predictions
+from utils_r import get_data_from_json, data_time, obtain_data, make_data_frame, get_product
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 sys.path.append('/Users/letiviada/dissertation_mmsc')
 import pandas as pd

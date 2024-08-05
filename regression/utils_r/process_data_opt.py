@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from utils.help_functions import create_interp
+from utils_r.help_functions import create_interp
 from scipy.integrate import quad
 
 def data_throughput(throughput:float, data: pd.DataFrame) -> pd.DataFrame:

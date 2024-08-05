@@ -3,7 +3,7 @@ sys.path.append('/Users/letiviada/dissertation_mmsc')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 import pandas as pd
 import numpy as np
-from utils import ratio_predictions
+from utils_r import ratio_predictions
 
 def get_data_for_opt(models: list, names_models: list, input1: np.ndarray, input2: np.ndarray, ratio:bool,n:float)->pd.DataFrame:
     """

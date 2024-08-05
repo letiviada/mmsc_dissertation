@@ -1,11 +1,11 @@
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression/')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression/')
-from utils import open_model
+from utils_r import open_model
 from models.model_train import  train_model
 sys.path.append('/Users/letiviada/dissertation_mmsc/')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/multiscale/')
-from plotting import plot_optimum
+from multiscale.plotting import plot_optimum
 import pandas as pd
 
 def get_data_opt_adhesivity_plots(data:pd.DataFrame, name_model:str, type_model:str = 'random_forest')->tuple:

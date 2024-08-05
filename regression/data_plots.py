@@ -1,4 +1,4 @@
-from utils import obtain_data, get_data_from_json, clean_data, data_time
+from utils_r import obtain_data, get_data_from_json, clean_data, data_time
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd

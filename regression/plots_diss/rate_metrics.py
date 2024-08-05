@@ -4,7 +4,7 @@ sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 sys.path.append('/Users/letiviada/dissertation_mmsc')
 from multiscale.plotting import opt_ml, make_loglog, plot_optimum
-from regression.utils import get_data_from_json
+from regression.utils_r import get_data_from_json
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns

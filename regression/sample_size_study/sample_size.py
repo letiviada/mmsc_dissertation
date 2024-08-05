@@ -2,7 +2,7 @@ from sklearn.model_selection import train_test_split
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
-from utils import clean_data, obtain_data, sampling_data, get_data_from_json, save_data_to_csv, data_time
+from utils_r import clean_data, obtain_data, sampling_data, get_data_from_json, save_data_to_csv, data_time
 from models import train_model
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score

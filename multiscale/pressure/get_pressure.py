@@ -43,5 +43,7 @@ class Pressure:
         np.ndarray
             Array of size (nt, nx) representing the pressure gradient.
         """
-        pressure_grad = np.gradient(self.pressure(), self.x_eval, axis=1)
+        u_big = self.u[:, np.newaxis]
+        u_big = np.repeat(u_big, self.x_eval.shape[0], axis=1)
+        pressure_grad = np.divide(-u_big, self.k)
         return pressure_grad

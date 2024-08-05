@@ -1,7 +1,7 @@
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
-from utils import get_data_from_json, data_time, save_data_to_csv, get_product
+from utils_r import get_data_from_json, data_time, save_data_to_csv, get_product
 import pandas as pd
 import numpy as np
 

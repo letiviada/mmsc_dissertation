@@ -148,8 +148,8 @@ sklearn-env/
 .dmypy.json
 dmypy.json
 
-multiscale/macro_results.json
-multiscale/micro_results.json
+multiscale/mono-dispersed/macroscale/
+multiscale/mono-dispersed/microscale/
 
 # Pyre type checker
 .pyre/

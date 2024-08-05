@@ -1,7 +1,7 @@
 from sklearn.metrics import mean_squared_error, r2_score
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
-from utils import open_model, open_data_model
+from utils_r import open_model, open_data_model
 
 def model_eval(output_variable,type_eval,type_model):
     """

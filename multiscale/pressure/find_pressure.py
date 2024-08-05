@@ -2,6 +2,7 @@ import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation')
 from multiscale.utils import save_results, load_any
+from multiscale.plotting import pressure_plot
 from get_pressure import Pressure
 import matplotlib.pyplot as plt
 
@@ -27,5 +28,6 @@ def plot(pressure,dpdx, x_eval):
     return fig
 
 
-p,dpdx,x_eval = pressure(1.0, 0.01, 4.0, None, 'multiscale/results/mono-dispersed/macroscale/macro_results_phi_4.0.json')
-fig = plot(p,dpdx,x_eval)
+p,dpdx,x_eval = pressure(alpha = 0.6, beta = 0.01,
+                          phi = 4.0, run = None, filename = 'multiscale/results/mono-dispersed/macroscale/macro_results_phi_4.0.json')
+fig_p, fig_dpdx = pressure_plot(p,dpdx,x_eval)

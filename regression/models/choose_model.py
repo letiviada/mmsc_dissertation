@@ -1,9 +1,9 @@
 from model_train import train_model
-from utils import get_data_from_json, data_time, clean_data
+from utils_r import get_data_from_json, data_time, clean_data
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
-from utils import obtain_data
+from utils_r import obtain_data
 
 def first_model(outputs:str, filename:str, type_model:str):
     ml_data = clean_data(filename)

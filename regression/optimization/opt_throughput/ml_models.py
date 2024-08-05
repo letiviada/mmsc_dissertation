@@ -1,6 +1,6 @@
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression/')
-from utils import open_model, get_ratio, save_data_to_csv
+from utils_r import open_model, get_ratio, save_data_to_csv
 from models import train_model
 import pandas as pd
 import seaborn as sns
@@ -41,11 +41,19 @@ def train_and_open(train:bool,data:pd.DataFrame)->tuple:
     ml_particles = open_models('avg_retained_particles_throughput_100')
     ml_time = open_models('time_throughput_100')
     return ml_particles, ml_time
-
 ml_particles, ml_time = train_and_open(train = False,data=data)
 
+def train_ratio(train:bool, data:pd.DataFrame, n:int)->pd.DataFrame:
+    """
+    Function that trains the ratio model
+    """
+    data_model = data[['adhesivity','particle_size', 'ratio']]
+    if train == True:
+        train_model('ratio', data_model, size_train = 'all', type_model = 'polynomial', save = True)
+    ml_ratio = open_models('ratio')
+    return ml_ratio
 ps = 0.05
-n = 1.2
+n = 3
 
 adhesivity_values = np.linspace(0, 0.75, num=101)
 #particle_size_values = np.linspace(0.01, 0.1, num=10).round(3)
@@ -67,8 +75,14 @@ df_filtered = data_ratio[data_ratio['particle_size'] == ps]
 df_true = true_sol[true_sol['particle_size'] == ps]
 df_true_n = df_true[df_true['n'] == n]
 
-max_ratio_row = df_filtered[df_filtered['ratio'] == df_filtered['ratio'].max()]
-mid_alpha = max_ratio_row['adhesivity'].values[0]
-df_filtered['cluster'] = np.where(df['adhesivity'] < mid_alpha, 0, 1)
-save_data_to_csv(df_filtered,f'optimization/opt_throughput/data/', 'data_clusters.csv')  
+plt.figure()
+sns.scatterplot(data=df_filtered, x='adhesivity', y='ratio')
+sns.scatterplot(data=df_true_n, x='adhesivity', y='ratio', color='red')
+plt.show()
+
+
+#max_ratio_row = df_filtered[df_filtered['ratio'] == df_filtered['ratio'].max()]
+#mid_alpha = max_ratio_row['adhesivity'].values[0]
+#df_filtered['cluster'] = np.where(df['adhesivity'] < mid_alpha, 0, 1)
+#save_data_to_csv(df_filtered,f'optimization/opt_throughput/data/', 'data_clusters.csv')  #
 

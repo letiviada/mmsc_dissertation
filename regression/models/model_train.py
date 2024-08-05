@@ -5,7 +5,7 @@ from sklearn.preprocessing import PolynomialFeatures
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
-from utils import save_model, obtain_data, sampling_data
+from utils_r import save_model, obtain_data, sampling_data
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
