@@ -7,9 +7,9 @@ from scipy.integrate import quad
 from scipy.stats.qmc import LatinHypercube, scale
 from sklearn.neighbors import NearestNeighbors
 
-def sampling_data(X, y, size:int, method:str='random'):
+def sampling_data(X, y, size:int, run = 0, method:str='random'):
     if method == 'random':
-        X_new = X.sample(size)
+        X_new = X.sample(size, random_state = run)
         y_new = y.loc[X_new.index]
     elif method == 'latin_hypercube':
         size = int(size)
@@ -17,7 +17,7 @@ def sampling_data(X, y, size:int, method:str='random'):
     
         while len(unique_points) < size:
         # Define the Latin Hypercube sampler
-            lhs_scipy = LatinHypercube(d=2)
+            lhs_scipy = LatinHypercube(d=2, seed = run)
             sample = lhs_scipy.random(n=size * 2)  # Generate more points than needed to ensure we get enough unique points
             l_bounds = np.array([X['adhesivity'].min(), X['particle_size'].min()])
             u_bounds = np.array([X['adhesivity'].max(), X['particle_size'].max()])
