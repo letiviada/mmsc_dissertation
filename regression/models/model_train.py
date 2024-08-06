@@ -140,8 +140,13 @@ def train_model(output:str,data:pd.DataFrame, size_train = 'all',run = 0, size_s
         grid_search.fit(X_train, y_train)
         print(f"Best parameters: {grid_search.best_estimator_} with score {grid_search.best_score_}")
         model = grid_search.best_estimator_
+    elif type_model == 'polynomial_no_tuning':
+        model = make_pipeline(PolynomialFeatures(degree=2), Ridge(alpha = 0.0001))
+        model.fit(X_train, y_train)
     # Predict the values
     # -------------------
+    y_pred_train = model.predict(X_train)
+    r2_train = r2_score(y_train, y_pred_train)
     y_pred = model.predict(X_test)
     mse = mean_squared_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
