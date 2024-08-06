@@ -4,7 +4,7 @@ sys.path.append('/Users/letiviada/dissertation_mmsc/regression/')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression/')
 from models.model_eval import model_eval
 from optimization.opt_time.make_models import ml_model
-from utils_r import clean_data, obtain_data, change_name_time 
+from utils_r import clean_data, obtain_data, change_name_time , get_data_from_json
 sys.path.append('/Users/letiviada/dissertation_mmsc/')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/')
 from multiscale.plotting import scatter_solutions, model_plot_with_lines_and_scatter
@@ -28,21 +28,22 @@ def get_large_set_of_data(output_variable,filename):
 def main(output_variable, name_eval, type_model,filename):  
     inputs, outputs = model_eval(output_variable,name_eval,type_model)
     #scatter_solutions(inputs,outputs,output_variable, type_model,name_eval)
-    alpha = np.arange(0.3,1.001,0.0001)
-    beta = np.arange(0.03,0.095,0.01).round(2)
+    alpha = np.arange(0.2,1.001,0.0001)
+    beta = np.arange(0.02,0.04,0.005).round(3)
+    beta = [0.02, 0.025,0.03,0.035]
     data_lines = get_data_lines(alpha,beta, output_variable, type_model)
     data_model = get_large_set_of_data(output_variable, filename)
     model_plot_with_lines_and_scatter(inputs, outputs, output_variable, type_model, data_lines,data_model)
 
 if __name__ == '__main__':
     names =['train']
-    filename = 'performance_indicators/performance_indicators_standard_basic.json'
+    filename = 'performance_indicators/performance_indicators_phi_4.0.json'
     #output_variable = 'volume_liquid_time_400'
-    output_variables = ['termination_time', 'total_throughput','efficiency']
+    output_variables = ['termination_time'] #, 'total_throughput','efficiency']
 
     for output_variable in output_variables:
         for name_eval in names:
-            for type_model in ['polynomial']: #, 'random_forest']:
+            for type_model in ['gradient_boosting']: #, 'random_forest']:
                 main(output_variable, name_eval,type_model,filename) 
 
 
