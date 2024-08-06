@@ -19,18 +19,19 @@ def scatter_histogram(data,output):
     --------
     fig (plt.Figure): the figure of the plot
     """
-    ps_unique_keys = data['particle_size'].unique()
+    ps_unique_keys = data['adhesivity'].unique()
     num_unique_keys = len(ps_unique_keys)
-    _, colors = style_and_colormap(num_positions = 13, colormap = 'tab20b')#
-    fig, ax = create_fig(1,1,dpi = 100)
+    _, colors = style_and_colormap(num_positions = 13, colormap = 'tab10')#
+    fig, ax = create_fig(1,1,dpi = 100, figsize = (10,10))
     colors = colors.tolist()
     color_mapping = {key: color for key, color in zip(ps_unique_keys, colors)}
     data_plot = data[['adhesivity', 'particle_size', output]] 
-    sns.scatterplot(data_plot, x='adhesivity', y=output, ax=ax[0], 
-                    hue='particle_size',palette=color_mapping, legend = 'full')
+    sns.scatterplot(data_plot, x='particle_size', y=output, ax=ax[0], 
+                    hue='adhesivity',palette=color_mapping, legend = 'full')
     ax[0].collections[0].set_sizes([150]) 
     ax[0].legend(bbox_to_anchor=(1.05, 1), loc='upper left')
-    #sns.histplot(data = data, x = output, ax = ax[1], bins = 15, kde = True, color = colors[7])
+   # sns.histplot(data = data, x = output, ax = ax[0],stat = 'percent', color = colors[0])
+    #ax[0].set_xticks([0.2,0.4,0.6,0.8,1.0])
     plt.tight_layout()
     return fig
 
