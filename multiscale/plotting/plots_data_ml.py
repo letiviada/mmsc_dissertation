@@ -116,8 +116,8 @@ def model_plot_with_lines_and_scatter(inputs, outputs, name, type_model, data_li
     else:
         unique_keys = ps_unique_keys
     num_unique_keys = len(unique_keys)
-    _, colors = style_and_colormap(num_positions = num_unique_keys, colormap = 'tab20b')
-    fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
+    _, colors = style_and_colormap(num_positions = num_unique_keys, colormap = 'tab10')
+    fig, ax = create_fig(nrows = 1, ncols = 1 ,figsize = (20,30),dpi = 300)
     
     colors = colors.tolist()
     color_mapping = {key: color for key, color in zip(unique_keys, colors)}
@@ -134,19 +134,17 @@ def model_plot_with_lines_and_scatter(inputs, outputs, name, type_model, data_li
     data_model2 = data_model[data_model['particle_size'].isin(ps2_unique_keys)]
     combined2 = combined2[combined2['particle_size'].isin(ps2_unique_keys)]
     combined = combined[combined['particle_size'].isin(ps2_unique_keys)]
-    sns.scatterplot(data = data_model2, x = 'adhesivity', y = name,hue = 'particle_size', palette = color_mapping, ax = ax[0])
-    sns.scatterplot(data = combined2, x = 'adhesivity', y = 'Solution', marker = 'x', 
-                   color = 'k', ax = ax[0], linewidths=2)
-    sns.scatterplot(data = combined,x = 'adhesivity', y = 'Solution', 
-                   color = 'red', ax = ax[0])
     for i, beta_value in enumerate(ps2_unique_keys):
         sorted_data_line = data_lines[data_lines['particle_size'] == beta_value].sort_values('adhesivity')
-        ax[0].plot(sorted_data_line['adhesivity'], sorted_data_line[name], color=color_mapping[beta_value])
-    ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left')
-    plt.tight_layout()
+        ax[0].plot(sorted_data_line['adhesivity'], sorted_data_line[name], color=color_mapping[beta_value], linewidth = 8,  zorder=1)
+    sns.scatterplot(data = data_model2, x = 'adhesivity', y = name,hue = 'particle_size', palette = color_mapping, ax = ax[0], s =500, zorder = 2, legend = False)
+    sns.scatterplot(data = combined2, x = 'adhesivity', y = 'Solution', marker = 'x', s = 400, legend = False, color = 'k', ax = ax[0], linewidths=4, zorder = 4)
+    sns.scatterplot(data = combined,x = 'adhesivity', y = 'Solution', hue = 'particle_size', palette = color_mapping, ax = ax[0], s = 500, zorder = 3, legend = False)
+    #ax[#0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left')
+    ax[0].set_ylim([200,1500])
+    #ax[0].set_yticks(np.arange(0, 1300, 250))
     name_save = name.replace(" ", "_").lower()
     save_figure(fig, f'regression/figures/data_{type_model}/{name_save}/solution_{name_save}_with_lines')
-    plt.show()
 
 
 def opt_ml(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lines:bool,particle_sizes : list = None,
