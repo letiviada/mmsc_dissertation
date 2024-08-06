@@ -20,7 +20,7 @@ def opt_model(time, outputs:str, filename:str, type_model:str):
         train_model(output_name, data_train, type_model = type_model)
 
 if __name__ == '__main__':
-    filename = 'performance_indicators/performance_indicators_standard_basic.json'
+    filename = 'performance_indicators/performance_indicators_standard.json'
     outputs = ['volume_liquid', 'removed_particles']
     output_first = ['total_throughput', 'termination_time','efficiency']
     time = 400

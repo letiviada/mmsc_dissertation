@@ -147,7 +147,10 @@ def train_model(output:str,data:pd.DataFrame, size_train = 'all',run = 0, size_s
     r2 = r2_score(y_test, y_pred)
     print(f"Mean squared error: {mse}")
     print(f"R2 score for test: {r2}")
-
+    y_train_pred = model.predict(X_train)
+    mse_train = mean_squared_error(y_train, y_train_pred)
+    r2_train = r2_score(y_train,y_train_pred)
+    print(f"R2 score for train:{r2_train}")
     # Save the model
     # --------------
     if save == True:
