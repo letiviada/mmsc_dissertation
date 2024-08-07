@@ -1,3 +1,4 @@
+
 from sklearn.model_selection import train_test_split
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
@@ -76,11 +77,12 @@ def main(output,num_runs,sizes,filename,type_model,sampling_method,time = None):
 
 if __name__ == '__main__':
     filename = 'performance_indicators/performance_indicators_sample_size.json'
-    num_runs = 2
-    sizes = np.arange(180,181,1)
-    sampling_methods = ['latin_hypercube']
-    type_models = ['polynomial'] #['polynomial','random_forest','gradient_boosting']
+    num_runs = 10
+    sizes = np.arange(40,181,1)
+    sampling_methods = ['random','latin_hypercube']
+    type_models = ['gradient_boosting'] #['polynomial','random_forest','gradient_boosting']
     for output in ['termination_time']: #,'efficiency']:
         for type_model in type_models:
             for sampling_method in sampling_methods:
                 main(output,num_runs, sizes,filename,type_model, sampling_method  = sampling_method)
+

@@ -132,11 +132,11 @@ def train_model(output:str,data:pd.DataFrame, size_train = 'all',run = 0, size_s
     elif type_model == 'polynomial':
         model_base = make_pipeline(PolynomialFeatures(), Ridge())
         param_grid = {
-            'polynomialfeatures__degree': np.arange(1,15),
-            'ridge__alpha': np.logspace(-10, 5, 16)
+            'polynomialfeatures__degree': np.arange(1,17),
+            'ridge__alpha': np.logspace(-12, 5, 18)
         }
         grid_search = GridSearchCV(model_base, param_grid,
-                    cv = 5, n_jobs=-1, verbose=1)
+                    cv = 10, n_jobs=-1, verbose=1)
         grid_search.fit(X_train, y_train)
         print(f"Best parameters: {grid_search.best_estimator_} with score {grid_search.best_score_}")
         model = grid_search.best_estimator_
