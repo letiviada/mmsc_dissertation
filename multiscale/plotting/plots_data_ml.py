@@ -19,16 +19,16 @@ def scatter_histogram(data,output):
     --------
     fig (plt.Figure): the figure of the plot
     """
-    ps_unique_keys = data['adhesivity'].unique()
+    ps_unique_keys = data['particle_size'].unique()
     num_unique_keys = len(ps_unique_keys)
     _, colors = style_and_colormap(num_positions = 13, colormap = 'tab10')#
     fig, ax = create_fig(1,1,dpi = 100, figsize = (10,10))
     colors = colors.tolist()
     color_mapping = {key: color for key, color in zip(ps_unique_keys, colors)}
     data_plot = data[['adhesivity', 'particle_size', output]] 
-    sns.scatterplot(data_plot, x='particle_size', y=output, ax=ax[0], 
-                    hue='adhesivity',palette=color_mapping, legend = 'full')
-    ax[0].collections[0].set_sizes([150]) 
+    sns.scatterplot(data_plot, x='adhesivity', y=output, ax=ax[0], 
+                    hue='particle_size',palette=color_mapping, legend = 'full')
+   # ax[0].collections[0].set_sizes([150]) 
     ax[0].legend(bbox_to_anchor=(1.05, 1), loc='upper left')
    # sns.histplot(data = data, x = output, ax = ax[0],stat = 'percent', color = colors[0])
     #ax[0].set_xticks([0.2,0.4,0.6,0.8,1.0])
@@ -147,11 +147,11 @@ def model_plot_with_lines_and_scatter(inputs, outputs, name, type_model, data_li
     save_figure(fig, f'regression/figures/data_{type_model}/{name_save}/solution_{name_save}_with_lines')
 
 
-def opt_ml(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lines:bool,particle_sizes : list = None,
+def opt_ml_1(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lines:bool,particle_sizes : list = None,
            data_line:pd.DataFrame = None,type_data:str = 'standard', save: bool = True):
     # Prepare figure, style, and colours
     # ----------------------------------
-    if particle_sizes is None:
+    if particle_sizes== 'all':
         unique_keys = full_data['particle_size'].unique()
     else:
         unique_keys = particle_sizes
@@ -170,7 +170,7 @@ def opt_ml(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lin
     name_pred = name.split('_time')[0] + '_predictions'
     if actual == True:
         filtered_data = full_data[full_data['particle_size'].isin(unique_keys)]
-        sns.scatterplot(data=filtered_data, x='adhesivity', y=name, hue='particle_size', palette=color_mapping, ax=ax[0])
+        sns.scatterplot(data=filtered_data, x='adhesivity', y=name, hue='particle_size', palette=color_mapping, ax=ax[0], s= 500, legend = False)
     if predictions  == True:
         for i, beta_value in enumerate(unique_keys):
             sorted_data = full_data[full_data['particle_size'] == beta_value].sort_values('adhesivity')
@@ -183,8 +183,8 @@ def opt_ml(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lin
                 ax[0].scatter(sorted_data['adhesivity'], sorted_data[name_pred], color=colors[i], marker='x')
     ax[0].set_xlabel('')
     ax[0].set_ylabel('')
-    ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left')
-    ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left', bbox_transform=plt.gcf().transFigure)
+   # ax[0].legend(title='Particle Size', bbox_to_anchor=(0, 1.05), loc='upper left', ncols = 10)
+   # ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left', bbox_transform=plt.gcf().transFigure)
     plt.tight_layout()
     if save == True:
         if predictions == True and lines == True:
@@ -194,7 +194,54 @@ def opt_ml(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lin
         else:
             save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/opt_{name}_actual_data')
     plt.show()
-
+    
+def opt_ml(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lines:bool,particle_sizes : list = None,
+           data_line:pd.DataFrame = None,type_data:str = 'standard', save: bool = True):
+    # Prepare figure, style, and colours
+    # ----------------------------------
+    if particle_sizes== 'all':
+        unique_keys = full_data['adhesivity'].unique()
+    else:
+        unique_keys = particle_sizes
+    if data_line is not None:
+        unique_keys_pred = data_line['adhesivity'].unique()
+        num_unique_keys = max(len(unique_keys),len(unique_keys_pred))
+    else: 
+        num_unique_keys = len(unique_keys)
+    _, colors = style_and_colormap(num_positions = num_unique_keys, colormap = 'tab10')
+    fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
+    colors = colors.tolist()
+    color_mapping = {key: color for key, color in zip(unique_keys, colors)}
+    full_data = full_data.sort_values('particle_size')
+    # Plot the results of the model
+    # -----------------------------
+    name_pred = name.split('_time')[0] + '_predictions'
+    if actual == True:
+        filtered_data = full_data[full_data['adhesivity'].isin(unique_keys)]
+        sns.lineplot(data=filtered_data, hue='adhesivity', y=name, x='particle_size', palette=color_mapping, ax=ax[0],markers= 'o', size = 400, legend = False)
+    if predictions  == True:
+        for i, beta_value in enumerate(unique_keys):
+            sorted_data = full_data[full_data['adhesivity'] == beta_value].sort_values('particle_size')
+            sorted_data_line = data_line[data_line['adhesivity'] == beta_value].sort_values('particle_sze')
+            if lines == True:
+                ax[0].plot(sorted_data_line['particle_size'], sorted_data_line[name_pred], color=colors[i])
+            elif lines == True and data_line is None:
+                raise ValueError('Please provide the data for the lines')
+            else:
+                ax[0].scatter(sorted_data['particle_size'], sorted_data[name_pred], color=colors[i], marker='x')
+    ax[0].set_xlabel('')
+    ax[0].set_ylabel('')
+   # ax[0].legend(title='Particle Size', bbox_to_anchor=(0, 1.05), loc='upper left', ncols = 10)
+   # ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left', bbox_transform=plt.gcf().transFigure)
+    plt.tight_layout()
+    if save == True:
+        if predictions == True and lines == True:
+            save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/opt_{name}_with_predictions_and_lines_ps')
+        elif predictions == True and lines == False:
+            save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/opt_{name}_with_predictions_ps')
+        else:
+            save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/opt_{name}_actual_data_ps')
+    plt.show()
 def make_loglog(data:pd.DataFrame,name:str,betas:list,type_data:str):
     """
     Make log-log plot to compare the data for the different particle sizes.
@@ -209,6 +256,8 @@ def make_loglog(data:pd.DataFrame,name:str,betas:list,type_data:str):
     --------
     None
     """
+    if betas== 'all':
+        betas = data['particle_size'].unique()
     num_unique_keys = len(betas)
     _, colors = style_and_colormap(num_positions = num_unique_keys, colormap = 'tab20b')
     fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
@@ -217,17 +266,17 @@ def make_loglog(data:pd.DataFrame,name:str,betas:list,type_data:str):
         data_ratio_ordered = data[data['particle_size'] == beta].sort_values('adhesivity')
         ax[0].loglog(data_ratio_ordered[data_ratio_ordered['particle_size'] == beta]['adhesivity'], 
                   data_ratio_ordered[data_ratio_ordered['particle_size'] == beta][name],
-                  color = colors[i])
+                  color = colors[i], linewidth = 6)
         log_stickiness = np.log10(data_ratio_ordered[data_ratio_ordered['particle_size'] == beta]['adhesivity'])
         log_y = np.log10(data_ratio_ordered[data_ratio_ordered['particle_size'] == beta][name])
         slope, intercept, r_value, p_value, std_err = linregress(log_stickiness, log_y)
         order = abs(slope)
         ax[0].loglog(data_ratio_ordered[data_ratio_ordered['particle_size'] == beta]['adhesivity'], 
                   10**(intercept + 0.005) * data_ratio_ordered[data_ratio_ordered['particle_size'] == beta]['adhesivity']**slope,
-                  color = colors[i], linestyle = '--', label = f'Beta {beta},Order {order:.2f}')
-    ax[0].set_xlabel('Stickiness')
+                  color = colors[i], linestyle = '--', label = f'Beta {beta},Order {order:.2f}', linewidth = 6)
+    ax[0].set_xlabel(r'$\alpha$')
     ax[0].set_ylabel(f'{name}')
-    ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left', ncols = 1)
+    #ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left', ncols = 1)
     plt.tight_layout()
     save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/loglog_{name}')
 
@@ -272,6 +321,7 @@ def plot_optimum(data:pd.DataFrame,model_value:str,particle_sizes : list = 'all'
     --------
     None
     """
+
     if particle_sizes == 'all':
         particle_sizes = data['particle_size'].unique()
     _, colors = style_and_colormap(num_positions = len(particle_sizes), colormap = 'tab20b')

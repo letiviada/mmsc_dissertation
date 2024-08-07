@@ -21,5 +21,5 @@ def dataplots(outputs):
     plt.show()
 
 if __name__ == '__main__':
-    outputs = ['efficiency']# ['termination_time', 'total_throughput','efficiency'] 
+    outputs = ['termination_time']# ['termination_time', 'total_throughput','efficiency'] 
     dataplots(outputs)

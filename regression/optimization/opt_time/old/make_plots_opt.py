@@ -31,17 +31,17 @@ if __name__ == '__main__':
     filename = 'performance_indicators/performance_indicators_standard_basic.json'
     time = 400
     n_values = np.arange(0.04,3.25,0.05).round(2)
-    particle_sizes = [0.08]
+    particle_sizes = 'all'
     data_ratio = get_physical_model_time(['volume_liquid','total_concentration'],time,1,filename)
 
     vol_name = f'volume_liquid_time_{time}'
     conc_name = f'total_concentration_time_{time}'
     make_plots(data_ratio,vol_name, actual = True, prediction = False,lines = True, data_line = None,type_data = 'standard',  particle_sizes= particle_sizes, save= False) 
     make_plots(data_ratio,conc_name, actual = True,  prediction = False,lines = False, data_line = None,type_data = 'standard',particle_sizes= particle_sizes, save= False)
-    #make_loglog(data_ratio,f'volume_liquid_time_{time}', betas = particle_sizes,type_data='standard')
+    make_loglog(data_ratio,f'volume_liquid_time_{time}', betas = particle_sizes,type_data='standard')
 
-    data = pd.read_csv(f'regression/optimization/opt_time/data/time_{time}/optimum_values.csv')
-    plot_optimum(data,particle_sizes,predictions = False)
+    #data = pd.read_csv(f'regression/optimization/opt_time/data/time_{time}/optimum_values.csv')
+    #plot_optimum(data,particle_sizes,predictions = False)
 
  
 

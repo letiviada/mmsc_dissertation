@@ -87,6 +87,6 @@ def data_time(time:int, data: pd.DataFrame) -> pd.DataFrame:
                     data.at[index, f'efficiency_time_{time}'] = 0.0
         time_efficiency = interp_func_efficiency(time) if interp_func_efficiency is not None else np.nan
         data.at[index, f'efficiency_time_{time}'] = time_efficiency
-        data.at[index, f'volume_time_{time}'] = interp_func_throughput(time_efficiency) if interp_func_throughput is not None else np.nan
+        data.at[index, f'volume_time_{time}'] = interp_func_throughput(time) if interp_func_throughput is not None else np.nan
     data_sorted = data.sort_values(['particle_size', 'adhesivity'])  
     return data_sorted
