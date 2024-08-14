@@ -43,9 +43,9 @@ if __name__ == '__main__':
 
     for output_variable in output_variables:
         for name_eval in names:
-            for type_model in ['gradient_boosting', 'random_forest']: #, 'random_forest']:
+            for type_model in ['polynomial','gradient_boosting', 'random_forest']: #, 'random_forest']:
                 main(output_variable, name_eval,type_model,filename) 
-
+                plt.show()
 
 
 

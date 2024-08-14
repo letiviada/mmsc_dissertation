@@ -136,7 +136,13 @@ def model_plot_with_lines_and_scatter(inputs, outputs, name, type_model, data_li
     combined = combined[combined['particle_size'].isin(ps2_unique_keys)]
     for i, beta_value in enumerate(ps2_unique_keys):
         sorted_data_line = data_lines[data_lines['particle_size'] == beta_value].sort_values('adhesivity')
-        ax[0].plot(sorted_data_line['adhesivity'], sorted_data_line[name], color=color_mapping[beta_value], linewidth = 8,  zorder=1)
+        beta = float(beta_value)
+        if beta in [0.02,0.03,0.04]:
+            ax[0].plot(sorted_data_line['adhesivity'], sorted_data_line[name], 
+                       color=color_mapping[beta_value], linewidth = 8,  zorder=2, linestyle = '--')
+        else:
+            ax[0].plot(sorted_data_line['adhesivity'], sorted_data_line[name], 
+                       color=color_mapping[beta_value], linewidth = 8,  zorder=1)
     sns.scatterplot(data = data_model2, x = 'adhesivity', y = name,hue = 'particle_size', palette = color_mapping, ax = ax[0], s =500, zorder = 2, legend = False)
     sns.scatterplot(data = combined2, x = 'adhesivity', y = 'Solution', marker = 'x', s = 400, legend = False, color = 'k', ax = ax[0], linewidths=4, zorder = 4)
     sns.scatterplot(data = combined,x = 'adhesivity', y = 'Solution', hue = 'particle_size', palette = color_mapping, ax = ax[0], s = 500, zorder = 3, legend = False)
@@ -245,7 +251,8 @@ def opt_ml_1(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,l
         else:
             save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/opt_{name}_actual_data_ps')
     plt.show()
-def make_loglog(data:pd.DataFrame,name:str,betas:list,type_data:str):
+
+def make_loglog(data:pd.DataFrame,name:str,betas:list,type_data:str,data_compare:pd.DataFrame = None, save:bool = True):
     """
     Make log-log plot to compare the data for the different particle sizes.
 
@@ -262,8 +269,8 @@ def make_loglog(data:pd.DataFrame,name:str,betas:list,type_data:str):
     if betas== 'all':
         betas = data['particle_size'].unique()
     num_unique_keys = len(betas)
-    _, colors = style_and_colormap(num_positions = num_unique_keys, colormap = 'tab20b')
-    fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
+    _, colors = style_and_colormap(num_positions = num_unique_keys, colormap = 'tab10')
+    fig, ax = create_fig(nrows = 1, ncols = 1 ,figsize = (15,8),dpi = 100)
     colors = colors.tolist()
     for i,beta in enumerate(betas):
         data_ratio_ordered = data[data['particle_size'] == beta].sort_values('adhesivity')
@@ -275,13 +282,29 @@ def make_loglog(data:pd.DataFrame,name:str,betas:list,type_data:str):
         slope, intercept, r_value, p_value, std_err = linregress(log_stickiness, log_y)
         order = abs(slope)
         ax[0].loglog(data_ratio_ordered[data_ratio_ordered['particle_size'] == beta]['adhesivity'], 
-                  10**(intercept + 0.005) * data_ratio_ordered[data_ratio_ordered['particle_size'] == beta]['adhesivity']**slope,
+                  10**(intercept) * data_ratio_ordered[data_ratio_ordered['particle_size'] == beta]['adhesivity']**slope,
                   color = colors[i], linestyle = '--', label = f'Beta {beta},Order {order:.2f}', linewidth = 6)
+    if data_compare is not None:
+        data_ratio_ordered = data_compare[data_compare['particle_size'] == 0.1].sort_values('adhesivity')
+        #print(data_ratio_ordered)
+        #ax[0].loglog(data_ratio_ordered['adhesivity'], 
+          #        data_ratio_ordered['throughput_time_0'],
+          #        color = 'k',linestyle = '-.', linewidth = 6)
+        log_stickiness = np.log10(data_ratio_ordered['adhesivity'])
+        log_y = np.log10(data_ratio_ordered['throughput_time_0'])
+        slope, intercept, r_value, p_value, std_err = linregress(log_stickiness, log_y)
+        order = abs(slope)
+        ax[0].loglog(data_ratio_ordered['adhesivity'],            
+                  10**(intercept-0.2) * data_ratio_ordered['adhesivity']**slope,
+                  color = 'k', linestyle = '-.', label = f'Beta {beta},Order {order:.2f}', linewidth = 6)
     ax[0].set_xlabel(r'$\alpha$')
-    ax[0].set_ylabel(f'{name}')
+    ax[0].set_ylabel(r'$\theta(\min\{\tau,400\})$')
     #ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left', ncols = 1)
     plt.tight_layout()
-    save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/loglog_{name}')
+    if save == True:
+        save_figure(fig, f'regression/optimization/opt_time/plots/loglog_{name}')
+        #save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/loglog_{name}')
+    return fig, ax
 
 def plot_optimal_adhesivity(particle_sizes,n_values, data, time):
 

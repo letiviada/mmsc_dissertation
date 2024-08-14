@@ -1,6 +1,9 @@
 
 import pandas as pd
 import numpy as np
+import sys
+sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
+sys.path.append('/Users/letiviada/dissertation_mmsc/')
 from regression.optimization.opt_time.make_models import  get_physical_model_time
 from utils_r import save_data_to_csv
 
@@ -29,7 +32,7 @@ def time_model_varying_n( n_values, time, filename):
 
 if __name__ == '__main__':
     filename = 'performance_indicators/performance_indicators_opt.json'
-    time = 400
+    time = 0
     n_values = np.arange(0.01,3,0.01).round(2) 
     data = time_model_varying_n(n_values,time,filename)
 

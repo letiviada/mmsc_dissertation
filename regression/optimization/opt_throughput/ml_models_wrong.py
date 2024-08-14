@@ -9,8 +9,8 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans, DBSCAN
 
 #mse, r2 = train_model(output, data, size_train = size, type_model=type_model,size_sampling = sampling_method,save = False)
-data = pd.read_csv('regression/optimization/opt_throughput/data/throughput_100/data_for_sums.csv')
-true_sol = pd.read_csv('regression/optimization/opt_throughput/data/throughput_100/data_varying_n_min.csv')
+data = pd.read_csv('regression/optimization/opt_throughput/data/physical/data_for_sums.csv')
+true_sol = pd.read_csv('regression/optimization/opt_throughput/data/physical/data_varying_n_min.csv')
 
 def open_models(name_model:str, type_model:str = 'polynomial')->tuple:
     """
@@ -73,11 +73,11 @@ data_ratio = get_ratio('efficiency_particles','time',n,df)
 # Filter the DataFrame for particle size = 0.06
 df_filtered = data_ratio[data_ratio['particle_size'] == ps]
 df_true = true_sol[true_sol['particle_size'] == ps]
-df_true_n = df_true[df_true['n'] == n]
+df_true_n = df_true[df_true['weight_coefficient'] == n]
 
 plt.figure()
 sns.scatterplot(data=df_filtered, x='adhesivity', y='ratio')
-sns.scatterplot(data=df_true_n, x='adhesivity', y='ratio', color='red')
+sns.scatterplot(data=df_true_n, x='adhesivity', y='gamma', color='red')
 plt.show()
 
 

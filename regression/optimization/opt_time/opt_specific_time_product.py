@@ -42,17 +42,17 @@ def time_model_varying_n(n_values, time, data, physical = True, ml = False):
     all_data = pd.DataFrame()
     optimum_values = pd.DataFrame()
     for n in n_values:
-        data_model_scaled = scale_data(data,time)
-        #data_model_scaled = data
-        #data_model_scaled.rename(columns={f'volume_time_{time}': f'volume_time_{time}_scaled'}, inplace=True)
+        #data_model_scaled = scale_data(data,time)
+        data_model_scaled = data
+        data_model_scaled.rename(columns={f'volume_time_{time}': f'volume_time_{time}_scaled'}, inplace=True)
         data_model= get_product(f'volume_time_{time}_scaled',f'efficiency_time_{time}',n, data_model_scaled)
         data_model['weight_coefficient'] = n 
         data_model.rename(columns={'product': 'gamma'}, inplace=True)
         all_data = pd.concat([all_data, data_model], ignore_index=True)
         for particle_size in data_model['particle_size'].unique():
             filtered_df = data_model[data_model['particle_size'] == particle_size]
-            min_product = filtered_df['gamma'].max()
-            optimum_values_for_size = filtered_df[filtered_df['gamma'] == min_product]
+            min_product = filtered_df['gamma'].nlargest(int(len(filtered_df) * 0.1))
+            optimum_values_for_size = filtered_df[filtered_df['gamma'].isin(min_product)]
             optimum_values = pd.concat([optimum_values, optimum_values_for_size], ignore_index=True)
     # Create different dataframes       
     data_no_n = data_model.drop(columns = ['weight_coefficient', 'gamma'])
@@ -62,7 +62,7 @@ def time_model_varying_n(n_values, time, data, physical = True, ml = False):
 
     # Save data
     if physical == True:
-        filepath = f'optimization/opt_time/data/physical'
+        filepath = f'optimization/opt_time/data/physical/time_{time}'
     if ml == True:
         filepath = f'optimization/opt_time/data/ml'
     save_data_to_csv(all_data,filepath, 'data_varying_n_min.csv')  
@@ -92,17 +92,19 @@ def main(time, physical, ml, alpha = None, beta = None):
     if physical == True:
         data = get_data_from_json('performance_indicators/performance_indicators_standard.json') 
         data_model = data_time(time,data) 
+        #data_model = pd.DataFrame({'adhesivity': data['adhesivity'], 'particle_size': data['particle_size'],
+         #                          f'volume_time_{time}': data['lifetime'], f'efficiency_time_{time}': data['efficiency']})
     if ml == True:
         data_model = open_all_models_get_predictions(time, alpha, beta)
 
-    n_values = np.arange(0.0,15,0.25).round(3)
+    n_values = np.arange(0.0,10,0.25).round(3)
     time_model_varying_n(n_values, time, data_model, physical, ml)
 
 if __name__ == '__main__':
-    time = 400
+    time = 0
     main(time, physical = True, ml = False)
-    alpha = np.arange(0.0,1.001,0.01).round(2)
-    beta = np.arange(0.01,0.11,0.01).round(3)
-    main(time, physical = False, ml = True, alpha = alpha, beta = beta)
+    alpha = np.arange(0.0,1.001,0.01).round(3)
+    beta = np.arange(0.02,0.11,0.02).round(3)
+    #main(time, physical = False, ml = True, alpha = alpha, beta = beta)
     
 

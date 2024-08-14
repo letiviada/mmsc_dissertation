@@ -26,7 +26,7 @@ def plot_adhesivity(data:pd.DataFrame, output:str, particle_sizes:list, save: bo
         data_particle_size = data[data['particle_size'] == particle_size]
         sns.scatterplot(x = data_particle_size['adhesivity'],y =  data_particle_size[output], ax=ax[0], color=color_mapping[particle_size],
                          label = f'Particle size: {particle_size}')
-    if save:
+    if save==True:
         filepath = f'regression/figures/{output}/adhesivity_plot'
         save_figure(fig, filepath)
     return fig, ax
@@ -47,12 +47,14 @@ def plot_perf_ind(data:pd.DataFrame, output:str, input:str, save:bool):
     """
     _, colors = style_and_colormap(num_positions=1, colormap='tab20b')
     colors = colors.tolist()
-    fig, ax = create_fig(nrows = 1, ncols = 1, dpi = 100)
+    fig, ax = create_fig(nrows = 1, ncols = 1, figsize = (15,8), dpi = 100)
     ax[0].plot(data[input],data[output], linewidth = 5, color = colors[0])
-    ax[0].set_xlabel(r'$\beta$')
-    ax[0].set_ylabel(r'$\tau$')
+    #ax[0].set_xlabel(r'$\beta$')
+    #ax[0].set_ylabel(r'$\tau$')
+    ax[0].set_xlabel(r'$\alpha$')
+    ax[0].set_ylabel(r'$\eta(\tau)$')
     sns.despine()
-    if save:
+    if save==True:
         filepath = f'regression/figures/ch3/{output}/{input}_plot'
         save_figure(fig, filepath)
     return fig, ax

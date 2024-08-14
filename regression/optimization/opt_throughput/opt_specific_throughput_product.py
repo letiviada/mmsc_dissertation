@@ -45,7 +45,7 @@ def throughput_model_varying_n(n_values, throughput, data, physical = True, ml =
     optimum_values = pd.DataFrame()
     for n in n_values:
         data_model_scaled = scale_data(data,throughput)
-        data_model= get_product(f'efficiency_throughput_{throughput}',f'time_throughput_{throughput}_scaled',n, data_model_scaled)
+        data_model= get_product(f'time_throughput_{throughput}_scaled',f'efficiency_throughput_{throughput}',n, data_model_scaled)
         data_model['weight_coefficient'] = n 
         data_model.loc[:, f'time_throughput_{throughput}'] = data_model_scaled.loc[:, f'time_throughput_{throughput}']
         all_data = pd.concat([all_data, data_model], ignore_index=True)
@@ -99,18 +99,18 @@ if __name__ == '__main__':
     # Ensures that the data can reach the necessary throughput
     data_model = data_throughput(throughput,data) # Gets the data for the specific throughput
     # Varying the importance of time
-    n_values = np.arange(0.1,10.05,0.1).round(2)
+    n_values = np.arange(0.0,10.05,0.25).round(3)
     throughput_model_varying_n(n_values, throughput, data_model, physical = True, ml = False) 
     
     # Get data from the ML models
     pd.set_option('display.max_rows', None)
-    alpha = np.arange(0.0,1.1,0.0001).round(4)
-    beta = np.arange(0.01,0.11,0.01).round(2)
+    alpha = np.arange(0.0,1.1,0.01).round(3)
+    beta = np.arange(0.02,0.11,0.02).round(2)
     data_ml = pd.read_csv(f'regression/optimization/opt_throughput/data/throughput_{throughput}/initial_dataset.csv')
     data_forward = open_ml_models_get_more_data(data_ml,throughput, alpha, beta)
 
     # Varying the importance of efficiency
-    n_values = np.arange(0.1,10.05,0.1).round(2)
+    n_values = np.arange(0.0,8.05,0.25).round(3)
     throughput_model_varying_n(n_values, throughput, data_forward, physical = False, ml = True)
 
 

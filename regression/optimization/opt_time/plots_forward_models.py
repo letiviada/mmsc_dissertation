@@ -15,7 +15,7 @@ data_ml = pd.read_csv('regression/optimization/opt_time/data/ml/data_varying_n_m
 particle_size = 0.06
 weight_coefficient = [8,4,2,1]
 
-fig, ax = plot_time_opt(data_physical, particle_size, weight_coefficient, data_ml=data_ml)
+fig, ax = plot_time_opt(data_physical, particle_size, weight_coefficient, data_ml=data_ml, save = False)
 plt.show()
 
 data_opt = pd.read_csv('regression/optimization/opt_time/data/ml/optimum_values.csv')
