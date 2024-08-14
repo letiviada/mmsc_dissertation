@@ -117,7 +117,7 @@ def model_plot_with_lines_and_scatter(inputs, outputs, name, type_model, data_li
         unique_keys = ps_unique_keys
     num_unique_keys = len(unique_keys)
     _, colors = style_and_colormap(num_positions = num_unique_keys, colormap = 'tab10')
-    fig, ax = create_fig(nrows = 1, ncols = 1 ,figsize = (20,30),dpi = 300)
+    fig, ax = create_fig(nrows = 1, ncols = 1 ,figsize = (10,15),dpi = 300)
     
     colors = colors.tolist()
     color_mapping = {key: color for key, color in zip(unique_keys, colors)}
@@ -141,13 +141,16 @@ def model_plot_with_lines_and_scatter(inputs, outputs, name, type_model, data_li
     sns.scatterplot(data = combined2, x = 'adhesivity', y = 'Solution', marker = 'x', s = 400, legend = False, color = 'k', ax = ax[0], linewidths=4, zorder = 4)
     sns.scatterplot(data = combined,x = 'adhesivity', y = 'Solution', hue = 'particle_size', palette = color_mapping, ax = ax[0], s = 500, zorder = 3, legend = False)
     #ax[#0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left')
-    ax[0].set_ylim([200,1500])
+    ax[0].set_ylim([150,1501])
+    ax[0].set_xlabel(r'$\alpha$')
+    ax[0].set_xticks(np.arange(0, 1.1, 0.2))
+    ax[0].set_ylabel(r'$\tau$')
     #ax[0].set_yticks(np.arange(0, 1300, 250))
     name_save = name.replace(" ", "_").lower()
     save_figure(fig, f'regression/figures/data_{type_model}/{name_save}/solution_{name_save}_with_lines')
 
 
-def opt_ml_1(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lines:bool,particle_sizes : list = None,
+def opt_ml(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lines:bool,particle_sizes : list = None,
            data_line:pd.DataFrame = None,type_data:str = 'standard', save: bool = True):
     # Prepare figure, style, and colours
     # ----------------------------------
@@ -170,17 +173,17 @@ def opt_ml_1(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,l
     name_pred = name.split('_time')[0] + '_predictions'
     if actual == True:
         filtered_data = full_data[full_data['particle_size'].isin(unique_keys)]
-        sns.scatterplot(data=filtered_data, x='adhesivity', y=name, hue='particle_size', palette=color_mapping, ax=ax[0], s= 500, legend = False)
+        sns.scatterplot(data=filtered_data, x='adhesivity', y=name, hue='particle_size', palette=color_mapping, ax=ax[0], s= 500, zorder = 1, legend = False)
     if predictions  == True:
         for i, beta_value in enumerate(unique_keys):
             sorted_data = full_data[full_data['particle_size'] == beta_value].sort_values('adhesivity')
-            sorted_data_line = data_line[data_line['particle_size'] == beta_value].sort_values('adhesivity')
             if lines == True:
+                sorted_data_line = data_line[data_line['particle_size'] == beta_value].sort_values('adhesivity')
                 ax[0].plot(sorted_data_line['adhesivity'], sorted_data_line[name_pred], color=colors[i])
             elif lines == True and data_line is None:
                 raise ValueError('Please provide the data for the lines')
             else:
-                ax[0].scatter(sorted_data['adhesivity'], sorted_data[name_pred], color=colors[i], marker='x')
+                ax[0].scatter(sorted_data['adhesivity'], sorted_data[name_pred], color='k', marker='x',s = 400, zorder = 2)
     ax[0].set_xlabel('')
     ax[0].set_ylabel('')
    # ax[0].legend(title='Particle Size', bbox_to_anchor=(0, 1.05), loc='upper left', ncols = 10)
@@ -195,7 +198,7 @@ def opt_ml_1(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,l
             save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/opt_{name}_actual_data')
     plt.show()
     
-def opt_ml(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lines:bool,particle_sizes : list = None,
+def opt_ml_1(full_data:pd.DataFrame, name:str, actual: bool, predictions: bool,lines:bool,particle_sizes : list = None,
            data_line:pd.DataFrame = None,type_data:str = 'standard', save: bool = True):
     # Prepare figure, style, and colours
     # ----------------------------------
@@ -322,24 +325,25 @@ def plot_optimum(data:pd.DataFrame,model_value:str,particle_sizes : list = 'all'
     None
     """
 
-    if particle_sizes == 'all':
+    if isinstance(particle_sizes, str) and particle_sizes == 'all':
         particle_sizes = data['particle_size'].unique()
     _, colors = style_and_colormap(num_positions = len(particle_sizes), colormap = 'tab20b')
     colors = colors.tolist()
     color_mapping = {key: color for key, color in zip(particle_sizes, colors)}
-    
+    fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
     for part_size in particle_sizes:
-        fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
+        
         filtered_data = data[data['particle_size'] == part_size]
         if actual == True:
-            ax[0].scatter(filtered_data['n'], filtered_data[f'adhesivity_{model_value}'], color = color_mapping[part_size], label = 'Physical Model')
+            ax[0].scatter(filtered_data['n'], filtered_data[f'adhesivity_{model_value}'], color = color_mapping[part_size], label = f'{part_size}')
         if predictions == True:
             ax[0].scatter(filtered_data['n'], filtered_data['adhesivity_predictions'], marker = 'x', color = color_mapping[part_size], label = 'ML Model')
             filename = f'regression/figures/optimization/optimal_adhesivity_{model_value}/particle_size_{part_size}_ml'
         else: 
-            filename = f'regression/figures/optimization/optimal_adhesivity_{model_value}/particle_size_{part_size}'
-        sns.despine()
-        ax[0].legend(loc = 'lower right', bbox_to_anchor=(1.05, 1))
+            #filename = f'regression/figures/optimization/optimal_adhesivity_{model_value}/particle_size_{part_size}'
+            filename = f'regression/figures/optimization/optimal_adhesivity_{model_value}/particle_size_varying_physical'
+        #sns.despine()
+        ax[0].legend(loc = 'best', ncols = 2, title = 'Particle Size')
         if max(filtered_data['adhesivity_predictions']) > 0.0:
             ax[0].set_yticks(np.arange(0, max(filtered_data['adhesivity_predictions']) + 0.05, 0.2))
             ax[0].set_yticks(np.arange(0, 1+ 0.05, 0.2))

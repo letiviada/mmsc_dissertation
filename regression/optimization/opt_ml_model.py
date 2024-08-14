@@ -1,3 +1,4 @@
+# Description: Training and plots for the models that give alpha as the output
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression/')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression/')
@@ -7,6 +8,7 @@ sys.path.append('/Users/letiviada/dissertation_mmsc/')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/multiscale/')
 from multiscale.plotting import plot_optimum
 import pandas as pd
+import numpy as np
 
 def get_data_opt_adhesivity_plots(data:pd.DataFrame, name_model:str, type_model:str = 'random_forest')->tuple:
     """
@@ -24,6 +26,7 @@ def get_data_opt_adhesivity_plots(data:pd.DataFrame, name_model:str, type_model:
     """
     model_path = f'regression/models_{type_model}/'
     ml_model = open_model(f'adhesivity_{name_model}',model_path=model_path)
+    data.rename(columns={'weight_coefficient': 'n'}, inplace=True)
     inputs = data.drop(f'adhesivity_{name_model}', axis=1)
     predictions = ml_model.predict(inputs)
     data['adhesivity_predictions'] = predictions
@@ -44,18 +47,21 @@ def train_and_plot_opt_adhesivity(model: str, value:int, train:bool, plot: bool,
     None
     
     """
-    data = pd.read_csv(f'regression/optimization/opt_{model}/data/{model}_{value}/optimum_values.csv')
+    #data = pd.read_csv(f'regression/optimization/opt_{model}/data/{model}_{value}/optimum_values.csv')
+    data = pd.read_csv(f'regression/optimization/opt_{model}/data/physical/optimum_values.csv')
     output = f'adhesivity_{model}_{value}'
 
     if train ==True:
         train_model(output, data, size_train = 'all', type_model = type_model, save = True)
 
     if plot == True:
+        
         data_pred, model1 = get_data_opt_adhesivity_plots(data, name_model = f'{model}_{value}',type_model = type_model)
         # Plot the data
         model_value =  f'{model}_{value}'
-        plot_optimum(data_pred,model_value,particle_sizes ='all', actual= True, predictions = False, save = True)
-
+        
+        plot_optimum(data_pred,model_value,particle_sizes =[ 0.03, 0.06, 0.09], actual= True, predictions = False, save = True)
+#np.arange(0.01,0.11,0.01).round(3)
 if __name__ == '__main__':
    # train_and_plot_opt_adhesivity(model = 'throughput', value = 100, train = True, plot = True, type_model = 'gradient_boosting')
     train_and_plot_opt_adhesivity(model = 'time', value = 400, train = False, plot = True, type_model = 'gradient_boosting')

@@ -34,11 +34,11 @@ def train_and_open(train:bool,data:pd.DataFrame)->tuple:
     Function that trains both models
     """
     data_particles = data.drop(columns = ['time_throughput_100'])
-    data_time = data.drop(columns = ['avg_retained_particles_throughput_100'])
+    data_time = data.drop(columns = ['efficiency_throughput_100'])
     if train == True:
-        train_model('avg_retained_particles_throughput_100', data_particles, size_train = 'all', type_model = 'polynomial', save = True)
+        train_model('efficiency_throughput_100', data_particles, size_train = 'all', type_model = 'polynomial', save = True)
         train_model('time_throughput_100', data_time, size_train = 'all', type_model = 'polynomial', save = True)
-    ml_particles = open_models('avg_retained_particles_throughput_100')
+    ml_particles = open_models('efficiency_throughput_100')
     ml_time = open_models('time_throughput_100')
     return ml_particles, ml_time
 ml_particles, ml_time = train_and_open(train = False,data=data)
@@ -66,9 +66,9 @@ df = pd.DataFrame({
 })
 
 # Predict the retained particles and time
-df['avg_retained_particles'] = ml_particles.predict(df)
+df['efficiency_particles'] = ml_particles.predict(df)
 df['time'] = ml_time.predict(df[['adhesivity', 'particle_size']])
-data_ratio = get_ratio('avg_retained_particles','time',n,df)
+data_ratio = get_ratio('efficiency_particles','time',n,df)
 
 # Filter the DataFrame for particle size = 0.06
 df_filtered = data_ratio[data_ratio['particle_size'] == ps]
@@ -80,9 +80,4 @@ sns.scatterplot(data=df_filtered, x='adhesivity', y='ratio')
 sns.scatterplot(data=df_true_n, x='adhesivity', y='ratio', color='red')
 plt.show()
 
-
-#max_ratio_row = df_filtered[df_filtered['ratio'] == df_filtered['ratio'].max()]
-#mid_alpha = max_ratio_row['adhesivity'].values[0]
-#df_filtered['cluster'] = np.where(df['adhesivity'] < mid_alpha, 0, 1)
-#save_data_to_csv(df_filtered,f'optimization/opt_throughput/data/', 'data_clusters.csv')  #
 

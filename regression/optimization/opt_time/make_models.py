@@ -51,8 +51,8 @@ def get_physical_model_time(outputs:list,time:int,n:int,filename:str)->pd.DataFr
     volume_name = change_name_time(outputs[0], time)
     concentration_name = change_name_time(outputs[1], time)
     data_model = obtain_data([volume_name, concentration_name], data)
-    data_ratio = get_product(volume_name, concentration_name,n, data_model) 
-    return data_ratio
+    data_product = get_product(volume_name, concentration_name,n, data_model) 
+    return data_product
 
 def get_full_data_and_models(outputs:list, time: int, n:int, type_model: list,filename:str)->tuple:
     """
