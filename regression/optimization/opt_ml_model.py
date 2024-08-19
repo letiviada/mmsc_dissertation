@@ -26,10 +26,11 @@ def get_data_opt_adhesivity_plots(data:pd.DataFrame, name_model:str, type_model:
     """
     model_path = f'regression/models_{type_model}/'
     ml_model = open_model(f'adhesivity_{name_model}',model_path=model_path)
-    data.rename(columns={'weight_coefficient': 'n'}, inplace=True)
+    #data.rename(columns={'weight_coefficient': 'n'}, inplace=True)
     inputs = data.drop(f'adhesivity_{name_model}', axis=1)
     predictions = ml_model.predict(inputs)
     data['adhesivity_predictions'] = predictions
+    data.rename(columns={'weight_coefficient': 'n'}, inplace=True)
     return  data, ml_model
 
 def train_and_plot_opt_adhesivity(model: str, value:int, train:bool, plot: bool, type_model: str):
@@ -48,7 +49,7 @@ def train_and_plot_opt_adhesivity(model: str, value:int, train:bool, plot: bool,
     
     """
     #data = pd.read_csv(f'regression/optimization/opt_{model}/data/{model}_{value}/optimum_values.csv')
-    data = pd.read_csv(f'regression/optimization/opt_{model}/data/physical/optimum_values.csv')
+    data = pd.read_csv(f'regression/optimization/opt_{model}/data/physical/time_400/optimum_values.csv')
     output = f'adhesivity_{model}_{value}'
 
     if train ==True:
@@ -60,8 +61,8 @@ def train_and_plot_opt_adhesivity(model: str, value:int, train:bool, plot: bool,
         # Plot the data
         model_value =  f'{model}_{value}'
         
-        plot_optimum(data_pred,model_value,particle_sizes =[ 0.03, 0.06, 0.09], actual= True, predictions = False, save = True)
+        plot_optimum(data_pred,model_value,particle_sizes = [0.06], actual= True, predictions = True, save = True)
 #np.arange(0.01,0.11,0.01).round(3)
 if __name__ == '__main__':
    # train_and_plot_opt_adhesivity(model = 'throughput', value = 100, train = True, plot = True, type_model = 'gradient_boosting')
-    train_and_plot_opt_adhesivity(model = 'time', value = 400, train = False, plot = True, type_model = 'gradient_boosting')
+    train_and_plot_opt_adhesivity(model = 'time', value = 400, train = True, plot = False, type_model = 'polynomial')

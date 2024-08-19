@@ -37,16 +37,28 @@ def main(alphas: list, betas: list,phi:float,name:str):
 
 # Plot the results
     # ----------------
-    fig_k = plot_one_dim(tau_values_list[0],k_values_list)
-    save_figure(fig_k, f'multiscale/figures/mono-dispersed/microscale/permeability/k_{name}')
-    fig_j = plot_one_dim(tau_values_list[0],j_values_list)
-    save_figure(fig_j, f'multiscale/figures/mono-dispersed/microscale/adhesivity/j_{name}')
-   # fig_u = plot_one_dim(t_eval, u_values_list, funct_type='velocity')
-   # save_figure(fig_u,f'multiscale/figures/mono-dispersed/macroscale/darcy_velocity/varying_parameters/darcy_velocity_{name}')
-   # fig_c = plot_one_dim(x_eval,c_values_list)
-   # save_figure(fig_c,f'multiscale/figures/mono-dispersed/macroscale/concentration/varying_parameters/concentration_{name}')
-   # fig_r_t = plot_one_dim(t_eval,r_t_values_list)
-   # save_figure(fig_r_t,f'multiscale/figures/mono-dispersed/macroscale/reactivity/varying_parameters/reactivity_{name}')
+    fig_k, ax_k = plot_one_dim(tau_values_list[0],k_values_list)
+    ax_k[0].set_xlabel('$s$')
+    ax_k[0].set_ylabel('$k$')
+   # save_figure(fig_k, f'multiscale/figures/mono-dispersed/microscale/permeability/k_{name}')
+    fig_j, ax_j = plot_one_dim(tau_values_list[0],j_values_list)
+    ax_j[0].set_xlabel('$s$')
+    ax_j[0].set_ylabel('$j$')
+   # save_figure(fig_j, f'multiscale/figures/mono-dispersed/microscale/adhesivity/j_{name}')
+    fig_u, ax_u = plot_one_dim(t_eval, u_values_list, funct_type='velocity')
+    ax_u[0].set_xlabel('$t$')
+    ax_u[0].set_ylabel('$u$')
+    #save_figure(fig_u,f'multiscale/figures/mono-dispersed/macroscale/darcy_velocity/varying_parameters/darcy_velocity_{name}')
+    fig_c,ax_c = plot_one_dim(x_eval,c_values_list)
+    ax_c[0].set_xticks([0,0.2, 0.4, 0.6, 0.8,1.0])
+    ax_c[0].set_xlabel('$x$')
+    ax_c[0].set_ylabel('$c$')
+    #save_figure(fig_c,f'multiscale/figures/mono-dispersed/macroscale/concentration/varying_parameters/concentration_{name}')
+    fig_r_t, ax_r_t = plot_one_dim(t_eval,r_t_values_list)
+    ax_r_t[0].set_xlabel('$t$')
+    ax_r_t[0].set_ylabel('$\psi$')
+    ax_r_t[0].set_xticks([0,0.2, 0.4, 0.6, 0.8,1.0,1.2])
+    save_figure(fig_r_t,f'multiscale/figures/mono-dispersed/macroscale/reactivity/varying_parameters/reactivity_{name}')
 
 if __name__ == '__main__':
     

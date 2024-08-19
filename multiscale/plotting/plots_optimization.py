@@ -117,3 +117,37 @@ def plot_range_time(data:pd.DataFrame,time:float, particle_size: list, save:bool
         save_figure(fig, 'regression/optimization/opt_time/plots/time_400/plot_range_time')
 
     return fig, ax
+
+def pareto_front(data:pd.DataFrame, xaxis:str, yaxis:str, min_throughput_value:float, min_efficiency_value:float, adhesivity:list, save:bool):
+    if type(adhesivity)==str and adhesivity == 'all':
+        adhesivity = data['particle_size'].unique().tolist()
+    _, colors = style_and_colormap(num_positions = len(adhesivity), colormap = 'tab10')
+    colors = colors.tolist()
+    color_mapping = {key: color for key, color in zip(adhesivity, colors)}
+    fig, ax = create_fig(nrows = 1, ncols = 1, figsize = (15,8), dpi = 100)
+
+    for adherence in adhesivity:
+        data_part_size = data[data['particle_size'] == adherence]
+        ax[0].plot(data_part_size[xaxis], data_part_size[yaxis], color = color_mapping[adherence], linewidth = 5)
+        min_throughput = data_part_size[data_part_size[xaxis] >= min_throughput_value]
+        min_efficiency = data_part_size[data_part_size[yaxis] >= min_efficiency_value]
+        min_throughput_row = min_throughput.loc[min_throughput[xaxis].idxmin()]
+        min_efficiency_row = min_efficiency.loc[min_efficiency[yaxis].idxmin()]
+        print(min_throughput_row)
+        print(min_efficiency_row)
+        ax[0].scatter(min_throughput_row[xaxis], min_throughput_row[yaxis], color = color_mapping[adherence],marker = 'X', s = 300, zorder = 5)
+        ax[0].scatter(min_efficiency_row[xaxis], min_efficiency_row[yaxis], color = color_mapping[adherence],marker = 'X', s = 300, zorder = 5)
+    ax[0].axvline(min_throughput_value, color='green', linestyle='-.',linewidth = 3,  label='Min Throughput')
+    ax[0].axhline(min_efficiency_value, color='green', linestyle='-.',linewidth = 3,  label='Min Efficiency')
+    ax[0].set_xlabel(r'$\theta(\min\{\tau,400\})$')
+    ax[0].set_ylabel(r'$\eta(\min\{\tau,400\})$')
+    ax[0].text(400, min_efficiency_value + 0.02, r'$\eta_{\mathrm{min}}$', color='black', ha='center')
+    ax[0].text(min_throughput_value + 10, 1, r'$\theta_{\mathrm{min}}$', color='black', ha='center')
+    ax[0].fill_betweenx(y=np.linspace(min_efficiency_value, 1.0, 100),
+                  x1=min_throughput_value, x2=400,
+                  color='green', alpha=0.1, label='Region of Interest')
+
+    
+    if save == True:
+        save_figure(fig, 'regression/optimization/opt_time/plots/time_400/pareto_front')
+    return fig, ax

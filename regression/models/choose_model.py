@@ -34,6 +34,6 @@ if __name__ == '__main__':
     time = 400
     #first_model(output_first, filename,'polynomial')
     for type_model  in ['polynomial']: # 'random_forest','gradient_boosting']:
-        #opt_model(time, outputs, filename, type_model)
+        opt_model(time, outputs, filename, type_model)
         #first_model(output_first, filename, type_model)
-        model_from_csv(csv_file, type_model)
+       # model_from_csv(csv_file, type_model)

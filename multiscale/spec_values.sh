@@ -1,8 +1,10 @@
 #!/bin/bash
 # To run, put in the terminal: bash params_plots.sh
 # Generate sequences
-alpha_values=$(seq 0.1 0.1 1.0)
-beta_values=$(seq 0.01 0.01 0.1)
+#alpha_values=$(seq 0.1 0.1 1.0)
+#beta_values=$(seq 0.01 0.01 0.1)
+alpha_values=(0.6)
+beta_values=(0.01)
 phi=4.0
 
 echo "Generating plots for the macroscale model"

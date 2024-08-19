@@ -64,7 +64,7 @@ def train_model(output:str,data:pd.DataFrame, size_train = 'all',run = 0, size_s
     """
     inputs, outputs = data.drop(output, axis = 1), data[output]
     if type_model == 'polynomial':
-        edges, inside = ensure_alpha_inclusion(data, 'particle_size', 'adhesivity')
+        edges, inside = ensure_alpha_inclusion(data, 'particle_size', 'adhesivity_time_400')
         inputs_inside, outputs_inside = inside.drop(output, axis = 1), inside[output]
         inputs_edges, outputs_edges = edges.drop(output, axis = 1), edges[output]
 

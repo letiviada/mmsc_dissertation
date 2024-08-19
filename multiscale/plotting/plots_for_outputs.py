@@ -20,7 +20,7 @@ def plot_time(t_eval,x_eval,funct,title = None,colormap = 'tab10',style = 'seabo
     """
     _, colors = style_and_colormap( colormap=colormap, num_positions = len(t_eval))
     nrows, ncols = 1,1
-    fig, ax = create_fig(nrows, ncols, title = title)
+    fig, ax = create_fig(nrows, ncols,figsize=(15,8), title = title)
     for t_idx,t in enumerate(t_eval):
         color = colors[t_idx]
         ax[0].plot(x_eval,funct[t_idx,:],color = color, linewidth = 5, label=f't = {t:.2f}')
@@ -31,7 +31,7 @@ def plot_time(t_eval,x_eval,funct,title = None,colormap = 'tab10',style = 'seabo
     fig.tight_layout()
     sns.despine()
     #fig.subplots_adjust(hspace=0.7, wspace=0.2)
-    return fig
+    return fig, ax
 
 def plot_one_dim(x_eval,functs,title = None, colormap = 'tab10',style = 'seaborn-v0_8', funct_type = None):
     """
@@ -46,7 +46,7 @@ def plot_one_dim(x_eval,functs,title = None, colormap = 'tab10',style = 'seaborn
     """
     _, colors = style_and_colormap( colormap=colormap, num_positions = len(functs))
     nrows, ncols = 1,1
-    fig, ax = create_fig(nrows, ncols, title = title)
+    fig, ax = create_fig(nrows, ncols,figsize=(15,8), title = title)
     for i in range(len(functs)):
         color = colors[i]
         funct = functs[i]
@@ -65,7 +65,7 @@ def plot_one_dim(x_eval,functs,title = None, colormap = 'tab10',style = 'seaborn
     ax[0].set_xlim(left=0)
     fig.tight_layout()
     sns.despine()
-    return fig
+    return fig, ax
 
 def pressure_plot(p:np.ndarray, dpdx: np.ndarray, x_eval: np.ndarray):
     """

@@ -27,17 +27,26 @@ def main(alpha,beta,phi,filename,parameter):
     elif parameter == 'reactivity':
         filtered_t_eval = t_eval[indices]
         filtered_psi = param[indices, :]
-        fig = plot_time(filtered_t_eval, x_eval,filtered_psi)
+        fig, ax = plot_time(filtered_t_eval, x_eval,filtered_psi)
+        ax[0].set_xlabel('$x$')
+        ax[0].set_xticks([0,0.2, 0.4, 0.6, 0.8,1.0])
+        ax[0].set_ylabel('$\psi$')
         save_figure(fig, f'multiscale/figures/mono-dispersed/macroscale/reactivity/reactivity_time/alpha_{alpha}/reactivity_alpha_{alpha}_beta_{beta}_phi_{phi}')
-        fig2 = plot_one_dim(t_eval, [param[:,1]], title='Reactivity')
-        save_figure(fig2, f'multiscale/figures/mono-dispersed/macroscale/reactivity/reactivity/alpha_{alpha}/reactivity_alpha_{alpha}_beta_{beta}_phi_{phi}')
+        #fig2 = plot_one_dim(t_eval, [param[:,1]], title='Reactivity')
+        #save_figure(fig2, f'multiscale/figures/mono-dispersed/macroscale/reactivity/reactivity/alpha_{alpha}/reactivity_alpha_{alpha}_beta_{beta}_phi_{phi}')
         plt.close(fig)
-        plt.close(fig2)
+        #plt.close(fig2)
     else:
         filtered_t_eval = t_eval[indices]
         filtered_param = param[indices, :]
 
-        fig = plot_time(filtered_t_eval, x_eval, filtered_param)
+        fig , ax= plot_time(filtered_t_eval, x_eval, filtered_param)
+        ax[0].set_xlabel('$x$')
+        ax[0].set_xticks([0,0.2, 0.4, 0.6, 0.8,1.0])
+        if parameter == 'adhesivity':
+            ax[0].set_ylabel('$j$')
+        elif parameter == 'permeability':
+            ax[0].set_ylabel('$k$')
         save_figure(fig, f'multiscale/figures/mono-dispersed/macroscale/{parameter}/alpha_{alpha}/{parameter}_alpha_{alpha}_beta_{beta}_phi_{phi}') 
         plt.close(fig)
 

@@ -298,12 +298,15 @@ def make_loglog(data:pd.DataFrame,name:str,betas:list,type_data:str,data_compare
                   10**(intercept-0.2) * data_ratio_ordered['adhesivity']**slope,
                   color = 'k', linestyle = '-.', label = f'Beta {beta},Order {order:.2f}', linewidth = 6)
     ax[0].set_xlabel(r'$\alpha$')
-    ax[0].set_ylabel(r'$\theta(\min\{\tau,400\})$')
-    #ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left', ncols = 1)
+    
+    #ax[0].set_ylabel(r'$\theta(\min\{\tau,400\})$')
+    ax[0].set_ylabel(r'$\theta(\tau)$')
+    ax[0].legend(title='Particle Size', bbox_to_anchor=(1.05, 1), loc='upper left', ncols = 1)
     plt.tight_layout()
     if save == True:
-        save_figure(fig, f'regression/optimization/opt_time/plots/loglog_{name}')
+        #save_figure(fig, f'regression/optimization/opt_time/plots/loglog_{name}')
         #save_figure(fig, f'regression/figures/optimization/{type_data}/{name}/loglog_{name}')
+        save_figure(fig,f'regression/figures/ch3/performance_metrics/{name}/loglog_alpha' )
     return fig, ax
 
 def plot_optimal_adhesivity(particle_sizes,n_values, data, time):
@@ -331,7 +334,7 @@ def plot_optimal_adhesivity(particle_sizes,n_values, data, time):
     save_figure(fig, f'regression/figures/optimization/particle_size_{particle_size}/optimal_adhesivity')
     plt.show()
 
-def plot_optimum(data:pd.DataFrame,model_value:str,particle_sizes : list = 'all',  actual: bool = True, predictions: bool = True, save: bool = True):    
+def plot_optimum( data:pd.DataFrame,model_value:str, particle_sizes : list = 'all', marker ='x', actual: bool = True, predictions: bool = True, save: bool = True):    
     """
     Function that plots the optimum for adhesivity for the different particle sizes.
 
@@ -350,7 +353,7 @@ def plot_optimum(data:pd.DataFrame,model_value:str,particle_sizes : list = 'all'
 
     if isinstance(particle_sizes, str) and particle_sizes == 'all':
         particle_sizes = data['particle_size'].unique()
-    _, colors = style_and_colormap(num_positions = len(particle_sizes), colormap = 'tab20b')
+    _, colors = style_and_colormap(num_positions = 3, colormap = 'tab10')#len(particle_sizes), colormap = 'tab20b')
     colors = colors.tolist()
     color_mapping = {key: color for key, color in zip(particle_sizes, colors)}
     fig, ax = create_fig(nrows = 1, ncols = 1 ,dpi = 100)
@@ -358,9 +361,9 @@ def plot_optimum(data:pd.DataFrame,model_value:str,particle_sizes : list = 'all'
         
         filtered_data = data[data['particle_size'] == part_size]
         if actual == True:
-            ax[0].scatter(filtered_data['n'], filtered_data[f'adhesivity_{model_value}'], color = color_mapping[part_size], label = f'{part_size}')
+            ax[0].scatter(filtered_data['weight_coefficient'], filtered_data[f'adhesivity_{model_value}'], color = color_mapping[part_size], label = f'{part_size}', alpha = 0.5)
         if predictions == True:
-            ax[0].scatter(filtered_data['n'], filtered_data['adhesivity_predictions'], marker = 'x', color = color_mapping[part_size], label = 'ML Model')
+            ax[0].scatter(filtered_data['weight_coefficient'], filtered_data['adhesivity_predictions'], marker = marker, color = color_mapping[part_size], label = 'ML Model')
             filename = f'regression/figures/optimization/optimal_adhesivity_{model_value}/particle_size_{part_size}_ml'
         else: 
             #filename = f'regression/figures/optimization/optimal_adhesivity_{model_value}/particle_size_{part_size}'
@@ -371,7 +374,7 @@ def plot_optimum(data:pd.DataFrame,model_value:str,particle_sizes : list = 'all'
             ax[0].set_yticks(np.arange(0, max(filtered_data['adhesivity_predictions']) + 0.05, 0.2))
             ax[0].set_yticks(np.arange(0, 1+ 0.05, 0.2))
 
-        
+    
         else:
             ax[0].set_yticks(np.arange(0, max(filtered_data['adhesivity_predictions']) + 0.05, 0.1))
         plt.tight_layout()  
@@ -379,7 +382,7 @@ def plot_optimum(data:pd.DataFrame,model_value:str,particle_sizes : list = 'all'
             save_figure(fig, filename)
     
             #save_figure(fig,filename)
-    plt.show()
+    return fig, ax
 
 
 def get_plots_size_sample(metric):
@@ -411,3 +414,24 @@ def get_plots_size_sample(metric):
     save_figure(fig, f'regression/figures/sample_size/comparison_{metric}_both')
     plt.show()
    
+def plot_optimum_models(type_models):    
+    """
+    Function that plots the optimum for adhesivity for the different particle sizes.
+
+    Parameters:
+    ----------
+    data (pd.DataFrame): the data to plot
+    particle_sizes (list): the list of particle sizes to plot
+    actual (bool): whether to plot the actual data
+    predictions (bool): whether to plot the predictions
+    save (bool): whether to save the figure
+
+    Returns:
+    --------
+    None
+    """
+    _, colors = style_and_colormap(num_positions = 4, colormap = 'tab10')#len(particle_sizes), colormap = 'tab20b')
+    colors = colors.tolist()
+    color_mapping = {key: color for key, color in zip(type_models, colors)}
+    fig, ax = create_fig(nrows = 1, ncols = 1 ,figsize = (15,8), dpi = 100)
+    return fig, ax, color_mapping
