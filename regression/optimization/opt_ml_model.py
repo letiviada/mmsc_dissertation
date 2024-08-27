@@ -49,7 +49,7 @@ def train_and_plot_opt_adhesivity(model: str, value:int, train:bool, plot: bool,
     
     """
     #data = pd.read_csv(f'regression/optimization/opt_{model}/data/{model}_{value}/optimum_values.csv')
-    data = pd.read_csv(f'regression/optimization/opt_{model}/data/physical/time_400/optimum_values.csv')
+    data = pd.read_csv(f'regression/optimization/opt_{model}/data/physical/optimum_values.csv')
     output = f'adhesivity_{model}_{value}'
 
     if train ==True:
@@ -64,5 +64,5 @@ def train_and_plot_opt_adhesivity(model: str, value:int, train:bool, plot: bool,
         plot_optimum(data_pred,model_value,particle_sizes = [0.06], actual= True, predictions = True, save = True)
 #np.arange(0.01,0.11,0.01).round(3)
 if __name__ == '__main__':
-   # train_and_plot_opt_adhesivity(model = 'throughput', value = 100, train = True, plot = True, type_model = 'gradient_boosting')
-    train_and_plot_opt_adhesivity(model = 'time', value = 400, train = True, plot = False, type_model = 'polynomial')
+   train_and_plot_opt_adhesivity(model = 'throughput', value = 100, train = True, plot = False, type_model = 'polynomial')
+   # train_and_plot_opt_adhesivity(model = 'time', value = 400, train = True, plot = False, type_model = 'polynomial')

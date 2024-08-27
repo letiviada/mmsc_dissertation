@@ -20,7 +20,7 @@ data = get_data_from_json('performance_indicators/performance_indicators_phi_4.0
 #fig, ax = make_loglog(data, 'termination_time', betas = 'all', type_data = 'physical',data_compare=None, save = False)
 #ax[0].set_xticks(np.arange(0.2,1.1,0.2))
 #plt.show()
-data_throughput = data[['adhesivity', 'particle_size','termination_time', 'lifetime', 'time','throughput']]
-data_plot = data_throughput.sort_values('termination_time')
-#fix, ax = plot_perf_ind_time(data_plot, output = 'throughput',particle_size=np.arange(0.2,1.2, 0.2).round(2), input_value = 'time', save=True)
+data_throughput = data[['adhesivity', 'particle_size', 'efficiency']]
+data_plot = data_throughput.sort_values('adhesivity')
+fix, ax = plot_perf_ind_time(data_plot, output = 'efficiency',adhesivity=np.arange(0.2,1.1, 0.2).round(2), input_value = 'particle_size', save=True)
 plt.show()

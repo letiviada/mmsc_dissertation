@@ -39,7 +39,7 @@ def compute_and_save(alpha, beta, num_runs):
         return G_initial
 
     #G_polydisperse = poly_dispersed()
-    tau_values = np.linspace(0,1_000, 2_001)
+    tau_values = np.linspace(0,2_000, 4_001)
     results_all_runs = []
     results_all_runs_with_G = []
     for run in range(num_runs):

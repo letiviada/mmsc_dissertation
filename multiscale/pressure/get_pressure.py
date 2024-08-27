@@ -28,7 +28,7 @@ class Pressure:
         k_inv = np.where(self.k!=0, 1/self.k, 0)
         for i in range(self.t_eval.shape[0]):
            k_inv_interp = interp1d(self.x_eval, k_inv[i,:], kind='cubic', fill_value='extrapolate')
-           pressure_den = quad(k_inv_interp, 0, self.x_eval[-1])[0]
+           pressure_den = quad(k_inv_interp, 0, self.x_eval[-1], limit = 75)[0]
            pressure_x = np.zeros(self.x_eval.shape[0])
            for xi in range(self.x_eval.shape[0]):
                pressure_x[xi] = quad(k_inv_interp,  self.x_eval[xi], self.x_eval[-1],limit = 75)[0]           

@@ -32,8 +32,8 @@ ax[0].scatter(filtered_data['weight_coefficient'], filtered_data[f'adhesivity_ti
 #ax[0].scatter(filtered_data_gb['n'], filtered_data_gb['adhesivity_predictions'],
       #       marker = 'x', color = color_mapping['gradient_boosting'], s = 200, alpha = 0.9,linewidth = 5, label = 'gradient_boosting')
 
-ax[0].scatter(filtered_data_poly['n'], filtered_data_poly['adhesivity_predictions'],
-                marker = 'x', color = color_mapping['polynomial'], s = 200, alpha = 0.9, linewidth = 5, label = 'polynomial')
+#ax[0].scatter(filtered_data_poly['n'], filtered_data_poly['adhesivity_predictions'],
+            #    marker = 'x', color = color_mapping['polynomial'], s = 200, alpha = 0.9, linewidth = 5, label = 'polynomial')
 ax[0].set_ylabel(r'$\alpha_{\mathrm{max}}$')
 ax[0].set_xlabel(r'$n$')
 ax[0].legend()

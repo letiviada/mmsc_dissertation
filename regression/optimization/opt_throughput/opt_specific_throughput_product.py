@@ -1,7 +1,7 @@
 import sys
 sys.path.append('/Users/letiviada/dissertation_mmsc/regression')
 sys.path.append('/home/viadacampos/Documents/mmsc_dissertation/regression')
-from utils_r import clean_data_throughput, data_throughput, save_data_to_csv, get_product, open_model
+from utils_r import clean_data_throughput, data_throughput, save_data_to_csv, get_product, open_model, weight_sum
 import pandas as pd
 import numpy as np
 
@@ -24,7 +24,7 @@ def scale_data(data,throughput):
     data.loc[:,f'time_throughput_{throughput}_scaled'] =  throughput / data.loc[:,f'time_throughput_{throughput}']
     return data
 
-def throughput_model_varying_n(n_values, throughput, data, physical = True, ml = False):
+def throughput_model_varying_n(n_values, throughput, data, physical = True, ml = False, type_weight:str = 'product'):
     """
     Function that takes a specific value of throughput and varies the importance of time. Finds the 
     optimum adhesivity for the product of retained particles and the time.
@@ -45,7 +45,10 @@ def throughput_model_varying_n(n_values, throughput, data, physical = True, ml =
     optimum_values = pd.DataFrame()
     for n in n_values:
         data_model_scaled = scale_data(data,throughput)
-        data_model= get_product(f'time_throughput_{throughput}_scaled',f'efficiency_throughput_{throughput}',n, data_model_scaled)
+        if type_weight == 'product':
+            data_model= get_product(f'time_throughput_{throughput}_scaled',f'efficiency_throughput_{throughput}',n, data_model_scaled)
+        elif type_weight == 'sum':
+            data_model = weight_sum(data_model_scaled, f'time_throughput_{throughput}_scaled', f'efficiency_throughput_{throughput}', n)
         data_model['weight_coefficient'] = n 
         data_model.loc[:, f'time_throughput_{throughput}'] = data_model_scaled.loc[:, f'time_throughput_{throughput}']
         all_data = pd.concat([all_data, data_model], ignore_index=True)
@@ -53,6 +56,8 @@ def throughput_model_varying_n(n_values, throughput, data, physical = True, ml =
             filtered_df = data_model[data_model['particle_size'] == particle_size]
             min_product = filtered_df['product'].max()
             optimum_values_for_size = filtered_df[filtered_df['product'] == min_product]
+            #min_product = filtered_df['product'].nlargest(int(len(filtered_df) * 0.25)) # To get best 10%
+            #optimum_values_for_size = filtered_df[filtered_df['product'].isin(min_product)]
             optimum_values = pd.concat([optimum_values, optimum_values_for_size], ignore_index=True)
     all_data.rename(columns={'product': f'gamma'}, inplace=True)
     data_model.rename(columns={'product': f'gamma'}, inplace=True)
@@ -62,11 +67,15 @@ def throughput_model_varying_n(n_values, throughput, data, physical = True, ml =
     optimum_values.rename(columns={'adhesivity': f'adhesivity_throughput_{throughput}'}, inplace=True)
     if physical == True:
         filepath = f'optimization/opt_throughput/data/physical'
-    if ml == True:
-        filepath = f'optimization/opt_throughput/data/ml'
-    save_data_to_csv(all_data,filepath, 'data_varying_n_min.csv')  
-    save_data_to_csv(optimum_values,filepath, 'optimum_values.csv')
-    save_data_to_csv(data_no_n,filepath, 'data_for_sums.csv')
+    elif ml == True:
+        filepath = f'optimization/opt_throughput/data/ml_range'
+    if type_weight == 'product':
+        save_data_to_csv(all_data,filepath, 'data_varying_n_min.csv')  
+        save_data_to_csv(optimum_values,filepath, 'optimum_values.csv')
+        save_data_to_csv(data_no_n,filepath, 'data_for_sums.csv')
+    elif type_weight == 'sum':
+        save_data_to_csv(all_data,filepath, 'data_varying_n_sum.csv')
+        save_data_to_csv(optimum_values,filepath, 'optimum_values_sum.csv')
     return all_data, optimum_values, data_no_n
 
 def open_ml_models_get_more_data(data_ml,throughput, alpha, beta):
@@ -95,23 +104,26 @@ def open_ml_models_get_more_data(data_ml,throughput, alpha, beta):
 
 if __name__ == '__main__':
     throughput = 100
-    data = clean_data_throughput('performance_indicators/performance_indicators_opt.json',throughput) 
+    data = clean_data_throughput('performance_indicators/performance_indicators_phi_4.0.json',throughput) 
     # Ensures that the data can reach the necessary throughput
-    data_model = data_throughput(throughput,data) # Gets the data for the specific throughput
+    #data_model = data_throughput(throughput,data) # Gets the data for the specific throughput
+    data_model = pd.read_csv('regression/optimization/opt_throughput/data/throughput_100/initial_dataset.csv')
     # Varying the importance of time
-    n_values = np.arange(0.0,10.05,0.25).round(3)
+    n_values = np.arange(0.0,10.05,0.1).round(3)
     throughput_model_varying_n(n_values, throughput, data_model, physical = True, ml = False) 
     
     # Get data from the ML models
-    pd.set_option('display.max_rows', None)
-    alpha = np.arange(0.0,1.1,0.01).round(3)
+    #pd.set_option('display.max_rows', None)
+    alpha = np.arange(0.0,1.001,0.01).round(5)
     beta = np.arange(0.02,0.11,0.02).round(2)
     data_ml = pd.read_csv(f'regression/optimization/opt_throughput/data/throughput_{throughput}/initial_dataset.csv')
     data_forward = open_ml_models_get_more_data(data_ml,throughput, alpha, beta)
 
     # Varying the importance of efficiency
-    n_values = np.arange(0.0,8.05,0.25).round(3)
+   # n_values = np.arange(1,5.05,0.05).round(3)
     throughput_model_varying_n(n_values, throughput, data_forward, physical = False, ml = True)
+
+
 
 
 

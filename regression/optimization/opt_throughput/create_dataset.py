@@ -39,7 +39,7 @@ def create_dataset(throughput:float, save:bool = False) -> pd.DataFrame:
         if optimum_values_for_size['adhesivity'].values[0] != 1.0:
             filtered_data = pd.concat([filtered_data, optimum_values_for_size], ignore_index=True)
     # Get the data from the json file
-    data = clean_data_throughput('performance_indicators/performance_indicators_opt.json', throughput)
+    data = clean_data_throughput('performance_indicators/performance_indicators_phi_4.0.json', throughput)
     data_physical = data_throughput(throughput,data)
     data_physical = data_physical[['adhesivity', 'particle_size', 
                                    f'time_throughput_{throughput}', f'efficiency_throughput_{throughput}']]

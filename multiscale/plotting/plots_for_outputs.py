@@ -81,17 +81,18 @@ def pressure_plot(p:np.ndarray, dpdx: np.ndarray, x_eval: np.ndarray):
     --------
     fig (matplotlib.figure.Figure): Figure for the pressure and pressure gradient
     """
-    _, colors = style_and_colormap(num_positions=p.shape[0])
+    _, colors = style_and_colormap(num_positions=p.shape[0], colormap='tab10')
     nrows, ncols = 1,1 
-    fig_p, ax_p = create_fig(nrows, ncols)
+    fig_p, ax_p = create_fig(nrows, ncols, figsize=(15,8))
     sns.despine()
-    fig_dpdx, ax_dpdx = create_fig(nrows, ncols)
+    fig_dpdx, ax_dpdx = create_fig(nrows, ncols, figsize=(15,8))
     for i in range(p.shape[0]):
         color = colors[i]
         ax_p[0].plot(x_eval,p[i,:],color = color, linewidth = 5)
         ax_dpdx[0].plot(x_eval,dpdx[i,:],color = color, linewidth = 5)
     ax_p[0].set_xlabel('$x$')
     ax_p[0].set_xlim(left=0)
+    ax_p[0].set_xticks(np.arange(0,1.1,0.2).round(2))
     ax_dpdx[0].set_xlim(left=0, right = 1)
     ax_p[0].set_ylim(bottom=0)
     ax_dpdx[0].set_ylim(top=0)
@@ -100,6 +101,6 @@ def pressure_plot(p:np.ndarray, dpdx: np.ndarray, x_eval: np.ndarray):
     ax_dpdx[0].set_ylabel(r'$\partial p /\partial x$')
     sns.despine()
     save_figure(fig_p, 'multiscale/figures/mono-dispersed/macroscale/pressure/pressure')
-    save_figure(fig_dpdx, 'multiscale/figures/mono-dispersed/macroscale/pressure/pressure_grad')
+   # save_figure(fig_dpdx, 'multiscale/figures/mono-dispersed/macroscale/pressure/pressure_grad')
     return fig_p, fig_dpdx
 

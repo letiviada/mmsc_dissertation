@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 def get_ratio(numerator: str, denominator: str, power: float, data: pd.DataFrame) -> pd.DataFrame:
     
@@ -47,6 +48,30 @@ def get_product(numerator: str, denominator: str, power: float, data: pd.DataFra
         'product':(data.loc[:, numerator] ** power) * (data.loc[:, denominator])}
     )
     return ratio
+def weight_sum(data:pd.DataFrame, function1:str, function2:str, weight:float) -> pd.DataFrame:
+    """
+    Function that calculates the weighted sum of two functions
+
+    Parameters:
+    -----------
+    data (pd.DataFrame): the data we want to consider
+    function1 (str): the name of the first function
+    function2 (str): the name of the second function
+    weight (float): the weight we want to consider
+
+    Returns:
+    --------
+    data (pd.DataFrame): the data with the new column
+    """
+    weight_sum = pd.DataFrame(
+        {'adhesivity': data.loc[:, 'adhesivity'],
+         'particle_size': data.loc[:, 'particle_size'],
+            function1: data.loc[:, function1],
+            function2: data.loc[:, function2],
+        'product': weight * data.loc[:, function1]  + (1-weight) *(data.loc[:, function2])}
+    )
+    return weight_sum
+
 def get_product_time(numerator1: str, numerator2: str, denominator: str, power: float, data: pd.DataFrame) -> pd.DataFrame:
     
     """

@@ -29,11 +29,11 @@ def model_from_csv(filename:str, type_model:str):
 if __name__ == '__main__':
     filename = 'performance_indicators/performance_indicators_opt.json'
     csv_file = 'regression/optimization/opt_throughput/data/throughput_100/initial_dataset.csv'
-    outputs = ['volume','efficiency']
+    outputs = ['volume']#,'efficiency']
     output_first = ['total_throughput', 'termination_time','efficiency']
     time = 400
     #first_model(output_first, filename,'polynomial')
     for type_model  in ['polynomial']: # 'random_forest','gradient_boosting']:
-        opt_model(time, outputs, filename, type_model)
+        #opt_model(time, outputs, filename, type_model)
         #first_model(output_first, filename, type_model)
-       # model_from_csv(csv_file, type_model)
+        model_from_csv(csv_file, type_model)

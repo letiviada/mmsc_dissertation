@@ -15,17 +15,7 @@ def pressure(alpha,beta,phi,run,filename):
     pressure = Pressure(t_eval,x_eval,k,u)
     p = pressure.pressure()
     dpdx = pressure.pressure_grad()
-    return p, dpdx, x_eval    
-def plot(pressure,dpdx, x_eval):
-    fig, (ax1, ax2) = plt.subplots(2, 1)
-    for i in range(pressure.shape[0]):
-        ax1.plot(x_eval, pressure[i,:])
-        ax2.plot(x_eval, dpdx[i,:])
-    ax1.set_xlabel('x')
-    ax1.set_ylabel('Pressure')
-
-    plt.show()
-    return fig
+    return p, dpdx, x_eval   
 
 
 p,dpdx,x_eval = pressure(alpha = 0.6, beta = 0.01,

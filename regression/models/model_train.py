@@ -64,7 +64,7 @@ def train_model(output:str,data:pd.DataFrame, size_train = 'all',run = 0, size_s
     """
     inputs, outputs = data.drop(output, axis = 1), data[output]
     if type_model == 'polynomial':
-        edges, inside = ensure_alpha_inclusion(data, 'particle_size', 'adhesivity_time_400')
+        edges, inside = ensure_alpha_inclusion(data, 'particle_size', 'adhesivity')
         inputs_inside, outputs_inside = inside.drop(output, axis = 1), inside[output]
         inputs_edges, outputs_edges = edges.drop(output, axis = 1), edges[output]
 
@@ -102,7 +102,7 @@ def train_model(output:str,data:pd.DataFrame, size_train = 'all',run = 0, size_s
     # ----------------
     if type_model == 'gradient_boosting':
         param_grid = {
-        'n_estimators': [150,200,300], # Number of trees in the forest
+        'n_estimators': [600], # Number of trees in the forest
         'max_depth': [5,6,7], # Maximum depth of the tree
         'learning_rate': np.linspace(0.05,0.2,5), # Learning rate shrinks the contribution of each tree
         'subsample': np.arange(0.2,1.1,0.2), 

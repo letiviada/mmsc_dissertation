@@ -14,7 +14,7 @@ def main(alpha,beta,phi,filename,parameter):
     t_eval = load_any(alpha,beta,'time_eval',run = None,filename=filename)
     x_eval = load_any(alpha,beta,'x_eval',run = None,filename= filename)
      # Time points of interest
-    time_points = [0,200,400,600,800,1000]
+    time_points = [0,200,400,600,800]
     # Find indices of the time points in t_eval
     indices = [np.abs(t_eval - t_point).argmin() for t_point in time_points]
 
@@ -47,6 +47,7 @@ def main(alpha,beta,phi,filename,parameter):
             ax[0].set_ylabel('$j$')
         elif parameter == 'permeability':
             ax[0].set_ylabel('$k$')
+            ax[0].set_yticks([0,0.2, 0.4, 0.6, 0.8,1.0])
         save_figure(fig, f'multiscale/figures/mono-dispersed/macroscale/{parameter}/alpha_{alpha}/{parameter}_alpha_{alpha}_beta_{beta}_phi_{phi}') 
         plt.close(fig)
 
@@ -71,7 +72,7 @@ if __name__ == '__main__':
     #parameters=["auxiliar_variable", "concentration", "darcy_velocity",
                #  "permeability", "adhesivity", "reactivity"]
     #parameters=["reactivity","darcy_velocity"]
-    parameters=["adhesivity"]
+    parameters=["permeability"]
     for alpha, beta in tqdm(alpha_beta_pairs):
         for parameter in tqdm(parameters):
             main(alpha, beta, args.phi,f'multiscale/results/mono-dispersed/macroscale/macro_results_plots.json',parameter)

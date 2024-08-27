@@ -1,6 +1,6 @@
 #!/bin/bash
 # To run, put in the terminal: bash params_plots.sh
-phi=4.0
+phi=2.0
 
 # Define values for alpha and beta
 alphas=$(seq 0.2 0.2 1.0)
