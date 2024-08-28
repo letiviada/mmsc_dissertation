@@ -18,7 +18,6 @@ data_ml['adhesivity_time_400'] = data_ml.groupby('particle_size')['adhesivity_ti
 data_pd['adhesivity_time_400'] = data_pd.groupby('particle_size')['adhesivity_time_400'].transform(
     lambda x: gaussian_filter1d(x, sigma=increased_sigma)
 )
-
 time = 400
 particle_size = np.arange(0.04, 0.11, 0.02).round(2)
 particle_size = [0.04, 0.06, 0.08, 0.1]

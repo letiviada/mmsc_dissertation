@@ -100,7 +100,7 @@ def pressure_plot(p:np.ndarray, dpdx: np.ndarray, x_eval: np.ndarray):
     ax_p[0].set_ylabel('$p$')
     ax_dpdx[0].set_ylabel(r'$\partial p /\partial x$')
     sns.despine()
-    save_figure(fig_p, 'multiscale/figures/mono-dispersed/macroscale/pressure/pressure')
-   # save_figure(fig_dpdx, 'multiscale/figures/mono-dispersed/macroscale/pressure/pressure_grad')
+    #save_figure(fig_p, 'multiscale/figures/mono-dispersed/macroscale/pressure/pressure')
+    save_figure(fig_dpdx, 'multiscale/figures/mono-dispersed/macroscale/pressure/pressure_grad')
     return fig_p, fig_dpdx
 

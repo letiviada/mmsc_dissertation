@@ -84,24 +84,23 @@ def plot_perf_ind_various_bet(data:pd.DataFrame, output:str,particle_size:list, 
 
 def plot_perf_ind_time(data:pd.DataFrame, output:str,adhesivity:list, input_value:str = 'time',save:bool = True):
     if type(adhesivity) == str and adhesivity == 'all':
-        adhesivity = data['adhesivity'].unique()
+        adhesivity = data['particle_size'].unique()
     _, colors = style_and_colormap(num_positions = len(adhesivity), colormap = 'tab10')
     colors = colors.tolist()
     color_mapping = {key: color for key, color in zip(adhesivity, colors)}
     fig, ax = create_fig(nrows = 1, ncols = 1, figsize = (15,8), dpi = 100)
     for adhe in adhesivity:
-        data_part_size = data[data['adhesivity'] == adhe]
-        #data_part_size = data_part_size.drop(['adhesivity', 'particle_size'], axis = 1)
-        print(data_part_size)
-        #inputs = data_part_size[input_value].values[0]
-        #outputs = data_part_size[output].values[0]
-        inputs = data_part_size[input_value]
-        outputs = data_part_size[output]
+        data_part_size = data[data['particle_size'] == adhe]
+        data_part_size = data_part_size.drop(['adhesivity', 'particle_size'], axis = 1)
+        inputs = data_part_size[input_value].values[0]
+        outputs = data_part_size[output].values[0]
+        #inputs = data_part_size[input_value]
+        #outputs = data_part_size[output]
         ax[0].plot(inputs, outputs, 
-                   color = color_mapping[adhe], marker = 'o', markersize = 20,  label = f'PS = {adhe}', linewidth = 5)
+                   color = color_mapping[adhe],  label = f'PS = {adhe}', linewidth = 5)
    # ax[0].set_xticks(np.arange(0.2,1.1,0.2))
-    ax[0].set_ylabel(r'$\eta(t)$')
-    ax[0].set_xlabel(r'$\beta$')
+    ax[0].set_ylabel(r'$\theta(t)$')
+    ax[0].set_xlabel(r'$t$')
     if save == True:
         filepath = f'regression/figures/ch3/performance_metrics/{output}/alpha_even_time'
         save_figure(fig, filepath)

@@ -8,7 +8,7 @@ This repository contains all the codes used to complete my dissertation. The pro
 2. [Folder Structure](#folder-structure)
 
 ## Introduction
-This project contains the codes used for solving a Differential-Algebraic Equations (DAE) system defining a multiscale model for filtration. It contains a study of the different variables for different parameter regimes and a pipeline to use machine learning for filtration. Studies the accuracy of three regression different models: polynomial, randoom forest, and gradeint boosting and how the sample size of training affects the estimation. The sampling is done using ranodom sampling and latin hypercube. Moreover, different optimization problems are studied and machine learning of these implemented. We have been able too demonstrate the efficiency of machine learning methods too study forward and backward problems. These methods simplify the computational cost significantly, as a task that could take hours is solved within seconds.
+This project contains the codes used for solving a Differential-Algebraic Equations (DAE) system defining a multiscale model for filtration. It contains a study of the different variables for different parameter regimes and a pipeline to use machine learning for filtration. Studies the accuracy of three regression different models: polynomial, randoom forest, and gradeint boosting and how the sample size of training affects the estimation. The sampling is done using random sampling and latin hypercube. Moreover, different optimization problems are studied and machine learning of these implemented. We have been able too demonstrate the efficiency of machine learning methods too study forward and inverse problems. These methods simplify the computational cost significantly, as a task that could take hours is solved within seconds.
 
 ## Folder Structure
 The repository is organized as follows:
@@ -59,9 +59,6 @@ The repository is organized as follows:
 ├── regression
 │   ├── __init__.py
 │   ├── data_plots.py
-│   ├── figures
-│   ├── model_plots.py
-│   ├── model_plots2.py
 │   ├── models
 │   │   ├── __init__.py
 │   │   ├── choose_model.py

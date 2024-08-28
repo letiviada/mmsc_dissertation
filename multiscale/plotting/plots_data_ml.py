@@ -390,18 +390,18 @@ def get_plots_size_sample(metric, save:bool = True):
     summary_stats_gb = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_gradient_boosting_random.csv')
     summary_stats_rf = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_random_forest_random.csv')
     summary_stats_poly_lhs = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_polynomial_latin_hypercube.csv')
-    #summary_stats_gb_lhs = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_gradient_boosting_latin_hypercube.csv')
-    #summary_stats_rf_lhs = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_random_forest_latin_hypercube.csv')
+    summary_stats_gb_lhs = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_gradient_boosting_latin_hypercube.csv')
+    summary_stats_rf_lhs = pd.read_csv(f'regression/sample_size_study/{metric}/summary_statistics_random_forest_latin_hypercube.csv')
 
     _, colors = style_and_colormap(num_positions=4, colormap = 'tab10')
     fig, ax = create_fig(1,1,figsize=(15,8),dpi = 100)
 
-    #ax[0].scatter(summary_stats_poly['Sample Size'], summary_stats_poly['Mean R2'], color = colors[0], marker = 'x', linewidth = 3, s = 150, label = 'PR Random')
+   # ax[0].scatter(summary_stats_poly['Sample Size'], summary_stats_poly['Mean R2'], color = colors[0], marker = 'x', linewidth = 3, s = 150, label = 'PR Random')
     ax[0].scatter(summary_stats_gb['Sample Size'], summary_stats_gb['Mean R2'], color = colors[1], marker = 'x',linewidth = 3, s = 150,label = 'GB Random')
     #ax[0].scatter(summary_stats_rf['Sample Size'], summary_stats_rf['Mean R2'], color = colors[2], marker = 'x', linewidth = 3, s =150, label = 'RF Random')
 
-    #ax[0].scatter(summary_stats_poly_lhs['Sample Size'], summary_stats_poly_lhs['Mean R2'], color = colors[2], marker = 'x', linewidth = 3, s = 150, alpha = 0.7, label = 'PR LHS')
-    #ax[0].scatter(summary_stats_gb_lhs['Sample Size'], summary_stats_gb_lhs['Mean R2'], color = colors[3], marker = 'x',linewidth = 3, s=150, label = 'GB LHS')
+   # ax[0].scatter(summary_stats_poly_lhs['Sample Size'], summary_stats_poly_lhs['Mean R2'], color = colors[2], marker = 'x', linewidth = 3, s = 150, alpha = 0.7, label = 'PR LHS')
+    ax[0].scatter(summary_stats_gb_lhs['Sample Size'], summary_stats_gb_lhs['Mean R2'], color = colors[3], marker = 'x',linewidth = 3, s=150, label = 'GB LHS')
     #ax[0].scatter(summary_stats_rf_lhs['Sample Size'], summary_stats_rf_lhs['Mean R2'], color = colors[3], marker = 'x', linewidth = 3, s=150, label = 'RF LHS')
     ax[0].set_xlabel('')
     ax[0].set_ylabel('Mean R2 Score')
