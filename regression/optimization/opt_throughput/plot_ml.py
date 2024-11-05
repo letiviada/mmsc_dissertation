@@ -27,9 +27,9 @@ fig, ax, color_mapping = plot_optimum_models(['actual','random_forest','gradient
 ax[0].scatter(filtered_data['weight_coefficient'], filtered_data[f'adhesivity_throughput_100'], 
               color = color_mapping['actual'], s = 350, label = 'actual', alpha  = 0.7)
 
-#ax[0].scatter(filtered_data_rf['n'], filtered_data_rf['adhesivity_predictions'], marker = 'x', color = color_mapping['random_forest'], s = 200, linewidth = 5, alpha = 0.9, label = 'random_forest')
-#ax[0].scatter(filtered_data_gb['n'], filtered_data_gb['adhesivity_predictions'],
-     #        marker = 'x', color = color_mapping['gradient_boosting'], s = 200, alpha = 0.9,linewidth = 5, label = 'gradient_boosting')
+ax[0].scatter(filtered_data_rf['n'], filtered_data_rf['adhesivity_predictions'], marker = 'x', color = color_mapping['random_forest'], s = 200, linewidth = 5, alpha = 0.9, label = 'random_forest')
+ax[0].scatter(filtered_data_gb['n'], filtered_data_gb['adhesivity_predictions'],
+             marker = 'x', color = color_mapping['gradient_boosting'], s = 200, alpha = 0.9,linewidth = 5, label = 'gradient_boosting')
 
 ax[0].scatter(filtered_data_poly['n'], filtered_data_poly['adhesivity_predictions'],
                 marker = 'x', color = color_mapping['polynomial'], s = 200, alpha = 0.9, linewidth = 5, label = 'polynomial')

@@ -34,7 +34,7 @@ def data_throughput(throughput:float, data: pd.DataFrame) -> pd.DataFrame:
     data_sorted = data.sort_values(['particle_size', 'adhesivity'])          
     return data_sorted
 
-def data_efficiency(efficiency:float, data:pd.DataFrame) -> pd.DataFrame:
+def data_efficiency(efficiency:float, data:pd.DataFrame) -> pd.DataFrame: # NOT USED IN THE DISSERTATION
     """
     Function that creates a new column in the data for a given efficiency
 

@@ -36,44 +36,6 @@ def sampling_data(X, y, size:int, run = 0, method:str='random'):
         unique_points = unique_points.head(size)
         
         X_new = unique_points
-        #print(X_new.columns)
         y_new = y.loc[X_new.index]
-        #print(size, y_new.shape)
 
     return X_new, y_new
-
-def data_time_old(time:int, names:list, data: pd.DataFrame) -> pd.DataFrame:
-    """
-    Function that creates a new column in the data for the time specified in the names columns
-
-    Parameters:
-    ----------
-    time (int): the time we want to consider
-    names (list): the list of names of the columns we want to consider
-    data (pd.DataFrame): the data we want to consider
-
-    Returns:
-    -------
-    data (pd.DataFrame): the data with the new columns
-    """
-    #data = get_data_from_json(filename)
-    filter_working_indices = data[data['termination_time'] > time].index
-    filter_finished_indices = data[data['termination_time'] <= time].index
-    for name in names:
-        if name == 'volume_liquid':
-            data.loc[filter_finished_indices,f'{name}_time_{time}'] = data.loc[filter_finished_indices, 'lifetime']
-            for index in filter_working_indices:
-                row = data.loc[index]
-                interp_func = create_interp(row,'time', 'throughput')
-                data.at[index, f'{name}_time_{time}'] = interp_func(time) if interp_func is not None else np.nan
-        elif name == 'total_concentration':
-            data.loc[filter_finished_indices, f'{name}_time_{time}'] = data.loc[filter_finished_indices, 'efficiency'] 
-            # Calculate total concentrratiton processed
-            for index in filter_working_indices:
-                row = data.loc[index]
-                interp_func = create_interp(row, 'time','efficiency_time')
-                if row['adhesivity'] == 0.0:
-                    data.at[index, f'{name}_time_{time}'] = 0.0
-                else:
-                    data.at[index, f'{name}_time_{time}'] = interp_func(time) if interp_func is not None else np.nan
-    return data

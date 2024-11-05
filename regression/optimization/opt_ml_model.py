@@ -62,7 +62,6 @@ def train_and_plot_opt_adhesivity(model: str, value:int, train:bool, plot: bool,
         model_value =  f'{model}_{value}'
         
         plot_optimum(data_pred,model_value,particle_sizes = [0.06], actual= True, predictions = True, save = True)
-#np.arange(0.01,0.11,0.01).round(3)
 if __name__ == '__main__':
    train_and_plot_opt_adhesivity(model = 'throughput', value = 100, train = True, plot = False, type_model = 'polynomial')
-   # train_and_plot_opt_adhesivity(model = 'time', value = 400, train = True, plot = False, type_model = 'polynomial')
+   train_and_plot_opt_adhesivity(model = 'time', value = 400, train = True, plot = False, type_model = 'polynomial')

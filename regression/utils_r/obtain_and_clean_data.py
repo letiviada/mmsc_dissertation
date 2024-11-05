@@ -38,8 +38,6 @@ def get_data_from_json(filename:str) -> pd.DataFrame:
         data_list.append(record)
 
     ml_data = pd.DataFrame(data_list)
-    
-    #data_to_keep = ml_data[['Adhesivity', 'Particle Size', 'Termination time', 'Lifetime']] 
     return ml_data
 
 def obtain_data(output:list, data_all: pd.DataFrame) -> pd.DataFrame:
@@ -47,6 +45,18 @@ def obtain_data(output:list, data_all: pd.DataFrame) -> pd.DataFrame:
     return data
 
 def clean_data(filename: str) -> pd.DataFrame:
+    """
+    Function that cleans the data as specified in Ch4. 
+
+    Parameters:
+    ----------
+    filename (str): the name of the json file
+
+    Returns:
+    ----------
+    data_to_keep (pd.DataFrame): thee updated dataframe that has changed the column name lifetime to total_throughput.
+
+    """
     data_to_keep = get_data_from_json(filename)
     
     data_to_keep = data_to_keep[data_to_keep['termination_time'] <= 1_500]

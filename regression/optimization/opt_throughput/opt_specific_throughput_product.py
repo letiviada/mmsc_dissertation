@@ -56,8 +56,6 @@ def throughput_model_varying_n(n_values, throughput, data, physical = True, ml =
             filtered_df = data_model[data_model['particle_size'] == particle_size]
             min_product = filtered_df['product'].max()
             optimum_values_for_size = filtered_df[filtered_df['product'] == min_product]
-            #min_product = filtered_df['product'].nlargest(int(len(filtered_df) * 0.25)) # To get best 10%
-            #optimum_values_for_size = filtered_df[filtered_df['product'].isin(min_product)]
             optimum_values = pd.concat([optimum_values, optimum_values_for_size], ignore_index=True)
     all_data.rename(columns={'product': f'gamma'}, inplace=True)
     data_model.rename(columns={'product': f'gamma'}, inplace=True)
@@ -106,21 +104,19 @@ if __name__ == '__main__':
     throughput = 100
     data = clean_data_throughput('performance_indicators/performance_indicators_phi_4.0.json',throughput) 
     # Ensures that the data can reach the necessary throughput
-    #data_model = data_throughput(throughput,data) # Gets the data for the specific throughput
+    #data_model = data_throughput(throughput,data) # Gets the data for the specific throughput 
     data_model = pd.read_csv('regression/optimization/opt_throughput/data/throughput_100/initial_dataset.csv')
     # Varying the importance of time
     n_values = np.arange(0.0,10.05,0.1).round(3)
     throughput_model_varying_n(n_values, throughput, data_model, physical = True, ml = False) 
     
     # Get data from the ML models
-    #pd.set_option('display.max_rows', None)
     alpha = np.arange(0.0,1.001,0.01).round(5)
     beta = np.arange(0.02,0.11,0.02).round(2)
     data_ml = pd.read_csv(f'regression/optimization/opt_throughput/data/throughput_{throughput}/initial_dataset.csv')
     data_forward = open_ml_models_get_more_data(data_ml,throughput, alpha, beta)
 
     # Varying the importance of efficiency
-   # n_values = np.arange(1,5.05,0.05).round(3)
     throughput_model_varying_n(n_values, throughput, data_forward, physical = False, ml = True)
 
 
